@@ -8,7 +8,7 @@ import { sponsors } from "@/data/sponsors";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn the story, mission, funding model, leadership, and partners behind Union County Arts Council.",
+    "Learn the story, mission, funding model, leadership, and partners behind Union County Community Arts Council.",
 };
 
 const programs = [
@@ -26,7 +26,7 @@ const milestones = [
   "2008 - Youth Arts Program expanded to county schools.",
   "2014 - Artist micro-grant initiative established.",
   "2020 - Community arts response fund created.",
-  "2025 - 3,000+ annual participants across UCAC programs.",
+  "2025 - 3,000+ annual participants across UCCAC programs.",
 ];
 
 export default function AboutPage() {
@@ -47,10 +47,10 @@ export default function AboutPage() {
             <div className="space-y-4">
               <h2 className="display text-4xl md:text-5xl">Our Story</h2>
               <p className="text-parchment/80">
-                Union County Arts Council began as a volunteer-led effort to protect creative spaces and champion local artists. What started as small pop-up exhibitions evolved into a trusted nonprofit cultural institution with programming that reaches all ages.
+                Union County Community Arts Council began as a volunteer-led effort to protect creative spaces and champion local artists. What started as small pop-up exhibitions evolved into a trusted nonprofit cultural institution with programming that reaches all ages.
               </p>
               <p className="text-parchment/80">
-                Over time, our mission expanded from showcasing art to creating access. Today, UCAC supports youth workshops, artist grants, community exhibitions, and cross-sector projects that keep arts visible in public life.
+                Over time, our mission expanded from showcasing art to creating access. Today, UCCAC supports youth workshops, artist grants, community exhibitions, and cross-sector projects that keep arts visible in public life.
               </p>
             </div>
             <div className="relative min-h-[360px] overflow-hidden">
@@ -76,7 +76,7 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4 lg:order-2">
               <p className="text-parchment/80">
-                We design each program around inclusion, collaboration, and local voice. UCAC&apos;s role is not only to present art, but to build long-term civic infrastructure where creativity can thrive.
+                We design each program around inclusion, collaboration, and local voice. UCCAC&apos;s role is not only to present art, but to build long-term civic infrastructure where creativity can thrive.
               </p>
               <p className="text-parchment/80">
                 Through partnerships with schools, businesses, artists, and volunteers, we continue to grow a cultural ecosystem that reflects Union County&apos;s identity and future.
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <div>
             <h2 className="display text-4xl md:text-5xl">How We&apos;re Funded</h2>
             <p className="mt-4 text-parchment/80">
-              UCAC operates through a diversified nonprofit model: individual donations, grants, sponsorships, memberships, and event revenue.
+              UCCAC operates through a diversified nonprofit model: individual donations, grants, sponsorships, memberships, and event revenue.
             </p>
             <ul className="mt-5 space-y-2 text-sm uppercase tracking-[0.12em] text-parchment/75">
               <li>38% Individual Donations</li>

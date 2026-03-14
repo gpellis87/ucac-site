@@ -16,9 +16,9 @@ export async function GET(
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//UCAC//Events//EN",
+    "PRODID:-//UCCAC//Events//EN",
     "BEGIN:VEVENT",
-    `UID:${event.slug}@ucac.example.org`,
+    `UID:${event.slug}@uccac.example.org`,
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}Z`,
     `DTSTART:${start}`,
     `DTEND:${end}`,

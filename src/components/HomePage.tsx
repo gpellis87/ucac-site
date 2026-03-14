@@ -59,7 +59,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto grid w-full max-w-[1500px] items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
           <div className="max-w-3xl">
             <p className="mb-4 inline-flex border border-terracotta/40 bg-black/45 px-3 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/95">
-              Union County Arts Council
+              Union County Community Arts Council
             </p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -75,7 +75,7 @@ export default function HomePage() {
             transition={{ delay: 0.12, duration: 0.75 }}
             className="mt-6 max-w-xl text-base text-parchment/90 md:text-lg"
           >
-            Union County Arts Council cultivates artistic excellence and community belonging through programs, exhibitions, and public cultural moments.
+            Union County Community Arts Council cultivates artistic excellence and community belonging through programs, exhibitions, and public cultural moments.
           </motion.p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/events" className="accent-btn">
@@ -159,7 +159,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col justify-center border border-parchment/20 bg-black/20 p-8 md:p-12">
             <p className="display text-3xl leading-tight text-parchment md:text-5xl">
-              &ldquo;UCAC transforms empty spaces into places where community and creativity meet.&rdquo;
+              &ldquo;UCCAC transforms empty spaces into places where community and creativity meet.&rdquo;
             </p>
             <p className="mt-5 max-w-md text-parchment/75">
               For nearly three decades, we have connected artists, students, and neighbors through exhibitions, grants, cultural events, and youth arts access.

@@ -18,21 +18,21 @@ const sans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Union County Arts Council",
-    template: "%s | Union County Arts Council",
+    default: "Union County Community Arts Council",
+    template: "%s | Union County Community Arts Council",
   },
   description:
-    "Union County Arts Council is a nonprofit arts organization advancing creative expression through exhibitions, workshops, youth programs, and community cultural events.",
-  metadataBase: new URL("https://ucac.example.org"),
+    "Union County Community Arts Council is a nonprofit arts organization advancing creative expression through exhibitions, workshops, youth programs, and community cultural events.",
+  metadataBase: new URL("https://uccac.example.org"),
   openGraph: {
-    title: "Union County Arts Council",
+    title: "Union County Community Arts Council",
     description: "Rooted in community. Driven by art.",
     type: "website",
-    url: "https://ucac.example.org",
+    url: "https://uccac.example.org",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Union County Arts Council",
+    title: "Union County Community Arts Council",
     description: "Rooted in community. Driven by art.",
   },
 };

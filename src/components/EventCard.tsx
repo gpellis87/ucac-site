@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { UcacEvent } from "@/data/events";
+import { UccacEvent } from "@/data/events";
 import { formatEventDate } from "@/lib/event-utils";
 
-export default function EventCard({ event }: { event: UcacEvent }) {
+export default function EventCard({ event }: { event: UccacEvent }) {
   return (
     <Link
       href={`/events/${event.slug}`}

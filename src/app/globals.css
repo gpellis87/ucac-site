@@ -25,6 +25,19 @@ body {
 
 body {
   font-family: var(--font-sans), Arial, sans-serif;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  line-height: 1.65;
+}
+
+::selection {
+  background: rgba(192, 84, 42, 0.35);
+  color: var(--surface);
 }
 
 .display {
@@ -95,4 +108,16 @@ body {
 
 .panel-dark {
   @apply border border-parchment/20 bg-black/30 backdrop-blur-sm;
+}
+
+input,
+textarea,
+select {
+  @apply transition-colors duration-200;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  @apply border-terracotta outline-none ring-2 ring-terracotta/35;
 }

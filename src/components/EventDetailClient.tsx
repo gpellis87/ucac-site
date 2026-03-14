@@ -4,11 +4,11 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Copy, CalendarPlus, Share2, X } from "lucide-react";
-import { UcacEvent, events } from "@/data/events";
+import { UccacEvent, events } from "@/data/events";
 import EventCard from "@/components/EventCard";
 import { buildGoogleCalendarLink, formatEventDate } from "@/lib/event-utils";
 
-export default function EventDetailClient({ event }: { event: UcacEvent }) {
+export default function EventDetailClient({ event }: { event: UccacEvent }) {
   const [showRsvp, setShowRsvp] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [copyStatus, setCopyStatus] = useState("Copy link");
@@ -18,7 +18,7 @@ export default function EventDetailClient({ event }: { event: UcacEvent }) {
     [event.slug],
   );
 
-  const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://ucac.example.org";
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://uccac.example.org";
   const pageUrl = `${baseUrl}/events/${event.slug}`;
   const smsBody = `Check out this event: ${event.title} on ${formatEventDate(event.date)} at ${event.location}. Learn more: ${pageUrl}`;
 
@@ -65,7 +65,7 @@ export default function EventDetailClient({ event }: { event: UcacEvent }) {
               {event.description} This gathering is designed to bring artists, patrons, and neighbors together in a space where conversation and creative exchange can flourish. Guests will experience curated programming, meaningful dialogue, and moments that celebrate the power of local culture.
             </p>
             <p>
-                Whether you are attending for inspiration, networking, or to support UCAC&apos;s mission, this event offers multiple ways to engage. The evening includes artist perspectives, collaborative opportunities, and clear paths to get involved in future community-centered initiatives.
+                Whether you are attending for inspiration, networking, or to support UCCAC&apos;s mission, this event offers multiple ways to engage. The evening includes artist perspectives, collaborative opportunities, and clear paths to get involved in future community-centered initiatives.
             </p>
             <p>
               Accessibility accommodations are available upon request, and all attendees are encouraged to contact us in advance with any needs. We are committed to building inclusive events where everyone feels welcome, seen, and valued.

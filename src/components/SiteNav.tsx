@@ -26,11 +26,11 @@ export default function SiteNav() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-parchment/15 bg-charcoal/92 backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.28)]">
         <div className="section-pad mx-auto flex h-20 max-w-[1500px] items-center justify-between">
           <Link href="/" className="group">
-            <div className="display text-3xl tracking-tight text-parchment transition-colors group-hover:text-terracotta">
-              UCAC
+            <div className="display text-[1.9rem] tracking-tight text-parchment transition-colors group-hover:text-terracotta">
+              UCCAC
             </div>
             <div className="text-[0.58rem] uppercase tracking-[0.22em] text-parchment/85">
-              Union County Arts Council
+              Union County Community Arts Council
             </div>
           </Link>
 

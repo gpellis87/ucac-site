@@ -12,7 +12,7 @@ export default function ContactPageClient() {
     <div className="pb-20">
       <SectionReveal className="section-pad py-24">
         <div className="mx-auto max-w-[1500px]">
-          <h1 className="editorial-title text-5xl md:text-8xl">Contact UCAC</h1>
+          <h1 className="editorial-title text-5xl md:text-8xl">Contact UCCAC</h1>
           <p className="mt-5 max-w-2xl text-parchment/75">
             We would love to hear from you. Reach out about programming, volunteering, media, partnerships, or general questions.
           </p>
@@ -76,7 +76,7 @@ export default function ContactPageClient() {
               <div className="mt-4 space-y-2 text-sm text-parchment/80">
                 <p>72 Arts Way, Monroe, NC 28112</p>
                 <p>(704) 555-0148</p>
-                <p>hello@unioncountyartscouncil.org</p>
+                <p>hello@unioncountycommunityartscouncil.org</p>
                 <p>Office Hours: Mon-Fri 9:00 AM - 5:00 PM</p>
               </div>
             </div>

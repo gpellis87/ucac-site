@@ -5,7 +5,7 @@ import { SectionReveal } from "@/components/SectionReveal";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Explore Union County Arts Council exhibitions, workshops, fundraisers, and community cultural events.",
+    "Explore Union County Community Arts Council exhibitions, workshops, fundraisers, and community cultural events.",
 };
 
 export default function EventsPage() {

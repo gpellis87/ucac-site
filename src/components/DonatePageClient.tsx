@@ -49,7 +49,7 @@ export default function DonatePageClient() {
             <h2 className="display text-4xl">Make a Donation</h2>
             {thanks ? (
               <div className="mt-5 border border-terracotta/50 bg-terracotta/10 p-4">
-                Thank you for supporting UCAC. Your contribution helps keep the arts accessible and thriving in Union County.
+                Thank you for supporting UCCAC. Your contribution helps keep the arts accessible and thriving in Union County.
               </div>
             ) : (
               <form

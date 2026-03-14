@@ -5,7 +5,7 @@ export type EventCategory =
   | "Gala"
   | "Community Event";
 
-export interface UcacEvent {
+export interface UccacEvent {
   id: number;
   slug: string;
   title: string;
@@ -21,7 +21,7 @@ export interface UcacEvent {
   tags: string[];
 }
 
-export const events: UcacEvent[] = [
+export const events: UccacEvent[] = [
   {
     id: 1,
     slug: "annual-spring-gala",
@@ -36,7 +36,7 @@ export const events: UcacEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "$125",
-    organizer: "UCAC Development Committee",
+    organizer: "UCCAC Development Committee",
     tags: ["Fundraiser", "Formal", "Live Music"],
   },
   {
@@ -47,13 +47,13 @@ export const events: UcacEvent[] = [
       "Hands-on Saturday workshops where students explore painting, collage, and mixed media with local teaching artists.",
     date: "2026-04-12",
     time: "10:00 AM - 1:00 PM",
-    location: "UCAC Studio Annex",
+    location: "UCCAC Studio Annex",
     address: "88 Gallery Lane, Monroe, NC 28110",
     category: "Workshop",
     imageUrl:
       "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "Free Event",
-    organizer: "UCAC Education Team",
+    organizer: "UCCAC Education Team",
     tags: ["Youth", "Education", "Hands-On"],
   },
   {
@@ -70,7 +70,7 @@ export const events: UcacEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "Free Event",
-    organizer: "UCAC Curatorial Team",
+    organizer: "UCCAC Curatorial Team",
     tags: ["Exhibition", "Opening Night", "Local Artists"],
   },
   {
@@ -87,7 +87,7 @@ export const events: UcacEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "Free Event",
-    organizer: "UCAC Public Art Initiative",
+    organizer: "UCCAC Public Art Initiative",
     tags: ["Public Art", "Outdoors", "Community"],
   },
   {
@@ -98,13 +98,13 @@ export const events: UcacEvent[] = [
       "An advanced session on visual storytelling, composition, and post-production with award-winning photographers.",
     date: "2026-05-16",
     time: "1:00 PM - 4:00 PM",
-    location: "UCAC Learning Loft",
+    location: "UCCAC Learning Loft",
     address: "45 Church Street, Monroe, NC 28112",
     category: "Workshop",
     imageUrl:
       "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "$45",
-    organizer: "UCAC Learning Studio",
+    organizer: "UCCAC Learning Studio",
     tags: ["Photography", "Masterclass", "Creative Skills"],
   },
   {
@@ -121,7 +121,7 @@ export const events: UcacEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "Free Event",
-    organizer: "UCAC Community Partnerships",
+    organizer: "UCCAC Community Partnerships",
     tags: ["Family", "Vendors", "Live Demos"],
   },
   {
@@ -138,7 +138,7 @@ export const events: UcacEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1533928298208-27ff66555d8d?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "$18",
-    organizer: "UCAC Media Arts Circle",
+    organizer: "UCCAC Media Arts Circle",
     tags: ["Film", "Panel", "Independent Art"],
   },
   {
@@ -146,16 +146,16 @@ export const events: UcacEvent[] = [
     slug: "board-open-house-volunteer-session",
     title: "Board Open House & Volunteer Info Session",
     description:
-      "Meet board members, learn how UCAC operates, and discover volunteer roles that fit your skills and interests.",
+      "Meet board members, learn how UCCAC operates, and discover volunteer roles that fit your skills and interests.",
     date: "2026-04-28",
     time: "6:00 PM - 7:30 PM",
-    location: "UCAC Main Office",
+    location: "UCCAC Main Office",
     address: "72 Arts Way, Monroe, NC 28112",
     category: "Community Event",
     imageUrl:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "Free Event",
-    organizer: "UCAC Board of Directors",
+    organizer: "UCCAC Board of Directors",
     tags: ["Volunteer", "Info Session", "Board"],
   },
   {
@@ -172,7 +172,7 @@ export const events: UcacEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1473447198193-5e26c7ffdc27?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "Free Event",
-    organizer: "UCAC Public Art Initiative",
+    organizer: "UCCAC Public Art Initiative",
     tags: ["Sculpture", "Outdoor", "Preview"],
   },
   {
@@ -189,7 +189,7 @@ export const events: UcacEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1506097425191-7ad538b29cef?auto=format&fit=crop&w=1600&q=80",
     ticketPrice: "Free Event",
-    organizer: "UCAC Grants Team",
+    organizer: "UCCAC Grants Team",
     tags: ["Grants", "Artists", "Q&A"],
   },
 ];

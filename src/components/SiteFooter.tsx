@@ -13,9 +13,9 @@ export default function SiteFooter() {
     <footer className="border-t border-parchment/20 bg-[#121212] py-16 text-parchment">
       <div className="section-pad mx-auto grid max-w-[1500px] gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="display text-4xl">UCAC</p>
+          <p className="display text-4xl">UCCAC</p>
           <p className="mt-3 max-w-xs text-sm text-parchment/75">
-            Union County Arts Council champions creative expression through education, exhibitions, and community projects.
+            Union County Community Arts Council champions creative expression through education, exhibitions, and community projects.
           </p>
         </div>
         <div>
@@ -33,7 +33,7 @@ export default function SiteFooter() {
           <div className="mt-3 space-y-2 text-sm text-parchment/85">
             <p>72 Arts Way, Monroe, NC 28112</p>
             <p>(704) 555-0148</p>
-            <p>hello@unioncountyartscouncil.org</p>
+            <p>hello@unioncountycommunityartscouncil.org</p>
             <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
           </div>
         </div>
@@ -66,8 +66,8 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-6 text-xs text-parchment/60">
-        <p>Union County Arts Council is a 501(c)(3) nonprofit organization.</p>
-        <p className="mt-1">© {new Date().getFullYear()} Union County Arts Council. All rights reserved.</p>
+        <p>Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
+        <p className="mt-1">© {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
       </div>
     </footer>
   );
