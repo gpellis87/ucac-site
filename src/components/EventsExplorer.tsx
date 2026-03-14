@@ -1,0 +1,163 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight, LayoutGrid, CalendarDays } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import EventCard from "@/components/EventCard";
+import { events, eventCategories, EventCategory } from "@/data/events";
+import { monthLabel } from "@/lib/event-utils";
+
+type ViewMode = "calendar" | "cards";
+type FilterMode = "All" | EventCategory;
+
+function sameDay(dateA: Date, dateB: Date): boolean {
+  return (
+    dateA.getFullYear() === dateB.getFullYear() &&
+    dateA.getMonth() === dateB.getMonth() &&
+    dateA.getDate() === dateB.getDate()
+  );
+}
+
+export default function EventsExplorer() {
+  const [view, setView] = useState<ViewMode>("calendar");
+  const [filter, setFilter] = useState<FilterMode>("All");
+  const [currentMonth, setCurrentMonth] = useState(new Date("2026-04-01"));
+
+  const filtered = useMemo(
+    () => (filter === "All" ? events : events.filter((event) => event.category === filter)),
+    [filter],
+  );
+
+  const monthStart = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1);
+  const monthEnd = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0);
+  const startOffset = monthStart.getDay();
+  const totalSlots = Math.ceil((startOffset + monthEnd.getDate()) / 7) * 7;
+
+  const days = Array.from({ length: totalSlots }).map((_, index) => {
+    const dayNumber = index - startOffset + 1;
+    const current = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), dayNumber);
+    const inMonth = dayNumber > 0 && dayNumber <= monthEnd.getDate();
+    const dayEvents = filtered.filter((event) => sameDay(new Date(event.date), current));
+    return { current, inMonth, dayEvents };
+  });
+
+  return (
+    <section className="section-pad pb-20">
+      <div className="mx-auto max-w-[1500px]">
+        <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap gap-2">
+            {eventCategories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setFilter(category)}
+                className={`border px-4 py-2 text-xs uppercase tracking-[0.14em] transition ${
+                  filter === category
+                    ? "border-terracotta bg-terracotta text-parchment"
+                    : "border-parchment/30 text-parchment/80 hover:border-terracotta"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setView("calendar")}
+              className={`inline-flex items-center gap-2 border px-4 py-2 text-xs uppercase tracking-[0.14em] ${
+                view === "calendar" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"
+              }`}
+            >
+              <CalendarDays size={15} /> Calendar
+            </button>
+            <button
+              type="button"
+              onClick={() => setView("cards")}
+              className={`inline-flex items-center gap-2 border px-4 py-2 text-xs uppercase tracking-[0.14em] ${
+                view === "cards" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"
+              }`}
+            >
+              <LayoutGrid size={15} /> Card View
+            </button>
+          </div>
+        </div>
+
+        <AnimatePresence mode="wait">
+          {view === "calendar" ? (
+            <motion.div
+              key="calendar"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="panel-dark p-5"
+            >
+              <div className="mb-5 flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1))}
+                  className="border border-parchment/30 p-2 transition hover:border-terracotta hover:bg-terracotta/10"
+                  aria-label="Previous month"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <h3 className="display text-3xl">{monthLabel(currentMonth)}</h3>
+                <button
+                  type="button"
+                  onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1))}
+                  className="border border-parchment/30 p-2 transition hover:border-terracotta hover:bg-terracotta/10"
+                  aria-label="Next month"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+              <div className="calendar-grid mb-2 gap-2 text-center text-[0.62rem] uppercase tracking-[0.16em] text-parchment/60">
+                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+                  <div key={day}>{day}</div>
+                ))}
+              </div>
+              <div className="calendar-grid gap-2">
+                {days.map(({ current, inMonth, dayEvents }) => (
+                  <div
+                    key={current.toISOString()}
+                    className={`min-h-[98px] border p-2 transition ${
+                      inMonth
+                        ? "border-parchment/20 bg-charcoal/50 hover:border-terracotta/40 hover:bg-charcoal/80"
+                        : "border-parchment/10 bg-charcoal/20 text-parchment/30"
+                    }`}
+                  >
+                    <p className={`text-xs ${dayEvents.length > 0 && inMonth ? "text-terracotta" : ""}`}>{current.getDate()}</p>
+                    <div className="mt-2 space-y-1">
+                      {dayEvents.slice(0, 2).map((event) => (
+                        <Link
+                          key={event.id}
+                          href={`/events/${event.slug}`}
+                          className="block truncate border-l-2 border-terracotta pl-2 text-[0.68rem] text-parchment/85 hover:text-terracotta"
+                        >
+                          {event.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="cards"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+            >
+              {filtered.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </section>
+  );
+}

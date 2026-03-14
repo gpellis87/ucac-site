@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #1a1a1a;
+  --surface: #f5f0eb;
+  --accent: #c0542a;
+  --slate: #677388;
+  --slate-deep: #2a3240;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--surface);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+.display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.08;
+  mix-blend-mode: soft-light;
+  background-image: radial-gradient(#ffffff 0.7px, transparent 0.7px);
+  background-size: 3px 3px;
+}
+
+.page-shell {
+  position: relative;
+  z-index: 2;
+}
+
+.section-pad {
+  @apply px-5 md:px-10 lg:px-16 xl:px-24;
+}
+
+.glass-dark {
+  @apply border border-white/15 bg-black/35 backdrop-blur-xl;
+}
+
+.accent-btn {
+  @apply inline-flex items-center justify-center rounded-none border border-terracotta bg-terracotta px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-parchment transition duration-300 hover:-translate-y-[1px] hover:brightness-110 hover:shadow-[0_10px_24px_rgba(192,84,42,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal;
+}
+
+.ghost-btn {
+  @apply inline-flex items-center justify-center rounded-none border border-parchment/50 bg-black/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-parchment transition duration-300 hover:-translate-y-[1px] hover:border-parchment hover:bg-parchment/90 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-parchment focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal;
+}
+
+.editorial-title {
+  @apply display leading-[0.95] tracking-tight text-parchment;
+}
+
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: var(--accent);
+  transition: width 220ms ease;
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  width: 100%;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.panel-dark {
+  @apply border border-parchment/20 bg-black/30 backdrop-blur-sm;
+}
