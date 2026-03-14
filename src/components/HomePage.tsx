@@ -90,31 +90,31 @@ export default function HomePage() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="relative hidden lg:block"
+            className="hidden lg:block"
           >
-            <div className="absolute -inset-[1px] bg-gradient-to-br from-terracotta/80 via-amber-400/30 to-slatecool/70 opacity-85" />
-            <div className="relative border border-parchment/20 bg-black/68 p-6 backdrop-blur-md">
+            <div className="panel-dark border-parchment/30 bg-charcoal/72 p-7 shadow-[0_20px_42px_rgba(0,0,0,0.35)]">
+              <div className="mb-5 h-px w-full bg-gradient-to-r from-terracotta/85 via-terracotta/35 to-transparent" />
               <div className="flex items-center justify-between gap-3">
-                <p className="text-[0.66rem] uppercase tracking-[0.2em] text-parchment/80">
+                <p className="text-[0.66rem] uppercase tracking-[0.2em] text-parchment/85">
                   Featured Event
                 </p>
-                <span className="border border-terracotta/40 bg-terracotta/20 px-2 py-1 text-[0.6rem] uppercase tracking-[0.16em] text-parchment/90">
+                <span className="border border-terracotta/45 bg-terracotta/15 px-2 py-1 text-[0.6rem] uppercase tracking-[0.16em] text-parchment/95">
                   Next Up
                 </span>
               </div>
-              <p className="mt-3 display text-3xl text-parchment [text-shadow:0_8px_20px_rgba(0,0,0,0.35)]">
+              <p className="mt-4 display text-3xl leading-tight text-parchment [text-shadow:0_8px_20px_rgba(0,0,0,0.3)]">
                 {featuredEvent.title}
               </p>
-              <p className="mt-3 text-[0.68rem] uppercase tracking-[0.15em] text-terracotta">
+              <p className="mt-4 text-[0.68rem] uppercase tracking-[0.15em] text-terracotta">
                 {formatEventDate(featuredEvent.date)} · {featuredEvent.time}
               </p>
-              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-parchment/70">
+              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-parchment/75">
                 {featuredEvent.location}
               </p>
-              <p className="mt-3 line-clamp-2 text-sm text-parchment/85">
+              <p className="mt-4 line-clamp-2 text-sm leading-relaxed text-parchment/86">
                 {featuredEvent.description}
               </p>
-              <Link href={`/events/${featuredEvent.slug}`} className="accent-btn mt-5 px-4 py-2 text-[0.68rem]">
+              <Link href={`/events/${featuredEvent.slug}`} className="accent-btn mt-6 w-full px-4 py-2 text-[0.68rem]">
                 View featured event
               </Link>
             </div>
