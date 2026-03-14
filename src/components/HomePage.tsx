@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { SectionReveal } from "@/components/SectionReveal";
 import { events } from "@/data/events";
 import EventCard from "@/components/EventCard";
+import { formatEventDate } from "@/lib/event-utils";
 import { useEffect, useState } from "react";
 
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
@@ -31,6 +32,9 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 
 export default function HomePage() {
   const featured = events.slice(0, 4);
+  const featuredEvent = [...events].sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  )[0];
 
   return (
     <div>
@@ -86,16 +90,34 @@ export default function HomePage() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
-            className="hidden border border-parchment/30 bg-black/46 p-6 backdrop-blur-md lg:block"
+            className="relative hidden lg:block"
           >
-            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/75">Now Showing</p>
-            <p className="mt-3 display text-3xl text-parchment [text-shadow:0_8px_20px_rgba(0,0,0,0.35)]">Local Artist Spotlight Exhibition</p>
-            <p className="mt-3 text-sm text-parchment/82">
-              A rotating showcase celebrating contemporary painters and sculptors shaping Union County&apos;s visual identity.
-            </p>
-            <Link href="/events/local-artist-spotlight-exhibition" className="accent-btn mt-5 px-4 py-2 text-[0.68rem]">
-              View event
-            </Link>
+            <div className="absolute -inset-[1px] bg-gradient-to-br from-terracotta/80 via-amber-400/30 to-slatecool/70 opacity-85" />
+            <div className="relative border border-parchment/20 bg-black/68 p-6 backdrop-blur-md">
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-[0.66rem] uppercase tracking-[0.2em] text-parchment/80">
+                  Featured Event
+                </p>
+                <span className="border border-terracotta/40 bg-terracotta/20 px-2 py-1 text-[0.6rem] uppercase tracking-[0.16em] text-parchment/90">
+                  Next Up
+                </span>
+              </div>
+              <p className="mt-3 display text-3xl text-parchment [text-shadow:0_8px_20px_rgba(0,0,0,0.35)]">
+                {featuredEvent.title}
+              </p>
+              <p className="mt-3 text-[0.68rem] uppercase tracking-[0.15em] text-terracotta">
+                {formatEventDate(featuredEvent.date)} · {featuredEvent.time}
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-parchment/70">
+                {featuredEvent.location}
+              </p>
+              <p className="mt-3 line-clamp-2 text-sm text-parchment/85">
+                {featuredEvent.description}
+              </p>
+              <Link href={`/events/${featuredEvent.slug}`} className="accent-btn mt-5 px-4 py-2 text-[0.68rem]">
+                View featured event
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
