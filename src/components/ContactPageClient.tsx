@@ -74,10 +74,11 @@ export default function ContactPageClient() {
             <div className="border border-parchment/20 p-5">
               <h3 className="display text-3xl">Contact Info</h3>
               <div className="mt-4 space-y-2 text-sm text-parchment/80">
-                <p>72 Arts Way, Monroe, NC 28112</p>
-                <p>(704) 555-0148</p>
-                <p>hello@unioncountycommunityartscouncil.org</p>
-                <p>Office Hours: Mon-Fri 9:00 AM - 5:00 PM</p>
+                <p>327 S Hayne St, Monroe, NC 28112</p>
+                <p>(704) 283-2784</p>
+                <p>info@unionarts.org</p>
+                <p>Office Hours: Mon-Fri 8:30 AM - 4:30 PM</p>
+                <p>Saturday-Sunday: Closed</p>
               </div>
             </div>
             <div className="border border-parchment/20 p-5">
@@ -96,8 +97,8 @@ export default function ContactPageClient() {
       <SectionReveal className="section-pad mt-8">
         <div className="mx-auto max-w-[1500px] overflow-hidden border border-parchment/20">
           <iframe
-            title="Union County map location"
-            src="https://www.google.com/maps?q=Union%20County%2C%20NC&output=embed"
+            title="UCCAC office map location"
+            src="https://www.google.com/maps?q=327%20S%20Hayne%20St%2C%20Monroe%2C%20NC%2028112&output=embed"
             width="100%"
             height="360"
             loading="lazy"

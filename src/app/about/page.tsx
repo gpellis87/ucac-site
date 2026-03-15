@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Palette, School, Landmark, HandHeart, Sparkles, Users2 } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
-import { boardMembers } from "@/data/boardMembers";
+import { boardMembers, exOfficioBoardMembers } from "@/data/boardMembers";
 import { sponsors } from "@/data/sponsors";
 
 export const metadata: Metadata = {
@@ -21,12 +21,12 @@ const programs = [
 ];
 
 const milestones = [
-  "1996 - Founded by local artists and educators.",
-  "2001 - First downtown mural collaboration launched.",
-  "2008 - Youth Arts Program expanded to county schools.",
-  "2014 - Artist micro-grant initiative established.",
-  "2020 - Community arts response fund created.",
-  "2025 - 3,000+ annual participants across UCCAC programs.",
+  "1980 - Founded by John Ashcraft, Jim Barnett, Koy Dawkins, and Ben Helms.",
+  "1981 - First annual Blooming Arts Festival launched in downtown Monroe.",
+  "1980s - Early support for community-led orchestra development initiatives.",
+  "2000s - Arts in Education programs scaled across county schools.",
+  "2025 - 42,000+ students served through Arts in Education programs.",
+  "Today - UCCAC continues to cultivate and celebrate arts countywide.",
 ];
 
 export default function AboutPage() {
@@ -47,10 +47,10 @@ export default function AboutPage() {
             <div className="space-y-4">
               <h2 className="display text-4xl md:text-5xl">Our Story</h2>
               <p className="text-parchment/80">
-                Union County Community Arts Council began as a volunteer-led effort to protect creative spaces and champion local artists. What started as small pop-up exhibitions evolved into a trusted nonprofit cultural institution with programming that reaches all ages.
+                Union County Community Arts Council was founded in 1980 by four area business leaders - John Ashcraft, Jim Barnett, Koy Dawkins, and Ben Helms - to enhance quality of life through arts and culture.
               </p>
               <p className="text-parchment/80">
-                Over time, our mission expanded from showcasing art to creating access. Today, UCCAC supports youth workshops, artist grants, community exhibitions, and cross-sector projects that keep arts visible in public life.
+                The council&apos;s roots include downtown Monroe&apos;s Blooming Arts Festival and continued support for major local cultural initiatives. Today, UCCAC serves the people of Union County by leading, cultivating, and promoting the arts as an essential component of community life.
               </p>
             </div>
             <div className="relative min-h-[360px] overflow-hidden">
@@ -76,10 +76,10 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4 lg:order-2">
               <p className="text-parchment/80">
-                We design each program around inclusion, collaboration, and local voice. UCCAC&apos;s role is not only to present art, but to build long-term civic infrastructure where creativity can thrive.
+                Our vision is a Union County that embraces the arts as a fundamental part of an enriched and thriving community. Programs are designed to increase participation, build appreciation, and remove barriers to access.
               </p>
               <p className="text-parchment/80">
-                Through partnerships with schools, businesses, artists, and volunteers, we continue to grow a cultural ecosystem that reflects Union County&apos;s identity and future.
+                Through partnerships with schools, nonprofits, local government, artists, and volunteers, we provide financial assistance and practical support to organizations and individuals creating arts impact across the county.
               </p>
             </div>
           </div>
@@ -114,6 +114,12 @@ export default function AboutPage() {
               <li>12% Membership Dues</li>
               <li>8% Program & Event Revenue</li>
             </ul>
+            <ul className="mt-6 list-disc space-y-2 pl-5 text-sm text-parchment/78">
+              <li>Increase participation, awareness, and appreciation of the arts.</li>
+              <li>Serve as a cultural planner and resource agency for Union County.</li>
+              <li>Develop programming and services responsive to community needs.</li>
+              <li>Provide financial assistance to arts organizations and individual artists.</li>
+            </ul>
           </div>
           <div className="flex items-center justify-center">
             <div className="relative h-64 w-64 rounded-full border border-parchment/20 bg-[conic-gradient(#c0542a_0_38%,#c9a84c_38%_62%,#677388_62%_80%,#2a3240_80%_92%,#f5f0eb_92%_100%)]">
@@ -126,7 +132,7 @@ export default function AboutPage() {
       <SectionReveal className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
           <h2 className="display text-4xl md:text-5xl">Board of Directors</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {boardMembers.map((member) => (
               <div key={member.id} className="border border-parchment/20 bg-black/20 p-4">
                 <div className="relative h-56 overflow-hidden">
@@ -134,6 +140,20 @@ export default function AboutPage() {
                 </div>
                 <p className="mt-3 display text-2xl">{member.name}</p>
                 <p className="text-sm text-parchment/70">{member.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionReveal>
+
+      <SectionReveal className="section-pad py-6">
+        <div className="mx-auto max-w-[1500px]">
+          <h3 className="display text-3xl">Ex-officio Board Members</h3>
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            {exOfficioBoardMembers.map((member) => (
+              <div key={member.id} className="border border-parchment/20 bg-black/20 p-4">
+                <p className="display text-2xl">{member.name}</p>
+                <p className="mt-1 text-sm text-parchment/75">{member.title}</p>
               </div>
             ))}
           </div>

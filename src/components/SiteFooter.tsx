@@ -23,6 +23,7 @@ export default function SiteFooter() {
           <div className="mt-3 flex flex-col gap-2 text-sm">
             <Link href="/">Home</Link>
             <Link href="/events">Events</Link>
+            <Link href="/artists">Artists</Link>
             <Link href="/about">About</Link>
             <Link href="/donate">Donate</Link>
             <Link href="/contact">Contact</Link>
@@ -31,10 +32,11 @@ export default function SiteFooter() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Contact</p>
           <div className="mt-3 space-y-2 text-sm text-parchment/85">
-            <p>72 Arts Way, Monroe, NC 28112</p>
-            <p>(704) 555-0148</p>
-            <p>hello@unioncountycommunityartscouncil.org</p>
-            <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+            <p>327 S Hayne St, Monroe, NC 28112</p>
+            <p>(704) 283-2784</p>
+            <p>info@unionarts.org</p>
+            <p>Mon-Fri: 8:30 AM - 4:30 PM</p>
+            <p>Sat-Sun: Closed</p>
           </div>
         </div>
         <div>
@@ -63,6 +65,14 @@ export default function SiteFooter() {
               </a>
             ))}
           </div>
+          <a
+            href="https://unionarts.networkforgood.com/projects/176453-support-union-county-community-arts-council"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-block text-xs uppercase tracking-[0.14em] text-terracotta hover:text-parchment"
+          >
+            Official Donate Portal
+          </a>
         </div>
       </div>
       <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-6 text-xs text-parchment/60">

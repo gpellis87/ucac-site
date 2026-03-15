@@ -37,9 +37,25 @@ export default function DonatePageClient() {
 
       <SectionReveal className="section-pad py-12">
         <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-3">
-          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">$50</p><p className="mt-2 text-parchment/75">Funds one youth workshop session.</p></div>
-          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">$250</p><p className="mt-2 text-parchment/75">Provides supplies for a community mural day.</p></div>
-          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">$1,000</p><p className="mt-2 text-parchment/75">Supports artist grant mini-awards.</p></div>
+          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">42,000+</p><p className="mt-2 text-parchment/75">Students served through Arts in Education programs.</p></div>
+          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">140,000+</p><p className="mt-2 text-parchment/75">Residents benefit from community arts programs and services.</p></div>
+          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">$175,000+</p><p className="mt-2 text-parchment/75">Awarded to artists, schools, and nonprofit organizations.</p></div>
+        </div>
+      </SectionReveal>
+
+      <SectionReveal className="section-pad pb-2">
+        <div className="mx-auto max-w-[1500px] border border-terracotta/45 bg-terracotta/10 p-5">
+          <p className="text-sm text-parchment/88">
+            Thank you for supporting the Union County Community Arts Council. Your tax-deductible contribution directly supports and promotes programs and services for arts organizations and individual artists throughout Union County.
+          </p>
+          <a
+            href="https://unionarts.networkforgood.com/projects/176453-support-union-county-community-arts-council"
+            target="_blank"
+            rel="noreferrer"
+            className="accent-btn mt-4 px-5 py-2 text-xs"
+          >
+            Donate on Official Portal
+          </a>
         </div>
       </SectionReveal>
 

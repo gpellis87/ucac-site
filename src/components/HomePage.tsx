@@ -75,7 +75,7 @@ export default function HomePage() {
             transition={{ delay: 0.12, duration: 0.75 }}
             className="mt-6 max-w-xl text-base text-parchment/90 md:text-lg"
           >
-            Union County Community Arts Council cultivates artistic excellence and community belonging through programs, exhibitions, and public cultural moments.
+            Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
           </motion.p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/events" className="accent-btn">
@@ -172,22 +172,22 @@ export default function HomePage() {
       </SectionReveal>
 
       <SectionReveal className="section-pad py-16">
-        <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-2 xl:grid-cols-4">
           <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={12} /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Programs</p>
+            <p className="display text-5xl text-terracotta"><Counter target={42000} /></p>
+            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Students Served</p>
           </div>
           <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={3400} /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Members</p>
+            <p className="display text-5xl text-terracotta"><Counter target={140000} /></p>
+            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Residents Reached</p>
           </div>
           <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={28} /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Years of Arts</p>
+            <p className="display text-5xl text-terracotta">$<Counter target={175000} /></p>
+            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Awarded Annually</p>
           </div>
           <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={100} suffix="%" /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Community Funded</p>
+            <p className="display text-5xl text-terracotta"><Counter target={1980} /></p>
+            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Founded</p>
           </div>
         </div>
       </SectionReveal>
