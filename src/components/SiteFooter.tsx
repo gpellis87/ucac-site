@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Instagram, Youtube, Twitter } from "lucide-react";
+import { DONATE_PORTAL_URL } from "@/lib/site-config";
 
 const social = [
   { href: "#", label: "Facebook", icon: Facebook },
@@ -25,7 +26,7 @@ export default function SiteFooter() {
             <Link href="/events">Events</Link>
             <Link href="/artists">Artists</Link>
             <Link href="/about">About</Link>
-            <Link href="/donate">Donate</Link>
+            <a href={DONATE_PORTAL_URL}>Donate</a>
             <Link href="/contact">Contact</Link>
           </div>
         </div>
@@ -66,7 +67,7 @@ export default function SiteFooter() {
             ))}
           </div>
           <a
-            href="https://unionarts.networkforgood.com/projects/176453-support-union-county-community-arts-council"
+            href={DONATE_PORTAL_URL}
             target="_blank"
             rel="noreferrer"
             className="mt-4 inline-block text-xs uppercase tracking-[0.14em] text-terracotta hover:text-parchment"

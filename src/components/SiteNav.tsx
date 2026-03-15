@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { DONATE_PORTAL_URL } from "@/lib/site-config";
 
 const links = [
   { href: "/", label: "Home" },
@@ -47,9 +48,9 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/donate" className="accent-btn px-4 py-2 text-xs">
+            <a href={DONATE_PORTAL_URL} className="accent-btn px-4 py-2 text-xs">
               Donate
-            </Link>
+            </a>
           </nav>
 
           <button
@@ -101,13 +102,13 @@ export default function SiteNav() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.24 }}
                 >
-                  <Link
-                    href="/donate"
+                  <a
+                    href={DONATE_PORTAL_URL}
                     className="accent-btn mt-2 w-fit px-6 py-3 text-sm"
                     onClick={() => setOpen(false)}
                   >
                     Donate
-                  </Link>
+                  </a>
                 </motion.div>
               </nav>
               <p className="text-sm text-parchment/70">Rooted in community. Driven by art.</p>

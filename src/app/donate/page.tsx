@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import DonatePageClient from "@/components/DonatePageClient";
+import { redirect } from "next/navigation";
+import { DONATE_PORTAL_URL } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Support Union County Community Arts Council through one-time or monthly giving, sponsorship, and volunteer engagement.",
+    "Donate to Union County Community Arts Council via the official contribution portal.",
 };
 
 export default function DonatePage() {
-  return <DonatePageClient />;
+  redirect(DONATE_PORTAL_URL);
 }

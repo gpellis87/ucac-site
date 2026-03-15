@@ -8,6 +8,7 @@ import { events } from "@/data/events";
 import EventCard from "@/components/EventCard";
 import { formatEventDate } from "@/lib/event-utils";
 import { useEffect, useState } from "react";
+import { DONATE_PORTAL_URL } from "@/lib/site-config";
 
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -81,9 +82,9 @@ export default function HomePage() {
             <Link href="/events" className="accent-btn">
               Explore Events
             </Link>
-            <Link href="/donate" className="ghost-btn">
+            <a href={DONATE_PORTAL_URL} className="ghost-btn">
               Get Involved
-            </Link>
+            </a>
           </div>
           </div>
           <motion.div
@@ -199,9 +200,9 @@ export default function HomePage() {
             Every contribution helps us fund classes, exhibitions, artist grants, and public art that belongs to everyone.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link href="/donate" className="accent-btn">
+            <a href={DONATE_PORTAL_URL} className="accent-btn">
               Donate
-            </Link>
+            </a>
             <Link href="/contact" className="ghost-btn">
               Volunteer
             </Link>
