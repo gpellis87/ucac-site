@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
@@ -45,6 +46,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${display.variable} ${sans.variable} grain`}>
         <ClientLayout>{children}</ClientLayout>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="b4c7d938-9742-46c0-8e09-f0f092e89196"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
