@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HomePage from "@/components/HomePage";
+import ComingSoonPage from "@/components/ComingSoonPage";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <HomePage />;
+  return <ComingSoonPage />;
 }
