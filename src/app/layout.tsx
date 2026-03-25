@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
-import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
+import ClientLayout from "@/components/ClientLayout";
 
 const display = DM_Serif_Display({
   subsets: ["latin"],
@@ -45,11 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${display.variable} ${sans.variable} grain`}>
-        <div className="page-shell min-h-screen bg-charcoal text-parchment">
-          <SiteNav />
-          <main className="pt-20">{children}</main>
-          <SiteFooter />
-        </div>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
