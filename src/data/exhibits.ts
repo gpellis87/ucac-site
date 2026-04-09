@@ -16,6 +16,8 @@ export interface Exhibit {
   submissionUrl?: string;
   /** Replace with a real image URL when gallery photos are available */
   imageUrl: string;
+  /** Path relative to /public, e.g. "/flyers/spring-art-show-2026.pdf" */
+  flyerPath?: string;
   tags: string[];
   presentedBy: string[];
   callToAction?: { label: string; href: string };
@@ -42,6 +44,7 @@ export const exhibits: Exhibit[] = [
     // TODO: Replace with actual gallery photo once available
     imageUrl:
       "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=1600&q=80",
+    flyerPath: "/flyers/spring-art-show-2026.pdf",
     tags: ["Painting", "Mixed Media", "Regional Artists", "Reception"],
     presentedBy: [
       "Union County Community Arts Council",
@@ -68,6 +71,7 @@ export const exhibits: Exhibit[] = [
     // TODO: Replace with actual student artwork photo once available
     imageUrl:
       "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1600&q=80",
+    flyerPath: "/flyers/student-artist-showcase-2026.pdf",
     tags: ["Youth", "Student Art", "Education", "Drop-In"],
     presentedBy: [
       "Union County Community Arts Council",
@@ -98,6 +102,7 @@ export const exhibits: Exhibit[] = [
     // TODO: Replace with actual exhibition photo once available
     imageUrl:
       "https://images.unsplash.com/photo-1447433819943-74a20887a81e?auto=format&fit=crop&w=1600&q=80",
+    flyerPath: "/flyers/veterans-spouses-exhibition-2026.pdf",
     tags: ["Veterans", "Military Spouses", "Call for Artists", "Second Annual"],
     presentedBy: [
       "Union County Community Arts Council",

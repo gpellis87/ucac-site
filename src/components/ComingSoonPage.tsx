@@ -154,18 +154,12 @@ export default function ComingSoonPage() {
               <ExhibitCard key={exhibit.id} exhibit={exhibit} />
             ))}
           </div>
-          <div className="mt-14 border border-parchment/15 bg-black/20 p-6 text-center">
-            <p className="text-sm text-parchment/65">
-              Gallery open Mon–Thu 10am–4pm · Selected Saturdays 10am–2pm
-            </p>
-            <p className="mt-1 text-sm text-parchment/65">
-              300 North Hayne Street, Monroe, NC 28111 &nbsp;·&nbsp; (704) 283-2784 &nbsp;·&nbsp; events@unionarts.org
-            </p>
+          <div className="mt-14 text-center">
             <a
               href="https://www.facebook.com/profile.php?id=61574355290119"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-xs uppercase tracking-[0.14em] text-parchment/60 transition hover:border-terracotta hover:text-parchment"
+              className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-xs uppercase tracking-[0.14em] text-parchment/60 transition hover:border-terracotta hover:text-parchment"
             >
               <Facebook size={13} className="text-terracotta" />
               Follow Us on Facebook

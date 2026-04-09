@@ -202,6 +202,40 @@ export default function ExhibitPage({ params }: Props) {
         </div>
       </main>
 
+      {/* Flyer embed */}
+      {exhibit.flyerPath && (
+        <section className="px-5 pb-16 md:px-10 lg:px-16 xl:px-24">
+          <div className="mx-auto max-w-[1500px]">
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <h2 className="display text-3xl text-parchment">Event Flyer</h2>
+              <a
+                href={exhibit.flyerPath}
+                download
+                className="ghost-btn px-4 py-2 text-xs"
+              >
+                Download Flyer
+              </a>
+            </div>
+            <div className="border border-parchment/20 overflow-hidden bg-black/20">
+              <object
+                data={exhibit.flyerPath}
+                type="application/pdf"
+                width="100%"
+                className="block min-h-[80vh]"
+                aria-label={`${exhibit.title} flyer`}
+              >
+                <div className="flex flex-col items-center justify-center gap-4 py-16 text-center text-parchment/60">
+                  <p className="text-sm">Your browser cannot display this PDF inline.</p>
+                  <a href={exhibit.flyerPath} download className="accent-btn px-5 py-2 text-xs">
+                    Download Flyer
+                  </a>
+                </div>
+              </object>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Footer strip */}
       <div className="border-t border-parchment/10 px-6 py-5 text-center mt-8">
         <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/30">
