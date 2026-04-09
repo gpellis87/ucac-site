@@ -35,17 +35,18 @@ export default function ExhibitPage({ params }: Props) {
 
       {/* Minimal header */}
       <header className="sticky top-0 z-50 border-b border-parchment/10 bg-[#0d0c0b]/92 backdrop-blur-xl px-5 md:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto flex h-16 max-w-[1500px] items-center justify-between">
+        <div className="mx-auto flex h-16 max-w-[1500px] items-center gap-4">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/65 transition hover:text-parchment"
           >
             <ArrowLeft size={14} />
-            Back
+            All Exhibitions
           </Link>
-          <Link href="/" className="display text-xl tracking-tight text-parchment hover:text-terracotta transition-colors">
-            UCCAC
-          </Link>
+          <span className="text-parchment/20">·</span>
+          <span className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/40">
+            Union County Community Arts Council
+          </span>
         </div>
       </header>
 

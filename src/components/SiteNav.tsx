@@ -8,10 +8,10 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/events", label: "Events" },
-  { href: "/artists", label: "Artists" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Events" },
+  { href: "/", label: "Artists" },
+  { href: "/", label: "About" },
+  { href: "/", label: "Contact" },
 ];
 
 export default function SiteNav() {
