@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Facebook } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
 
 export default function ContactPageClient() {
@@ -83,11 +83,8 @@ export default function ContactPageClient() {
             </div>
             <div className="border border-parchment/20 p-5">
               <h3 className="display text-3xl">Follow Us</h3>
-              <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-                <a href="https://www.facebook.com/profile.php?id=61574355290119" target="_blank" rel="noreferrer" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Facebook size={15} /> Facebook</a>
-                <a href="#" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Instagram size={15} /> Instagram</a>
-                <a href="#" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Twitter size={15} /> X</a>
-                <a href="#" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Youtube size={15} /> YouTube</a>
+              <div className="mt-4">
+                <a href="https://www.facebook.com/profile.php?id=61574355290119" target="_blank" rel="noreferrer" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2 text-sm"><Facebook size={15} /> Facebook</a>
               </div>
             </div>
           </div>
