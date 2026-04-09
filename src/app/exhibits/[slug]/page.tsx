@@ -67,7 +67,7 @@ export default function ExhibitPage({ params }: Props) {
       </header>
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
-      <div className="relative h-[62vh] min-h-[420px] overflow-hidden">
+      <div className="relative h-[42vh] max-h-[520px] min-h-[300px] overflow-hidden">
         <Image
           src={exhibit.imageUrl}
           alt={exhibit.title}
