@@ -82,7 +82,6 @@ export default function ExhibitPage({ params }: Props) {
               Preview
             </p>
             <video
-              src={exhibit.videoPath}
               poster={exhibit.imageUrl}
               controls
               playsInline
@@ -90,11 +89,11 @@ export default function ExhibitPage({ params }: Props) {
               className="w-full border border-parchment/15 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
               aria-label={`${exhibit.title} teaser video`}
             >
+              <source src={exhibit.videoPath.replace(".mov", ".mp4")} type="video/mp4" />
               <source src={exhibit.videoPath} type="video/quicktime" />
-              <source src={exhibit.videoPath} type="video/mp4" />
               <p className="p-4 text-sm text-parchment/60">
                 Your browser does not support this video.{" "}
-                <a href={exhibit.videoPath} download className="text-terracotta underline">
+                <a href={exhibit.videoPath.replace(".mov", ".mp4")} download className="text-terracotta underline">
                   Download it here.
                 </a>
               </p>
