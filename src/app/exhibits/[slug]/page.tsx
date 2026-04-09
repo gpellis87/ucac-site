@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MapPin, Clock, CalendarDays, Users } from "lucide-react";
+import { ArrowLeft, MapPin, CalendarDays, Users } from "lucide-react";
 import { exhibits, statusLabel } from "@/data/exhibits";
 import dynamic from "next/dynamic";
 
@@ -131,10 +131,6 @@ export default function ExhibitPage({ params }: Props) {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 text-sm">
-              <Clock size={15} className="mt-0.5 shrink-0 text-terracotta" />
-              <p className="text-parchment/80">{exhibit.galleryHours}</p>
-            </div>
 
             {exhibit.receptionDate && (
               <div className="flex items-start gap-3 text-sm">

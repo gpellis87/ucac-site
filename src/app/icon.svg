@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Terracotta background with slight rounding -->
+  <rect width="32" height="32" rx="5" fill="#c0542a"/>
+  <!-- Thin gold/cream horizontal rule -->
+  <line x1="5" y1="20" x2="27" y2="20" stroke="#f5f0eb" stroke-width="1" opacity="0.5"/>
+  <!-- UC letters -->
+  <text
+    x="16"
+    y="18"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    fill="#f5f0eb"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="13"
+    font-weight="bold"
+    letter-spacing="1"
+  >UC</text>
+  <!-- Small "arts" label below the rule -->
+  <text
+    x="16"
+    y="26"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    fill="#f5f0eb"
+    font-family="Arial, sans-serif"
+    font-size="5"
+    letter-spacing="1.5"
+    opacity="0.8"
+  >ARTS</text>
+</svg>
