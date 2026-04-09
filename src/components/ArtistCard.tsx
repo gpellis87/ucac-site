@@ -32,6 +32,7 @@ export default function ArtistCard({ artist }: { artist: Artist }) {
         <div className="min-w-0">
           <h3 className="display text-xl text-parchment leading-tight truncate">{displayName}</h3>
           <p className="mt-0.5 text-[0.65rem] uppercase tracking-[0.14em] text-terracotta truncate">{artist.medium}</p>
+          <p className="mt-0.5 text-[0.6rem] text-parchment/40 truncate">{artist.city}, {artist.state}</p>
         </div>
       </div>
     </Link>

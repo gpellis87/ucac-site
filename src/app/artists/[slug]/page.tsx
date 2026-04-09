@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Globe, Instagram, Mail } from "lucide-react";
+import { ArrowLeft, Globe, Instagram, Mail, MapPin } from "lucide-react";
 import { artists } from "@/data/artists";
 
 type Props = { params: { slug: string } };
@@ -62,11 +62,19 @@ export default function ArtistPage({ params }: Props) {
               <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl">
                 {displayName}
               </h1>
+              <p className="mt-3 flex items-center gap-1.5 text-xs text-parchment/45">
+                <MapPin size={11} className="text-terracotta/60" />
+                {artist.city}, {artist.state}
+              </p>
 
               {artist.bio && (
-                <p className="mt-6 max-w-2xl text-base leading-relaxed text-parchment/80 md:text-lg">
-                  {artist.bio}
-                </p>
+                <div className="mt-6 max-w-2xl space-y-4">
+                  {artist.bio.split("\n\n").map((para, i) => (
+                    <p key={i} className="text-base leading-relaxed text-parchment/80 md:text-lg">
+                      {para}
+                    </p>
+                  ))}
+                </div>
               )}
 
               {/* Links */}
