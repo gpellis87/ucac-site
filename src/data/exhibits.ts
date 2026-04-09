@@ -20,6 +20,8 @@ export interface Exhibit {
   flyerPath?: string;
   /** Path relative to /public for a teaser/promo video */
   videoPath?: string;
+  /** Gallery images — add paths here when photos become available */
+  images?: string[];
   tags: string[];
   presentedBy: string[];
   callToAction?: { label: string; href: string };

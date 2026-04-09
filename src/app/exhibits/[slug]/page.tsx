@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MapPin, CalendarDays, Users } from "lucide-react";
+import { ArrowLeft, MapPin, CalendarDays, Users, Mail, Phone } from "lucide-react";
 import { exhibits, statusLabel } from "@/data/exhibits";
 import dynamic from "next/dynamic";
 
@@ -23,34 +23,51 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-const statusStyle: Record<string, string> = {
-  "now-on-view": "bg-terracotta text-parchment",
-  "opening-soon": "bg-parchment/15 text-parchment border border-parchment/40",
-  "call-for-artists": "bg-slate/30 text-parchment border border-parchment/30",
+const statusColors: Record<string, string> = {
+  "now-on-view":    "bg-terracotta text-parchment",
+  "opening-soon":   "border border-parchment/50 text-parchment",
+  "call-for-artists": "border border-terracotta/70 text-terracotta",
 };
+
+function SectionEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">
+      {children}
+    </p>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="my-12 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
+  );
+}
 
 export default function ExhibitPage({ params }: Props) {
   const exhibit = exhibits.find((e) => e.slug === params.slug);
   if (!exhibit) notFound();
 
-  return (
-    <div className="min-h-screen bg-[#0d0c0b] text-parchment flex flex-col">
+  const receptionLabel =
+    exhibit.status === "opening-soon" ? "Celebration" : "Reception";
 
-      {/* Minimal header */}
+  return (
+    <div className="bg-[#0d0c0b] text-parchment flex flex-col">
+
+      {/* ── Sticky back bar ─────────────────────────────────────────── */}
       <header className="sticky top-0 z-50 border-b border-parchment/10 bg-[#0d0c0b]/92 backdrop-blur-xl px-5 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto flex h-14 max-w-[1500px] items-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/55 transition hover:text-parchment"
           >
-            <ArrowLeft size={14} />
+            <ArrowLeft size={13} />
             Back
           </Link>
         </div>
       </header>
 
-      {/* Hero image */}
-      <div className="relative h-[55vh] min-h-[360px] overflow-hidden">
+      {/* ── Hero ────────────────────────────────────────────────────── */}
+      <div className="relative h-[62vh] min-h-[420px] overflow-hidden">
         <Image
           src={exhibit.imageUrl}
           alt={exhibit.title}
@@ -59,88 +76,114 @@ export default function ExhibitPage({ params }: Props) {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0c0b] via-[#0d0c0b]/50 to-black/20" />
+        {/* Deeper gradient so title is always legible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0c0b] via-[#0d0c0b]/60 to-black/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(192,84,42,0.18),transparent_50%)]" />
+
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-10 lg:px-16 xl:px-24">
           <div className="mx-auto max-w-[1500px]">
-            <span
-              className={`inline-block px-3 py-1 text-[0.65rem] uppercase tracking-[0.16em] ${statusStyle[exhibit.status]}`}
-            >
+            <span className={`inline-block px-3 py-1 text-[0.62rem] uppercase tracking-[0.18em] ${statusColors[exhibit.status]}`}>
               {statusLabel[exhibit.status]}
             </span>
-            <h1 className="editorial-title mt-4 max-w-4xl text-4xl md:text-6xl lg:text-7xl">
+            <h1 className="editorial-title mt-3 max-w-4xl text-4xl leading-[0.93] md:text-6xl lg:text-[5.5rem]">
               {exhibit.title}
             </h1>
+            {exhibit.receptionDate && (
+              <p className="mt-4 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60">
+                {receptionLabel} &nbsp;·&nbsp;{" "}
+                {new Date(exhibit.receptionDate + "T12:00:00").toLocaleDateString("en-US", {
+                  weekday: "long", month: "long", day: "numeric",
+                })}
+                {exhibit.receptionTime && ` · ${exhibit.receptionTime}`}
+              </p>
+            )}
           </div>
         </div>
       </div>
 
-      {/* Teaser video — only shown when a videoPath is set */}
+      {/* ── Teaser Video ─────────────────────────────────────────────── */}
       {exhibit.videoPath && (
-        <section className="bg-black px-5 py-10 md:px-10 lg:px-16 xl:px-24">
-          <div className="mx-auto max-w-[1500px]">
-            <p className="mb-4 text-[0.68rem] uppercase tracking-[0.2em] text-terracotta">
-              Preview
-            </p>
-            <video
-              poster={exhibit.imageUrl}
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full border border-parchment/15 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
-              aria-label={`${exhibit.title} teaser video`}
-            >
-              <source src={exhibit.videoPath.replace(".mov", ".mp4")} type="video/mp4" />
-              <source src={exhibit.videoPath} type="video/quicktime" />
-              <p className="p-4 text-sm text-parchment/60">
-                Your browser does not support this video.{" "}
-                <a href={exhibit.videoPath.replace(".mov", ".mp4")} download className="text-terracotta underline">
-                  Download it here.
-                </a>
-              </p>
-            </video>
+        <section className="bg-[#060605]">
+          <div className="px-5 pt-10 md:px-10 lg:px-16 xl:px-24">
+            <div className="mx-auto max-w-[1500px]">
+              <SectionEyebrow>Exhibition Preview</SectionEyebrow>
+              <video
+                controls
+                playsInline
+                preload="auto"
+                className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
+                aria-label={`${exhibit.title} teaser video`}
+              >
+                <source src={exhibit.videoPath.replace(".mov", ".mp4")} type="video/mp4" />
+                <source src={exhibit.videoPath} type="video/quicktime" />
+                <p className="p-4 text-sm text-parchment/60">
+                  Your browser does not support this video.{" "}
+                  <a href={exhibit.videoPath.replace(".mov", ".mp4")} download className="text-terracotta underline">
+                    Download it here.
+                  </a>
+                </p>
+              </video>
+            </div>
+          </div>
+          {/* Bridge strip — signals more content below */}
+          <div className="mt-10 flex items-center gap-4 border-t border-parchment/10 px-5 py-5 md:px-10 lg:px-16 xl:px-24">
+            <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="h-1 w-8 bg-terracotta/70" />
+                <span className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">
+                  Exhibition Details
+                </span>
+              </div>
+              <span className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/30">
+                {exhibit.location} · Monroe, NC
+              </span>
+            </div>
           </div>
         </section>
       )}
 
-      {/* Main content */}
-      <main className="flex-1 px-5 py-12 md:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[1.6fr_1fr]">
+      {/* ── Main content ─────────────────────────────────────────────── */}
+      <main className="flex-1 px-5 py-14 md:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1.55fr_1fr] lg:gap-16">
 
-          {/* Left: description + details */}
-          <article className="space-y-6">
-            <p className="text-base leading-relaxed text-parchment/82 md:text-lg">
+          {/* Left: article */}
+          <article>
+            <SectionEyebrow>About This Exhibition</SectionEyebrow>
+            <p className="text-lg leading-relaxed text-parchment/88 md:text-xl">
               {exhibit.description}
             </p>
-            <ul className="space-y-3 border-l border-terracotta/50 pl-5">
-              {exhibit.details.map((detail) => (
-                <li key={detail} className="text-sm leading-relaxed text-parchment/75">
-                  {detail}
-                </li>
-              ))}
-            </ul>
+
+            {exhibit.details.length > 0 && (
+              <ul className="mt-8 space-y-4 border-l-2 border-terracotta/40 pl-6">
+                {exhibit.details.map((detail) => (
+                  <li key={detail} className="text-sm leading-relaxed text-parchment/72">
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {exhibit.callToAction && (
-              <a
-                href={exhibit.callToAction.href}
-                target="_blank"
-                rel="noreferrer"
-                className="accent-btn mt-4 w-fit"
-              >
-                {exhibit.callToAction.label}
-              </a>
+              <div className="mt-10">
+                <a
+                  href={exhibit.callToAction.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="accent-btn"
+                >
+                  {exhibit.callToAction.label}
+                </a>
+              </div>
             )}
 
             {exhibit.presentedBy.length > 0 && (
-              <div className="pt-4">
-                <p className="mb-3 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.18em] text-parchment/50">
-                  <Users size={12} /> Presented By
+              <div className="mt-12 border-t border-parchment/10 pt-8">
+                <p className="mb-4 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/40">
+                  <Users size={11} /> Presented By
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {exhibit.presentedBy.map((org) => (
-                    <span
-                      key={org}
-                      className="border border-parchment/20 px-3 py-1 text-xs text-parchment/70"
-                    >
+                    <span key={org} className="border border-parchment/15 px-3 py-1.5 text-xs text-parchment/65">
                       {org}
                     </span>
                   ))}
@@ -150,109 +193,146 @@ export default function ExhibitPage({ params }: Props) {
           </article>
 
           {/* Right: info sidebar */}
-          <aside className="space-y-4 border border-parchment/20 bg-black/25 p-6 self-start">
-            <div className="flex items-start gap-3 text-sm">
-              <MapPin size={15} className="mt-0.5 shrink-0 text-terracotta" />
-              <div>
-                <p className="text-parchment">{exhibit.location}</p>
-                <p className="text-parchment/60">{exhibit.address}</p>
-              </div>
-            </div>
+          <aside className="lg:sticky lg:top-20 self-start">
+            <div className="border border-parchment/15 bg-black/30 divide-y divide-parchment/10">
 
-
-            {exhibit.receptionDate && (
-              <div className="flex items-start gap-3 text-sm">
-                <CalendarDays size={15} className="mt-0.5 shrink-0 text-terracotta" />
-                <div>
-                  <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/50 mb-0.5">
-                    {exhibit.status === "opening-soon" ? "Celebration" : "Reception"}
-                  </p>
-                  <p className="text-parchment">
-                    {new Date(exhibit.receptionDate + "T12:00:00").toLocaleDateString("en-US", {
-                      weekday: "long",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                  {exhibit.receptionTime && (
-                    <p className="text-parchment/65 text-xs mt-0.5">{exhibit.receptionTime}</p>
-                  )}
+              {/* Location */}
+              <div className="p-5">
+                <p className="mb-2 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Location</p>
+                <div className="flex items-start gap-2.5">
+                  <MapPin size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                  <div>
+                    <p className="text-sm font-medium text-parchment">{exhibit.location}</p>
+                    <p className="mt-0.5 text-xs text-parchment/55">{exhibit.address}</p>
+                  </div>
                 </div>
               </div>
-            )}
 
-            {exhibit.submissionDeadline && (
-              <div className="flex items-start gap-3 text-sm">
-                <CalendarDays size={15} className="mt-0.5 shrink-0 text-terracotta" />
-                <div>
-                  <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/50 mb-0.5">
-                    Submissions Due
+              {/* Reception / Celebration */}
+              {exhibit.receptionDate && (
+                <div className="p-5">
+                  <p className="mb-2 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">
+                    {receptionLabel}
                   </p>
-                  <p className="text-parchment">
-                    {new Date(exhibit.submissionDeadline + "T12:00:00").toLocaleDateString("en-US", {
-                      weekday: "long",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
+                  <div className="flex items-start gap-2.5">
+                    <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                    <div>
+                      <p className="text-sm font-medium text-parchment">
+                        {new Date(exhibit.receptionDate + "T12:00:00").toLocaleDateString("en-US", {
+                          weekday: "long", month: "long", day: "numeric",
+                        })}
+                      </p>
+                      {exhibit.receptionTime && (
+                        <p className="mt-0.5 text-xs text-parchment/55">{exhibit.receptionTime}</p>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
 
-            {exhibit.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2 pt-2">
-                {exhibit.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="border border-parchment/20 px-2 py-1 text-[0.65rem] uppercase tracking-[0.12em] text-parchment/60"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
+              {/* Submission deadline */}
+              {exhibit.submissionDeadline && (
+                <div className="p-5">
+                  <p className="mb-2 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Submissions Due</p>
+                  <div className="flex items-start gap-2.5">
+                    <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                    <div>
+                      <p className="text-sm font-medium text-parchment">
+                        {new Date(exhibit.submissionDeadline + "T12:00:00").toLocaleDateString("en-US", {
+                          weekday: "long", month: "long", day: "numeric",
+                        })}
+                      </p>
+                      {exhibit.submissionUrl && (
+                        <a
+                          href={exhibit.submissionUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-2 inline-block text-[0.68rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
+                        >
+                          Submit Now →
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
 
-            <div className="pt-3 border-t border-parchment/15">
-              <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/45 mb-2">Questions?</p>
-              <a
-                href="mailto:events@unionarts.org"
-                className="text-sm text-terracotta hover:underline"
-              >
-                events@unionarts.org
-              </a>
-              <p className="mt-1 text-sm text-parchment/55">(704) 283-2784</p>
+              {/* Tags */}
+              {exhibit.tags.length > 0 && (
+                <div className="p-5">
+                  <div className="flex flex-wrap gap-1.5">
+                    {exhibit.tags.map((tag) => (
+                      <span key={tag} className="border border-parchment/15 px-2 py-1 text-[0.6rem] uppercase tracking-[0.12em] text-parchment/50">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Contact */}
+              <div className="p-5">
+                <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Questions?</p>
+                <a href="mailto:events@unionarts.org" className="flex items-center gap-2 text-sm text-parchment/70 transition hover:text-terracotta">
+                  <Mail size={12} className="text-terracotta/70" /> events@unionarts.org
+                </a>
+                <p className="mt-2 flex items-center gap-2 text-sm text-parchment/55">
+                  <Phone size={12} className="text-terracotta/70" /> (704) 283-2784
+                </p>
+              </div>
+
             </div>
           </aside>
         </div>
       </main>
 
-      {/* Flyer embed */}
-      {exhibit.flyerPath && (
-        <section className="px-5 pb-16 md:px-10 lg:px-16 xl:px-24">
-          <div className="mx-auto max-w-[1500px]">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <h2 className="display text-3xl text-parchment">Event Flyer</h2>
-              <a
-                href={exhibit.flyerPath}
-                download
-                className="ghost-btn px-4 py-2 text-xs"
-              >
-                Download Flyer
-              </a>
+      {/* ── Image gallery (shown when photos are added) ──────────────── */}
+      {exhibit.images && exhibit.images.length > 0 && (
+        <>
+          <Divider />
+          <section className="px-5 pb-16 md:px-10 lg:px-16 xl:px-24">
+            <div className="mx-auto max-w-[1500px]">
+              <SectionEyebrow>Gallery</SectionEyebrow>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {exhibit.images.map((src, i) => (
+                  <div key={i} className="relative aspect-[4/3] overflow-hidden">
+                    <Image src={src} alt={`${exhibit.title} photo ${i + 1}`} fill className="object-cover transition duration-500 hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="py-4">
-              <FlyerViewer flyerPath={exhibit.flyerPath} title={exhibit.title} />
-            </div>
-          </div>
-        </section>
+          </section>
+        </>
       )}
 
-      {/* Footer strip */}
-      <div className="border-t border-parchment/10 px-6 py-5 text-center mt-8">
-        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/30">
+      {/* ── Flyer ────────────────────────────────────────────────────── */}
+      {exhibit.flyerPath && (
+        <>
+          <Divider />
+          <section className="px-5 pb-20 md:px-10 lg:px-16 xl:px-24">
+            <div className="mx-auto max-w-[1500px]">
+              <div className="mb-6 flex items-end justify-between gap-4">
+                <div>
+                  <SectionEyebrow>Official Flyer</SectionEyebrow>
+                  <h2 className="display text-3xl text-parchment">Event Details</h2>
+                </div>
+                <a href={exhibit.flyerPath} download className="ghost-btn px-4 py-2 text-xs">
+                  Download
+                </a>
+              </div>
+              <FlyerViewer flyerPath={exhibit.flyerPath} title={exhibit.title} />
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* ── Footer ───────────────────────────────────────────────────── */}
+      <div className="border-t border-parchment/10 px-6 py-5 text-center">
+        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/25">
           &copy; {new Date().getFullYear()} Union County Community Arts Council &mdash; 501(c)(3) Nonprofit
         </p>
       </div>
+
     </div>
   );
 }
