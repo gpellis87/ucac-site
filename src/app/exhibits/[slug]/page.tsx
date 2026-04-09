@@ -4,7 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, Clock, CalendarDays, Users } from "lucide-react";
 import { exhibits, statusLabel } from "@/data/exhibits";
-import FlyerViewer from "@/components/FlyerViewer";
+import dynamic from "next/dynamic";
+
+const FlyerViewer = dynamic(() => import("@/components/FlyerViewer"), { ssr: false });
 
 type Props = { params: { slug: string } };
 
