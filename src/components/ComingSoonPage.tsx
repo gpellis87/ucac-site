@@ -3,12 +3,17 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import ExhibitCard from "@/components/ExhibitCard";
+import { exhibits } from "@/data/exhibits";
 
 export default function ComingSoonPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#0d0c0b] text-parchment flex flex-col">
+    <div className="bg-[#0d0c0b] text-parchment flex flex-col">
 
-      {/* Background image — same as homepage hero */}
+      {/* Hero section */}
+      <div className="relative min-h-screen overflow-hidden flex flex-col">
+
+      {/* Background image */}
       <motion.div
         initial={{ scale: 1.08, opacity: 0.75 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -116,8 +121,43 @@ export default function ComingSoonPage() {
         </motion.p>
       </div>
 
-      {/* Footer strip */}
-      <div className="relative z-10 border-t border-parchment/10 px-6 py-5 text-center">
+      {/* Footer strip inside hero section */}
+      <div className="relative z-10 border-t border-parchment/10 px-6 py-4 text-center">
+        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/30">
+          Scroll down to see current exhibitions
+        </p>
+      </div>
+
+      </div>{/* end hero section */}
+
+      {/* Exhibits section */}
+      <section className="bg-[#111110] px-5 py-16 md:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="mb-2 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-terracotta">On View Now &amp; Upcoming</p>
+              <h2 className="display mt-2 text-4xl text-parchment md:text-5xl">Current Exhibitions</h2>
+            </div>
+          </div>
+          <div className="mt-2 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent mb-10" />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {exhibits.map((exhibit) => (
+              <ExhibitCard key={exhibit.id} exhibit={exhibit} />
+            ))}
+          </div>
+          <div className="mt-14 border border-parchment/15 bg-black/20 p-6 text-center">
+            <p className="text-sm text-parchment/65">
+              Gallery open Mon–Thu 10am–4pm · Selected Saturdays 10am–2pm
+            </p>
+            <p className="mt-1 text-sm text-parchment/65">
+              327 S. Hayne Street, Monroe, NC &nbsp;·&nbsp; (704) 283-2784 &nbsp;·&nbsp; info@unionarts.org
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Site footer */}
+      <div className="border-t border-parchment/10 bg-[#0d0c0b] px-6 py-5 text-center">
         <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/30">
           &copy; {new Date().getFullYear()} Union County Community Arts Council &mdash; 501(c)(3) Nonprofit
         </p>
