@@ -74,9 +74,9 @@ export default function ContactPageClient() {
             <div className="border border-parchment/20 p-5">
               <h3 className="display text-3xl">Contact Info</h3>
               <div className="mt-4 space-y-2 text-sm text-parchment/80">
-                <p>327 S Hayne St, Monroe, NC 28112</p>
+                <p>300 North Hayne Street, Monroe, NC 28111</p>
                 <p>(704) 283-2784</p>
-                <p>info@unionarts.org</p>
+                <p>events@unionarts.org</p>
                 <p>Office Hours: Mon-Fri 8:30 AM - 4:30 PM</p>
                 <p>Saturday-Sunday: Closed</p>
               </div>
@@ -84,7 +84,7 @@ export default function ContactPageClient() {
             <div className="border border-parchment/20 p-5">
               <h3 className="display text-3xl">Follow Us</h3>
               <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
-                <a href="#" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Facebook size={15} /> Facebook</a>
+                <a href="https://www.facebook.com/profile.php?id=61574355290119" target="_blank" rel="noreferrer" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Facebook size={15} /> Facebook</a>
                 <a href="#" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Instagram size={15} /> Instagram</a>
                 <a href="#" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Twitter size={15} /> X</a>
                 <a href="#" className="border border-parchment/30 p-3 hover:border-terracotta inline-flex items-center gap-2"><Youtube size={15} /> YouTube</a>
@@ -98,7 +98,7 @@ export default function ContactPageClient() {
         <div className="mx-auto max-w-[1500px] overflow-hidden border border-parchment/20">
           <iframe
             title="UCCAC office map location"
-            src="https://www.google.com/maps?q=327%20S%20Hayne%20St%2C%20Monroe%2C%20NC%2028112&output=embed"
+            src="https://www.google.com/maps?q=300%20North%20Hayne%20Street%2C%20Monroe%2C%20NC%2028111&output=embed"
             width="100%"
             height="360"
             loading="lazy"

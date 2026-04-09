@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 
 const social = [
-  { href: "#", label: "Facebook", icon: Facebook },
+  { href: "https://www.facebook.com/profile.php?id=61574355290119", label: "Facebook", icon: Facebook },
   { href: "#", label: "Instagram", icon: Instagram },
   { href: "#", label: "X", icon: Twitter },
   { href: "#", label: "YouTube", icon: Youtube },
@@ -31,9 +31,9 @@ export default function SiteFooter() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Contact</p>
           <div className="mt-3 space-y-2 text-sm text-parchment/85">
-            <p>327 S Hayne St, Monroe, NC 28112</p>
+            <p>300 North Hayne Street, Monroe, NC 28111</p>
             <p>(704) 283-2784</p>
-            <p>info@unionarts.org</p>
+            <p>events@unionarts.org</p>
             <p>Mon-Fri: 8:30 AM - 4:30 PM</p>
             <p>Sat-Sun: Closed</p>
           </div>

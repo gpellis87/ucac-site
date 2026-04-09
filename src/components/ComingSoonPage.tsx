@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, ChevronDown } from "lucide-react";
 import ExhibitCard from "@/components/ExhibitCard";
 import { exhibits } from "@/data/exhibits";
 
@@ -10,8 +10,8 @@ export default function ComingSoonPage() {
   return (
     <div className="bg-[#0d0c0b] text-parchment flex flex-col">
 
-      {/* Hero section */}
-      <div className="relative min-h-screen overflow-hidden flex flex-col">
+      {/* Hero section — intentionally not full-height so exhibitions are visible */}
+      <div className="relative min-h-[80vh] overflow-hidden flex flex-col">
 
       {/* Background image */}
       <motion.div
@@ -83,7 +83,7 @@ export default function ComingSoonPage() {
           className="mt-10"
         >
           <a
-            href="mailto:info@unionarts.org"
+            href="mailto:events@unionarts.org"
             className="accent-btn"
           >
             Get in Touch
@@ -101,13 +101,13 @@ export default function ComingSoonPage() {
             <Phone size={13} className="shrink-0 text-terracotta/70" />
             (704) 283-2784
           </a>
-          <a href="mailto:info@unionarts.org" className="flex items-center gap-2 transition-colors hover:text-parchment">
+          <a href="mailto:events@unionarts.org" className="flex items-center gap-2 transition-colors hover:text-parchment">
             <Mail size={13} className="shrink-0 text-terracotta/70" />
-            info@unionarts.org
+            events@unionarts.org
           </a>
           <p className="flex items-center gap-2">
             <MapPin size={13} className="shrink-0 text-terracotta/70" />
-            327 S Hayne St, Monroe, NC
+            300 North Hayne Street, Monroe, NC 28111
           </p>
         </motion.div>
 
@@ -121,17 +121,26 @@ export default function ComingSoonPage() {
         </motion.p>
       </div>
 
-      {/* Footer strip inside hero section */}
-      <div className="relative z-10 border-t border-parchment/10 px-6 py-4 text-center">
-        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/30">
-          Scroll down to see current exhibitions
-        </p>
+      {/* Scroll indicator */}
+      <div className="relative z-10 flex flex-col items-center pb-8 pt-2">
+        <a
+          href="#exhibitions"
+          className="group flex flex-col items-center gap-1 text-parchment/50 transition hover:text-parchment"
+        >
+          <span className="text-[0.62rem] uppercase tracking-[0.2em]">Current Exhibitions</span>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown size={18} className="text-terracotta" />
+          </motion.div>
+        </a>
       </div>
 
       </div>{/* end hero section */}
 
       {/* Exhibits section */}
-      <section className="bg-[#111110] px-5 py-16 md:px-10 lg:px-16 xl:px-24">
+      <section id="exhibitions" className="bg-[#111110] px-5 py-16 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-2 flex items-end justify-between gap-4">
             <div>
@@ -150,8 +159,17 @@ export default function ComingSoonPage() {
               Gallery open Mon–Thu 10am–4pm · Selected Saturdays 10am–2pm
             </p>
             <p className="mt-1 text-sm text-parchment/65">
-              327 S. Hayne Street, Monroe, NC &nbsp;·&nbsp; (704) 283-2784 &nbsp;·&nbsp; info@unionarts.org
+              300 North Hayne Street, Monroe, NC 28111 &nbsp;·&nbsp; (704) 283-2784 &nbsp;·&nbsp; events@unionarts.org
             </p>
+            <a
+              href="https://www.facebook.com/profile.php?id=61574355290119"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-xs uppercase tracking-[0.14em] text-parchment/60 transition hover:border-terracotta hover:text-parchment"
+            >
+              <Facebook size={13} className="text-terracotta" />
+              Follow Us on Facebook
+            </a>
           </div>
         </div>
       </section>

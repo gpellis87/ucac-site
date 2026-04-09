@@ -191,10 +191,10 @@ export default function ExhibitPage({ params }: Props) {
             <div className="pt-3 border-t border-parchment/15">
               <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/45 mb-2">Questions?</p>
               <a
-                href="mailto:info@unionarts.org"
+                href="mailto:events@unionarts.org"
                 className="text-sm text-terracotta hover:underline"
               >
-                info@unionarts.org
+                events@unionarts.org
               </a>
               <p className="mt-1 text-sm text-parchment/55">(704) 283-2784</p>
             </div>
