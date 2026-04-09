@@ -1,56 +1,80 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SectionReveal } from "@/components/SectionReveal";
-import { localArtists } from "@/data/localArtists";
+import { ArrowLeft } from "lucide-react";
+import ArtistCard from "@/components/ArtistCard";
+import { artists } from "@/data/artists";
 
 export const metadata: Metadata = {
-  title: "Local Artists",
+  title: "Artists | Union County Community Arts Council",
   description:
-    "Explore Union County local artists across painting, photography, fiber arts, ceramics, and public art. Directory data is currently mock for prototype use.",
+    "Meet the artists of Union County. A directory of painters, mixed-media creators, and fiber artists connected through the Union County Community Arts Council in Monroe, NC.",
 };
 
 export default function ArtistsPage() {
   return (
-    <div className="pb-24">
-      <SectionReveal className="section-pad relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(192,84,42,0.25),transparent_34%),radial-gradient(circle_at_80%_15%,rgba(103,115,136,0.3),transparent_45%)]" />
-        <div className="relative mx-auto max-w-[1500px]">
-          <p className="text-xs uppercase tracking-[0.2em] text-terracotta">Creative Community</p>
-          <h1 className="editorial-title mt-4 max-w-4xl text-5xl md:text-8xl">Local Artist Directory</h1>
-          <p className="mt-5 max-w-2xl text-parchment/80">
-            A curated directory spotlighting artists working across Union County. These listings are prototype mock entries and can be replaced with a live submission and approval workflow later.
-          </p>
-        </div>
-      </SectionReveal>
+    <div className="bg-[#0d0c0b] text-parchment flex flex-col min-h-screen">
 
-      <SectionReveal className="section-pad py-10">
-        <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4 border border-parchment/20 bg-black/30 p-5">
-          <p className="text-sm text-parchment/78">
-            Are you a local artist? We can add a formal submission form in the next phase.
-          </p>
-          <Link href="/contact" className="accent-btn px-4 py-2 text-xs">
-            Submit Interest
+      {/* Sticky back bar */}
+      <header className="sticky top-0 z-50 border-b border-parchment/10 bg-[#0d0c0b]/92 backdrop-blur-xl px-5 md:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto flex h-14 max-w-[1500px] items-center">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/55 transition hover:text-parchment"
+          >
+            <ArrowLeft size={13} />
+            Back
           </Link>
         </div>
-      </SectionReveal>
+      </header>
 
-      <SectionReveal className="section-pad py-10">
-        <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {localArtists.map((artist) => (
-            <article key={artist.id} className="panel-dark p-5 transition hover:border-terracotta/45">
-              <p className="text-[0.65rem] uppercase tracking-[0.16em] text-terracotta">{artist.specialty}</p>
-              <h2 className="mt-3 display text-3xl">{artist.name}</h2>
-              <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/65">{artist.city}</p>
-              <p className="mt-4 text-sm leading-relaxed text-parchment/82">{artist.bio}</p>
-              <div className="mt-5 space-y-1 text-xs text-parchment/75">
-                <p>Email: {artist.email}</p>
-                <p>Website: {artist.website}</p>
-                <p>Social: {artist.social}</p>
-              </div>
-            </article>
-          ))}
+      {/* Page header */}
+      <div className="px-5 py-16 md:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto max-w-[1500px]">
+          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Creative Community</p>
+          <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
+            Artist Directory
+          </h1>
+          <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
+            Spotlighting the painters, sculptors, and makers connected through the Union County Community Arts Council.
+          </p>
+          <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
         </div>
-      </SectionReveal>
+      </div>
+
+      {/* Grid */}
+      <main className="flex-1 px-5 pb-20 md:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {artists.map((artist) => (
+              <ArtistCard key={artist.id} artist={artist} />
+            ))}
+          </div>
+
+          {/* CTA strip */}
+          <div className="mt-14 flex items-center justify-between gap-4 border border-parchment/15 bg-black/30 p-6">
+            <div>
+              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-terracotta">Are You an Artist?</p>
+              <p className="mt-1 text-sm text-parchment/70">
+                UCCAC members can request to be listed in this directory.
+              </p>
+            </div>
+            <a
+              href="mailto:events@unionarts.org"
+              className="shrink-0 border border-terracotta px-5 py-2.5 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
+            >
+              Get Listed
+            </a>
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <div className="border-t border-parchment/10 px-6 py-5 text-center">
+        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/25">
+          &copy; {new Date().getFullYear()} Union County Community Arts Council &mdash; 501(c)(3) Nonprofit
+        </p>
+      </div>
+
     </div>
   );
 }
