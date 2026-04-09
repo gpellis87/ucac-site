@@ -110,7 +110,8 @@ export default function ExhibitPage({ params }: Props) {
               <video
                 controls
                 playsInline
-                preload="auto"
+                preload="metadata"
+                {...(exhibit.videoPoster ? { poster: exhibit.videoPoster } : {})}
                 className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
                 aria-label={`${exhibit.title} teaser video`}
               >
