@@ -74,6 +74,35 @@ export default function ExhibitPage({ params }: Props) {
         </div>
       </div>
 
+      {/* Teaser video — only shown when a videoPath is set */}
+      {exhibit.videoPath && (
+        <section className="bg-black px-5 py-10 md:px-10 lg:px-16 xl:px-24">
+          <div className="mx-auto max-w-[1500px]">
+            <p className="mb-4 text-[0.68rem] uppercase tracking-[0.2em] text-terracotta">
+              Preview
+            </p>
+            <video
+              src={exhibit.videoPath}
+              poster={exhibit.imageUrl}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full border border-parchment/15 shadow-[0_16px_48px_rgba(0,0,0,0.6)]"
+              aria-label={`${exhibit.title} teaser video`}
+            >
+              <source src={exhibit.videoPath} type="video/quicktime" />
+              <source src={exhibit.videoPath} type="video/mp4" />
+              <p className="p-4 text-sm text-parchment/60">
+                Your browser does not support this video.{" "}
+                <a href={exhibit.videoPath} download className="text-terracotta underline">
+                  Download it here.
+                </a>
+              </p>
+            </video>
+          </div>
+        </section>
+      )}
+
       {/* Main content */}
       <main className="flex-1 px-5 py-12 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[1.6fr_1fr]">

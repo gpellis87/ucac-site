@@ -18,6 +18,8 @@ export interface Exhibit {
   imageUrl: string;
   /** Path relative to /public, e.g. "/flyers/spring-art-show-2026.pdf" */
   flyerPath?: string;
+  /** Path relative to /public for a teaser/promo video */
+  videoPath?: string;
   tags: string[];
   presentedBy: string[];
   callToAction?: { label: string; href: string };
@@ -45,6 +47,7 @@ export const exhibits: Exhibit[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?auto=format&fit=crop&w=1600&q=80",
     flyerPath: "/flyers/spring-art-show-2026.pdf",
+    videoPath: "/videos/spring-art-show-2026.mov",
     tags: ["Painting", "Mixed Media", "Regional Artists", "Reception"],
     presentedBy: [
       "Union County Community Arts Council",
