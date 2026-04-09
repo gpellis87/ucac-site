@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, Clock, CalendarDays, Users } from "lucide-react";
 import { exhibits, statusLabel } from "@/data/exhibits";
+import FlyerViewer from "@/components/FlyerViewer";
 
 type Props = { params: { slug: string } };
 
@@ -35,18 +36,14 @@ export default function ExhibitPage({ params }: Props) {
 
       {/* Minimal header */}
       <header className="sticky top-0 z-50 border-b border-parchment/10 bg-[#0d0c0b]/92 backdrop-blur-xl px-5 md:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto flex h-16 max-w-[1500px] items-center gap-4">
+        <div className="mx-auto flex h-14 max-w-[1500px] items-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/65 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={14} />
-            All Exhibitions
+            Back
           </Link>
-          <span className="text-parchment/20">·</span>
-          <span className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/40">
-            Union County Community Arts Council
-          </span>
         </div>
       </header>
 
@@ -217,21 +214,8 @@ export default function ExhibitPage({ params }: Props) {
                 Download Flyer
               </a>
             </div>
-            <div className="border border-parchment/20 overflow-hidden bg-black/20">
-              <object
-                data={exhibit.flyerPath}
-                type="application/pdf"
-                width="100%"
-                className="block min-h-[80vh]"
-                aria-label={`${exhibit.title} flyer`}
-              >
-                <div className="flex flex-col items-center justify-center gap-4 py-16 text-center text-parchment/60">
-                  <p className="text-sm">Your browser cannot display this PDF inline.</p>
-                  <a href={exhibit.flyerPath} download className="accent-btn px-5 py-2 text-xs">
-                    Download Flyer
-                  </a>
-                </div>
-              </object>
+            <div className="py-4">
+              <FlyerViewer flyerPath={exhibit.flyerPath} title={exhibit.title} />
             </div>
           </div>
         </section>

@@ -121,21 +121,27 @@ export default function ComingSoonPage() {
         </motion.p>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="relative z-10 flex flex-col items-center pb-8 pt-2">
-        <a
-          href="#exhibitions"
-          className="group flex flex-col items-center gap-1 text-parchment/50 transition hover:text-parchment"
+      {/* Scroll invitation strip */}
+      <motion.a
+        href="#exhibitions"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.7 }}
+        className="relative z-10 flex w-full items-center justify-between border-t border-terracotta/30 bg-black/50 px-5 py-4 backdrop-blur-sm transition hover:bg-terracotta/15 md:px-10 lg:px-16 xl:px-24 group"
+      >
+        <div className="flex items-center gap-3">
+          <span className="h-1.5 w-1.5 rounded-full bg-terracotta" />
+          <span className="text-[0.7rem] uppercase tracking-[0.2em] text-parchment/80">
+            3 Exhibitions Now On View &amp; Upcoming
+          </span>
+        </div>
+        <motion.div
+          animate={{ x: [0, 5, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         >
-          <span className="text-[0.62rem] uppercase tracking-[0.2em]">Current Exhibitions</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronDown size={18} className="text-terracotta" />
-          </motion.div>
-        </a>
-      </div>
+          <ChevronDown size={16} className="text-terracotta" />
+        </motion.div>
+      </motion.a>
 
       </div>{/* end hero section */}
 
