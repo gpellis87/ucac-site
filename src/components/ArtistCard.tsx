@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Artist } from "@/data/artists";
 
@@ -12,13 +11,10 @@ export default function ArtistCard({ artist }: { artist: Artist }) {
     >
       {/* Work thumbnail */}
       <div className="relative aspect-square overflow-hidden bg-[#111]">
-        <Image
+        <img
           src={artist.workImages[0]}
           alt={`Work by ${displayName}`}
-          fill
-          className="object-cover transition duration-700 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          unoptimized
+          className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
       </div>
@@ -26,14 +22,11 @@ export default function ArtistCard({ artist }: { artist: Artist }) {
       {/* Info strip */}
       <div className="flex items-center gap-4 p-4">
         {/* Portrait avatar */}
-        <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-parchment/20">
-          <Image
+        <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-parchment/20">
+          <img
             src={artist.portraitUrl}
             alt={displayName}
-            fill
-            className="object-cover"
-            sizes="48px"
-            unoptimized
+            className="h-full w-full object-cover"
           />
         </div>
         <div className="min-w-0">

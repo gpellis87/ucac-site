@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Globe, Instagram, Mail } from "lucide-react";
@@ -31,7 +30,7 @@ export default function ArtistPage({ params }: Props) {
 
       {/* Sticky back bar */}
       <header className="sticky top-0 z-50 border-b border-parchment/10 bg-[#0d0c0b]/92 backdrop-blur-xl px-5 md:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto flex h-14 max-w-[1500px] items-center justify-between">
+        <div className="mx-auto flex h-14 max-w-[1500px] items-center">
           <Link
             href="/artists"
             className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/55 transition hover:text-parchment"
@@ -49,15 +48,11 @@ export default function ArtistPage({ params }: Props) {
           <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:gap-16 items-start">
 
             {/* Portrait */}
-            <div className="relative h-64 w-64 shrink-0 overflow-hidden border border-parchment/15 lg:h-80 lg:w-80">
-              <Image
+            <div className="h-64 w-64 shrink-0 overflow-hidden border border-parchment/15 lg:h-80 lg:w-80">
+              <img
                 src={artist.portraitUrl}
                 alt={displayName}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 256px, 320px"
-                unoptimized
+                className="h-full w-full object-cover"
               />
             </div>
 
@@ -116,14 +111,11 @@ export default function ArtistPage({ params }: Props) {
               <p className="mb-6 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Selected Work</p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {artist.workImages.map((src, i) => (
-                  <div key={i} className="relative aspect-square overflow-hidden border border-parchment/10 bg-[#111]">
-                    <Image
+                  <div key={i} className="aspect-square overflow-hidden border border-parchment/10 bg-[#111]">
+                    <img
                       src={src}
                       alt={`${displayName} — work ${i + 1}`}
-                      fill
-                      className="object-cover transition duration-500 hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      unoptimized
+                      className="h-full w-full object-cover transition duration-500 hover:scale-105"
                     />
                   </div>
                 ))}
