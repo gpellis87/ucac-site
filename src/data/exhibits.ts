@@ -16,6 +16,7 @@ export interface Exhibit {
   imageUrl: string;
   flyerPath?: string;
   videoPath?: string;
+  videoPaths?: string[];
   videoPoster?: string;
   images?: string[];
   tags: string[];

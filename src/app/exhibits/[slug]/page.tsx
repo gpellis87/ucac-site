@@ -102,37 +102,37 @@ export default async function ExhibitPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── Teaser Video ─────────────────────────────────────────────── */}
-      {exhibit.videoPath && (
+      {/* ── Videos ───────────────────────────────────────────────────── */}
+      {exhibit.videoPaths && exhibit.videoPaths.length > 0 && (
         <section className="bg-[#060605]">
           <div className="px-5 pt-10 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto max-w-[1500px]">
               <SectionEyebrow>Exhibition Preview</SectionEyebrow>
-              <video
-                controls
-                playsInline
-                preload="auto"
-                {...(exhibit.videoPoster ? { poster: exhibit.videoPoster } : {})}
-                className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
-                aria-label={`${exhibit.title} teaser video`}
-              >
-                <source src={exhibit.videoPath} type="video/mp4" />
-                <p className="p-4 text-sm text-parchment/60">
-                  Your browser does not support this video.{" "}
-                  <a href={exhibit.videoPath} download className="text-terracotta underline">
-                    Download it here.
-                  </a>
-                </p>
-              </video>
+              <div className={exhibit.videoPaths.length > 1 ? "grid gap-6 md:grid-cols-2" : ""}>
+                {exhibit.videoPaths.map((src, i) => (
+                  <video
+                    key={i}
+                    controls
+                    playsInline
+                    preload="auto"
+                    className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
+                    aria-label={`${exhibit.title} video ${i + 1}`}
+                  >
+                    <source src={src} type="video/mp4" />
+                    <p className="p-4 text-sm text-parchment/60">
+                      Your browser does not support this video.{" "}
+                      <a href={src} download className="text-terracotta underline">Download it here.</a>
+                    </p>
+                  </video>
+                ))}
+              </div>
             </div>
           </div>
           <div className="mt-10 flex items-center gap-4 border-t border-parchment/10 px-5 py-5 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="h-1 w-8 bg-terracotta/70" />
-                <span className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">
-                  Exhibition Details
-                </span>
+                <span className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Exhibition Details</span>
               </div>
               <span className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/30">
                 {exhibit.location} · Monroe, NC
