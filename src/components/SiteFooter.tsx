@@ -59,9 +59,9 @@ export default function SiteFooter() {
             <Image
               src="/sponsors/nc-arts-council.png"
               alt="North Carolina Arts Council"
-              width={240}
-              height={96}
-              className="h-24 w-auto object-contain"
+              width={280}
+              height={112}
+              className="h-28 w-auto object-contain"
             />
           </a>
           <p className="max-w-xs text-xs text-parchment/45 leading-relaxed sm:text-left">
