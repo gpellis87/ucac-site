@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Globe, Instagram, Mail, MapPin } from "lucide-react";
@@ -48,11 +49,14 @@ export default function ArtistPage({ params }: Props) {
           <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:gap-16 items-start">
 
             {/* Portrait */}
-            <div className="h-64 w-64 shrink-0 overflow-hidden border border-parchment/15 lg:h-80 lg:w-80">
-              <img
+            <div className="relative h-64 w-64 shrink-0 overflow-hidden border border-parchment/15 lg:h-80 lg:w-80">
+              <Image
                 src={artist.portraitUrl}
                 alt={displayName}
-                className="h-full w-full object-cover"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 256px, 320px"
               />
             </div>
 
@@ -119,11 +123,13 @@ export default function ArtistPage({ params }: Props) {
               <p className="mb-6 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Selected Work</p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {artist.workImages.map((src, i) => (
-                  <div key={i} className="aspect-square overflow-hidden border border-parchment/10 bg-[#111]">
-                    <img
+                  <div key={i} className="relative aspect-square overflow-hidden border border-parchment/10 bg-[#111]">
+                    <Image
                       src={src}
                       alt={`${displayName} — work ${i + 1}`}
-                      className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                      fill
+                      className="object-cover transition duration-500 hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                 ))}
