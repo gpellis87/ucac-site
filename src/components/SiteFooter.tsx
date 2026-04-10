@@ -51,13 +51,15 @@ export default function SiteFooter() {
             className="h-12 w-auto rounded"
           />
           <div className="h-8 w-px bg-parchment/20" />
-          <Image
-            src="/sponsors/nc-arts-council.png"
-            alt="North Carolina Arts Council"
-            width={120}
-            height={48}
-            className="h-10 w-auto object-contain grayscale brightness-150 opacity-70"
-          />
+          <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer">
+            <Image
+              src="/sponsors/nc-arts-council.png"
+              alt="North Carolina Arts Council"
+              width={120}
+              height={48}
+              className="h-10 w-auto object-contain grayscale brightness-150 opacity-70 transition hover:opacity-100 hover:grayscale-0"
+            />
+          </a>
           <p className="max-w-xs text-xs text-parchment/45 leading-relaxed">
             Supported by the North Carolina Arts Council, a division of the Department of Natural &amp; Cultural Resources.
           </p>
