@@ -9,7 +9,7 @@ import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
 import { exhibits } from "@/data/exhibits";
 
-function Counter({ target, prefix = "", suffix = "" }: { target: number; prefix?: string; suffix?: string }) {
+function Counter({ target, prefix = "", suffix = "", raw = false }: { target: number; prefix?: string; suffix?: string; raw?: boolean }) {
   const [count, setCount] = useState(0);
   useEffect(() => {
     let frame = 0;
@@ -17,14 +17,13 @@ function Counter({ target, prefix = "", suffix = "" }: { target: number; prefix?
     const step = () => {
       frame += 16;
       const progress = Math.min(frame / duration, 1);
-      // Ease out
       const eased = 1 - Math.pow(1 - progress, 3);
       setCount(Math.round(target * eased));
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
   }, [target]);
-  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
+  return <span>{prefix}{raw ? count : count.toLocaleString()}{suffix}</span>;
 }
 
 export default function HomePage() {
@@ -193,11 +192,11 @@ export default function HomePage() {
                 { value: 42000,  label: "Students Served" },
                 { value: 140000, label: "Residents Reached" },
                 { value: 175000, label: "Awarded Annually", prefix: "$" },
-                { value: 1980,   label: "Founded" },
-              ].map(({ value, label, prefix }) => (
+                { value: 1980,   label: "Founded", raw: true },
+              ].map(({ value, label, prefix, raw }) => (
                 <div key={label} className="bg-[#111110] p-8">
                   <p className="display text-5xl text-terracotta">
-                    <Counter target={value} prefix={prefix ?? ""} />
+                    <Counter target={value} prefix={prefix ?? ""} raw={raw} />
                   </p>
                   <p className="mt-2 text-xs uppercase tracking-[0.16em] text-parchment/55">{label}</p>
                 </div>
