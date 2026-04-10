@@ -23,32 +23,81 @@ function parseFilename(filename: string): { title: string; artist: string | null
   return { title: base.slice(0, byIdx).trim(), artist: base.slice(byIdx + 4).trim() };
 }
 
+/**
+ * PortraitVideo — renders a phone-recorded portrait video correctly.
+ *
+ * Phone videos are stored as landscape frames with a "rotate 90°" metadata tag
+ * that many browsers silently ignore. The fix: make the container portrait (9:16),
+ * then size the video element to the container's height and translate+rotate it
+ * so the landscape frame fills the portrait box perfectly.
+ */
+function PortraitVideo({ src, label }: { src: string; label: string }) {
+  return (
+    /* Outer: portrait aspect ratio (9:16) */
+    <div className="relative w-full overflow-hidden bg-black" style={{ paddingTop: "177.78%" }}>
+      {/* Inner: centered, handles the rotation math */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          aria-label={label}
+          style={{
+            /*
+             * The video frame is landscape (16:9). We need it to display portrait.
+             * Set width = container-height (177.78% of container-width),
+             * height = auto (browser keeps 16:9 → becomes container-width tall),
+             * then rotate 90° CW. The result exactly fills the 9:16 container.
+             */
+            width: "177.78%",
+            height: "auto",
+            transform: "rotate(90deg)",
+            transformOrigin: "center",
+          }}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  );
+}
+
 export default function ExhibitGallery({ images, additionalVideoPaths, exhibitTitle }: Props) {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const visibleImages = images.slice(0, visibleCount);
   const hasMore = visibleCount < images.length;
 
+  const hasVideos = additionalVideoPaths && additionalVideoPaths.length > 0;
+
   return (
     <>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-
-        {/* Additional videos rendered as gallery cards */}
-        {additionalVideoPaths?.map((src, i) => (
-          <div key={`vid-${i}`} className="relative aspect-[4/3] overflow-hidden bg-black/60">
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              className="h-full w-full object-cover"
-              aria-label={`${exhibitTitle} video ${i + 1}`}
-            >
-              <source src={src} type="video/mp4" />
-            </video>
+      {/* Additional videos — portrait row above the photo grid */}
+      {hasVideos && (
+        <div className="mb-8">
+          <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">
+            Exhibition Videos
+          </p>
+          <div
+            className={
+              additionalVideoPaths!.length === 1
+                ? "max-w-[280px]"
+                : "grid gap-3 grid-cols-2 max-w-lg"
+            }
+          >
+            {additionalVideoPaths!.map((src, i) => (
+              <PortraitVideo
+                key={`vid-${i}`}
+                src={src}
+                label={`${exhibitTitle} video ${i + 1}`}
+              />
+            ))}
           </div>
-        ))}
+        </div>
+      )}
 
-        {/* Photo grid */}
+      {/* Photo grid */}
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {visibleImages.map(({ url, filename }, i) => {
           const { title, artist } = parseFilename(filename ?? "");
           return (
@@ -75,7 +124,6 @@ export default function ExhibitGallery({ images, additionalVideoPaths, exhibitTi
             </div>
           );
         })}
-
       </div>
 
       {/* Load more */}
