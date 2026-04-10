@@ -231,13 +231,14 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
       </SectionReveal>
 
       {/* ── Connect CTA ──────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad py-24">
+      <SectionReveal className="section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
           <div className="relative overflow-hidden border border-parchment/15 bg-black/40 p-10 text-center md:p-16">
             {/* Subtle terracotta glow */}
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(192,84,42,0.12),transparent_65%)]" />
             <div className="relative z-10">
-              <h2 className="display mt-3 text-4xl md:text-5xl">Get in Touch</h2>
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Connect</p>
+              <h2 className="display mt-2 text-4xl md:text-5xl">Get in Touch</h2>
               <p className="mx-auto mt-4 max-w-md text-parchment/60 text-sm leading-relaxed">
                 We&rsquo;d love to connect — reach out about exhibitions, programming, or anything else.
               </p>

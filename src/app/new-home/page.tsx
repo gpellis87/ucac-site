@@ -125,6 +125,37 @@ export default function NewHomePage() {
         </div>
       </div>
 
+      {/* Map */}
+      <div className="section-pad pb-24">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
+          <p className="mb-5 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40">Find Us</p>
+          <div className="overflow-hidden border border-parchment/15 aspect-[16/7]">
+            <iframe
+              src="https://www.google.com/maps?q=300%20North%20Hayne%20Street%2C%20Monroe%2C%20NC%2028112&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg) saturate(0.6) brightness(0.85)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="300 North Hayne Street, Monroe, NC"
+            />
+          </div>
+          <div className="mt-3 flex items-center justify-between">
+            <p className="text-xs text-parchment/35">300 North Hayne Street · Monroe, NC 28112</p>
+            <a
+              href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28112"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[0.68rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
+            >
+              Open in Google Maps →
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
