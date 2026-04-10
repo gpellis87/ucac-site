@@ -8,6 +8,7 @@ import { getExhibitBySlug, getExhibitSlugs } from "@/sanity/queries";
 import dynamic from "next/dynamic";
 
 const FlyerViewer = dynamic(() => import("@/components/FlyerViewer"), { ssr: false });
+import ExhibitGallery from "@/components/ExhibitGallery";
 
 export const revalidate = 60;
 
@@ -102,30 +103,25 @@ export default async function ExhibitPage({ params }: Props) {
         </div>
       </div>
 
-      {/* ── Videos ───────────────────────────────────────────────────── */}
-      {exhibit.videoPaths && exhibit.videoPaths.length > 0 && (
+      {/* ── Main Video ───────────────────────────────────────────────── */}
+      {exhibit.mainVideoPath && (
         <section className="bg-[#060605]">
           <div className="px-5 pt-10 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto max-w-[1500px]">
               <SectionEyebrow>Exhibition Preview</SectionEyebrow>
-              <div className={exhibit.videoPaths.length > 1 ? "grid gap-6 md:grid-cols-2" : ""}>
-                {exhibit.videoPaths.map((src, i) => (
-                  <video
-                    key={i}
-                    controls
-                    playsInline
-                    preload="auto"
-                    className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
-                    aria-label={`${exhibit.title} video ${i + 1}`}
-                  >
-                    <source src={src} type="video/mp4" />
-                    <p className="p-4 text-sm text-parchment/60">
-                      Your browser does not support this video.{" "}
-                      <a href={src} download className="text-terracotta underline">Download it here.</a>
-                    </p>
-                  </video>
-                ))}
-              </div>
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
+                aria-label={`${exhibit.title} preview video`}
+              >
+                <source src={exhibit.mainVideoPath} type="video/mp4" />
+                <p className="p-4 text-sm text-parchment/60">
+                  Your browser does not support this video.{" "}
+                  <a href={exhibit.mainVideoPath} download className="text-terracotta underline">Download it here.</a>
+                </p>
+              </video>
             </div>
           </div>
           <div className="mt-10 flex items-center gap-4 border-t border-parchment/10 px-5 py-5 md:px-10 lg:px-16 xl:px-24">
@@ -277,20 +273,19 @@ export default async function ExhibitPage({ params }: Props) {
         </div>
       </main>
 
-      {/* ── Image gallery ────────────────────────────────────────────── */}
-      {exhibit.images && exhibit.images.length > 0 && (
+      {/* ── Gallery (additional videos + images) ─────────────────────── */}
+      {((exhibit.additionalVideoPaths && exhibit.additionalVideoPaths.length > 0) ||
+        (exhibit.images && exhibit.images.length > 0)) && (
         <>
           <Divider />
           <section className="px-5 pb-16 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto max-w-[1500px]">
               <SectionEyebrow>Gallery</SectionEyebrow>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {exhibit.images.map((src, i) => (
-                  <div key={i} className="relative aspect-[4/3] overflow-hidden">
-                    <Image src={src} alt={`${exhibit.title} photo ${i + 1}`} fill className="object-cover transition duration-500 hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                  </div>
-                ))}
-              </div>
+              <ExhibitGallery
+                images={exhibit.images ?? []}
+                additionalVideoPaths={exhibit.additionalVideoPaths}
+                exhibitTitle={exhibit.title}
+              />
             </div>
           </section>
         </>

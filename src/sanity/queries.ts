@@ -18,12 +18,9 @@ const EXHIBIT_FIELDS = `
   "imageUrl": heroImage.asset->url,
   "flyerPath": flyerFile.asset->url,
   "videoPath": videoUrl,
-  "videoPaths": array::compact(
-    coalesce(videoFiles[].asset->url, []) +
-    coalesce(videoUrls, []) +
-    select(defined(videoUrl) => [videoUrl], [])
-  ),
-  "images": images[defined(asset)].asset->url,
+  "mainVideoPath": coalesce(mainVideo.asset->url, videoUrl),
+  "additionalVideoPaths": additionalVideos[defined(asset)].asset->url,
+  "images": images[defined(asset)]{ "url": asset->url, "filename": asset->originalFilename },
   "tags": coalesce(tags, []),
   "presentedBy": coalesce(presentedBy, []),
   callToAction

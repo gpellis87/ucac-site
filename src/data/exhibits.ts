@@ -17,8 +17,10 @@ export interface Exhibit {
   flyerPath?: string;
   videoPath?: string;
   videoPaths?: string[];
+  mainVideoPath?: string;
+  additionalVideoPaths?: string[];
   videoPoster?: string;
-  images?: string[];
+  images?: { url: string; filename: string }[];
   tags: string[];
   presentedBy: string[];
   callToAction?: { label: string; href: string };
