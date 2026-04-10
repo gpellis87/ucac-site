@@ -135,7 +135,7 @@ export default function NewHomePage() {
               src="https://www.google.com/maps/embed?pb=!4v1775845512145!6m8!1m7!1s8DlSB1FtnLg3RrhnCrwFCQ!2m2!1d34.98290750404062!2d-80.54950402759681!3f132.21760578911346!4f-1.2581472799853088!5f0.7820865974627469"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: "invert(0.9) hue-rotate(180deg) saturate(0.6) brightness(0.85)" }}
+              style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
