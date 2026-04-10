@@ -52,18 +52,18 @@ export default function NewHomePage() {
               <p>
                 After years of building something meaningful in this community, the Union County
                 Community Arts Council is stepping into a new space — one that gives us the room
-                to grow in the ways we've always envisioned.
+                to grow in the ways we&apos;ve always envisioned.
               </p>
               <p>
-                This move is more than logistical. It's a signal of what's possible: more
+                This move is more than logistical. It&apos;s a signal of what&apos;s possible: more
                 exhibitions, expanded programming, and a genuine gathering place for the
                 creativity Union County has to offer. Our new home will open more doors — for
                 artists, students, families, and everyone who believes in the power of the arts
                 to connect us.
               </p>
               <p>
-                In the coming weeks and months, we'll bring you along as the space takes shape.
-                You'll see the transformation in real time — the people behind it, the milestones
+                In the coming weeks and months, we&apos;ll bring you along as the space takes shape.
+                You&apos;ll see the transformation in real time — the people behind it, the milestones
                 along the way, and the moment the doors finally open. Follow us on{" "}
                 <a
                   href="https://www.facebook.com/profile.php?id=61574355290119"
@@ -77,7 +77,7 @@ export default function NewHomePage() {
               </p>
               <p>
                 This is a community moment. Our artists, supporters, and neighbors are all part
-                of this story — and we can't wait to celebrate the opening with you.
+                of this story — and we can&apos;t wait to celebrate the opening with you.
               </p>
               <p className="text-parchment/60">
                 The best chapter is just beginning.
