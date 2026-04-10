@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ExhibitCard from "@/components/ExhibitCard";
-import { exhibits } from "@/data/exhibits";
+import { getExhibits } from "@/sanity/queries";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Exhibitions | Union County Community Arts Council",
@@ -8,10 +10,11 @@ export const metadata: Metadata = {
     "Current and upcoming exhibitions at the UCCAC Gallery in Monroe, NC — painting, mixed media, student art, and more.",
 };
 
-export default function ExhibitsPage() {
+export default async function ExhibitsPage() {
+  const exhibits = await getExhibits();
+
   return (
     <div className="pb-24">
-      {/* Page header */}
       <div className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
           <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">UCCAC Gallery · Monroe, NC</p>
@@ -25,14 +28,17 @@ export default function ExhibitsPage() {
         </div>
       </div>
 
-      {/* Exhibit grid */}
       <div className="section-pad">
         <div className="mx-auto max-w-[1500px]">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {exhibits.map((exhibit) => (
-              <ExhibitCard key={exhibit.id} exhibit={exhibit} />
-            ))}
-          </div>
+          {exhibits.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {exhibits.map((exhibit) => (
+                <ExhibitCard key={exhibit.id} exhibit={exhibit} />
+              ))}
+            </div>
+          ) : (
+            <p className="py-20 text-center text-parchment/40">No exhibitions are currently listed.</p>
+          )}
         </div>
       </div>
     </div>

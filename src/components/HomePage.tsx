@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Facebook, ChevronDown } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
-import { exhibits } from "@/data/exhibits";
+import type { Exhibit } from "@/data/exhibits";
 
 function Counter({ target, prefix = "", suffix = "", raw = false }: { target: number; prefix?: string; suffix?: string; raw?: boolean }) {
   const [count, setCount] = useState(0);
@@ -26,7 +26,7 @@ function Counter({ target, prefix = "", suffix = "", raw = false }: { target: nu
   return <span>{prefix}{raw ? count : count.toLocaleString()}{suffix}</span>;
 }
 
-export default function HomePage() {
+export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}

@@ -3,19 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, CalendarDays, Users, Mail, Phone } from "lucide-react";
-import { exhibits, statusLabel } from "@/data/exhibits";
+import { statusLabel } from "@/data/exhibits";
+import { getExhibitBySlug, getExhibitSlugs } from "@/sanity/queries";
 import dynamic from "next/dynamic";
 
 const FlyerViewer = dynamic(() => import("@/components/FlyerViewer"), { ssr: false });
 
+export const revalidate = 60;
+
 type Props = { params: { slug: string } };
 
-export function generateStaticParams() {
-  return exhibits.map((e) => ({ slug: e.slug }));
+export async function generateStaticParams() {
+  const slugs = await getExhibitSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const exhibit = exhibits.find((e) => e.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const exhibit = await getExhibitBySlug(params.slug);
   if (!exhibit) return { title: "Exhibit Not Found" };
   return {
     title: `${exhibit.title} | Union County Community Arts Council`,
@@ -43,8 +47,8 @@ function Divider() {
   );
 }
 
-export default function ExhibitPage({ params }: Props) {
-  const exhibit = exhibits.find((e) => e.slug === params.slug);
+export default async function ExhibitPage({ params }: Props) {
+  const exhibit = await getExhibitBySlug(params.slug);
   if (!exhibit) notFound();
 
   const receptionLabel =
@@ -114,11 +118,10 @@ export default function ExhibitPage({ params }: Props) {
                 className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
                 aria-label={`${exhibit.title} teaser video`}
               >
-                <source src={exhibit.videoPath.replace(".mov", ".mp4")} type="video/mp4" />
-                <source src={exhibit.videoPath} type="video/quicktime" />
+                <source src={exhibit.videoPath} type="video/mp4" />
                 <p className="p-4 text-sm text-parchment/60">
                   Your browser does not support this video.{" "}
-                  <a href={exhibit.videoPath.replace(".mov", ".mp4")} download className="text-terracotta underline">
+                  <a href={exhibit.videoPath} download className="text-terracotta underline">
                     Download it here.
                   </a>
                 </p>
