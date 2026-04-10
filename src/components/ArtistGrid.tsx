@@ -54,8 +54,8 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
       {/* Grid */}
       {filtered.length > 0 ? (
         <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {filtered.map((artist) => (
-            <ArtistCard key={artist.id} artist={artist} />
+          {filtered.map((artist, i) => (
+            <ArtistCard key={artist.id} artist={artist} priority={i < 5} />
           ))}
         </div>
       ) : (

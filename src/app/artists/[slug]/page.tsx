@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Globe, Instagram, Mail, MapPin } from "lucide-react";
 import { getArtistBySlug, getArtistSlugs } from "@/sanity/queries";
+import { sanityImg } from "@/sanity/image";
 
 export const revalidate = 60;
 
@@ -54,7 +55,7 @@ export default async function ArtistPage({ params }: Props) {
             {/* Portrait */}
             <div className="relative h-64 w-64 shrink-0 overflow-hidden border border-parchment/15 lg:h-80 lg:w-80">
               <Image
-                src={artist.portraitUrl}
+                src={sanityImg(artist.portraitUrl, { w: 640, h: 640, fit: "crop" })}
                 alt={displayName}
                 fill
                 priority
@@ -130,7 +131,7 @@ export default async function ArtistPage({ params }: Props) {
                 {artist.workImages.map((src, i) => (
                   <div key={i} className="relative aspect-square overflow-hidden border border-parchment/10 bg-[#111]">
                     <Image
-                      src={src}
+                      src={sanityImg(src, { w: 800, h: 800, fit: "crop" })}
                       alt={`${displayName} — work ${i + 1}`}
                       fill
                       className="object-cover transition duration-500 hover:scale-105"

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Artist } from "@/data/artists";
+import { sanityImg } from "@/sanity/image";
 
-export default function ArtistCard({ artist }: { artist: Artist }) {
+export default function ArtistCard({ artist, priority = false }: { artist: Artist; priority?: boolean }) {
   const displayName = `${artist.firstName} ${artist.lastName}`;
 
   return (
@@ -13,9 +14,10 @@ export default function ArtistCard({ artist }: { artist: Artist }) {
       {/* Work thumbnail */}
       <div className="relative aspect-[4/3] overflow-hidden bg-[#111]">
         <Image
-          src={artist.workImages[0]}
+          src={sanityImg(artist.workImages?.[0], { w: 480, fit: "crop" })}
           alt={`Work by ${displayName}`}
           fill
+          priority={priority}
           className="object-cover transition duration-700 group-hover:scale-105"
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
         />
@@ -27,7 +29,7 @@ export default function ArtistCard({ artist }: { artist: Artist }) {
         {/* Portrait avatar */}
         <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-parchment/20">
           <Image
-            src={artist.portraitUrl}
+            src={sanityImg(artist.portraitUrl, { w: 64, h: 64, fit: "crop" })}
             alt={displayName}
             fill
             className="object-cover"
