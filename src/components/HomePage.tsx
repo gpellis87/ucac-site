@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Facebook } from "lucide-react";
+import { Facebook, ChevronDown } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
 import { exhibits } from "@/data/exhibits";
@@ -13,11 +13,13 @@ function Counter({ target, prefix = "", suffix = "" }: { target: number; prefix?
   const [count, setCount] = useState(0);
   useEffect(() => {
     let frame = 0;
-    const duration = 900;
+    const duration = 1100;
     const step = () => {
       frame += 16;
       const progress = Math.min(frame / duration, 1);
-      setCount(Math.round(target * progress));
+      // Ease out
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(target * eased));
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
@@ -29,11 +31,13 @@ export default function HomePage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[88vh] items-center overflow-hidden py-20">
+      <section className="section-pad relative flex min-h-[90vh] items-center overflow-hidden py-20">
+
+        {/* Background image */}
         <motion.div
           initial={{ scale: 1.08, opacity: 0.75 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 1.4, ease: "easeOut" }}
           className="absolute inset-0"
         >
           <Image
@@ -45,57 +49,118 @@ export default function HomePage() {
             className="object-cover object-center"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(0,0,0,0.82),rgba(0,0,0,0.36)_44%,rgba(0,0,0,0.70))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.34),transparent_34%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.24),transparent_42%)]" />
 
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(0,0,0,0.86),rgba(0,0,0,0.32)_50%,rgba(0,0,0,0.72))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.38),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.22),transparent_42%)]" />
+
+        {/* Grain */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.055]"
+          style={{
+            backgroundImage: "radial-gradient(#ffffff 0.7px, transparent 0.7px)",
+            backgroundSize: "3px 3px",
+          }}
+        />
+
+        {/* Content */}
         <div className="relative z-10 mx-auto w-full max-w-[1500px]">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex border border-terracotta/40 bg-black/45 px-3 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/95"
-          >
-            Union County Community Arts Council
-          </motion.p>
+
+          {/* Editorial rule */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+            style={{ originX: 0 }}
+            className="mb-6 h-px w-24 bg-terracotta"
+          />
+
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.75 }}
-            className="editorial-title mt-5 max-w-4xl text-6xl text-parchment md:text-8xl xl:text-9xl [text-shadow:0_10px_28px_rgba(0,0,0,0.42)]"
+            transition={{ delay: 0.35, duration: 0.8 }}
+            className="editorial-title max-w-4xl text-[clamp(4rem,10vw,8.5rem)] leading-[0.9] text-parchment [text-shadow:0_10px_32px_rgba(0,0,0,0.45)]"
           >
-            Art lives<br />here.
+            Art lives<br />
+            <span className="text-terracotta">here.</span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-            className="mt-6 max-w-xl text-base text-parchment/90 leading-relaxed md:text-lg"
+            transition={{ delay: 0.52, duration: 0.7 }}
+            className="mt-7 max-w-lg text-base text-parchment/85 leading-relaxed md:text-lg"
           >
-            Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
+            Exhibitions, education, and community — rooted in Monroe, NC and open to everyone.
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.65, duration: 0.6 }}
+            transition={{ delay: 0.66, duration: 0.6 }}
             className="mt-8 flex flex-wrap gap-3"
           >
             <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
             <Link href="/contact" className="ghost-btn">Get in Touch</Link>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.85, duration: 0.7 }}
+            className="mt-8 text-[0.65rem] uppercase tracking-[0.22em] text-parchment/30"
+          >
+            Monroe, NC &nbsp;·&nbsp; Est. 1980 &nbsp;·&nbsp; 501(c)(3) Nonprofit
+          </motion.p>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1, duration: 0.7 }}
+          className="absolute bottom-0 inset-x-0 flex items-center justify-between border-t border-parchment/15 bg-black/40 px-5 py-3 backdrop-blur-sm md:px-10 lg:px-16 xl:px-24"
+        >
+          <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
+              </span>
+              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70">
+                {exhibits.length} Exhibitions On View &amp; Upcoming
+              </span>
+            </div>
+            <motion.div
+              animate={{ y: [0, 4, 0] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronDown size={15} className="text-terracotta/60" />
+            </motion.div>
+          </div>
+        </motion.div>
+
       </section>
 
       {/* ── Mission strip ────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad py-10">
-        <div className="mx-auto max-w-[1500px] border-y border-parchment/20 py-8">
-          <p className="display text-center text-2xl leading-tight md:text-4xl">
-            We champion art as civic infrastructure for imagination, equity, and collective joy.
-          </p>
+      <SectionReveal className="section-pad bg-[#111110] py-14">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="flex gap-6 items-start">
+            <span className="display text-[5rem] leading-none text-terracotta/25 select-none hidden md:block">&ldquo;</span>
+            <div>
+              <p className="display text-2xl leading-snug text-parchment/90 md:text-[2rem]">
+                We champion art as civic infrastructure — for imagination, equity, and collective joy.
+              </p>
+              <p className="mt-4 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/35">
+                Union County Community Arts Council
+              </p>
+            </div>
+          </div>
         </div>
       </SectionReveal>
 
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
-      <SectionReveal className="section-pad py-16">
+      <SectionReveal className="section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-2 flex items-end justify-between gap-4">
             <div>
@@ -106,7 +171,7 @@ export default function HomePage() {
               View all
             </Link>
           </div>
-          <div className="mt-2 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent mb-10" />
+          <div className="mt-3 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent mb-10" />
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {exhibits.map((exhibit) => (
               <ExhibitCard key={exhibit.id} exhibit={exhibit} />
@@ -119,47 +184,58 @@ export default function HomePage() {
       </SectionReveal>
 
       {/* ── Stats ────────────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad py-16">
-        <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-2 xl:grid-cols-4">
-          <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={42000} /></p>
-            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Students Served</p>
-          </div>
-          <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={140000} /></p>
-            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Residents Reached</p>
-          </div>
-          <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={175000} prefix="$" /></p>
-            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Awarded Annually</p>
-          </div>
-          <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta"><Counter target={1980} /></p>
-            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Founded</p>
+      <SectionReveal>
+        <div className="bg-[#111110] section-pad py-16">
+          <div className="mx-auto max-w-[1500px]">
+            <p className="mb-10 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Our Impact</p>
+            <div className="grid gap-px bg-parchment/10 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                { value: 42000,  label: "Students Served" },
+                { value: 140000, label: "Residents Reached" },
+                { value: 175000, label: "Awarded Annually", prefix: "$" },
+                { value: 1980,   label: "Founded" },
+              ].map(({ value, label, prefix }) => (
+                <div key={label} className="bg-[#111110] p-8">
+                  <p className="display text-5xl text-terracotta">
+                    <Counter target={value} prefix={prefix ?? ""} />
+                  </p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-parchment/55">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </SectionReveal>
 
       {/* ── Connect CTA ──────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad pb-24">
-        <div className="mx-auto max-w-[1500px] border border-parchment/20 bg-black/30 p-10 text-center md:p-14">
-          <h2 className="display text-4xl md:text-5xl">Connect With Us</h2>
-          <p className="mx-auto mt-4 max-w-xl text-parchment/75">
-            Located in downtown Monroe, NC. Stop by, give us a call, or follow us on Facebook to stay up to date on exhibitions and events.
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link href="/contact" className="accent-btn">Contact Us</Link>
-            <a
-              href="https://www.facebook.com/profile.php?id=61574355290119"
-              target="_blank"
-              rel="noreferrer"
-              className="ghost-btn inline-flex items-center gap-2"
-            >
-              <Facebook size={14} /> Follow on Facebook
-            </a>
+      <SectionReveal className="section-pad py-24">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="relative overflow-hidden border border-parchment/15 bg-black/40 p-10 text-center md:p-16">
+            {/* Subtle terracotta glow */}
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(192,84,42,0.12),transparent_65%)]" />
+            <div className="relative z-10">
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Come See Us</p>
+              <h2 className="display mt-3 text-4xl md:text-5xl">300 North Hayne Street<br />Monroe, NC</h2>
+              <p className="mx-auto mt-4 max-w-md text-parchment/60 text-sm leading-relaxed">
+                Mon–Thu 10 AM–4 PM &nbsp;·&nbsp; Select Saturdays 10 AM–2 PM<br />
+                Office: Mon–Fri 8:30 AM–4:30 PM
+              </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Link href="/contact" className="accent-btn">Contact Us</Link>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61574355290119"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ghost-btn inline-flex items-center gap-2"
+                >
+                  <Facebook size={14} /> Follow on Facebook
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </SectionReveal>
+
     </div>
   );
 }
