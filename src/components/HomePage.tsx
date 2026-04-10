@@ -31,7 +31,7 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[90vh] items-center overflow-hidden py-20">
+      <section className="section-pad relative flex min-h-[600px] max-h-[860px] h-[90vh] items-center overflow-hidden py-20">
 
         {/* Background image */}
         <motion.div
@@ -106,15 +106,15 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
 
         </div>
 
-        {/* Scroll indicator */}
+        {/* Bottom bar */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.7 }}
-          className="absolute bottom-0 inset-x-0 flex items-center justify-between border-t border-parchment/15 bg-black/40 px-5 py-3 backdrop-blur-sm md:px-10 lg:px-16 xl:px-24"
+          className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-black/40 backdrop-blur-sm"
         >
-          <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between">
-            <div className="flex items-center gap-3">
+          <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 py-3">
+            <div className="flex items-center gap-3 shrink-0">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
@@ -123,9 +123,24 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
                 {exhibits.length} Exhibitions On View &amp; Upcoming
               </span>
             </div>
+
+            <Link
+              href="/new-home"
+              className="group hidden md:flex items-center gap-3 border-l border-parchment/15 pl-4 transition hover:opacity-100"
+            >
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
+              </span>
+              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-terracotta/80 group-hover:text-terracotta transition">
+                Announcement &mdash; We&rsquo;re Moving
+              </span>
+            </Link>
+
             <motion.div
               animate={{ y: [0, 4, 0] }}
               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+              className="shrink-0"
             >
               <ChevronDown size={15} className="text-terracotta/60" />
             </motion.div>
@@ -135,28 +150,28 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
       </section>
 
       {/* ── Moving Announcement ──────────────────────────────────────── */}
-      <div className="section-pad bg-terracotta/10 border-y border-terracotta/25 py-5">
-        <div className="mx-auto flex max-w-[1500px] flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
-            </span>
-            <div>
-              <p className="text-[0.65rem] uppercase tracking-[0.2em] text-terracotta">Announcement</p>
-              <p className="mt-0.5 text-sm text-parchment/85">
-                We&rsquo;re moving — UCCAC is heading to a new home. Follow the journey.
-              </p>
+      <SectionReveal className="section-pad bg-[#100f0e] py-14 border-b border-parchment/10">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="relative overflow-hidden border border-terracotta/25 bg-black/40 p-8 md:p-12">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.15),transparent_60%)]" />
+            <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Announcement</p>
+                <h2 className="display mt-2 text-3xl text-parchment md:text-4xl">We&rsquo;re Moving to a New Home</h2>
+                <p className="mt-3 max-w-lg text-sm text-parchment/65 leading-relaxed">
+                  A new space at 300 North Hayne Street — more room for exhibitions, programs, and the community we serve. Follow the journey as it unfolds.
+                </p>
+              </div>
+              <Link
+                href="/new-home"
+                className="shrink-0 accent-btn self-start md:self-auto"
+              >
+                Read the Announcement
+              </Link>
             </div>
           </div>
-          <Link
-            href="/new-home"
-            className="shrink-0 border border-terracotta px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
-          >
-            Learn More
-          </Link>
         </div>
-      </div>
+      </SectionReveal>
 
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
       <SectionReveal className="section-pad py-20">
