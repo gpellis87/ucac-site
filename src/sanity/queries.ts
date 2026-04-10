@@ -10,7 +10,7 @@ const EXHIBIT_FIELDS = `
   description,
   "details": coalesce(details, []),
   "location": coalesce(location, "UCCAC Gallery"),
-  "address": coalesce(address, "300 North Hayne Street, Monroe, NC 28111"),
+  "address": coalesce(address, "300 North Hayne Street, Monroe, NC 28112"),
   receptionDate,
   receptionTime,
   submissionDeadline,

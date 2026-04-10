@@ -33,7 +33,8 @@ export default function SiteFooter() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Contact</p>
           <div className="mt-3 space-y-2 text-sm text-parchment/85">
-            <p>300 North Hayne Street, Monroe, NC 28111</p>
+            <p>300 North Hayne Street, Monroe, NC 28112</p>
+            <p>PO Box 576, Monroe, NC 28112</p>
             <p>(704) 283-2784</p>
             <p>events@unionarts.org</p>
             <p>Mon–Fri: 8:00 AM – 4:00 PM</p>
@@ -41,31 +42,33 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-6">
-        <div className="mb-5 flex flex-wrap items-center gap-5">
+      <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-8">
+        <div className="mb-6 flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-center sm:gap-8">
           <Image
             src="/sponsors/ucac-logo.png"
             alt="Union County Community Arts Council"
-            width={72}
-            height={72}
-            className="h-[72px] w-auto rounded"
+            width={96}
+            height={96}
+            className="h-24 w-auto rounded"
           />
-          <div className="h-12 w-px bg-parchment/20" />
+          <div className="h-px w-16 bg-parchment/20 sm:h-16 sm:w-px" />
           <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer" className="transition hover:opacity-75">
             <Image
               src="/sponsors/nc-arts-council.png"
               alt="North Carolina Arts Council"
-              width={160}
-              height={64}
-              className="h-14 w-auto object-contain"
+              width={200}
+              height={80}
+              className="h-20 w-auto object-contain"
             />
           </a>
-          <p className="max-w-xs text-xs text-parchment/45 leading-relaxed">
+          <p className="max-w-xs text-xs text-parchment/45 leading-relaxed sm:text-left">
             Supported by the North Carolina Arts Council, a division of the Department of Natural &amp; Cultural Resources.
           </p>
         </div>
-        <p className="text-xs text-parchment/60">Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
-        <p className="mt-1 text-xs text-parchment/60">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
+        <div className="text-center">
+          <p className="text-xs text-parchment/60">Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
+          <p className="mt-1 text-xs text-parchment/60">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );

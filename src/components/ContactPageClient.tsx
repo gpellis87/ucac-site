@@ -33,10 +33,11 @@ export default function ContactPageClient() {
             <p className="text-lg font-medium text-parchment">UCCAC Gallery</p>
             <p className="mt-1 text-sm text-parchment/70 leading-relaxed">
               300 North Hayne Street<br />
-              Monroe, NC 28111
+              Monroe, NC 28112<br />
+              PO Box 576
             </p>
             <a
-              href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28111"
+              href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28112"
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-block text-[0.68rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
@@ -100,7 +101,7 @@ export default function ContactPageClient() {
         <div className="mx-auto max-w-[1500px] overflow-hidden border border-parchment/20">
           <iframe
             title="UCCAC office map location"
-            src="https://www.google.com/maps?q=300%20North%20Hayne%20Street%2C%20Monroe%2C%20NC%2028111&output=embed"
+            src="https://www.google.com/maps?q=300%20North%20Hayne%20Street%2C%20Monroe%2C%20NC%2028112&output=embed"
             width="100%"
             height="400"
             loading="lazy"
