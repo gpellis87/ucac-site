@@ -3,14 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { SectionReveal } from "@/components/SectionReveal";
-import { events } from "@/data/events";
-import EventCard from "@/components/EventCard";
-import { formatEventDate } from "@/lib/event-utils";
 import { useEffect, useState } from "react";
-import { DONATE_PORTAL_URL } from "@/lib/site-config";
+import { Facebook } from "lucide-react";
+import { SectionReveal } from "@/components/SectionReveal";
+import ExhibitCard from "@/components/ExhibitCard";
+import { exhibits } from "@/data/exhibits";
 
-function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
+function Counter({ target, prefix = "", suffix = "" }: { target: number; prefix?: string; suffix?: string }) {
   const [count, setCount] = useState(0);
   useEffect(() => {
     let frame = 0;
@@ -23,22 +22,13 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
     };
     requestAnimationFrame(step);
   }, [target]);
-  return (
-    <span>
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  );
+  return <span>{prefix}{count.toLocaleString()}{suffix}</span>;
 }
 
 export default function HomePage() {
-  const featured = events.slice(0, 4);
-  const featuredEvent = [...events].sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-  )[0];
-
   return (
     <div>
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="section-pad relative flex min-h-[88vh] items-center overflow-hidden py-20">
         <motion.div
           initial={{ scale: 1.08, opacity: 0.75 }}
@@ -55,157 +45,118 @@ export default function HomePage() {
             className="object-cover object-center"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(0,0,0,0.8),rgba(0,0,0,0.34)_44%,rgba(0,0,0,0.68))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(0,0,0,0.82),rgba(0,0,0,0.36)_44%,rgba(0,0,0,0.70))]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.34),transparent_34%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.24),transparent_42%)]" />
-        <div className="relative z-10 mx-auto grid w-full max-w-[1500px] items-end gap-12 lg:grid-cols-[1.25fr_0.75fr]">
-          <div className="max-w-3xl">
-            <p className="mb-4 inline-flex border border-terracotta/40 bg-black/45 px-3 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/95">
-              Union County Community Arts Council
-            </p>
+
+        <div className="relative z-10 mx-auto w-full max-w-[1500px]">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="inline-flex border border-terracotta/40 bg-black/45 px-3 py-1 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/95"
+          >
+            Union County Community Arts Council
+          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75 }}
-            className="editorial-title max-w-4xl text-6xl text-parchment md:text-8xl xl:text-9xl [text-shadow:0_10px_28px_rgba(0,0,0,0.42)]"
+            transition={{ delay: 0.35, duration: 0.75 }}
+            className="editorial-title mt-5 max-w-4xl text-6xl text-parchment md:text-8xl xl:text-9xl [text-shadow:0_10px_28px_rgba(0,0,0,0.42)]"
           >
-            Art lives here.
+            Art lives<br />here.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.12, duration: 0.75 }}
-            className="mt-6 max-w-xl text-base text-parchment/90 md:text-lg"
+            transition={{ delay: 0.5, duration: 0.7 }}
+            className="mt-6 max-w-xl text-base text-parchment/90 leading-relaxed md:text-lg"
           >
             Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
           </motion.p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/events" className="accent-btn">
-              Explore Events
-            </Link>
-            <a href={DONATE_PORTAL_URL} className="ghost-btn">
-              Get Involved
-            </a>
-          </div>
-          </div>
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="hidden lg:block"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.65, duration: 0.6 }}
+            className="mt-8 flex flex-wrap gap-3"
           >
-            <div className="panel-dark border-parchment/30 bg-charcoal/72 p-7 shadow-[0_20px_42px_rgba(0,0,0,0.35)]">
-              <div className="mb-5 h-px w-full bg-gradient-to-r from-terracotta/85 via-terracotta/35 to-transparent" />
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-[0.66rem] uppercase tracking-[0.2em] text-parchment/85">
-                  Featured Event
-                </p>
-                <span className="border border-terracotta/45 bg-terracotta/15 px-2 py-1 text-[0.6rem] uppercase tracking-[0.16em] text-parchment/95">
-                  Next Up
-                </span>
-              </div>
-              <p className="mt-4 display text-3xl leading-tight text-parchment [text-shadow:0_8px_20px_rgba(0,0,0,0.3)]">
-                {featuredEvent.title}
-              </p>
-              <p className="mt-4 text-[0.68rem] uppercase tracking-[0.15em] text-terracotta">
-                {formatEventDate(featuredEvent.date)} · {featuredEvent.time}
-              </p>
-              <p className="mt-1 text-xs uppercase tracking-[0.12em] text-parchment/75">
-                {featuredEvent.location}
-              </p>
-              <p className="mt-4 line-clamp-2 text-sm leading-relaxed text-parchment/86">
-                {featuredEvent.description}
-              </p>
-              <Link href={`/events/${featuredEvent.slug}`} className="accent-btn mt-6 w-full px-4 py-2 text-[0.68rem]">
-                View featured event
-              </Link>
-            </div>
+            <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
+            <Link href="/contact" className="ghost-btn">Get in Touch</Link>
           </motion.div>
         </div>
       </section>
 
+      {/* ── Mission strip ────────────────────────────────────────────── */}
       <SectionReveal className="section-pad py-10">
         <div className="mx-auto max-w-[1500px] border-y border-parchment/20 py-8">
-          <p className="display text-center text-3xl leading-tight md:text-5xl">
+          <p className="display text-center text-2xl leading-tight md:text-4xl">
             We champion art as civic infrastructure for imagination, equity, and collective joy.
           </p>
         </div>
       </SectionReveal>
 
+      {/* ── Current Exhibitions ───────────────────────────────────────── */}
       <SectionReveal className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 flex items-end justify-between gap-4">
-            <h2 className="display text-4xl md:text-6xl">Featured Events</h2>
-            <Link href="/events" className="link-underline text-sm uppercase tracking-[0.15em]">
+          <div className="mb-2 flex items-end justify-between gap-4">
+            <div>
+              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-terracotta">On View Now &amp; Upcoming</p>
+              <h2 className="display mt-2 text-4xl text-parchment md:text-5xl">Current Exhibitions</h2>
+            </div>
+            <Link href="/exhibits" className="link-underline hidden text-sm uppercase tracking-[0.15em] md:block">
               View all
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {featured.map((event) => (
-              <EventCard key={event.id} event={event} />
+          <div className="mt-2 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent mb-10" />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {exhibits.map((exhibit) => (
+              <ExhibitCard key={exhibit.id} exhibit={exhibit} />
             ))}
           </div>
-        </div>
-      </SectionReveal>
-
-      <SectionReveal className="section-pad py-16">
-        <div className="mx-auto grid max-w-[1500px] items-stretch gap-8 lg:grid-cols-2">
-          <div className="relative min-h-[420px] overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?auto=format&fit=crop&w=1600&q=80"
-              alt="Visitors in a modern art gallery"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="flex flex-col justify-center border border-parchment/20 bg-black/20 p-8 md:p-12">
-            <p className="display text-3xl leading-tight text-parchment md:text-5xl">
-              &ldquo;UCCAC transforms empty spaces into places where community and creativity meet.&rdquo;
-            </p>
-            <p className="mt-5 max-w-md text-parchment/75">
-              For nearly three decades, we have connected artists, students, and neighbors through exhibitions, grants, cultural events, and youth arts access.
-            </p>
-            <Link href="/about" className="accent-btn mt-8 w-fit">
-              Our Story
-            </Link>
+          <div className="mt-10 md:hidden text-center">
+            <Link href="/exhibits" className="ghost-btn px-5 py-2.5 text-xs">View All Exhibitions</Link>
           </div>
         </div>
       </SectionReveal>
 
+      {/* ── Stats ────────────────────────────────────────────────────── */}
       <SectionReveal className="section-pad py-16">
-          <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-2 xl:grid-cols-4">
           <div className="border border-parchment/20 p-6">
             <p className="display text-5xl text-terracotta"><Counter target={42000} /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Students Served</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Students Served</p>
           </div>
           <div className="border border-parchment/20 p-6">
             <p className="display text-5xl text-terracotta"><Counter target={140000} /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Residents Reached</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Residents Reached</p>
           </div>
           <div className="border border-parchment/20 p-6">
-            <p className="display text-5xl text-terracotta">$<Counter target={175000} /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Awarded Annually</p>
+            <p className="display text-5xl text-terracotta"><Counter target={175000} prefix="$" /></p>
+            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Awarded Annually</p>
           </div>
           <div className="border border-parchment/20 p-6">
             <p className="display text-5xl text-terracotta"><Counter target={1980} /></p>
-            <p className="mt-1 uppercase tracking-[0.14em] text-parchment/70">Founded</p>
+            <p className="mt-1 text-xs uppercase tracking-[0.14em] text-parchment/70">Founded</p>
           </div>
         </div>
       </SectionReveal>
 
+      {/* ── Connect CTA ──────────────────────────────────────────────── */}
       <SectionReveal className="section-pad pb-24">
         <div className="mx-auto max-w-[1500px] border border-parchment/20 bg-black/30 p-10 text-center md:p-14">
-          <h2 className="display text-4xl md:text-6xl">Support the Next Creative Chapter</h2>
+          <h2 className="display text-4xl md:text-5xl">Connect With Us</h2>
           <p className="mx-auto mt-4 max-w-xl text-parchment/75">
-            Every contribution helps us fund classes, exhibitions, artist grants, and public art that belongs to everyone.
+            Located in downtown Monroe, NC. Stop by, give us a call, or follow us on Facebook to stay up to date on exhibitions and events.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <a href={DONATE_PORTAL_URL} className="accent-btn">
-              Donate
+            <Link href="/contact" className="accent-btn">Contact Us</Link>
+            <a
+              href="https://www.facebook.com/profile.php?id=61574355290119"
+              target="_blank"
+              rel="noreferrer"
+              className="ghost-btn inline-flex items-center gap-2"
+            >
+              <Facebook size={14} /> Follow on Facebook
             </a>
-            <Link href="/contact" className="ghost-btn">
-              Volunteer
-            </Link>
           </div>
         </div>
       </SectionReveal>

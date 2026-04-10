@@ -7,11 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/", label: "Events" },
-  { href: "/artists", label: "Artists" },
-  { href: "/", label: "About" },
-  { href: "/", label: "Contact" },
+  { href: "/",          label: "Home" },
+  { href: "/exhibits",  label: "Exhibitions" },
+  { href: "/artists",   label: "Artists" },
+  { href: "/contact",   label: "Contact" },
 ];
 
 export default function SiteNav() {
@@ -21,6 +20,9 @@ export default function SiteNav() {
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <>
@@ -41,7 +43,7 @@ export default function SiteNav() {
                 key={link.href}
                 href={link.href}
                 className={`link-underline text-sm uppercase tracking-[0.14em] ${
-                  pathname === link.href ? "text-terracotta" : "text-parchment/95"
+                  isActive(link.href) ? "text-terracotta" : "text-parchment/95"
                 }`}
               >
                 {link.label}
@@ -86,7 +88,7 @@ export default function SiteNav() {
                   >
                     <Link
                       href={link.href}
-                      className="display text-4xl text-parchment"
+                      className={`display text-4xl ${isActive(link.href) ? "text-terracotta" : "text-parchment"}`}
                       onClick={() => setOpen(false)}
                     >
                       {link.label}

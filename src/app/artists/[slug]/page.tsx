@@ -27,22 +27,22 @@ export default function ArtistPage({ params }: Props) {
   const displayName = `${artist.firstName} ${artist.lastName}`;
 
   return (
-    <div className="bg-[#0d0c0b] text-parchment flex flex-col min-h-screen">
+    <div className="pb-24">
 
-      {/* Sticky back bar */}
-      <header className="sticky top-0 z-50 border-b border-parchment/10 bg-[#0d0c0b]/92 backdrop-blur-xl px-5 md:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto flex h-14 max-w-[1500px] items-center">
+      {/* Breadcrumb */}
+      <div className="section-pad border-b border-parchment/10 py-3">
+        <div className="mx-auto max-w-[1500px]">
           <Link
             href="/artists"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/55 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             All Artists
           </Link>
         </div>
-      </header>
+      </div>
 
-      <main className="flex-1 px-5 py-14 md:px-10 lg:px-16 xl:px-24">
+      <div className="section-pad py-14">
         <div className="mx-auto max-w-[1500px]">
 
           {/* Artist header */}
@@ -138,15 +138,7 @@ export default function ArtistPage({ params }: Props) {
           )}
 
         </div>
-      </main>
-
-      {/* Footer */}
-      <div className="border-t border-parchment/10 px-6 py-5 text-center">
-        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/25">
-          &copy; {new Date().getFullYear()} Union County Community Arts Council &mdash; 501(c)(3) Nonprofit
-        </p>
       </div>
-
     </div>
   );
 }

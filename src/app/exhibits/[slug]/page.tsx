@@ -24,8 +24,8 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 const statusColors: Record<string, string> = {
-  "now-on-view":    "bg-terracotta text-parchment",
-  "opening-soon":   "border border-parchment/50 text-parchment",
+  "now-on-view":      "bg-terracotta text-parchment",
+  "opening-soon":     "border border-parchment/50 text-parchment",
   "call-for-artists": "border border-terracotta/70 text-terracotta",
 };
 
@@ -51,20 +51,20 @@ export default function ExhibitPage({ params }: Props) {
     exhibit.status === "opening-soon" ? "Celebration" : "Reception";
 
   return (
-    <div className="bg-[#0d0c0b] text-parchment flex flex-col">
+    <div className="pb-0">
 
-      {/* ── Sticky back bar ─────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 border-b border-parchment/10 bg-[#0d0c0b]/92 backdrop-blur-xl px-5 md:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto flex h-14 max-w-[1500px] items-center">
+      {/* ── Breadcrumb ───────────────────────────────────────────────── */}
+      <div className="section-pad border-b border-parchment/10 px-5 py-3 md:px-10 lg:px-16 xl:px-24">
+        <div className="mx-auto max-w-[1500px]">
           <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/55 transition hover:text-parchment"
+            href="/exhibits"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
-            Back
+            All Exhibitions
           </Link>
         </div>
-      </header>
+      </div>
 
       {/* ── Hero ────────────────────────────────────────────────────── */}
       <div className="relative h-[42vh] max-h-[520px] min-h-[300px] overflow-hidden">
@@ -76,7 +76,6 @@ export default function ExhibitPage({ params }: Props) {
           sizes="100vw"
           className="object-cover"
         />
-        {/* Deeper gradient so title is always legible */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0d0c0b] via-[#0d0c0b]/60 to-black/10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(192,84,42,0.18),transparent_50%)]" />
 
@@ -126,7 +125,6 @@ export default function ExhibitPage({ params }: Props) {
               </video>
             </div>
           </div>
-          {/* Bridge strip — signals more content below */}
           <div className="mt-10 flex items-center gap-4 border-t border-parchment/10 px-5 py-5 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between">
               <div className="flex items-center gap-3">
@@ -194,10 +192,9 @@ export default function ExhibitPage({ params }: Props) {
           </article>
 
           {/* Right: info sidebar */}
-          <aside className="lg:sticky lg:top-20 self-start">
+          <aside className="lg:sticky lg:top-24 self-start">
             <div className="border border-parchment/15 bg-black/30 divide-y divide-parchment/10">
 
-              {/* Location */}
               <div className="p-5">
                 <p className="mb-2 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Location</p>
                 <div className="flex items-start gap-2.5">
@@ -209,7 +206,6 @@ export default function ExhibitPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Reception / Celebration */}
               {exhibit.receptionDate && (
                 <div className="p-5">
                   <p className="mb-2 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">
@@ -231,7 +227,6 @@ export default function ExhibitPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Submission deadline */}
               {exhibit.submissionDeadline && (
                 <div className="p-5">
                   <p className="mb-2 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Submissions Due</p>
@@ -258,7 +253,6 @@ export default function ExhibitPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Tags */}
               {exhibit.tags.length > 0 && (
                 <div className="p-5">
                   <div className="flex flex-wrap gap-1.5">
@@ -271,7 +265,6 @@ export default function ExhibitPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Contact */}
               <div className="p-5">
                 <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Questions?</p>
                 <a href="mailto:events@unionarts.org" className="flex items-center gap-2 text-sm text-parchment/70 transition hover:text-terracotta">
@@ -287,7 +280,7 @@ export default function ExhibitPage({ params }: Props) {
         </div>
       </main>
 
-      {/* ── Image gallery (shown when photos are added) ──────────────── */}
+      {/* ── Image gallery ────────────────────────────────────────────── */}
       {exhibit.images && exhibit.images.length > 0 && (
         <>
           <Divider />
@@ -326,13 +319,6 @@ export default function ExhibitPage({ params }: Props) {
           </section>
         </>
       )}
-
-      {/* ── Footer ───────────────────────────────────────────────────── */}
-      <div className="border-t border-parchment/10 px-6 py-5 text-center">
-        <p className="text-[0.62rem] uppercase tracking-[0.2em] text-parchment/25">
-          &copy; {new Date().getFullYear()} Union County Community Arts Council &mdash; 501(c)(3) Nonprofit
-        </p>
-      </div>
 
     </div>
   );

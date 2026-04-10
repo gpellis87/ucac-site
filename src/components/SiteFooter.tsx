@@ -23,11 +23,10 @@ export default function SiteFooter() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Quick Links</p>
           <div className="mt-3 flex flex-col gap-2 text-sm">
-            <Link href="/">Home</Link>
-            <Link href="/">Events</Link>
-            <Link href="/">Artists</Link>
-            <Link href="/">About</Link>
-            <Link href="/">Contact</Link>
+            <Link href="/" className="text-parchment/80 transition hover:text-parchment">Home</Link>
+            <Link href="/exhibits" className="text-parchment/80 transition hover:text-parchment">Exhibitions</Link>
+            <Link href="/artists" className="text-parchment/80 transition hover:text-parchment">Artists</Link>
+            <Link href="/contact" className="text-parchment/80 transition hover:text-parchment">Contact</Link>
           </div>
         </div>
         <div>
@@ -43,7 +42,7 @@ export default function SiteFooter() {
       </div>
       <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-6 text-xs text-parchment/60">
         <p>Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
-        <p className="mt-1">© {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
+        <p className="mt-1">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
       </div>
     </footer>
   );
