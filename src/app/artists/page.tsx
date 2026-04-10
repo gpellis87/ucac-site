@@ -29,9 +29,14 @@ export default function ArtistsPage() {
       <div className="section-pad">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {artists.map((artist) => (
-              <ArtistCard key={artist.id} artist={artist} />
-            ))}
+            {[...artists]
+              .sort((a, b) =>
+                a.lastName.localeCompare(b.lastName) ||
+                a.firstName.localeCompare(b.firstName)
+              )
+              .map((artist) => (
+                <ArtistCard key={artist.id} artist={artist} />
+              ))}
           </div>
 
           {/* CTA */}
