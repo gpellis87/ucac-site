@@ -36,7 +36,7 @@ export default function SiteFooter() {
             <p>300 North Hayne Street, Monroe, NC 28111</p>
             <p>(704) 283-2784</p>
             <p>events@unionarts.org</p>
-            <p>Mon–Fri: 8:30 AM – 4:30 PM</p>
+            <p>Mon–Fri: 8:00 AM – 4:00 PM</p>
             <p>Sat–Sun: Closed</p>
           </div>
         </div>

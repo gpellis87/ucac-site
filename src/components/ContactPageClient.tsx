@@ -86,7 +86,7 @@ export default function ContactPageClient() {
               </div>
               <div>
                 <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/40 mb-1">Office</p>
-                <p>Mon – Fri &nbsp; 8:30 AM – 4:30 PM</p>
+                <p>Mon – Fri &nbsp; 8:00 AM – 4:00 PM</p>
                 <p className="text-parchment/50">Sat – Sun: Closed</p>
               </div>
             </div>
