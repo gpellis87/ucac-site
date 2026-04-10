@@ -23,7 +23,7 @@ export default function SponsorsStrip() {
         <p className="mb-8 text-center text-[0.68rem] uppercase tracking-[0.22em] text-parchment/30">
           Supported By
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-3">
           {sponsors.map(({ name, file, href, imgClass }) => (
             <a
               key={name}
@@ -31,7 +31,7 @@ export default function SponsorsStrip() {
               target="_blank"
               rel="noreferrer"
               title={name}
-              className="flex h-[88px] w-[168px] items-center justify-center rounded-xl bg-[#f8f6f3] p-5 shadow-md transition duration-200 hover:opacity-75"
+              className="flex h-[76px] w-[144px] items-center justify-center rounded-xl bg-[#f8f6f3] p-4 shadow-md transition duration-200 hover:opacity-75"
             >
               <Image
                 src={`/sponsors/${file}`}
