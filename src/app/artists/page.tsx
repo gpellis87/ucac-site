@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ArtistCard from "@/components/ArtistCard";
+import ArtistGrid from "@/components/ArtistGrid";
 import { artists } from "@/data/artists";
 
 export const metadata: Metadata = {
@@ -25,19 +25,10 @@ export default function ArtistsPage() {
         </div>
       </div>
 
-      {/* Grid */}
+      {/* Grid + search */}
       <div className="section-pad">
         <div className="mx-auto max-w-[1500px]">
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {[...artists]
-              .sort((a, b) =>
-                a.lastName.localeCompare(b.lastName) ||
-                a.firstName.localeCompare(b.firstName)
-              )
-              .map((artist) => (
-                <ArtistCard key={artist.id} artist={artist} />
-              ))}
-          </div>
+          <ArtistGrid artists={artists} />
 
           {/* CTA */}
           <div className="mt-14 flex items-center justify-between gap-4 border border-parchment/15 bg-black/30 p-6">
