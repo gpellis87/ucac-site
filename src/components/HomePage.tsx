@@ -157,6 +157,15 @@ export default function HomePage() {
         </div>
       </SectionReveal>
 
+      {/* ── Mission strip ────────────────────────────────────────────── */}
+      <SectionReveal className="section-pad bg-[#111110] py-14">
+        <div className="mx-auto max-w-[1500px] border-y border-parchment/15 py-10">
+          <p className="display text-center text-2xl leading-snug text-parchment/90 md:text-[2rem]">
+            We champion art as civic infrastructure — for imagination, equity, and collective joy.
+          </p>
+        </div>
+      </SectionReveal>
+
       {/* ── Stats ────────────────────────────────────────────────────── */}
       <SectionReveal>
         <div className="bg-[#111110] section-pad py-16">
