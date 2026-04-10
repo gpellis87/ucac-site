@@ -23,7 +23,7 @@ const EXHIBIT_FIELDS = `
     defined(videoUrl) => [videoUrl],
     []
   ),
-  "images": images[].asset->url,
+  "images": images[defined(asset)].asset->url,
   "tags": coalesce(tags, []),
   "presentedBy": coalesce(presentedBy, []),
   callToAction
