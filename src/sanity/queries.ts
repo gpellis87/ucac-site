@@ -18,10 +18,10 @@ const EXHIBIT_FIELDS = `
   "imageUrl": heroImage.asset->url,
   "flyerPath": flyerFile.asset->url,
   "videoPath": videoUrl,
-  "videoPaths": select(
-    defined(videoUrls) && length(coalesce(videoUrls, [])) > 0 => videoUrls,
-    defined(videoUrl) => [videoUrl],
-    []
+  "videoPaths": array::compact(
+    coalesce(videoFiles[].asset->url, []) +
+    coalesce(videoUrls, []) +
+    select(defined(videoUrl) => [videoUrl], [])
   ),
   "images": images[defined(asset)].asset->url,
   "tags": coalesce(tags, []),
