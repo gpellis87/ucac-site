@@ -33,8 +33,11 @@ export default function SiteFooter() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Contact</p>
           <div className="mt-3 space-y-2 text-sm text-parchment/85">
-            <p>300 North Hayne Street, Monroe, NC 28112</p>
-            <p>PO Box 576, Monroe, NC 28112</p>
+            <div>
+              <p>300 North Hayne Street</p>
+              <p>PO Box 576</p>
+              <p>Monroe, NC 28112</p>
+            </div>
             <p>(704) 283-2784</p>
             <p>events@unionarts.org</p>
             <p>Mon–Fri: 8:00 AM – 4:00 PM</p>
@@ -47,18 +50,18 @@ export default function SiteFooter() {
           <Image
             src="/sponsors/ucac-logo.png"
             alt="Union County Community Arts Council"
-            width={96}
-            height={96}
-            className="h-24 w-auto rounded"
+            width={112}
+            height={112}
+            className="h-28 w-auto rounded"
           />
-          <div className="h-px w-16 bg-parchment/20 sm:h-16 sm:w-px" />
+          <div className="h-px w-16 bg-parchment/20 sm:h-20 sm:w-px" />
           <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer" className="transition hover:opacity-75">
             <Image
               src="/sponsors/nc-arts-council.png"
               alt="North Carolina Arts Council"
-              width={200}
-              height={80}
-              className="h-20 w-auto object-contain"
+              width={240}
+              height={96}
+              className="h-24 w-auto object-contain"
             />
           </a>
           <p className="max-w-xs text-xs text-parchment/45 leading-relaxed sm:text-left">
