@@ -46,18 +46,18 @@ export default function SiteFooter() {
           <Image
             src="/sponsors/ucac-logo.png"
             alt="Union County Community Arts Council"
-            width={48}
-            height={48}
-            className="h-12 w-auto rounded"
+            width={72}
+            height={72}
+            className="h-[72px] w-auto rounded"
           />
-          <div className="h-8 w-px bg-parchment/20" />
-          <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer">
+          <div className="h-12 w-px bg-parchment/20" />
+          <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer" className="transition hover:opacity-75">
             <Image
               src="/sponsors/nc-arts-council.png"
               alt="North Carolina Arts Council"
-              width={120}
-              height={48}
-              className="h-10 w-auto object-contain grayscale brightness-150 opacity-70 transition hover:opacity-100 hover:grayscale-0"
+              width={160}
+              height={64}
+              className="h-14 w-auto object-contain"
             />
           </a>
           <p className="max-w-xs text-xs text-parchment/45 leading-relaxed">

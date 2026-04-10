@@ -4,51 +4,15 @@ import Image from "next/image";
 import { SectionReveal } from "@/components/SectionReveal";
 
 const sponsors = [
-  {
-    name: "Atrium Health",
-    file: "atrium-health.png",
-    href: "https://atriumhealth.org/",
-  },
-  {
-    name: "Duke Energy",
-    file: "duke-energy.png",
-    href: "https://www.duke-energy.com/home",
-  },
-  {
-    name: "Huntington Bank",
-    file: "huntington-bank.png",
-    href: "https://www.huntington.com/",
-  },
-  {
-    name: "Union Power Cooperative",
-    file: "union-power.jpg",
-    href: "https://union-power.com/",
-  },
-  {
-    name: "City of Monroe",
-    file: "city-of-monroe.jpg",
-    href: "https://www.monroenc.org/",
-  },
-  {
-    name: "Union County",
-    file: "union-county.png",
-    href: "https://www.unioncountync.gov/",
-  },
-  {
-    name: "Wingate University",
-    file: "wingate.png",
-    href: "https://www.wingate.edu/",
-  },
-  {
-    name: "Lawrence Associates",
-    file: "lawrence.png",
-    href: "http://lawrencesurveying.com/",
-  },
-  {
-    name: "Hinson Electric",
-    file: "hinson-electric.webp",
-    href: "https://hinsonelectricinc.com/",
-  },
+  { name: "Atrium Health",           file: "atrium-health.png",    href: "https://atriumhealth.org/",              imgClass: "" },
+  { name: "Duke Energy",             file: "duke-energy.png",      href: "https://www.duke-energy.com/home",       imgClass: "" },
+  { name: "Huntington Bank",         file: "huntington-bank.png",  href: "https://www.huntington.com/",            imgClass: "" },
+  { name: "Union Power Cooperative", file: "union-power.jpg",      href: "https://union-power.com/",               imgClass: "" },
+  { name: "City of Monroe",          file: "city-of-monroe.jpg",   href: "https://www.monroenc.org/",              imgClass: "" },
+  { name: "Union County",            file: "union-county.png",     href: "https://www.unioncountync.gov/",         imgClass: "" },
+  { name: "Wingate University",      file: "wingate.png",          href: "https://www.wingate.edu/",               imgClass: "" },
+  { name: "Lawrence Associates",     file: "lawrence.png",         href: "http://lawrencesurveying.com/",          imgClass: "invert" },
+  { name: "Hinson Electric",         file: "hinson-electric.webp", href: "https://hinsonelectricinc.com/",         imgClass: "contrast-150 brightness-75" },
 ];
 
 export default function SponsorsStrip() {
@@ -59,7 +23,7 @@ export default function SponsorsStrip() {
           Supported By
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
-          {sponsors.map(({ name, file, href }) => (
+          {sponsors.map(({ name, file, href, imgClass }) => (
             <a
               key={name}
               href={href}
@@ -73,7 +37,7 @@ export default function SponsorsStrip() {
                 alt={name}
                 width={160}
                 height={64}
-                className="h-full w-full object-contain"
+                className={`h-full w-full object-contain ${imgClass}`}
                 unoptimized={file.endsWith(".webp")}
               />
             </a>
