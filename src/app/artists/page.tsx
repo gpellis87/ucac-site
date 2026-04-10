@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import ArtistGrid from "@/components/ArtistGrid";
-import { artists } from "@/data/artists";
+import { getArtists } from "@/sanity/queries";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Artists | Union County Community Arts Council",
@@ -8,7 +10,8 @@ export const metadata: Metadata = {
     "Meet the artists of Union County — painters, mixed-media creators, and fiber artists connected through the Union County Community Arts Council in Monroe, NC.",
 };
 
-export default function ArtistsPage() {
+export default async function ArtistsPage() {
+  const artists = await getArtists();
   return (
     <div className="pb-24">
       {/* Page header */}

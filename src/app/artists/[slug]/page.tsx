@@ -3,16 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Globe, Instagram, Mail, MapPin } from "lucide-react";
-import { artists } from "@/data/artists";
+import { getArtistBySlug, getArtistSlugs } from "@/sanity/queries";
+
+export const revalidate = 60;
 
 type Props = { params: { slug: string } };
 
-export function generateStaticParams() {
-  return artists.map((a) => ({ slug: a.slug }));
+export async function generateStaticParams() {
+  const slugs = await getArtistSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const artist = artists.find((a) => a.slug === params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const artist = await getArtistBySlug(params.slug);
   if (!artist) return { title: "Artist Not Found" };
   return {
     title: `${artist.firstName} ${artist.lastName} | Union County Community Arts Council`,
@@ -20,8 +23,8 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ArtistPage({ params }: Props) {
-  const artist = artists.find((a) => a.slug === params.slug);
+export default async function ArtistPage({ params }: Props) {
+  const artist = await getArtistBySlug(params.slug);
   if (!artist) notFound();
 
   const displayName = `${artist.firstName} ${artist.lastName}`;
@@ -105,19 +108,21 @@ export default function ArtistPage({ params }: Props) {
                     @{artist.instagram}
                   </a>
                 )}
-                <a
-                  href={`mailto:${artist.email}`}
-                  className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.72rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
-                >
-                  <Mail size={12} className="text-terracotta" />
-                  Contact
-                </a>
+                {artist.email && (
+                  <a
+                    href={`mailto:${artist.email}`}
+                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.72rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
+                  >
+                    <Mail size={12} className="text-terracotta" />
+                    Contact
+                  </a>
+                )}
               </div>
             </div>
           </div>
 
           {/* Work gallery */}
-          {artist.workImages.length > 0 && (
+          {artist.workImages && artist.workImages.length > 0 && (
             <div className="mt-16">
               <div className="mb-8 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
               <p className="mb-6 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Selected Work</p>

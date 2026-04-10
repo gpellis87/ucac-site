@@ -1,5 +1,6 @@
 import { getClient } from "./client";
 import type { Exhibit } from "@/data/exhibits";
+import type { Artist } from "@/data/artists";
 
 const EXHIBIT_FIELDS = `
   "id": _id,
@@ -56,6 +57,51 @@ export async function getExhibitSlugs(): Promise<string[]> {
   if (!client) return [];
   const results = await client.fetch<{ slug: string }[]>(
     `*[_type == "exhibit" && status != "archived"] { "slug": slug.current }`
+  );
+  return results.map((r) => r.slug);
+}
+
+// ── Artist queries ────────────────────────────────────────────────────────────
+
+const ARTIST_FIELDS = `
+  "id": _id,
+  "slug": slug.current,
+  firstName,
+  lastName,
+  medium,
+  city,
+  state,
+  bio,
+  email,
+  website,
+  instagram,
+  "portraitUrl": portrait.asset->url,
+  "workImages": workImages[].asset->url
+`;
+
+export async function getArtists(): Promise<Artist[]> {
+  const client = getClient();
+  if (!client) return [];
+  return client.fetch<Artist[]>(
+    `*[_type == "artist"] | order(lastName asc, firstName asc) { ${ARTIST_FIELDS} }`
+  );
+}
+
+export async function getArtistBySlug(slug: string): Promise<Artist | null> {
+  const client = getClient();
+  if (!client) return null;
+  const results = await client.fetch<Artist[]>(
+    `*[_type == "artist" && slug.current == $slug][0..0] { ${ARTIST_FIELDS} }`,
+    { slug }
+  );
+  return results[0] ?? null;
+}
+
+export async function getArtistSlugs(): Promise<string[]> {
+  const client = getClient();
+  if (!client) return [];
+  const results = await client.fetch<{ slug: string }[]>(
+    `*[_type == "artist"] { "slug": slug.current }`
   );
   return results.map((r) => r.slug);
 }
