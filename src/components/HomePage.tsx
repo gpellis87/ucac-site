@@ -90,7 +90,7 @@ export default function HomePage() {
             transition={{ delay: 0.52, duration: 0.7 }}
             className="mt-7 max-w-lg text-base text-parchment/85 leading-relaxed md:text-lg"
           >
-            Exhibitions, education, and community — rooted in Monroe, NC and open to everyone.
+            Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
           </motion.p>
 
           <motion.div
@@ -103,14 +103,6 @@ export default function HomePage() {
             <Link href="/contact" className="ghost-btn">Get in Touch</Link>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.85, duration: 0.7 }}
-            className="mt-8 text-[0.65rem] uppercase tracking-[0.22em] text-parchment/30"
-          >
-            Monroe, NC &nbsp;·&nbsp; Est. 1980 &nbsp;·&nbsp; 501(c)(3) Nonprofit
-          </motion.p>
         </div>
 
         {/* Scroll indicator */}
@@ -140,23 +132,6 @@ export default function HomePage() {
         </motion.div>
 
       </section>
-
-      {/* ── Mission strip ────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad bg-[#111110] py-14">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="flex gap-6 items-start">
-            <span className="display text-[5rem] leading-none text-terracotta/25 select-none hidden md:block">&ldquo;</span>
-            <div>
-              <p className="display text-2xl leading-snug text-parchment/90 md:text-[2rem]">
-                We champion art as civic infrastructure — for imagination, equity, and collective joy.
-              </p>
-              <p className="mt-4 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/35">
-                Union County Community Arts Council
-              </p>
-            </div>
-          </div>
-        </div>
-      </SectionReveal>
 
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
       <SectionReveal className="section-pad py-20">
@@ -213,11 +188,9 @@ export default function HomePage() {
             {/* Subtle terracotta glow */}
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(192,84,42,0.12),transparent_65%)]" />
             <div className="relative z-10">
-              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Come See Us</p>
-              <h2 className="display mt-3 text-4xl md:text-5xl">300 North Hayne Street<br />Monroe, NC</h2>
+              <h2 className="display mt-3 text-4xl md:text-5xl">Get in Touch</h2>
               <p className="mx-auto mt-4 max-w-md text-parchment/60 text-sm leading-relaxed">
-                Mon–Thu 10 AM–4 PM &nbsp;·&nbsp; Select Saturdays 10 AM–2 PM<br />
-                Office: Mon–Fri 8:30 AM–4:30 PM
+                We&rsquo;d love to connect — reach out about exhibitions, programming, or anything else.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link href="/contact" className="accent-btn">Contact Us</Link>
