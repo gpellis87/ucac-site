@@ -7,9 +7,10 @@ interface SectionRevealProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  id?: string;
 }
 
-export function SectionReveal({ children, className, delay = 0 }: SectionRevealProps) {
+export function SectionReveal({ children, className, delay = 0, id }: SectionRevealProps) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -17,11 +18,12 @@ export function SectionReveal({ children, className, delay = 0 }: SectionRevealP
   // Once mounted, swap to motion.div so the scroll-in animation works for
   // sections that are below the fold.
   if (!mounted) {
-    return <div className={className}>{children}</div>;
+    return <div id={id} className={className}>{children}</div>;
   }
 
   return (
     <motion.div
+      id={id}
       className={className}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}

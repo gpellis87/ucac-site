@@ -114,15 +114,15 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
           className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-black/40 backdrop-blur-sm"
         >
           <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 py-3">
-            <div className="flex items-center gap-3 shrink-0">
+            <a href="#exhibitions" className="group flex items-center gap-3 shrink-0 transition hover:opacity-80">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
               </span>
-              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70">
+              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70 group-hover:text-parchment/90 transition">
                 {exhibits.length} Exhibitions On View &amp; Upcoming
               </span>
-            </div>
+            </a>
 
             <Link
               href="/new-home"
@@ -174,7 +174,7 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
       </SectionReveal>
 
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
-      <SectionReveal className="section-pad py-20">
+      <SectionReveal id="exhibitions" className="section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-2 flex items-end justify-between gap-4">
             <div>
