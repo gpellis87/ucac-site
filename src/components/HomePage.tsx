@@ -134,6 +134,30 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
 
       </section>
 
+      {/* ── Moving Announcement ──────────────────────────────────────── */}
+      <div className="section-pad bg-terracotta/10 border-y border-terracotta/25 py-5">
+        <div className="mx-auto flex max-w-[1500px] flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
+            </span>
+            <div>
+              <p className="text-[0.65rem] uppercase tracking-[0.2em] text-terracotta">Announcement</p>
+              <p className="mt-0.5 text-sm text-parchment/85">
+                We&rsquo;re moving — UCCAC is heading to a new home. Follow the journey.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/new-home"
+            className="shrink-0 border border-terracotta px-4 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
+          >
+            Learn More
+          </Link>
+        </div>
+      </div>
+
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
       <SectionReveal className="section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
