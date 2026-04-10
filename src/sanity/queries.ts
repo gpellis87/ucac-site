@@ -23,11 +23,21 @@ const EXHIBIT_FIELDS = `
   callToAction
 `;
 
+const STATUS_ORDER: Record<string, number> = {
+  "now-on-view": 0,
+  "opening-soon": 1,
+  "call-for-artists": 2,
+  "archived": 3,
+};
+
 export async function getExhibits(): Promise<Exhibit[]> {
   const client = getClient();
   if (!client) return [];
-  return client.fetch(
-    `*[_type == "exhibit" && status != "archived"] | order(_createdAt desc) { ${EXHIBIT_FIELDS} }`
+  const results = await client.fetch<Exhibit[]>(
+    `*[_type == "exhibit" && status != "archived"] { ${EXHIBIT_FIELDS} }`
+  );
+  return results.sort(
+    (a, b) => (STATUS_ORDER[a.status] ?? 9) - (STATUS_ORDER[b.status] ?? 9)
   );
 }
 

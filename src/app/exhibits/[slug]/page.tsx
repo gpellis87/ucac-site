@@ -94,9 +94,7 @@ export default async function ExhibitPage({ params }: Props) {
             {exhibit.receptionDate && (
               <p className="mt-4 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60">
                 {receptionLabel} &nbsp;·&nbsp;{" "}
-                {new Date(exhibit.receptionDate + "T12:00:00").toLocaleDateString("en-US", {
-                  weekday: "long", month: "long", day: "numeric",
-                })}
+                {exhibit.receptionDate}
                 {exhibit.receptionTime && ` · ${exhibit.receptionTime}`}
               </p>
             )}
@@ -218,9 +216,7 @@ export default async function ExhibitPage({ params }: Props) {
                     <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
                     <div>
                       <p className="text-sm font-medium text-parchment">
-                        {new Date(exhibit.receptionDate + "T12:00:00").toLocaleDateString("en-US", {
-                          weekday: "long", month: "long", day: "numeric",
-                        })}
+                        {exhibit.receptionDate}
                       </p>
                       {exhibit.receptionTime && (
                         <p className="mt-0.5 text-xs text-parchment/55">{exhibit.receptionTime}</p>
@@ -237,9 +233,7 @@ export default async function ExhibitPage({ params }: Props) {
                     <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
                     <div>
                       <p className="text-sm font-medium text-parchment">
-                        {new Date(exhibit.submissionDeadline + "T12:00:00").toLocaleDateString("en-US", {
-                          weekday: "long", month: "long", day: "numeric",
-                        })}
+                        {exhibit.submissionDeadline}
                       </p>
                       {exhibit.submissionUrl && (
                         <a
