@@ -6,12 +6,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const links: { href: string; label: string; highlight?: boolean }[] = [
-  { href: "/",          label: "Home" },
-  { href: "/exhibits",  label: "Exhibitions" },
-  { href: "/artists",   label: "Artists" },
-  { href: "/new-home",  label: "New Home", highlight: true },
-  { href: "/contact",   label: "Contact" },
+const links = [
+  { href: "/",         label: "Home" },
+  { href: "/exhibits", label: "Exhibitions" },
+  { href: "/artists",  label: "Artists" },
+  { href: "/contact",  label: "Contact" },
 ];
 
 export default function SiteNav() {
@@ -44,11 +43,7 @@ export default function SiteNav() {
                 key={link.href}
                 href={link.href}
                 className={`link-underline text-sm uppercase tracking-[0.14em] ${
-                  isActive(link.href)
-                    ? "text-terracotta"
-                    : link.highlight
-                    ? "text-terracotta/80 hover:text-terracotta"
-                    : "text-parchment/95"
+                  isActive(link.href) ? "text-terracotta" : "text-parchment/95"
                 }`}
               >
                 {link.label}
