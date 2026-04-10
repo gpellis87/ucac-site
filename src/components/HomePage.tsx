@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Facebook, ChevronDown } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
+import SponsorsStrip from "@/components/SponsorsStrip";
 import type { Exhibit } from "@/data/exhibits";
 
 function Counter({ target, prefix = "", suffix = "", raw = false }: { target: number; prefix?: string; suffix?: string; raw?: boolean }) {
@@ -189,6 +190,9 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
           </div>
         </div>
       </SectionReveal>
+
+      {/* ── Sponsors ─────────────────────────────────────────────────── */}
+      <SponsorsStrip />
 
       {/* ── Connect CTA ──────────────────────────────────────────────── */}
       <SectionReveal className="section-pad py-24">

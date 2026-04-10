@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Facebook } from "lucide-react";
 
@@ -6,8 +7,14 @@ export default function SiteFooter() {
     <footer className="border-t border-parchment/20 bg-[#121212] py-16 text-parchment">
       <div className="section-pad mx-auto grid max-w-[1500px] gap-10 md:grid-cols-3">
         <div>
-          <p className="display text-4xl">UCCAC</p>
-          <p className="mt-3 max-w-xs text-sm text-parchment/75">
+          <Image
+            src="/sponsors/ucac-logo.png"
+            alt="Union County Community Arts Council"
+            width={80}
+            height={80}
+            className="mb-4 rounded"
+          />
+          <p className="max-w-xs text-sm text-parchment/75">
             Union County Community Arts Council champions creative expression through education, exhibitions, and community projects.
           </p>
           <a
@@ -40,9 +47,21 @@ export default function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-6 text-xs text-parchment/60">
-        <p>Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
-        <p className="mt-1">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
+      <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-6">
+        <div className="mb-4 flex items-center gap-3">
+          <Image
+            src="/sponsors/nc-arts-council.png"
+            alt="North Carolina Arts Council"
+            width={120}
+            height={48}
+            className="h-10 w-auto object-contain brightness-90"
+          />
+          <p className="text-xs text-parchment/50">
+            Supported by the North Carolina Arts Council, a division of the Department of Natural &amp; Cultural Resources.
+          </p>
+        </div>
+        <p className="text-xs text-parchment/60">Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
+        <p className="mt-1 text-xs text-parchment/60">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
       </div>
     </footer>
   );
