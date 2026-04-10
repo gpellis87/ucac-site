@@ -3,16 +3,17 @@
 import Image from "next/image";
 import { SectionReveal } from "@/components/SectionReveal";
 
+// Alphabetical order
 const sponsors = [
-  { name: "Atrium Health",           file: "atrium-health.png",    href: "https://atriumhealth.org/",              imgClass: "" },
-  { name: "Duke Energy",             file: "duke-energy.png",      href: "https://www.duke-energy.com/home",       imgClass: "" },
-  { name: "Huntington Bank",         file: "huntington-bank.png",  href: "https://www.huntington.com/",            imgClass: "" },
-  { name: "Union Power Cooperative", file: "union-power.jpg",      href: "https://union-power.com/",               imgClass: "" },
-  { name: "City of Monroe",          file: "city-of-monroe.jpg",   href: "https://www.monroenc.org/",              imgClass: "" },
-  { name: "Union County",            file: "union-county.png",     href: "https://www.unioncountync.gov/",         imgClass: "" },
-  { name: "Wingate University",      file: "wingate.png",          href: "https://www.wingate.edu/",               imgClass: "" },
-  { name: "Lawrence Associates",     file: "lawrence.png",         href: "http://lawrencesurveying.com/",          imgClass: "invert" },
-  { name: "Hinson Electric",         file: "hinson-electric.webp", href: "https://hinsonelectricinc.com/",         imgClass: "contrast-150 brightness-75" },
+  { name: "Atrium Health",           file: "atrium-health.png",    href: "https://atriumhealth.org/",         imgClass: "mix-blend-multiply" },
+  { name: "City of Monroe",          file: "city-of-monroe.jpg",   href: "https://www.monroenc.org/",         imgClass: "mix-blend-multiply" },
+  { name: "Duke Energy",             file: "duke-energy.png",      href: "https://www.duke-energy.com/home",  imgClass: "mix-blend-multiply" },
+  { name: "Hinson Electric",         file: "hinson-electric.webp", href: "https://hinsonelectricinc.com/",    imgClass: "contrast-[1.6] brightness-[0.65]" },
+  { name: "Huntington Bank",         file: "huntington-bank.png",  href: "https://www.huntington.com/",       imgClass: "mix-blend-multiply" },
+  { name: "Lawrence Associates",     file: "lawrence.png",         href: "http://lawrencesurveying.com/",     imgClass: "invert" },
+  { name: "Union County",            file: "union-county.png",     href: "https://www.unioncountync.gov/",    imgClass: "mix-blend-multiply" },
+  { name: "Union Power Cooperative", file: "union-power.jpg",      href: "https://union-power.com/",          imgClass: "mix-blend-multiply" },
+  { name: "Wingate University",      file: "wingate.png",          href: "https://www.wingate.edu/",          imgClass: "mix-blend-multiply" },
 ];
 
 export default function SponsorsStrip() {
@@ -30,7 +31,7 @@ export default function SponsorsStrip() {
               target="_blank"
               rel="noreferrer"
               title={name}
-              className="flex h-[72px] w-[148px] items-center justify-center rounded-xl bg-[#f8f6f3] p-4 shadow-md transition duration-200 hover:opacity-75"
+              className="flex h-[88px] w-[168px] items-center justify-center rounded-xl bg-[#f8f6f3] p-5 shadow-md transition duration-200 hover:opacity-75"
             >
               <Image
                 src={`/sponsors/${file}`}
