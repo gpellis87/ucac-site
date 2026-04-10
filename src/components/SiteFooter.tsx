@@ -7,13 +7,7 @@ export default function SiteFooter() {
     <footer className="border-t border-parchment/20 bg-[#121212] py-16 text-parchment">
       <div className="section-pad mx-auto grid max-w-[1500px] gap-10 md:grid-cols-3">
         <div>
-          <Image
-            src="/sponsors/ucac-logo.png"
-            alt="Union County Community Arts Council"
-            width={80}
-            height={80}
-            className="mb-4 rounded"
-          />
+          <p className="display text-4xl text-parchment mb-3">UCCAC</p>
           <p className="max-w-xs text-sm text-parchment/75">
             Union County Community Arts Council champions creative expression through education, exhibitions, and community projects.
           </p>
@@ -48,15 +42,23 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-6">
-        <div className="mb-4 flex items-center gap-3">
+        <div className="mb-5 flex flex-wrap items-center gap-5">
+          <Image
+            src="/sponsors/ucac-logo.png"
+            alt="Union County Community Arts Council"
+            width={48}
+            height={48}
+            className="h-12 w-auto rounded"
+          />
+          <div className="h-8 w-px bg-parchment/20" />
           <Image
             src="/sponsors/nc-arts-council.png"
             alt="North Carolina Arts Council"
             width={120}
             height={48}
-            className="h-10 w-auto object-contain brightness-90"
+            className="h-10 w-auto object-contain grayscale brightness-150 opacity-70"
           />
-          <p className="text-xs text-parchment/50">
+          <p className="max-w-xs text-xs text-parchment/45 leading-relaxed">
             Supported by the North Carolina Arts Council, a division of the Department of Natural &amp; Cultural Resources.
           </p>
         </div>
