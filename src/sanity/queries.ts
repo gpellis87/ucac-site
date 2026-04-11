@@ -77,6 +77,7 @@ const ARTIST_FIELDS = `
   email,
   website,
   instagram,
+  facebook,
   "portraitUrl": portrait.asset->url,
   "workImages": workImages[].asset->url
 `;

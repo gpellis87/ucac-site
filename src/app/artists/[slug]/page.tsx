@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Globe, Instagram, Mail, MapPin } from "lucide-react";
+import { ArrowLeft, Facebook, Globe, Instagram, Mail, MapPin } from "lucide-react";
 import { getArtistBySlug, getArtistSlugs } from "@/sanity/queries";
 import { sanityImg } from "@/sanity/image";
 
@@ -107,6 +107,17 @@ export default async function ArtistPage({ params }: Props) {
                   >
                     <Instagram size={12} className="text-terracotta" />
                     @{artist.instagram}
+                  </a>
+                )}
+                {artist.facebook && (
+                  <a
+                    href={`https://facebook.com/${artist.facebook}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.72rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
+                  >
+                    <Facebook size={12} className="text-terracotta" />
+                    @{artist.facebook}
                   </a>
                 )}
                 {artist.email && (

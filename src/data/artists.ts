@@ -8,6 +8,7 @@ export interface Artist {
   email: string;
   website?: string;
   instagram?: string;
+  facebook?: string;
   medium: string;
   bio?: string;
   portraitUrl: string;
