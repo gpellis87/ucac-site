@@ -9,6 +9,7 @@ import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
 import SponsorsStrip from "@/components/SponsorsStrip";
 import type { Exhibit } from "@/data/exhibits";
+import { sanityImg } from "@/sanity/image";
 
 function Counter({ target, prefix = "", suffix = "", raw = false }: { target: number; prefix?: string; suffix?: string; raw?: boolean }) {
   const [count, setCount] = useState(0);
@@ -27,7 +28,7 @@ function Counter({ target, prefix = "", suffix = "", raw = false }: { target: nu
   return <span>{prefix}{raw ? count : count.toLocaleString()}{suffix}</span>;
 }
 
-export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
+export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhibit[]; recentlyClosed: Exhibit | null }) {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
@@ -196,6 +197,44 @@ export default function HomePage({ exhibits }: { exhibits: Exhibit[] }) {
           </div>
         </div>
       </SectionReveal>
+
+      {/* ── Recently Closed ──────────────────────────────────────────── */}
+      {recentlyClosed && (
+        <SectionReveal className="section-pad pb-20">
+          <div className="mx-auto max-w-[1500px]">
+            <div className="mb-6 flex items-center gap-4">
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Recently Closed</p>
+              <div className="h-px flex-1 bg-parchment/10" />
+            </div>
+            <Link
+              href={`/exhibits/${recentlyClosed.slug}`}
+              className="group flex flex-col overflow-hidden border border-parchment/10 bg-black/20 transition duration-300 hover:border-parchment/25 sm:flex-row"
+            >
+              <div className="relative h-52 shrink-0 overflow-hidden sm:h-auto sm:w-72">
+                <Image
+                  src={sanityImg(recentlyClosed.imageUrl, { w: 600, h: 400, fit: "crop" })}
+                  alt={recentlyClosed.title}
+                  fill
+                  className="object-cover opacity-55 transition duration-700 group-hover:opacity-70 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 288px"
+                />
+              </div>
+              <div className="flex flex-col justify-center gap-3 p-7">
+                <p className="text-[0.65rem] uppercase tracking-[0.18em] text-parchment/30">Past Exhibition</p>
+                <h3 className="display text-2xl text-parchment/75 leading-tight group-hover:text-parchment/90 transition md:text-3xl">
+                  {recentlyClosed.title}
+                </h3>
+                <p className="line-clamp-2 max-w-xl text-sm text-parchment/45 leading-relaxed">
+                  {recentlyClosed.description}
+                </p>
+                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/30 transition group-hover:text-parchment/55 group-hover:tracking-[0.2em]">
+                  View Exhibition
+                </p>
+              </div>
+            </Link>
+          </div>
+        </SectionReveal>
+      )}
 
       {/* ── Mission strip ────────────────────────────────────────────── */}
       <SectionReveal className="section-pad bg-[#111110] py-14">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HomePage from "@/components/HomePage";
-import { getExhibits } from "@/sanity/queries";
+import { getExhibits, getMostRecentArchivedExhibit } from "@/sanity/queries";
 
 export const revalidate = 60;
 
@@ -10,6 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const exhibits = await getExhibits();
-  return <HomePage exhibits={exhibits} />;
+  const [exhibits, recentlyClosed] = await Promise.all([
+    getExhibits(),
+    getMostRecentArchivedExhibit(),
+  ]);
+  return <HomePage exhibits={exhibits} recentlyClosed={recentlyClosed} />;
 }
