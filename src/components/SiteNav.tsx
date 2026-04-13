@@ -7,10 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/",         label: "Home" },
-  { href: "/exhibits", label: "Exhibitions" },
-  { href: "/artists",  label: "Artists" },
-  { href: "/contact",  label: "Contact" },
+  { href: "/",            label: "Home" },
+  { href: "/exhibits",    label: "Exhibitions" },
+  { href: "/artists",     label: "Artists" },
+  { href: "/membership",  label: "Join Us" },
+  { href: "/contact",     label: "Contact" },
 ];
 
 export default function SiteNav() {

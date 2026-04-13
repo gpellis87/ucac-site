@@ -160,15 +160,17 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
                 <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Announcement</p>
                 <h2 className="display mt-2 text-3xl text-parchment md:text-4xl">We&rsquo;re Moving to a New Home</h2>
                 <p className="mt-3 max-w-lg text-sm text-parchment/65 leading-relaxed">
-                  A new space at 300 North Hayne Street — more room for exhibitions, programs, and the community we serve. Follow the journey as it unfolds.
+                  A new space at 300 North Hayne Street — artist studios, teaching spaces, a gallery, and a shop. Founding memberships are now open at a special rate.
                 </p>
               </div>
-              <Link
-                href="/new-home"
-                className="shrink-0 accent-btn self-start md:self-auto"
-              >
-                Read the Announcement
-              </Link>
+              <div className="flex shrink-0 flex-col gap-3 self-start md:self-auto">
+                <Link href="/membership" className="accent-btn text-center">
+                  Become a Founding Member
+                </Link>
+                <Link href="/new-home" className="ghost-btn text-center text-[0.68rem]">
+                  Read the Announcement
+                </Link>
+              </div>
             </div>
           </div>
         </div>

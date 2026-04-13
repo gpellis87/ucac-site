@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ArrowLeft, MapPin, Paintbrush, BookOpen, Frame, ShoppingBag } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "A New Home | Union County Community Arts Council",
@@ -121,6 +121,60 @@ export default function NewHomePage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </div>
+
+      {/* What's Coming */}
+      <div className="section-pad py-16 bg-[#0f0f0e]">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="mb-10">
+            <div className="mb-6 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
+            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">What&rsquo;s Coming</p>
+            <h2 className="editorial-title mt-3 text-4xl text-parchment md:text-5xl">Inside the New Space</h2>
+            <p className="mt-4 max-w-xl text-sm text-parchment/60 leading-relaxed">
+              Our new home at 300 North Hayne Street is being built for the full creative life of this community. Here&rsquo;s what we&rsquo;re bringing to life.
+            </p>
+          </div>
+          <div className="grid gap-px bg-parchment/10 sm:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                icon: Paintbrush,
+                label: "Artist Studios",
+                body: "Dedicated studio spaces available for working artists — a place to create, focus, and be part of a creative community.",
+              },
+              {
+                icon: BookOpen,
+                label: "Teaching Studios",
+                body: "Flexible learning spaces for classes and workshops across all ages and abilities, from beginners to seasoned creatives.",
+              },
+              {
+                icon: Frame,
+                label: "Gallery",
+                body: "A professional exhibition space for regional artists and traveling shows — celebrating the full breadth of what art can be.",
+              },
+              {
+                icon: ShoppingBag,
+                label: "The Shop",
+                body: "A curated space to browse and purchase original work, prints, and handmade goods directly from local artists.",
+              },
+            ].map(({ icon: Icon, label, body }) => (
+              <div key={label} className="bg-[#0f0f0e] p-8 space-y-4">
+                <div className="flex h-10 w-10 items-center justify-center border border-terracotta/30 bg-terracotta/10">
+                  <Icon size={16} className="text-terracotta" />
+                </div>
+                <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70">{label}</p>
+                <p className="text-sm text-parchment/55 leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link href="/membership" className="accent-btn">
+              Become a Founding Member
+            </Link>
+            <Link href="/contact" className="ghost-btn">
+              Get in Touch
+            </Link>
           </div>
         </div>
       </div>
