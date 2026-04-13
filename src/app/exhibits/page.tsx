@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ExhibitCard from "@/components/ExhibitCard";
-import { getExhibits } from "@/sanity/queries";
+import { getExhibits, getArchivedExhibits } from "@/sanity/queries";
 
 export const revalidate = 60;
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ExhibitsPage() {
-  const exhibits = await getExhibits();
+  const [exhibits, archived] = await Promise.all([getExhibits(), getArchivedExhibits()]);
 
   return (
     <div className="pb-24">
@@ -41,6 +41,20 @@ export default async function ExhibitsPage() {
           )}
         </div>
       </div>
+
+      {archived.length > 0 && (
+        <div className="section-pad mt-20">
+          <div className="mx-auto max-w-[1500px]">
+            <div className="mb-8 h-px w-full bg-gradient-to-r from-parchment/20 via-parchment/10 to-transparent" />
+            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40">Past Exhibitions</p>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {archived.map((exhibit) => (
+                <ExhibitCard key={exhibit.id} exhibit={exhibit} muted />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

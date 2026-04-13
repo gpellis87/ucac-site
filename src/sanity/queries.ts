@@ -54,11 +54,19 @@ export async function getExhibitBySlug(slug: string): Promise<Exhibit | null> {
   return results[0] ?? null;
 }
 
+export async function getArchivedExhibits(): Promise<Exhibit[]> {
+  const client = getClient();
+  if (!client) return [];
+  return client.fetch<Exhibit[]>(
+    `*[_type == "exhibit" && status == "archived"] | order(_createdAt desc) { ${EXHIBIT_FIELDS} }`
+  );
+}
+
 export async function getExhibitSlugs(): Promise<string[]> {
   const client = getClient();
   if (!client) return [];
   const results = await client.fetch<{ slug: string }[]>(
-    `*[_type == "exhibit" && status != "archived"] { "slug": slug.current }`
+    `*[_type == "exhibit"] { "slug": slug.current }`
   );
   return results.map((r) => r.slug);
 }
