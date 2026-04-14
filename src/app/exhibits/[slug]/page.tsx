@@ -260,8 +260,8 @@ export default async function ExhibitPage({ params }: Props) {
 
               <div className="p-5">
                 <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Questions?</p>
-                <a href="mailto:events@unionarts.org" className="flex items-center gap-2 text-sm text-parchment/70 transition hover:text-terracotta">
-                  <Mail size={12} className="text-terracotta/70" /> events@unionarts.org
+                <a href="mailto:info@unionarts.org" className="flex items-center gap-2 text-sm text-parchment/70 transition hover:text-terracotta">
+                  <Mail size={12} className="text-terracotta/70" /> info@unionarts.org
                 </a>
                 <p className="mt-2 flex items-center gap-2 text-sm text-parchment/55">
                   <Phone size={12} className="text-terracotta/70" /> (704) 283-2784

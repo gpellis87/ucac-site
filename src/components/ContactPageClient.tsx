@@ -57,9 +57,9 @@ export default function ContactPageClient() {
                 <Phone size={13} className="shrink-0 text-terracotta/60" />
                 (704) 283-2784
               </a>
-              <a href="mailto:events@unionarts.org" className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment">
+              <a href="mailto:info@unionarts.org" className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment">
                 <Mail size={13} className="shrink-0 text-terracotta/60" />
-                events@unionarts.org
+                info@unionarts.org
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61574355290119"

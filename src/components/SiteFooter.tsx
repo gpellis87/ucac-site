@@ -39,7 +39,7 @@ export default function SiteFooter() {
               <p>Monroe, NC 28112</p>
             </div>
             <p>(704) 283-2784</p>
-            <p>events@unionarts.org</p>
+            <p>info@unionarts.org</p>
             <p>Mon–Fri: 8:00 AM – 4:00 PM</p>
             <p>Sat–Sun: Closed</p>
           </div>
