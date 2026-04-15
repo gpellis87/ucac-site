@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, MapPin, Paintbrush, BookOpen, Frame, ShoppingBag } from "lucide-react";
+
+const MEMBERSHIP_URL = "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
+const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
+
+const buildingPhotos = [
+  "IMG_6017.jpg","IMG_6018.jpg","IMG_6019.jpg","IMG_6020.jpg","IMG_6021.jpg","IMG_6022.jpg",
+  "IMG_6023.jpg","IMG_6024.jpg","IMG_6025.jpg","IMG_6026.jpg","IMG_6027.jpg","IMG_6028.jpg",
+  "IMG_6029.jpg","IMG_6030.jpg","IMG_6031.jpg","IMG_6032.jpg","IMG_6033.jpg","IMG_6875.jpg",
+];
 
 export const metadata: Metadata = {
   title: "A New Home | Union County Community Arts Council",
@@ -169,12 +179,68 @@ export default function NewHomePage() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/membership" className="accent-btn">
+            <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="accent-btn">
               Become a Founding Member
-            </Link>
+            </a>
             <Link href="/contact" className="ghost-btn">
               Get in Touch
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Building Progress Photos */}
+      <div className="section-pad py-16">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
+          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-2">In Progress</p>
+          <h2 className="editorial-title mt-2 text-4xl text-parchment md:text-5xl mb-8">Building Updates</h2>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            {buildingPhotos.map((photo) => (
+              <div key={photo} className="relative aspect-square overflow-hidden bg-black/30">
+                <Image
+                  src={`/building/${photo}`}
+                  alt="Building progress photo"
+                  fill
+                  className="object-cover transition duration-500 hover:scale-105 hover:opacity-90"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 17vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Support CTA with QR codes */}
+      <div className="section-pad py-14 bg-[#0f0f0e]">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
+          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40 mb-8">Support the Journey</p>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="border border-terracotta/30 bg-black/30 p-8 flex flex-col items-center text-center">
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-1">Make a Donation</p>
+              <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
+                Every gift helps bring our new home to life. Scan to donate or click below.
+              </p>
+              <a href={DONATE_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
+                <Image src="/qr-donate.png" alt="Scan to donate" width={160} height={160} />
+              </a>
+              <a href={DONATE_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border border-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment">
+                Donate Now
+              </a>
+            </div>
+            <div className="border border-parchment/20 bg-black/30 p-8 flex flex-col items-center text-center">
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60 mb-1">Become a Member</p>
+              <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
+                Founding memberships are open now. Scan to join or click below.
+              </p>
+              <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
+                <Image src="/qr-membership.png" alt="Scan to become a member" width={160} height={160} />
+              </a>
+              <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block bg-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85">
+                Join Now
+              </a>
+            </div>
           </div>
         </div>
       </div>

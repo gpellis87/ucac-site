@@ -6,6 +6,8 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
+const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
+
 const links = [
   { href: "/",            label: "Home" },
   { href: "/exhibits",    label: "Exhibitions" },
@@ -50,6 +52,14 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={DONATE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="border border-terracotta bg-terracotta/10 px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.14em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
+            >
+              Donate
+            </a>
           </nav>
 
           <button
@@ -97,7 +107,17 @@ export default function SiteNav() {
                   </motion.div>
                 ))}
               </nav>
-              <p className="text-sm text-parchment/70">Rooted in community. Driven by art.</p>
+              <div className="space-y-4">
+                <a
+                  href={DONATE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block border border-terracotta bg-terracotta/10 px-6 py-3 text-center text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
+                >
+                  Donate
+                </a>
+                <p className="text-sm text-parchment/70">Rooted in community. Driven by art.</p>
+              </div>
             </div>
           </motion.aside>
         )}

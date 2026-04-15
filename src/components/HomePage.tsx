@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Facebook, ChevronDown } from "lucide-react";
+import { Facebook, ChevronDown, Heart } from "lucide-react";
+
+const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
+const MEMBERSHIP_URL = "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
 import SponsorsStrip from "@/components/SponsorsStrip";
@@ -42,8 +45,8 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
           className="absolute inset-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=2000&q=80"
-            alt="Abstract art installation in gallery lighting"
+            src="/hero-mural.jpg"
+            alt="Mural at the Union County Community Arts Council"
             fill
             priority
             sizes="100vw"
@@ -52,7 +55,7 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
         </motion.div>
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(0,0,0,0.86),rgba(0,0,0,0.32)_50%,rgba(0,0,0,0.72))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(0,0,0,0.88),rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.80))]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.38),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.22),transparent_42%)]" />
 
         {/* Grain */}
@@ -102,6 +105,9 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
             className="mt-8 flex flex-wrap gap-3"
           >
             <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
+            <a href={DONATE_URL} target="_blank" rel="noreferrer" className="ghost-btn inline-flex items-center gap-2">
+              <Heart size={13} /> Donate
+            </a>
             <Link href="/contact" className="ghost-btn">Get in Touch</Link>
           </motion.div>
 
@@ -164,9 +170,9 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
                 </p>
               </div>
               <div className="flex shrink-0 flex-col gap-3 self-start md:self-auto">
-                <Link href="/membership" className="accent-btn text-center">
+                <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="accent-btn text-center">
                   Become a Founding Member
-                </Link>
+                </a>
                 <Link href="/new-home" className="ghost-btn text-center text-[0.68rem]">
                   Read the Announcement
                 </Link>
@@ -285,6 +291,14 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link href="/contact" className="accent-btn">Contact Us</Link>
+                <a
+                  href={DONATE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ghost-btn inline-flex items-center gap-2"
+                >
+                  <Heart size={14} /> Donate
+                </a>
                 <a
                   href="https://www.facebook.com/profile.php?id=61574355290119"
                   target="_blank"

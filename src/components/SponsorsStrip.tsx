@@ -8,6 +8,7 @@ const sponsors = [
   { name: "Atrium Health",           file: "atrium-health.png",    href: "https://atriumhealth.org/",         imgClass: "mix-blend-multiply" },
   { name: "City of Monroe",          file: "city-of-monroe.jpg",   href: "https://www.monroenc.org/",         imgClass: "mix-blend-multiply" },
   { name: "Duke Energy",             file: "duke-energy.png",      href: "https://www.duke-energy.com/home",  imgClass: "mix-blend-multiply" },
+  { name: "Helms Heating & Air",      file: "helms.jpg",            href: "https://helmsheating.com/",         imgClass: "mix-blend-multiply" },
   { name: "Hinson Electric",         file: "hinson-electric.webp", href: "https://hinsonelectricinc.com/",    imgClass: "contrast-[1.6] brightness-[0.65]" },
   { name: "Huntington Bank",         file: "huntington-bank.png",  href: "https://www.huntington.com/",       imgClass: "mix-blend-multiply" },
   { name: "Lawrence Associates",     file: "lawrence.png",         href: "http://lawrencesurveying.com/",     imgClass: "invert" },

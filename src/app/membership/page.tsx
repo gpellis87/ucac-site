@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
+
+const MEMBERSHIP_URL = "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
 
 export const metadata: Metadata = {
   title: "Membership | Union County Community Arts Council",
@@ -101,13 +104,24 @@ export default function MembershipPage() {
                   <p className="mt-4 text-sm text-parchment/65 leading-relaxed">
                     Be among the first to join as we move into our new space. Founding members help shape what the UCCAC becomes next.
                   </p>
-                  <Link
-                    href="/contact"
+                  <a
+                    href={MEMBERSHIP_URL}
+                    target="_blank"
+                    rel="noreferrer"
                     className="mt-6 inline-block w-full bg-terracotta px-6 py-3 text-center text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
                   >
                     Become a Member
-                  </Link>
+                  </a>
                 </div>
+              </div>
+
+              {/* Membership QR */}
+              <div className="border border-parchment/15 bg-black/30 p-7 text-center">
+                <p className="mb-4 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50">Scan to Join</p>
+                <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
+                  <Image src="/qr-membership.png" alt="Scan to become a member" width={160} height={160} className="mx-auto" />
+                </a>
+                <p className="mt-3 text-xs text-parchment/35">Scan with your phone to sign up</p>
               </div>
 
               {/* What's coming */}
