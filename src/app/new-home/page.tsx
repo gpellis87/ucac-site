@@ -9,7 +9,7 @@ const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-unio
 const buildingPhotos = [
   "IMG_6017.jpg","IMG_6018.jpg","IMG_6019.jpg","IMG_6020.jpg","IMG_6021.jpg","IMG_6022.jpg",
   "IMG_6023.jpg","IMG_6024.jpg","IMG_6025.jpg","IMG_6026.jpg","IMG_6027.jpg","IMG_6028.jpg",
-  "IMG_6029.jpg","IMG_6030.jpg","IMG_6031.jpg","IMG_6032.jpg","IMG_6033.jpg","IMG_6875.jpg",
+  "IMG_6029.jpg","IMG_6030.jpg","IMG_6031.jpg","IMG_6032.jpg","IMG_6033.jpg",
 ];
 
 export const metadata: Metadata = {
