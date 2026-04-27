@@ -28,6 +28,7 @@ export default function SiteFooter() {
             <Link href="/exhibits" className="text-parchment/80 transition hover:text-parchment">Exhibitions</Link>
             <Link href="/artists" className="text-parchment/80 transition hover:text-parchment">Artists</Link>
             <Link href="/contact" className="text-parchment/80 transition hover:text-parchment">Contact</Link>
+            <a href="https://unionarts.org/donate" target="_blank" rel="noreferrer" className="text-parchment/80 transition hover:text-parchment">Donate</a>
           </div>
         </div>
         <div>

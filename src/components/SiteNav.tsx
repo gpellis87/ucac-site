@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
+const DONATE_URL = "https://unionarts.org/donate";
 
 const links = [
   { href: "/",            label: "Home" },
