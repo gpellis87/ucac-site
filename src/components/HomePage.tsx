@@ -165,18 +165,20 @@ export default function HomePage({
               </span>
             </a>
 
-            <Link
-              href="/new-home"
-              className="group hidden md:flex items-center gap-3 border-l border-parchment/15 pl-4 transition hover:opacity-100"
-            >
-              <span className="relative flex h-2 w-2 shrink-0">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
-              </span>
-              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-terracotta/80 group-hover:text-terracotta transition">
-                Announcement &mdash; We&rsquo;re Moving
-              </span>
-            </Link>
+            {announcements.length > 0 && (
+              <Link
+                href={`/announcements#${announcements[0].slug}`}
+                className="group hidden md:flex items-center gap-3 border-l border-parchment/15 pl-4 transition hover:opacity-100 min-w-0"
+              >
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
+                </span>
+                <span className="truncate text-[0.68rem] uppercase tracking-[0.2em] text-terracotta/80 transition group-hover:text-terracotta">
+                  {announcements[0].eyebrow || "Announcement"} &mdash; {announcements[0].title}
+                </span>
+              </Link>
+            )}
 
             <motion.div
               animate={{ y: [0, 4, 0] }}
@@ -191,65 +193,59 @@ export default function HomePage({
       </section>
 
       {/* ── Announcements ────────────────────────────────────────────── */}
-      {announcements.length > 0 && (() => {
-        const [featured, ...rest] = announcements;
-        return (
-          <SectionReveal className="section-pad bg-[#100f0e] py-14 border-b border-parchment/10">
-            <div className="mx-auto max-w-[1500px]">
-
-              {/* Featured */}
-              <div className="relative overflow-hidden border border-terracotta/25 bg-black/40 p-8 md:p-12">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.15),transparent_60%)]" />
-                <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-                  <div>
-                    {featured.eyebrow && (
-                      <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">{featured.eyebrow}</p>
-                    )}
-                    <h2 className="display mt-2 text-3xl text-parchment md:text-4xl">{featured.title}</h2>
-                    <p className="mt-3 max-w-lg text-sm text-parchment/65 leading-relaxed">{featured.description}</p>
-                  </div>
-                  <div className="flex shrink-0 flex-col gap-3 self-start md:self-auto">
-                    {featured.ctaOne && <AnnouncementCta cta={featured.ctaOne} primary />}
-                    {featured.ctaTwo && <AnnouncementCta cta={featured.ctaTwo} />}
-                    <Link
-                      href={`/announcements#${featured.slug}`}
-                      className="text-[0.68rem] text-parchment/45 transition hover:text-parchment/80"
-                    >
-                      Read this announcement →
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Archive row */}
-              {rest.length > 0 && (
-                <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                  {rest.map((ann) => (
-                    <div key={ann.slug} className="flex flex-col gap-3 border border-parchment/15 bg-black/20 p-5">
-                      {ann.eyebrow && (
-                        <p className="text-[0.62rem] uppercase tracking-[0.18em] text-parchment/40">{ann.eyebrow}</p>
-                      )}
-                      <h3 className="display text-xl text-parchment">{ann.title}</h3>
-                      <p className="flex-1 text-xs leading-relaxed text-parchment/55">{ann.description}</p>
-                      <div className="flex flex-wrap items-center gap-3 pt-1">
-                        {ann.ctaOne && <AnnouncementCta cta={ann.ctaOne} small />}
-                        {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} small />}
-                        <Link
-                          href={`/announcements#${ann.slug}`}
-                          className="text-[0.62rem] text-parchment/40 transition hover:text-parchment/70"
-                        >
-                          Read more →
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
+      {announcements.length > 0 && (
+        <SectionReveal className="section-pad bg-[#100f0e] py-8 border-b border-parchment/10">
+          <div className="mx-auto max-w-[1500px]">
+            <div className="mb-4 flex items-center justify-between">
+              <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/35">Announcements</p>
+              <Link href="/announcements" className="text-[0.65rem] uppercase tracking-[0.16em] text-parchment/35 transition hover:text-parchment/65">
+                View all →
+              </Link>
             </div>
-          </SectionReveal>
-        );
-      })()}
+            <div className={`grid gap-4 ${
+              announcements.length === 1 ? "grid-cols-1" :
+              announcements.length === 2 ? "md:grid-cols-2" :
+              "md:grid-cols-2 lg:grid-cols-3"
+            }`}>
+              {announcements.map((ann, i) => (
+                <div
+                  key={ann.slug}
+                  className={`relative flex flex-col gap-3 overflow-hidden border p-6 ${
+                    i === 0 ? "border-terracotta/30 bg-black/40" : "border-parchment/15 bg-black/20"
+                  }`}
+                >
+                  {i === 0 && (
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.1),transparent_65%)]" />
+                  )}
+                  <div className="relative flex flex-1 flex-col gap-3">
+                    {ann.eyebrow && (
+                      <p className={`text-[0.62rem] uppercase tracking-[0.2em] ${i === 0 ? "text-terracotta" : "text-parchment/40"}`}>
+                        {ann.eyebrow}
+                      </p>
+                    )}
+                    <h2 className={`display leading-tight text-parchment ${i === 0 ? "text-2xl" : "text-xl"}`}>
+                      {ann.title}
+                    </h2>
+                    <p className="flex-1 text-sm leading-relaxed text-parchment/60">
+                      {ann.description}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-3 pt-1">
+                      {ann.ctaOne && <AnnouncementCta cta={ann.ctaOne} primary={i === 0} small={i > 0} />}
+                      {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} small />}
+                      <Link
+                        href={`/announcements#${ann.slug}`}
+                        className="text-[0.62rem] text-parchment/38 transition hover:text-parchment/65"
+                      >
+                        Read more →
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </SectionReveal>
+      )}
 
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
       <SectionReveal id="exhibitions" className="section-pad py-20">
