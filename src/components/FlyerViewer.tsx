@@ -7,6 +7,10 @@ import "react-pdf/dist/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
+function isPdf(url: string) {
+  return url.toLowerCase().split("?")[0].endsWith(".pdf");
+}
+
 export default function FlyerViewer({ flyerPath, title }: { flyerPath: string; title: string }) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
@@ -18,6 +22,20 @@ export default function FlyerViewer({ flyerPath, title }: { flyerPath: string; t
         <a href={flyerPath} download className="accent-btn px-5 py-2 text-xs">
           Download Flyer
         </a>
+      </div>
+    );
+  }
+
+  if (!isPdf(flyerPath)) {
+    return (
+      <div className="flex justify-center">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={flyerPath}
+          alt={`${title} flyer`}
+          className="w-full max-w-2xl shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
+          onError={() => setError(true)}
+        />
       </div>
     );
   }
