@@ -2,6 +2,15 @@ import { getClient } from "./client";
 import type { Exhibit } from "@/data/exhibits";
 import type { Artist } from "@/data/artists";
 
+export type Announcement = {
+  title: string;
+  eyebrow: string | null;
+  description: string;
+  publishedAt: string;
+  ctaOne: { label: string; url: string } | null;
+  ctaTwo: { label: string; url: string } | null;
+};
+
 const EXHIBIT_FIELDS = `
   "id": _id,
   "slug": slug.current,
@@ -78,6 +87,23 @@ export async function getExhibitSlugs(): Promise<string[]> {
     `*[_type == "exhibit"] { "slug": slug.current }`
   );
   return results.map((r) => r.slug);
+}
+
+// ── Announcement queries ──────────────────────────────────────────────────────
+
+export async function getAnnouncements(): Promise<Announcement[]> {
+  const client = getClient();
+  if (!client) return [];
+  const today = new Date().toISOString().split("T")[0];
+  return client.fetch<Announcement[]>(
+    `*[_type == "announcement" && active == true && (!defined(expiresAt) || expiresAt > $today)]
+      | order(publishedAt desc) [0...3] {
+        title, eyebrow, description, publishedAt,
+        ctaOne { label, url },
+        ctaTwo { label, url },
+      }`,
+    { today }
+  );
 }
 
 // ── Artist queries ────────────────────────────────────────────────────────────

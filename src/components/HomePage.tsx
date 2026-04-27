@@ -11,7 +11,34 @@ import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
 import SponsorsStrip from "@/components/SponsorsStrip";
 import type { Exhibit } from "@/data/exhibits";
+import type { Announcement } from "@/sanity/queries";
 import { sanityImg } from "@/sanity/image";
+
+function AnnouncementCta({
+  cta,
+  primary,
+  small,
+}: {
+  cta: { label: string; url: string };
+  primary?: boolean;
+  small?: boolean;
+}) {
+  const isExternal = cta.url.startsWith("http");
+  const cls = primary
+    ? "accent-btn text-center"
+    : small
+    ? "ghost-btn px-3 py-1.5 text-[0.65rem] text-center"
+    : "ghost-btn text-center text-[0.68rem]";
+  return isExternal ? (
+    <a href={cta.url} target="_blank" rel="noreferrer" className={cls}>
+      {cta.label}
+    </a>
+  ) : (
+    <Link href={cta.url} className={cls}>
+      {cta.label}
+    </Link>
+  );
+}
 
 function Counter({ target, prefix = "", suffix = "", raw = false }: { target: number; prefix?: string; suffix?: string; raw?: boolean }) {
   const [count, setCount] = useState(0);
@@ -30,7 +57,15 @@ function Counter({ target, prefix = "", suffix = "", raw = false }: { target: nu
   return <span>{prefix}{raw ? count : count.toLocaleString()}{suffix}</span>;
 }
 
-export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhibit[]; recentlyClosed: Exhibit | null }) {
+export default function HomePage({
+  exhibits,
+  recentlyClosed,
+  announcements,
+}: {
+  exhibits: Exhibit[];
+  recentlyClosed: Exhibit | null;
+  announcements: Announcement[];
+}) {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
@@ -155,31 +190,58 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
 
       </section>
 
-      {/* ── Moving Announcement ──────────────────────────────────────── */}
-      <SectionReveal className="section-pad bg-[#100f0e] py-14 border-b border-parchment/10">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="relative overflow-hidden border border-terracotta/25 bg-black/40 p-8 md:p-12">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.15),transparent_60%)]" />
-            <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Announcement</p>
-                <h2 className="display mt-2 text-3xl text-parchment md:text-4xl">We&rsquo;re Moving to a New Home</h2>
-                <p className="mt-3 max-w-lg text-sm text-parchment/65 leading-relaxed">
-                  A new space at 300 North Hayne Street — artist studios, teaching spaces, a gallery, and a shop. Founding memberships are now open at a special rate.
-                </p>
+      {/* ── Announcements ────────────────────────────────────────────── */}
+      {announcements.length > 0 && (() => {
+        const [featured, ...rest] = announcements;
+        return (
+          <SectionReveal className="section-pad bg-[#100f0e] py-14 border-b border-parchment/10">
+            <div className="mx-auto max-w-[1500px]">
+
+              {/* Featured */}
+              <div className="relative overflow-hidden border border-terracotta/25 bg-black/40 p-8 md:p-12">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.15),transparent_60%)]" />
+                <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    {featured.eyebrow && (
+                      <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">{featured.eyebrow}</p>
+                    )}
+                    <h2 className="display mt-2 text-3xl text-parchment md:text-4xl">{featured.title}</h2>
+                    <p className="mt-3 max-w-lg text-sm text-parchment/65 leading-relaxed">{featured.description}</p>
+                  </div>
+                  {(featured.ctaOne || featured.ctaTwo) && (
+                    <div className="flex shrink-0 flex-col gap-3 self-start md:self-auto">
+                      {featured.ctaOne && <AnnouncementCta cta={featured.ctaOne} primary />}
+                      {featured.ctaTwo && <AnnouncementCta cta={featured.ctaTwo} />}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="flex shrink-0 flex-col gap-3 self-start md:self-auto">
-                <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="accent-btn text-center">
-                  Become a Founding Member
-                </a>
-                <Link href="/new-home" className="ghost-btn text-center text-[0.68rem]">
-                  Read the Announcement
-                </Link>
-              </div>
+
+              {/* Archive row */}
+              {rest.length > 0 && (
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  {rest.map((ann) => (
+                    <div key={ann.title} className="flex flex-col gap-3 border border-parchment/15 bg-black/20 p-5">
+                      {ann.eyebrow && (
+                        <p className="text-[0.62rem] uppercase tracking-[0.18em] text-parchment/40">{ann.eyebrow}</p>
+                      )}
+                      <h3 className="display text-xl text-parchment">{ann.title}</h3>
+                      <p className="flex-1 text-xs leading-relaxed text-parchment/55">{ann.description}</p>
+                      {(ann.ctaOne || ann.ctaTwo) && (
+                        <div className="flex flex-wrap gap-2 pt-1">
+                          {ann.ctaOne && <AnnouncementCta cta={ann.ctaOne} small />}
+                          {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} small />}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
             </div>
-          </div>
-        </div>
-      </SectionReveal>
+          </SectionReveal>
+        );
+      })()}
 
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
       <SectionReveal id="exhibitions" className="section-pad py-20">
