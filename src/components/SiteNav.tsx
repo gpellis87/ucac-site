@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const DONATE_URL = "https://unionarts.org/donate";
+const DONATE_HREF = "/donate";
 
 const links = [
   { href: "/",            label: "Home" },
@@ -52,14 +52,12 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={DONATE_URL}
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href={DONATE_HREF}
               className="border border-terracotta bg-terracotta/10 px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.14em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
             >
               Donate
-            </a>
+            </Link>
           </nav>
 
           <button
@@ -108,14 +106,12 @@ export default function SiteNav() {
                 ))}
               </nav>
               <div className="space-y-4">
-                <a
-                  href={DONATE_URL}
-                  target="_blank"
-                  rel="noreferrer"
+                <Link
+                  href={DONATE_HREF}
                   className="block border border-terracotta bg-terracotta/10 px-6 py-3 text-center text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
                 >
                   Donate
-                </a>
+                </Link>
                 <p className="text-sm text-parchment/70">Rooted in community. Driven by art.</p>
               </div>
             </div>

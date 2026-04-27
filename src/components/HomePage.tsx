@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Facebook, ChevronDown, Heart } from "lucide-react";
 
-const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
 const MEMBERSHIP_URL = "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
@@ -105,9 +104,9 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
             className="mt-8 flex flex-wrap gap-3"
           >
             <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
-            <a href={DONATE_URL} target="_blank" rel="noreferrer" className="ghost-btn inline-flex items-center gap-2">
+            <Link href="/donate" className="ghost-btn inline-flex items-center gap-2">
               <Heart size={13} /> Donate
-            </a>
+            </Link>
             <Link href="/contact" className="ghost-btn">Get in Touch</Link>
           </motion.div>
 
@@ -291,14 +290,9 @@ export default function HomePage({ exhibits, recentlyClosed }: { exhibits: Exhib
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link href="/contact" className="accent-btn">Contact Us</Link>
-                <a
-                  href={DONATE_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="ghost-btn inline-flex items-center gap-2"
-                >
+                <Link href="/donate" className="ghost-btn inline-flex items-center gap-2">
                   <Heart size={14} /> Donate
-                </a>
+                </Link>
                 <a
                   href="https://www.facebook.com/profile.php?id=61574355290119"
                   target="_blank"

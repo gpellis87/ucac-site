@@ -6,7 +6,7 @@ import { ArrowLeft, Heart } from "lucide-react";
 export const metadata: Metadata = {
   title: "Donate | Union County Community Arts Council",
   description:
-    "Support the arts in Union County. Your donation helps fund programs, exhibitions, and the arts council's new home at 300 North Hayne Street.",
+    "Support the arts in Union County. Your donation helps fund programs, exhibitions, and arts education for students and teachers across Union County.",
 };
 
 const GENERAL_DONATE_URL =
@@ -35,90 +35,95 @@ export default function DonatePage() {
       {/* Hero */}
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.18),transparent_55%)]" />
-        <div className="section-pad relative py-20">
+        <div className="section-pad relative py-16">
           <div className="mx-auto max-w-[1500px]">
             <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Support the Arts</p>
             <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
               Donate
             </h1>
-            <p className="mt-5 max-w-2xl text-base text-parchment/70 leading-relaxed md:text-lg">
-              Your generosity helps fund exhibitions, programming, student outreach, and our new home at 300 North Hayne Street. Every gift makes a difference.
+            <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
+              Choose how you&apos;d like to support the arts in Union County. Every gift — large or small — makes a real difference.
             </p>
             <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
           </div>
         </div>
       </div>
 
-      {/* General Support */}
-      <div className="section-pad py-14">
+      {/* Giving options */}
+      <div className="section-pad py-12">
         <div className="mx-auto max-w-[1500px]">
-          <div className="grid gap-12 lg:grid-cols-[1fr_360px]">
+          <p className="mb-8 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/40">Ways to Give</p>
+          <div className="grid gap-6 lg:grid-cols-2">
 
-            {/* Left: impact copy */}
-            <div className="space-y-6 text-base leading-relaxed text-parchment/75">
-              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/45">General Support</p>
-              <p>
-                The Union County Community Arts Council has been a welcoming home for artists,
-                students, and the broader community for over 35 years. We&apos;re proud that our
-                programs reach more than 140,000 residents each year — and we&apos;re just getting started.
+            {/* Card 1: General Support */}
+            <div className="flex flex-col border border-parchment/20 bg-black/20 p-8 md:p-10">
+              <p className="text-[0.65rem] uppercase tracking-[0.22em] text-parchment/45">General Support</p>
+              <h2 className="display mt-3 text-3xl text-parchment">Support the Arts Council</h2>
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-parchment/65">
+                Your tax-deductible gift directly funds exhibitions, youth programs, community events,
+                and our new home at 300 North Hayne Street. Processed through Zeffy — 100% of every
+                dollar goes directly to the arts council.
               </p>
-              <p>
-                As we move into our new home at 300 North Hayne Street, we&apos;re expanding what&apos;s
-                possible: more studio space, expanded programming, a professional gallery, and
-                a curated shop. Your donation helps make that happen.
-              </p>
-              <p>
-                All donations are processed securely through Zeffy, a nonprofit fundraising
-                platform with zero platform fees — meaning 100% of your gift goes directly
-                to the arts council.
-              </p>
-              <a
-                href={GENERAL_DONATE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 inline-flex items-center gap-2 bg-terracotta px-8 py-3.5 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
-              >
-                <Heart size={14} /> Donate Now
-              </a>
+              <div className="mt-8 flex flex-wrap items-center gap-6">
+                <a
+                  href={GENERAL_DONATE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+                >
+                  <Heart size={13} /> Donate Now
+                </a>
+                <div className="flex items-center gap-3">
+                  <a href={GENERAL_DONATE_URL} target="_blank" rel="noreferrer" className="transition hover:opacity-75">
+                    <Image src="/qr-donate.png" alt="Scan to donate to UCCAC" width={64} height={64} />
+                  </a>
+                  <p className="text-[0.62rem] uppercase tracking-[0.14em] text-parchment/30 leading-snug">
+                    Or scan<br />to donate
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Right: QR code */}
-            <div className="flex flex-col items-center border border-parchment/15 bg-black/30 p-8 text-center">
-              <p className="mb-4 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50">Scan to Donate</p>
-              <a href={GENERAL_DONATE_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
-                <Image
-                  src="/qr-donate.png"
-                  alt="Scan to donate to the Union County Community Arts Council"
-                  width={200}
-                  height={200}
-                />
-              </a>
-              <p className="mt-4 text-xs text-parchment/35">Scan with your phone camera</p>
+            {/* Card 2: Barbara Faulk Educators Grant */}
+            <div className="relative flex flex-col overflow-hidden border border-terracotta/35 bg-black/20 p-8 md:p-10">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.1),transparent_60%)]" />
+              <div className="relative flex flex-1 flex-col">
+                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">Named Grant</p>
+                <h2 className="display mt-3 text-3xl text-parchment">
+                  Barbara Faulk<br />Educators Grant
+                </h2>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-parchment/65">
+                  Honoring 35 years of leadership and a lifelong passion for arts in education. This
+                  grant supports classroom teachers and arts programs serving students across Union County.
+                </p>
+                <div className="mt-8">
+                  <a
+                    href={BARBARA_FAULK_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+                  >
+                    <Heart size={13} /> Give to This Grant
+                  </a>
+                  <p className="mt-3 text-[0.62rem] text-parchment/35">Read Barbara&apos;s story below.</p>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="section-pad">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="h-px bg-gradient-to-r from-transparent via-parchment/20 to-transparent" />
-        </div>
-      </div>
-
-      {/* Barbara Faulk Educators Grant */}
+      {/* Barbara Faulk tribute */}
       <div className="section-pad py-14">
         <div className="mx-auto max-w-[1500px]">
-          <div className="relative overflow-hidden border border-parchment/20 bg-black/20 p-8 md:p-12 lg:p-16">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(192,84,42,0.12),transparent_60%)]" />
-            <div className="relative">
-              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Named Grant</p>
-              <h2 className="editorial-title mt-3 text-4xl leading-tight md:text-5xl lg:text-6xl">
-                Barbara Faulk<br />Educators Grant
-              </h2>
-
-              <div className="mt-8 max-w-3xl space-y-5 text-base leading-relaxed text-parchment/75">
+          <div className="mb-14 h-px bg-gradient-to-r from-transparent via-parchment/15 to-transparent" />
+          <div className="grid gap-0 lg:grid-cols-[3px_1fr]">
+            <div className="hidden lg:block bg-terracotta/50 rounded-full" />
+            <div className="lg:pl-12">
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">A Celebration</p>
+              <h2 className="editorial-title mt-3 text-4xl leading-tight md:text-5xl">Barbara Faulk</h2>
+              <div className="mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-parchment/70">
                 <p>
                   I would like to take a moment to celebrate Barbara Faulk. Barbara was with the Arts
                   Council for 35 years and served as Executive Director from 1991 until she retired in
@@ -134,24 +139,19 @@ export default function DonatePage() {
                 </p>
                 <p>
                   For her legacy to be remembered for generations to come, I am proud to announce that
-                  we are honoring Barbara Faulk by creating the <strong className="text-parchment font-semibold">Barbara Faulk Educators Grant</strong> —
-                  so that her energy and love of life will continue always.
+                  we are honoring Barbara Faulk by creating the{" "}
+                  <strong className="text-parchment">Barbara Faulk Educators Grant</strong>{" "}
+                  — so that her energy and love of life will continue always.
                 </p>
               </div>
-
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <a
-                  href={BARBARA_FAULK_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-terracotta px-8 py-3.5 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
-                >
-                  <Heart size={14} /> Give to This Grant
-                </a>
-                <p className="text-xs text-parchment/50">
-                  100% of your gift supports arts education and classroom teachers in Union County.
-                </p>
-              </div>
+              <a
+                href={BARBARA_FAULK_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-flex items-center gap-2 border border-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
+              >
+                <Heart size={13} /> Give to This Grant
+              </a>
             </div>
           </div>
         </div>
