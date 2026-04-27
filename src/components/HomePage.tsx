@@ -165,20 +165,6 @@ export default function HomePage({
               </span>
             </a>
 
-            {announcements.length > 0 && (
-              <Link
-                href={`/announcements#${announcements[0].slug}`}
-                className="group hidden md:flex items-center gap-3 border-l border-parchment/15 pl-4 transition hover:opacity-100 min-w-0"
-              >
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
-                </span>
-                <span className="truncate text-[0.68rem] uppercase tracking-[0.2em] text-terracotta/80 transition group-hover:text-terracotta">
-                  {announcements[0].eyebrow || "Announcement"} &mdash; {announcements[0].title}
-                </span>
-              </Link>
-            )}
 
             <motion.div
               animate={{ y: [0, 4, 0] }}
