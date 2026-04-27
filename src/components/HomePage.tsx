@@ -208,12 +208,16 @@ export default function HomePage({
                     <h2 className="display mt-2 text-3xl text-parchment md:text-4xl">{featured.title}</h2>
                     <p className="mt-3 max-w-lg text-sm text-parchment/65 leading-relaxed">{featured.description}</p>
                   </div>
-                  {(featured.ctaOne || featured.ctaTwo) && (
-                    <div className="flex shrink-0 flex-col gap-3 self-start md:self-auto">
-                      {featured.ctaOne && <AnnouncementCta cta={featured.ctaOne} primary />}
-                      {featured.ctaTwo && <AnnouncementCta cta={featured.ctaTwo} />}
-                    </div>
-                  )}
+                  <div className="flex shrink-0 flex-col gap-3 self-start md:self-auto">
+                    {featured.ctaOne && <AnnouncementCta cta={featured.ctaOne} primary />}
+                    {featured.ctaTwo && <AnnouncementCta cta={featured.ctaTwo} />}
+                    <Link
+                      href={`/announcements#${featured.slug}`}
+                      className="text-[0.68rem] text-parchment/45 transition hover:text-parchment/80"
+                    >
+                      Read this announcement →
+                    </Link>
+                  </div>
                 </div>
               </div>
 
@@ -221,18 +225,22 @@ export default function HomePage({
               {rest.length > 0 && (
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   {rest.map((ann) => (
-                    <div key={ann.title} className="flex flex-col gap-3 border border-parchment/15 bg-black/20 p-5">
+                    <div key={ann.slug} className="flex flex-col gap-3 border border-parchment/15 bg-black/20 p-5">
                       {ann.eyebrow && (
                         <p className="text-[0.62rem] uppercase tracking-[0.18em] text-parchment/40">{ann.eyebrow}</p>
                       )}
                       <h3 className="display text-xl text-parchment">{ann.title}</h3>
                       <p className="flex-1 text-xs leading-relaxed text-parchment/55">{ann.description}</p>
-                      {(ann.ctaOne || ann.ctaTwo) && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {ann.ctaOne && <AnnouncementCta cta={ann.ctaOne} small />}
-                          {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} small />}
-                        </div>
-                      )}
+                      <div className="flex flex-wrap items-center gap-3 pt-1">
+                        {ann.ctaOne && <AnnouncementCta cta={ann.ctaOne} small />}
+                        {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} small />}
+                        <Link
+                          href={`/announcements#${ann.slug}`}
+                          className="text-[0.62rem] text-parchment/40 transition hover:text-parchment/70"
+                        >
+                          Read more →
+                        </Link>
+                      </div>
                     </div>
                   ))}
                 </div>

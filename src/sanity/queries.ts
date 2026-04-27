@@ -4,8 +4,10 @@ import type { Artist } from "@/data/artists";
 
 export type Announcement = {
   title: string;
+  slug: string;
   eyebrow: string | null;
   description: string;
+  body: string | null;
   publishedAt: string;
   ctaOne: { label: string; url: string } | null;
   ctaTwo: { label: string; url: string } | null;
@@ -91,17 +93,25 @@ export async function getExhibitSlugs(): Promise<string[]> {
 
 // ── Announcement queries ──────────────────────────────────────────────────────
 
+const ANNOUNCEMENT_FILTER = `_type == "announcement" && active == true && (!defined(expiresAt) || expiresAt > $today)`;
+const ANNOUNCEMENT_FIELDS = `title, "slug": slug.current, eyebrow, description, body, publishedAt, ctaOne { label, url }, ctaTwo { label, url }`;
+
 export async function getAnnouncements(): Promise<Announcement[]> {
   const client = getClient();
   if (!client) return [];
   const today = new Date().toISOString().split("T")[0];
   return client.fetch<Announcement[]>(
-    `*[_type == "announcement" && active == true && (!defined(expiresAt) || expiresAt > $today)]
-      | order(publishedAt desc) [0...3] {
-        title, eyebrow, description, publishedAt,
-        ctaOne { label, url },
-        ctaTwo { label, url },
-      }`,
+    `*[${ANNOUNCEMENT_FILTER}] | order(publishedAt desc) [0...3] { ${ANNOUNCEMENT_FIELDS} }`,
+    { today }
+  );
+}
+
+export async function getAllAnnouncements(): Promise<Announcement[]> {
+  const client = getClient();
+  if (!client) return [];
+  const today = new Date().toISOString().split("T")[0];
+  return client.fetch<Announcement[]>(
+    `*[${ANNOUNCEMENT_FILTER}] | order(publishedAt desc) { ${ANNOUNCEMENT_FIELDS} }`,
     { today }
   );
 }
