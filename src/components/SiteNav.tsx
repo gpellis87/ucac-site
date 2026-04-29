@@ -6,13 +6,13 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const DONATE_HREF = "/donate";
+const SUPPORT_HREF = "/support";
 
 const links = [
   { href: "/",            label: "Home" },
   { href: "/exhibits",    label: "Exhibitions" },
   { href: "/artists",     label: "Artists" },
-  { href: "/membership",  label: "Membership" },
+  { href: "/support",     label: "Support" },
   { href: "/contact",     label: "Contact" },
 ];
 
@@ -53,10 +53,10 @@ export default function SiteNav() {
               </Link>
             ))}
             <Link
-              href={DONATE_HREF}
+              href={SUPPORT_HREF}
               className="border border-terracotta bg-terracotta/10 px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.14em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
             >
-              Donate
+              Support
             </Link>
           </nav>
 
@@ -107,10 +107,10 @@ export default function SiteNav() {
               </nav>
               <div className="space-y-4">
                 <Link
-                  href={DONATE_HREF}
+                  href={SUPPORT_HREF}
                   className="block border border-terracotta bg-terracotta/10 px-6 py-3 text-center text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
                 >
-                  Donate
+                  Support
                 </Link>
                 <p className="text-sm text-parchment/70">Rooted in community. Driven by art.</p>
               </div>

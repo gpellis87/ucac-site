@@ -28,7 +28,7 @@ export default function SiteFooter() {
             <Link href="/exhibits" className="text-parchment/80 transition hover:text-parchment">Exhibitions</Link>
             <Link href="/artists" className="text-parchment/80 transition hover:text-parchment">Artists</Link>
             <Link href="/contact" className="text-parchment/80 transition hover:text-parchment">Contact</Link>
-            <Link href="/donate" className="text-parchment/80 transition hover:text-parchment">Donate</Link>
+            <Link href="/support" className="text-parchment/80 transition hover:text-parchment">Support</Link>
           </div>
         </div>
         <div>

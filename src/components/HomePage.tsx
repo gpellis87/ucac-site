@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Facebook, ChevronDown, Heart } from "lucide-react";
 
-const MEMBERSHIP_URL = "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
 import SponsorsStrip from "@/components/SponsorsStrip";
@@ -139,8 +138,8 @@ export default function HomePage({
             className="mt-8 flex flex-wrap gap-3"
           >
             <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
-            <Link href="/donate" className="ghost-btn inline-flex items-center gap-2">
-              <Heart size={13} /> Donate
+            <Link href="/support" className="ghost-btn inline-flex items-center gap-2">
+              <Heart size={13} /> Support
             </Link>
             <Link href="/contact" className="ghost-btn">Get in Touch</Link>
           </motion.div>
@@ -342,8 +341,8 @@ export default function HomePage({
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <Link href="/contact" className="accent-btn">Contact Us</Link>
-                <Link href="/donate" className="ghost-btn inline-flex items-center gap-2">
-                  <Heart size={14} /> Donate
+                <Link href="/support" className="ghost-btn inline-flex items-center gap-2">
+                  <Heart size={14} /> Support
                 </Link>
                 <a
                   href="https://www.facebook.com/profile.php?id=61574355290119"
