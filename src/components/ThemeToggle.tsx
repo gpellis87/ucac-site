@@ -35,8 +35,8 @@ export default function ThemeToggle({ mobile = false }: { mobile?: boolean }) {
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
       className={
         mobile
-          ? "ghost-btn w-full gap-2 text-center"
-          : "inline-flex items-center gap-2 border px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.14em] transition hover:-translate-y-[1px]"
+          ? "ghost-btn w-full justify-center gap-2 text-center"
+          : "inline-flex h-10 w-10 items-center justify-center border transition hover:-translate-y-[1px]"
       }
       style={
         mobile
@@ -48,8 +48,8 @@ export default function ThemeToggle({ mobile = false }: { mobile?: boolean }) {
             }
       }
     >
-      {theme === "light" ? <Moon size={14} /> : <Sun size={14} />}
-      {theme === "light" ? "Dark Theme" : "Light Theme"}
+      {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
+      {mobile ? (theme === "light" ? "Dark Theme" : "Light Theme") : null}
     </button>
   );
 }

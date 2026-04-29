@@ -88,8 +88,9 @@ export default function HomePage({
         </motion.div>
 
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(0,0,0,0.88),rgba(0,0,0,0.55)_50%,rgba(0,0,0,0.80))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.38),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.22),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.82),rgba(18,14,11,0.46)_50%,rgba(18,14,11,0.72))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,248,241,0.06),rgba(0,0,0,0.18))]" />
 
         {/* Grain */}
         <div
@@ -116,7 +117,8 @@ export default function HomePage({
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.8 }}
-            className="editorial-title max-w-4xl text-[clamp(4rem,10vw,8.5rem)] leading-[0.9] text-parchment [text-shadow:0_10px_32px_rgba(0,0,0,0.45)]"
+            className="max-w-4xl text-[clamp(4rem,10vw,8.5rem)] leading-[0.9] text-white [text-shadow:0_14px_38px_rgba(0,0,0,0.55)]"
+            style={{ fontFamily: "var(--font-display), Georgia, serif" }}
           >
             Art lives<br />
             <span className="text-terracotta">here.</span>
@@ -126,7 +128,7 @@ export default function HomePage({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.52, duration: 0.7 }}
-            className="mt-7 max-w-lg text-base text-parchment/85 leading-relaxed md:text-lg"
+            className="mt-7 max-w-xl text-base leading-relaxed text-white/90 [text-shadow:0_4px_18px_rgba(0,0,0,0.35)] md:text-lg"
           >
             Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
           </motion.p>
@@ -138,10 +140,12 @@ export default function HomePage({
             className="mt-8 flex flex-wrap gap-3"
           >
             <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
-            <Link href="/support" className="ghost-btn inline-flex items-center gap-2">
+            <Link href="/support" className="inline-flex items-center justify-center gap-2 border border-white/45 bg-black/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:text-[#1b1612]">
               <Heart size={13} /> Support
             </Link>
-            <Link href="/contact" className="ghost-btn">Get in Touch</Link>
+            <Link href="/contact" className="inline-flex items-center justify-center border border-white/45 bg-black/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:text-[#1b1612]">
+              Get in Touch
+            </Link>
           </motion.div>
 
         </div>

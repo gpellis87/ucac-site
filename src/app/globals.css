@@ -222,25 +222,25 @@ html[data-theme="light"] .text-parchment {
   color: rgb(var(--theme-text)) !important;
 }
 
-html[data-theme="light"] .text-parchment\/95 { color: rgb(var(--theme-text) / 0.95) !important; }
-html[data-theme="light"] .text-parchment\/90 { color: rgb(var(--theme-text) / 0.9) !important; }
-html[data-theme="light"] .text-parchment\/88 { color: rgb(var(--theme-text) / 0.88) !important; }
-html[data-theme="light"] .text-parchment\/85 { color: rgb(var(--theme-text) / 0.85) !important; }
-html[data-theme="light"] .text-parchment\/80 { color: rgb(var(--theme-text) / 0.8) !important; }
-html[data-theme="light"] .text-parchment\/78 { color: rgb(var(--theme-text) / 0.78) !important; }
-html[data-theme="light"] .text-parchment\/75 { color: rgb(var(--theme-text) / 0.75) !important; }
-html[data-theme="light"] .text-parchment\/72 { color: rgb(var(--theme-text) / 0.72) !important; }
-html[data-theme="light"] .text-parchment\/70 { color: rgb(var(--theme-text) / 0.7) !important; }
-html[data-theme="light"] .text-parchment\/65 { color: rgb(var(--theme-text) / 0.65) !important; }
-html[data-theme="light"] .text-parchment\/60 { color: rgb(var(--theme-text) / 0.6) !important; }
-html[data-theme="light"] .text-parchment\/55 { color: rgb(var(--theme-text) / 0.55) !important; }
-html[data-theme="light"] .text-parchment\/50 { color: rgb(var(--theme-text) / 0.5) !important; }
-html[data-theme="light"] .text-parchment\/45 { color: rgb(var(--theme-text) / 0.45) !important; }
-html[data-theme="light"] .text-parchment\/40 { color: rgb(var(--theme-text) / 0.4) !important; }
-html[data-theme="light"] .text-parchment\/35 { color: rgb(var(--theme-text) / 0.35) !important; }
-html[data-theme="light"] .text-parchment\/30 { color: rgb(var(--theme-text) / 0.3) !important; }
-html[data-theme="light"] .text-parchment\/20 { color: rgb(var(--theme-text) / 0.2) !important; }
-html[data-theme="light"] .text-parchment\/10 { color: rgb(var(--theme-text) / 0.1) !important; }
+html[data-theme="light"] .text-parchment\/95 { color: rgb(var(--theme-text) / 0.97) !important; }
+html[data-theme="light"] .text-parchment\/90 { color: rgb(var(--theme-text) / 0.94) !important; }
+html[data-theme="light"] .text-parchment\/88 { color: rgb(var(--theme-text) / 0.92) !important; }
+html[data-theme="light"] .text-parchment\/85 { color: rgb(var(--theme-text) / 0.89) !important; }
+html[data-theme="light"] .text-parchment\/80 { color: rgb(var(--theme-text) / 0.85) !important; }
+html[data-theme="light"] .text-parchment\/78 { color: rgb(var(--theme-text) / 0.83) !important; }
+html[data-theme="light"] .text-parchment\/75 { color: rgb(var(--theme-text) / 0.8) !important; }
+html[data-theme="light"] .text-parchment\/72 { color: rgb(var(--theme-text) / 0.77) !important; }
+html[data-theme="light"] .text-parchment\/70 { color: rgb(var(--theme-text) / 0.75) !important; }
+html[data-theme="light"] .text-parchment\/65 { color: rgb(var(--theme-text) / 0.71) !important; }
+html[data-theme="light"] .text-parchment\/60 { color: rgb(var(--theme-text) / 0.68) !important; }
+html[data-theme="light"] .text-parchment\/55 { color: rgb(var(--theme-text) / 0.64) !important; }
+html[data-theme="light"] .text-parchment\/50 { color: rgb(var(--theme-text) / 0.6) !important; }
+html[data-theme="light"] .text-parchment\/45 { color: rgb(var(--theme-text) / 0.56) !important; }
+html[data-theme="light"] .text-parchment\/40 { color: rgb(var(--theme-text) / 0.52) !important; }
+html[data-theme="light"] .text-parchment\/35 { color: rgb(var(--theme-text) / 0.48) !important; }
+html[data-theme="light"] .text-parchment\/30 { color: rgb(var(--theme-text) / 0.44) !important; }
+html[data-theme="light"] .text-parchment\/20 { color: rgb(var(--theme-text) / 0.3) !important; }
+html[data-theme="light"] .text-parchment\/10 { color: rgb(var(--theme-text) / 0.18) !important; }
 
 html[data-theme="light"] .border-parchment,
 html[data-theme="light"] .border-parchment\/50,
