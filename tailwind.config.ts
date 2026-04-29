@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        charcoal: "#1e1915",
+        charcoal: "#1a1a1a",
         parchment: "#f5f0eb",
         terracotta: "#c0542a",
         slatecool: "#677388",

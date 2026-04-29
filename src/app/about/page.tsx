@@ -46,10 +46,10 @@ export default function AboutPage() {
           <div className="grid gap-7 lg:grid-cols-2 lg:items-center">
             <div className="space-y-4">
               <h2 className="display text-4xl md:text-5xl">Our Story</h2>
-              <p className="text-parchment/87">
+              <p className="text-parchment/80">
                 Union County Community Arts Council was founded in 1980 by four area business leaders - John Ashcraft, Jim Barnett, Koy Dawkins, and Ben Helms - to enhance quality of life through arts and culture.
               </p>
-              <p className="text-parchment/87">
+              <p className="text-parchment/80">
                 The council&apos;s roots include downtown Monroe&apos;s Blooming Arts Festival and continued support for major local cultural initiatives. Today, UCCAC serves the people of Union County by leading, cultivating, and promoting the arts as an essential component of community life.
               </p>
             </div>
@@ -75,10 +75,10 @@ export default function AboutPage() {
               />
             </div>
             <div className="space-y-4 lg:order-2">
-              <p className="text-parchment/87">
+              <p className="text-parchment/80">
                 Our vision is a Union County that embraces the arts as a fundamental part of an enriched and thriving community. Programs are designed to increase participation, build appreciation, and remove barriers to access.
               </p>
-              <p className="text-parchment/87">
+              <p className="text-parchment/80">
                 Through partnerships with schools, nonprofits, local government, artists, and volunteers, we provide financial assistance and practical support to organizations and individuals creating arts impact across the county.
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-[1500px] gap-8 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <h2 className="display text-4xl md:text-5xl">How We&apos;re Funded</h2>
-            <p className="mt-4 text-parchment/87">
+            <p className="mt-4 text-parchment/80">
               UCCAC operates through a diversified nonprofit model: individual donations, grants, sponsorships, memberships, and event revenue.
             </p>
             <ul className="mt-5 space-y-2 text-sm uppercase tracking-[0.12em] text-parchment/75">
@@ -114,7 +114,7 @@ export default function AboutPage() {
               <li>12% Membership Dues</li>
               <li>8% Program & Event Revenue</li>
             </ul>
-            <ul className="mt-6 list-disc space-y-2 pl-5 text-sm text-parchment/85">
+            <ul className="mt-6 list-disc space-y-2 pl-5 text-sm text-parchment/78">
               <li>Increase participation, awareness, and appreciation of the arts.</li>
               <li>Serve as a cultural planner and resource agency for Union County.</li>
               <li>Develop programming and services responsive to community needs.</li>
@@ -181,7 +181,7 @@ export default function AboutPage() {
             {milestones.map((item) => (
               <div key={item} className="relative">
                 <span className="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-terracotta" />
-                <p className="text-parchment/87">{item}</p>
+                <p className="text-parchment/80">{item}</p>
               </div>
             ))}
           </div>

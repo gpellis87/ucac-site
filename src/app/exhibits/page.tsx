@@ -21,7 +21,7 @@ export default async function ExhibitsPage() {
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Exhibitions
           </h1>
-          <p className="mt-5 max-w-xl text-base text-parchment/78 leading-relaxed">
+          <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
             Works from artists across Union County and the region — on view now and opening soon at 300 North Hayne Street.
           </p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
@@ -37,7 +37,7 @@ export default async function ExhibitsPage() {
               ))}
             </div>
           ) : (
-            <p className="py-20 text-center text-parchment/53">No exhibitions are currently listed.</p>
+            <p className="py-20 text-center text-parchment/40">No exhibitions are currently listed.</p>
           )}
         </div>
       </div>
@@ -46,7 +46,7 @@ export default async function ExhibitsPage() {
         <div className="section-pad mt-20">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-8 h-px w-full bg-gradient-to-r from-parchment/20 via-parchment/10 to-transparent" />
-            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/53">Past Exhibitions</p>
+            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40">Past Exhibitions</p>
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {archived.map((exhibit) => (
                 <ExhibitCard key={exhibit.id} exhibit={exhibit} muted />
