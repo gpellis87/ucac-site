@@ -13,7 +13,7 @@ const sponsors = [
   { name: "Huntington Bank",         file: "huntington-bank.png",  href: "https://www.huntington.com/",       imgClass: "mix-blend-multiply" },
   { name: "Lawrence Associates",     file: "lawrence.png",         href: "http://lawrencesurveying.com/",     imgClass: "invert" },
   { name: "Union County",            file: "union-county.png",     href: "https://www.unioncountync.gov/",    imgClass: "mix-blend-multiply" },
-  { name: "Union Power Cooperative", file: "union-power.jpg",      href: "https://union-power.com/",          imgClass: "mix-blend-multiply" },
+  { name: "Union Power Cooperative", file: "union-power.png",      href: "https://union-power.com/",          imgClass: "mix-blend-multiply" },
   { name: "Wingate University",      file: "wingate.png",          href: "https://www.wingate.edu/",          imgClass: "mix-blend-multiply" },
 ];
 
