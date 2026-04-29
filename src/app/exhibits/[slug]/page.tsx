@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const statusColors: Record<string, string> = {
-  "now-on-view":      "bg-terracotta text-parchment",
-  "opening-soon":     "border border-parchment/50 text-parchment",
-  "call-for-artists": "border border-terracotta/70 text-terracotta",
+  "now-on-view":      "border border-terracotta bg-terracotta text-white shadow-[0_10px_20px_rgba(192,84,42,0.28)]",
+  "opening-soon":     "border border-white/75 bg-white/92 text-[#201914] shadow-[0_10px_20px_rgba(0,0,0,0.2)]",
+  "call-for-artists": "border border-[#8ba0bf]/75 bg-[#334766]/92 text-white shadow-[0_10px_20px_rgba(0,0,0,0.24)]",
 };
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {

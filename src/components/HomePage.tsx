@@ -207,11 +207,6 @@ export default function HomePage({
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.1),transparent_65%)]" />
                   )}
                   <div className="relative flex flex-1 flex-col gap-3">
-                    {ann.eyebrow && (
-                      <p className={`text-[0.62rem] uppercase tracking-[0.2em] ${i === 0 ? "text-terracotta" : "text-parchment/40"}`}>
-                        {ann.eyebrow}
-                      </p>
-                    )}
                     <h2 className={`display leading-tight text-parchment ${i === 0 ? "text-2xl" : "text-xl"}`}>
                       {ann.title}
                     </h2>
@@ -282,8 +277,8 @@ export default function HomePage({
                 />
               </div>
               <div className="flex flex-col justify-center gap-3 p-7">
-                <p className="text-[0.65rem] uppercase tracking-[0.18em] text-parchment/30">Past Exhibition</p>
-                <h3 className="display text-2xl text-parchment/75 leading-tight group-hover:text-parchment/90 transition md:text-3xl">
+                <p className="text-[0.65rem] uppercase tracking-[0.18em] text-terracotta">Past Exhibition</p>
+                <h3 className="display text-2xl text-parchment/85 leading-tight group-hover:text-parchment transition md:text-3xl">
                   {recentlyClosed.title}
                 </h3>
                 <p className="line-clamp-2 max-w-xl text-sm text-parchment/45 leading-relaxed">

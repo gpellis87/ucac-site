@@ -34,7 +34,7 @@ export default function SiteNav() {
             <div className="display text-[1.9rem] tracking-tight text-parchment transition-colors group-hover:text-terracotta">
               UCCAC
             </div>
-            <div className="text-[0.58rem] uppercase tracking-[0.22em] text-parchment/85">
+            <div className="text-[0.58rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-terracotta">
               Union County Community Arts Council
             </div>
           </Link>
