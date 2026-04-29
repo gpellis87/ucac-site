@@ -18,7 +18,7 @@ export default function EventCard({ event }: { event: UccacEvent }) {
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-        <div className="absolute left-4 top-4 bg-charcoal/80 px-3 py-1 text-[0.65rem] uppercase tracking-[0.16em] text-terracotta">
+        <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.65rem] uppercase tracking-[0.16em] text-terracotta">
           {event.category}
         </div>
       </div>

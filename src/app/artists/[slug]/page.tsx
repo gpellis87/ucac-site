@@ -140,7 +140,7 @@ export default async function ArtistPage({ params }: Props) {
               <p className="mb-6 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Selected Work</p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {artist.workImages.map((src, i) => (
-                  <div key={i} className="relative aspect-square overflow-hidden border border-parchment/10 bg-[#111]">
+                  <div key={i} className="relative aspect-square overflow-hidden border border-parchment/10 bg-[rgb(var(--theme-bg-alt)_/_0.65)]">
                     <Image
                       src={sanityImg(src, { w: 800, h: 800, fit: "crop" })}
                       alt={`${displayName} — work ${i + 1}`}

@@ -43,14 +43,14 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
           sizes="100vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-black/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.92)] via-[rgb(var(--theme-overlay)_/_0.52)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
         <div className="section-pad absolute inset-x-0 bottom-0 pb-10">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-4 flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em]">
               <span className="bg-terracotta px-3 py-1 text-parchment">{event.category}</span>
-              <span className="bg-black/45 px-3 py-1 text-parchment">{formatEventDate(event.date)}</span>
-              <span className="bg-black/45 px-3 py-1 text-parchment">{event.time}</span>
-              <span className="bg-black/45 px-3 py-1 text-parchment">{event.location}</span>
+              <span className="theme-chip px-3 py-1 text-parchment">{formatEventDate(event.date)}</span>
+              <span className="theme-chip px-3 py-1 text-parchment">{event.time}</span>
+              <span className="theme-chip px-3 py-1 text-parchment">{event.location}</span>
             </div>
             <h1 className="editorial-title max-w-4xl text-5xl md:text-7xl">{event.title}</h1>
           </div>
@@ -72,7 +72,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
             </p>
           </article>
 
-          <aside className="space-y-4 border border-parchment/20 bg-black/25 p-6">
+          <aside className="theme-panel space-y-4 p-6">
             <p><span className="text-parchment/55">Date:</span> {formatEventDate(event.date)}</p>
             <p><span className="text-parchment/55">Time:</span> {event.time}</p>
             <p><span className="text-parchment/55">Location:</span> {event.location}</p>
@@ -105,7 +105,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
       </section>
 
       <section className="section-pad sticky bottom-0 z-30 mt-10">
-        <div className="mx-auto flex max-w-[1500px] flex-wrap items-center justify-between gap-3 border border-parchment/20 bg-charcoal/95 p-4 backdrop-blur-xl">
+        <div className="theme-panel-strong mx-auto flex max-w-[1500px] flex-wrap items-center justify-between gap-3 p-4 backdrop-blur-xl">
           <button type="button" onClick={() => setShowRsvp(true)} className="accent-btn px-5 py-2 text-xs">
             RSVP
           </button>
@@ -154,8 +154,8 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
       </section>
 
       {showRsvp && (
-        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/70 p-4">
-          <div className="w-full max-w-md border border-parchment/25 bg-charcoal p-6">
+        <div className="theme-modal fixed inset-0 z-[80] flex items-center justify-center p-4">
+          <div className="theme-panel-strong w-full max-w-md p-6">
             <div className="mb-4 flex items-center justify-between">
               <h3 className="display text-3xl">RSVP</h3>
               <button type="button" onClick={() => setShowRsvp(false)} aria-label="Close RSVP modal">
@@ -174,9 +174,9 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
                   setSubmitted(true);
                 }}
               >
-                <input required aria-label="Name" placeholder="Name" className="w-full border border-parchment/30 bg-transparent px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
-                <input required type="email" aria-label="Email" placeholder="Email" className="w-full border border-parchment/30 bg-transparent px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
-                <input required type="number" min={1} defaultValue={1} aria-label="Number of Guests" placeholder="Number of Guests" className="w-full border border-parchment/30 bg-transparent px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
+                <input required aria-label="Name" placeholder="Name" className="theme-input w-full px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
+                <input required type="email" aria-label="Email" placeholder="Email" className="theme-input w-full px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
+                <input required type="number" min={1} defaultValue={1} aria-label="Number of Guests" placeholder="Number of Guests" className="theme-input w-full px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
                 <button type="submit" className="accent-btn w-full">
                   Submit RSVP
                 </button>

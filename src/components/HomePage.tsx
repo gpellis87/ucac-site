@@ -151,7 +151,7 @@ export default function HomePage({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.7 }}
-          className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-[rgba(34,30,26,0.46)] backdrop-blur-sm"
+          className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-[rgb(var(--theme-nav)_/_0.54)] backdrop-blur-sm"
         >
           <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 py-3">
             <a href="#exhibitions" className="group flex items-center gap-3 shrink-0 transition hover:opacity-80">
@@ -179,7 +179,7 @@ export default function HomePage({
 
       {/* ── Announcements ────────────────────────────────────────────── */}
       {announcements.length > 0 && (
-        <SectionReveal className="section-pad border-b border-parchment/10 bg-[rgba(245,240,235,0.025)] py-8">
+        <SectionReveal className="theme-band section-pad border-b border-parchment/10 py-8">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-4 flex items-center justify-between">
               <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/35">Announcements</p>
@@ -295,7 +295,7 @@ export default function HomePage({
       )}
 
       {/* ── Mission strip ────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad bg-[rgba(245,240,235,0.02)] py-14">
+      <SectionReveal className="theme-band section-pad py-14">
         <div className="mx-auto max-w-[1500px] border-y border-parchment/15 py-10">
           <p className="display text-center text-2xl leading-snug text-parchment/90 md:text-[2rem]">
             We champion art as civic infrastructure — for imagination, equity, and collective joy.
@@ -305,7 +305,7 @@ export default function HomePage({
 
       {/* ── Stats ────────────────────────────────────────────────────── */}
       <SectionReveal>
-        <div className="section-pad bg-[rgba(245,240,235,0.02)] py-16">
+        <div className="theme-band section-pad py-16">
           <div className="mx-auto max-w-[1500px]">
             <p className="mb-10 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Our Impact</p>
             <div className="grid gap-px bg-parchment/10 md:grid-cols-2 xl:grid-cols-4">

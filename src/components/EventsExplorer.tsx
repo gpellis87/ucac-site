@@ -123,8 +123,8 @@ export default function EventsExplorer() {
                     key={current.toISOString()}
                     className={`min-h-[98px] border p-2 transition ${
                       inMonth
-                        ? "border-parchment/20 bg-charcoal/50 hover:border-terracotta/40 hover:bg-charcoal/80"
-                        : "border-parchment/10 bg-charcoal/20 text-parchment/30"
+                        ? "border-parchment/20 bg-[rgb(var(--theme-surface)_/_0.72)] hover:border-terracotta/40 hover:bg-[rgb(var(--theme-surface-strong)_/_0.9)]"
+                        : "border-parchment/10 bg-[rgb(var(--theme-bg-alt)_/_0.5)] text-parchment/30"
                     }`}
                   >
                     <p className={`text-xs ${dayEvents.length > 0 && inMonth ? "text-terracotta" : ""}`}>{current.getDate()}</p>

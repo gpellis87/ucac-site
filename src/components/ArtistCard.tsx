@@ -12,7 +12,7 @@ export default function ArtistCard({ artist, priority = false }: { artist: Artis
       className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1 hover:border-terracotta/70 hover:shadow-[0_12px_24px_rgba(0,0,0,0.28)]"
     >
       {/* Work thumbnail */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#111]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[rgb(var(--theme-bg-alt)_/_0.65)]">
         <Image
           src={sanityImg(artist.workImages?.[0], { w: 480, fit: "crop" })}
           alt={`Work by ${displayName}`}

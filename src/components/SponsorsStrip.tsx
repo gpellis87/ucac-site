@@ -19,7 +19,7 @@ const sponsors = [
 
 export default function SponsorsStrip() {
   return (
-    <SectionReveal className="section-pad bg-[#0d0c0b] py-14">
+    <SectionReveal className="theme-band section-pad py-14">
       <div className="mx-auto max-w-[1500px]">
         <p className="mb-8 text-center text-[0.68rem] uppercase tracking-[0.22em] text-parchment/30">
           Supported By
@@ -32,7 +32,7 @@ export default function SponsorsStrip() {
               target="_blank"
               rel="noreferrer"
               title={name}
-              className="flex h-[76px] w-[144px] items-center justify-center rounded-xl bg-[#f8f6f3] p-4 shadow-md transition duration-200 hover:opacity-75"
+              className="theme-panel-strong flex h-[76px] w-[144px] items-center justify-center rounded-xl p-4 shadow-md transition duration-200 hover:opacity-75"
             >
               <Image
                 src={`/sponsors/${file}`}

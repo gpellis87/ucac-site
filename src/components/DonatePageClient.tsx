@@ -61,7 +61,7 @@ export default function DonatePageClient() {
 
       <SectionReveal className="section-pad py-14">
         <div className="mx-auto grid max-w-[1500px] gap-8 lg:grid-cols-[1.3fr_1fr]">
-          <div className="border border-parchment/20 bg-black/25 p-6 md:p-8">
+          <div className="theme-panel p-6 md:p-8">
             <h2 className="display text-4xl">Make a Donation</h2>
             {thanks ? (
               <div className="mt-5 border border-terracotta/50 bg-terracotta/10 p-4">
@@ -104,7 +104,7 @@ export default function DonatePageClient() {
                       type="number"
                       min={1}
                       placeholder="Enter custom amount"
-                      className="mt-3 w-full border border-parchment/30 bg-transparent px-3 py-2"
+                      className="theme-input mt-3 w-full px-3 py-2"
                     />
                   )}
                   {errors.amount ? <p className="mt-1 text-xs text-terracotta">{errors.amount}</p> : null}
@@ -117,16 +117,16 @@ export default function DonatePageClient() {
                     Monthly
                   </button>
                 </div>
-                <input name="dedicate" placeholder="Dedicate in honor/memory of (optional)" className="w-full border border-parchment/30 bg-transparent px-3 py-2" />
+                <input name="dedicate" placeholder="Dedicate in honor/memory of (optional)" className="theme-input w-full px-3 py-2" />
                 <div>
-                  <input name="name" placeholder="Name" className="w-full border border-parchment/30 bg-transparent px-3 py-2" />
+                  <input name="name" placeholder="Name" className="theme-input w-full px-3 py-2" />
                   {errors.name ? <p className="mt-1 text-xs text-terracotta">{errors.name}</p> : null}
                 </div>
                 <div>
-                  <input name="email" placeholder="Email" className="w-full border border-parchment/30 bg-transparent px-3 py-2" />
+                  <input name="email" placeholder="Email" className="theme-input w-full px-3 py-2" />
                   {errors.email ? <p className="mt-1 text-xs text-terracotta">{errors.email}</p> : null}
                 </div>
-                <input name="phone" placeholder="Phone (optional)" className="w-full border border-parchment/30 bg-transparent px-3 py-2" />
+                <input name="phone" placeholder="Phone (optional)" className="theme-input w-full px-3 py-2" />
                 <button type="submit" className="accent-btn w-full">Donate Now</button>
                 <p className="text-xs text-parchment/60">This is a nonprofit 501(c)(3) organization. Donations are tax-deductible.</p>
               </form>
@@ -155,16 +155,16 @@ export default function DonatePageClient() {
                   setVolunteerDone(true);
                 }}
               >
-                <input required placeholder="Name" className="w-full border border-parchment/30 bg-transparent px-3 py-2" />
-                <input required type="email" placeholder="Email" className="w-full border border-parchment/30 bg-transparent px-3 py-2" />
-                <select required className="w-full border border-parchment/30 bg-charcoal px-3 py-2">
+                <input required placeholder="Name" className="theme-input w-full px-3 py-2" />
+                <input required type="email" placeholder="Email" className="theme-input w-full px-3 py-2" />
+                <select required className="theme-input w-full px-3 py-2">
                   <option value="">Area of Interest</option>
                   <option>Events</option>
                   <option>Youth Programs</option>
                   <option>Fundraising</option>
                   <option>Marketing</option>
                 </select>
-                <textarea placeholder="Message" rows={4} className="w-full border border-parchment/30 bg-transparent px-3 py-2" />
+                <textarea placeholder="Message" rows={4} className="theme-input w-full px-3 py-2" />
                 <button className="ghost-btn w-full" type="submit">Send Interest</button>
               </form>
             )}

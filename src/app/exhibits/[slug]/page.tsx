@@ -81,7 +81,7 @@ export default async function ExhibitPage({ params }: Props) {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0c0b] via-[#0d0c0b]/60 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.9)] via-[rgb(var(--theme-overlay)_/_0.58)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(192,84,42,0.18),transparent_50%)]" />
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-10 lg:px-16 xl:px-24">
@@ -105,7 +105,7 @@ export default async function ExhibitPage({ params }: Props) {
 
       {/* ── Main Video ───────────────────────────────────────────────── */}
       {exhibit.mainVideoPath && (
-        <section className="bg-[#060605]">
+        <section className="theme-band">
           <div className="px-5 pt-10 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto max-w-[1500px]">
               <SectionEyebrow>Exhibition Preview</SectionEyebrow>
@@ -190,7 +190,7 @@ export default async function ExhibitPage({ params }: Props) {
 
           {/* Right: info sidebar */}
           <aside className="lg:sticky lg:top-24 self-start">
-            <div className="border border-parchment/15 bg-black/30 divide-y divide-parchment/10">
+            <div className="theme-panel divide-y divide-parchment/10">
 
               <div className="p-5">
                 <p className="mb-2 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">Location</p>

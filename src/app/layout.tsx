@@ -4,6 +4,16 @@ import Script from "next/script";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
+const themeInitScript = `
+  try {
+    var stored = window.localStorage.getItem("uccac-theme");
+    var theme = stored === "dark" ? "dark" : "light";
+    document.documentElement.dataset.theme = theme;
+  } catch (e) {
+    document.documentElement.dataset.theme = "light";
+  }
+`;
+
 const display = DM_Serif_Display({
   subsets: ["latin"],
   variable: "--font-display",
@@ -43,8 +53,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <body className={`${display.variable} ${sans.variable} grain`}>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
         <ClientLayout>{children}</ClientLayout>
         <Script
           defer

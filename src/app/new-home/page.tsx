@@ -136,7 +136,7 @@ export default function NewHomePage() {
       </div>
 
       {/* What's Coming */}
-      <div className="section-pad py-16 bg-[#0f0f0e]">
+      <div className="theme-band section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-10">
             <div className="mb-6 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
@@ -169,7 +169,7 @@ export default function NewHomePage() {
                 body: "A curated space to browse and purchase original work, prints, and handmade goods directly from local artists.",
               },
             ].map(({ icon: Icon, label, body }) => (
-              <div key={label} className="bg-[#0f0f0e] p-8 space-y-4">
+              <div key={label} className="bg-[rgb(var(--theme-surface)_/_0.58)] p-8 space-y-4">
                 <div className="flex h-10 w-10 items-center justify-center border border-terracotta/30 bg-terracotta/10">
                   <Icon size={16} className="text-terracotta" />
                 </div>
@@ -212,7 +212,7 @@ export default function NewHomePage() {
       </div>
 
       {/* Support CTA with QR codes */}
-      <div className="section-pad py-14 bg-[#0f0f0e]">
+      <div className="theme-band section-pad py-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
           <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40 mb-8">Support the Journey</p>

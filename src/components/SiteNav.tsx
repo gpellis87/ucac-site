@@ -5,8 +5,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-
-const SUPPORT_HREF = "/support";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/",            label: "Home" },
@@ -29,7 +28,7 @@ export default function SiteNav() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-parchment/15 bg-[rgba(34,30,26,0.84)] backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.22)]">
+      <header className="theme-nav fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.12)]">
         <div className="section-pad mx-auto flex h-20 max-w-[1500px] items-center justify-between">
           <Link href="/" className="group">
             <div className="display text-[1.9rem] tracking-tight text-parchment transition-colors group-hover:text-terracotta">
@@ -52,12 +51,7 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href={SUPPORT_HREF}
-              className="border border-terracotta bg-terracotta/10 px-4 py-1.5 text-[0.72rem] uppercase tracking-[0.14em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
-            >
-              Support
-            </Link>
+            <ThemeToggle />
           </nav>
 
           <button
@@ -78,7 +72,7 @@ export default function SiteNav() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="fixed inset-0 z-[70] bg-charcoal"
+            className="theme-drawer fixed inset-0 z-[70]"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(192,84,42,0.18),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(245,240,235,0.07),transparent_45%)]" />
             <div className="relative flex h-full flex-col justify-between p-8">
@@ -106,12 +100,7 @@ export default function SiteNav() {
                 ))}
               </nav>
               <div className="space-y-4">
-                <Link
-                  href={SUPPORT_HREF}
-                  className="block border border-terracotta bg-terracotta/10 px-6 py-3 text-center text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
-                >
-                  Support
-                </Link>
+                <ThemeToggle mobile />
                 <p className="text-sm text-parchment/70">Rooted in community. Driven by art.</p>
               </div>
             </div>
