@@ -137,7 +137,9 @@ export default function SupportPage() {
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             <div className="flex flex-col border border-parchment/20 bg-parchment/[0.035] p-8 md:p-10">
               <p className="text-[0.65rem] uppercase tracking-[0.22em] text-parchment/45">General Support</p>
-              <h3 className="display mt-3 text-3xl text-parchment">Support the Arts Council</h3>
+              <h3 className="display mt-3 text-3xl text-parchment md:min-h-[4.5rem]">
+                Support the Arts Council
+              </h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-parchment/65">
                 Your tax-deductible gift directly funds exhibitions, youth programs, community events,
                 and our new home at 300 North Hayne Street. Processed through Zeffy so every dollar
@@ -169,7 +171,7 @@ export default function SupportPage() {
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
               <div className="relative flex flex-1 flex-col">
                 <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">Named Grant</p>
-                <h3 className="display mt-3 text-3xl text-parchment">
+                <h3 className="display mt-3 text-3xl text-parchment md:min-h-[4.5rem]">
                   Barbara Faulk
                   <br />
                   Educators Grant
