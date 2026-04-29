@@ -42,12 +42,12 @@ export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhib
       <div className={`space-y-2 ${muted ? "p-4" : "p-5 space-y-3"}`}>
         <h3 className={`display text-parchment leading-tight ${muted ? "text-lg" : "text-2xl"}`}>{exhibit.title}</h3>
         {!muted && (
-          <p className="text-xs uppercase tracking-[0.14em] text-parchment/60">
+          <p className="text-xs uppercase tracking-[0.14em] text-parchment/70">
             {exhibit.location} · {exhibit.address.split(",")[1]?.trim() ?? exhibit.address}
           </p>
         )}
-        <p className={`line-clamp-2 text-parchment/60 ${muted ? "text-xs" : "text-sm text-parchment/75"}`}>{exhibit.description}</p>
-        <p className={`pt-1 text-[0.68rem] uppercase tracking-[0.16em] transition group-hover:tracking-[0.2em] ${muted ? "text-parchment/35 group-hover:text-parchment/60" : "text-terracotta"}`}>
+        <p className={`line-clamp-2 text-parchment/70 ${muted ? "text-xs" : "text-sm text-parchment/83"}`}>{exhibit.description}</p>
+        <p className={`pt-1 text-[0.68rem] uppercase tracking-[0.16em] transition group-hover:tracking-[0.2em] ${muted ? "text-parchment/50 group-hover:text-parchment/72" : "text-terracotta"}`}>
           View Exhibition
         </p>
       </div>

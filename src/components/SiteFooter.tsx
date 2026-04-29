@@ -4,11 +4,11 @@ import { Facebook } from "lucide-react";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-parchment/20 bg-[#121212] py-16 text-parchment">
+    <footer className="border-t border-parchment/20 bg-[#1c1610] py-16 text-parchment">
       <div className="section-pad mx-auto grid max-w-[1500px] gap-10 md:grid-cols-3">
         <div>
           <p className="display text-4xl text-parchment mb-3">UCCAC</p>
-          <p className="max-w-xs text-sm text-parchment/75">
+          <p className="max-w-xs text-sm text-parchment/83">
             Union County Community Arts Council champions creative expression through education, exhibitions, and community projects.
           </p>
           <a
@@ -22,18 +22,18 @@ export default function SiteFooter() {
           </a>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Quick Links</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-parchment/80">Quick Links</p>
           <div className="mt-3 flex flex-col gap-2 text-sm">
-            <Link href="/" className="text-parchment/80 transition hover:text-parchment">Home</Link>
-            <Link href="/exhibits" className="text-parchment/80 transition hover:text-parchment">Exhibitions</Link>
-            <Link href="/artists" className="text-parchment/80 transition hover:text-parchment">Artists</Link>
-            <Link href="/contact" className="text-parchment/80 transition hover:text-parchment">Contact</Link>
-            <Link href="/donate" className="text-parchment/80 transition hover:text-parchment">Donate</Link>
+            <Link href="/" className="text-parchment/87 transition hover:text-parchment">Home</Link>
+            <Link href="/exhibits" className="text-parchment/87 transition hover:text-parchment">Exhibitions</Link>
+            <Link href="/artists" className="text-parchment/87 transition hover:text-parchment">Artists</Link>
+            <Link href="/contact" className="text-parchment/87 transition hover:text-parchment">Contact</Link>
+            <Link href="/donate" className="text-parchment/87 transition hover:text-parchment">Donate</Link>
           </div>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Contact</p>
-          <div className="mt-3 space-y-2 text-sm text-parchment/85">
+          <p className="text-xs uppercase tracking-[0.2em] text-parchment/80">Contact</p>
+          <div className="mt-3 space-y-2 text-sm text-parchment/90">
             <div>
               <p>300 North Hayne Street</p>
               <p>PO Box 576</p>
@@ -65,20 +65,20 @@ export default function SiteFooter() {
               className="h-28 w-auto object-contain"
             />
           </a>
-          <p className="max-w-xs text-xs text-parchment/45 leading-relaxed sm:text-left">
+          <p className="max-w-xs text-xs text-parchment/58 leading-relaxed sm:text-left">
             Supported by the North Carolina Arts Council, a division of the Department of Natural &amp; Cultural Resources.
           </p>
         </div>
         <div className="text-center">
-          <p className="text-xs text-parchment/60">Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
-          <p className="mt-1 text-xs text-parchment/60">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
-          <p className="mt-3 text-[0.65rem] text-parchment/30">
+          <p className="text-xs text-parchment/70">Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
+          <p className="mt-1 text-xs text-parchment/70">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
+          <p className="mt-3 text-[0.65rem] text-parchment/45">
             Built &amp; maintained by{" "}
             <a
               href="https://phillipellis.com"
               target="_blank"
               rel="noreferrer"
-              className="underline underline-offset-2 transition hover:text-parchment/60"
+              className="underline underline-offset-2 transition hover:text-parchment/80"
             >
               Phillip Ellis
             </a>

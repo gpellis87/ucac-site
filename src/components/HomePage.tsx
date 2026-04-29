@@ -127,7 +127,7 @@ export default function HomePage({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.52, duration: 0.7 }}
-            className="mt-7 max-w-lg text-base text-parchment/85 leading-relaxed md:text-lg"
+            className="mt-7 max-w-lg text-base text-parchment/90 leading-relaxed md:text-lg"
           >
             Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
           </motion.p>
@@ -160,7 +160,7 @@ export default function HomePage({
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
               </span>
-              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70 group-hover:text-parchment/90 transition">
+              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/78 group-hover:text-parchment/90 transition">
                 {exhibits.length} Exhibitions On View &amp; Upcoming
               </span>
             </a>
@@ -180,11 +180,11 @@ export default function HomePage({
 
       {/* ── Announcements ────────────────────────────────────────────── */}
       {announcements.length > 0 && (
-        <SectionReveal className="section-pad bg-[#100f0e] py-8 border-b border-parchment/10">
+        <SectionReveal className="section-pad bg-[#1a140e] py-8 border-b border-parchment/10">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-4 flex items-center justify-between">
-              <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/35">Announcements</p>
-              <Link href="/announcements" className="text-[0.65rem] uppercase tracking-[0.16em] text-parchment/35 transition hover:text-parchment/65">
+              <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/48">Announcements</p>
+              <Link href="/announcements" className="text-[0.65rem] uppercase tracking-[0.16em] text-parchment/48 transition hover:text-parchment/65">
                 View all →
               </Link>
             </div>
@@ -205,14 +205,14 @@ export default function HomePage({
                   )}
                   <div className="relative flex flex-1 flex-col gap-3">
                     {ann.eyebrow && (
-                      <p className={`text-[0.62rem] uppercase tracking-[0.2em] ${i === 0 ? "text-terracotta" : "text-parchment/40"}`}>
+                      <p className={`text-[0.62rem] uppercase tracking-[0.2em] ${i === 0 ? "text-terracotta" : "text-parchment/53"}`}>
                         {ann.eyebrow}
                       </p>
                     )}
                     <h2 className={`display leading-tight text-parchment ${i === 0 ? "text-2xl" : "text-xl"}`}>
                       {ann.title}
                     </h2>
-                    <p className="flex-1 text-sm leading-relaxed text-parchment/60">
+                    <p className="flex-1 text-sm leading-relaxed text-parchment/70">
                       {ann.description}
                     </p>
                     <div className="flex flex-wrap items-center gap-3 pt-1">
@@ -220,7 +220,7 @@ export default function HomePage({
                       {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} small />}
                       <Link
                         href={`/announcements#${ann.slug}`}
-                        className="text-[0.62rem] text-parchment/38 transition hover:text-parchment/65"
+                        className="text-[0.62rem] text-parchment/52 transition hover:text-parchment/65"
                       >
                         Read more →
                       </Link>
@@ -262,7 +262,7 @@ export default function HomePage({
         <SectionReveal className="section-pad pb-20">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-6 flex items-center gap-4">
-              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Recently Closed</p>
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/48">Recently Closed</p>
               <div className="h-px flex-1 bg-parchment/10" />
             </div>
             <Link
@@ -279,14 +279,14 @@ export default function HomePage({
                 />
               </div>
               <div className="flex flex-col justify-center gap-3 p-7">
-                <p className="text-[0.65rem] uppercase tracking-[0.18em] text-parchment/30">Past Exhibition</p>
-                <h3 className="display text-2xl text-parchment/75 leading-tight group-hover:text-parchment/90 transition md:text-3xl">
+                <p className="text-[0.65rem] uppercase tracking-[0.18em] text-parchment/45">Past Exhibition</p>
+                <h3 className="display text-2xl text-parchment/83 leading-tight group-hover:text-parchment/90 transition md:text-3xl">
                   {recentlyClosed.title}
                 </h3>
-                <p className="line-clamp-2 max-w-xl text-sm text-parchment/45 leading-relaxed">
+                <p className="line-clamp-2 max-w-xl text-sm text-parchment/58 leading-relaxed">
                   {recentlyClosed.description}
                 </p>
-                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/30 transition group-hover:text-parchment/55 group-hover:tracking-[0.2em]">
+                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/45 transition group-hover:text-parchment/65 group-hover:tracking-[0.2em]">
                   View Exhibition
                 </p>
               </div>
@@ -296,7 +296,7 @@ export default function HomePage({
       )}
 
       {/* ── Mission strip ────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad bg-[#111110] py-14">
+      <SectionReveal className="section-pad bg-[#1b1510] py-14">
         <div className="mx-auto max-w-[1500px] border-y border-parchment/15 py-10">
           <p className="display text-center text-2xl leading-snug text-parchment/90 md:text-[2rem]">
             We champion art as civic infrastructure — for imagination, equity, and collective joy.
@@ -306,9 +306,9 @@ export default function HomePage({
 
       {/* ── Stats ────────────────────────────────────────────────────── */}
       <SectionReveal>
-        <div className="bg-[#111110] section-pad py-16">
+        <div className="bg-[#1b1510] section-pad py-16">
           <div className="mx-auto max-w-[1500px]">
-            <p className="mb-10 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Our Impact</p>
+            <p className="mb-10 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/48">Our Impact</p>
             <div className="grid gap-px bg-parchment/10 md:grid-cols-2 xl:grid-cols-4">
               {[
                 { value: 42000,  label: "Students Served" },
@@ -316,11 +316,11 @@ export default function HomePage({
                 { value: 175000, label: "Awarded Annually", prefix: "$" },
                 { value: 1980,   label: "Founded", raw: true },
               ].map(({ value, label, prefix, raw }) => (
-                <div key={label} className="bg-[#111110] p-8">
+                <div key={label} className="bg-[#1b1510] p-8">
                   <p className="display text-5xl text-terracotta">
                     <Counter target={value} prefix={prefix ?? ""} raw={raw} />
                   </p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-parchment/55">{label}</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.16em] text-parchment/65">{label}</p>
                 </div>
               ))}
             </div>
@@ -337,7 +337,7 @@ export default function HomePage({
             <div className="relative z-10">
               <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Connect</p>
               <h2 className="display mt-2 text-4xl md:text-5xl">Get in Touch</h2>
-              <p className="mx-auto mt-4 max-w-md text-parchment/60 text-sm leading-relaxed">
+              <p className="mx-auto mt-4 max-w-md text-parchment/70 text-sm leading-relaxed">
                 We&rsquo;d love to connect — reach out about exhibitions, programming, or anything else.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">

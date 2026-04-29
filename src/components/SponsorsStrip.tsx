@@ -13,17 +13,18 @@ const sponsors = [
   { name: "Huntington Bank",         file: "huntington-bank.png",  href: "https://www.huntington.com/",       imgClass: "mix-blend-multiply" },
   { name: "Lawrence Associates",     file: "lawrence.png",         href: "http://lawrencesurveying.com/",     imgClass: "invert" },
   { name: "Union County",            file: "union-county.png",     href: "https://www.unioncountync.gov/",    imgClass: "mix-blend-multiply" },
-  { name: "Union Power Cooperative", file: "union-power.jpg",      href: "https://union-power.com/",          imgClass: "mix-blend-multiply" },
+  { name: "Union Power Cooperative", file: "union-power.png",      href: "https://union-power.com/",          imgClass: "mix-blend-multiply" },
   { name: "Wingate University",      file: "wingate.png",          href: "https://www.wingate.edu/",          imgClass: "mix-blend-multiply" },
 ];
 
 export default function SponsorsStrip() {
   return (
-    <SectionReveal className="section-pad bg-[#0d0c0b] py-14">
+    <SectionReveal className="section-pad bg-[#171210] py-14">
       <div className="mx-auto max-w-[1500px]">
-        <p className="mb-8 text-center text-[0.68rem] uppercase tracking-[0.22em] text-parchment/30">
+        <p className="mb-8 text-center text-[0.68rem] uppercase tracking-[0.22em] text-parchment/45">
           Supported By
         </p>
+
         <div className="flex flex-wrap items-center justify-center gap-3">
           {sponsors.map(({ name, file, href, imgClass }) => (
             <a

@@ -13,7 +13,7 @@ export default function ContactPageClient() {
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Contact Us
           </h1>
-          <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
+          <p className="mt-5 max-w-xl text-base text-parchment/78 leading-relaxed">
             We would love to hear from you. Reach out about exhibitions, programming, volunteering, or general questions.
           </p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
@@ -28,10 +28,10 @@ export default function ContactPageClient() {
           <div className="border border-parchment/15 bg-black/30 p-7">
             <div className="mb-4 flex items-center gap-2">
               <MapPin size={14} className="text-terracotta" />
-              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/50">Location</p>
+              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/62">Location</p>
             </div>
             <p className="text-lg font-medium text-parchment">UCCAC Gallery</p>
-            <p className="mt-1 text-sm text-parchment/70 leading-relaxed">
+            <p className="mt-1 text-sm text-parchment/78 leading-relaxed">
               300 North Hayne Street<br />
               Monroe, NC 28112<br />
               PO Box 576
@@ -50,14 +50,14 @@ export default function ContactPageClient() {
           <div className="border border-parchment/15 bg-black/30 p-7">
             <div className="mb-4 flex items-center gap-2">
               <Phone size={14} className="text-terracotta" />
-              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/50">Reach Us</p>
+              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/62">Reach Us</p>
             </div>
             <div className="space-y-3">
-              <a href="tel:+17042832784" className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment">
+              <a href="tel:+17042832784" className="flex items-center gap-3 text-sm text-parchment/87 transition hover:text-parchment">
                 <Phone size={13} className="shrink-0 text-terracotta/60" />
                 (704) 283-2784
               </a>
-              <a href="mailto:info@unionarts.org" className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment">
+              <a href="mailto:info@unionarts.org" className="flex items-center gap-3 text-sm text-parchment/87 transition hover:text-parchment">
                 <Mail size={13} className="shrink-0 text-terracotta/60" />
                 info@unionarts.org
               </a>
@@ -65,7 +65,7 @@ export default function ContactPageClient() {
                 href="https://www.facebook.com/profile.php?id=61574355290119"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment"
+                className="flex items-center gap-3 text-sm text-parchment/87 transition hover:text-parchment"
               >
                 <Facebook size={13} className="shrink-0 text-terracotta/60" />
                 Facebook
@@ -77,18 +77,18 @@ export default function ContactPageClient() {
           <div className="border border-parchment/15 bg-black/30 p-7">
             <div className="mb-4 flex items-center gap-2">
               <Clock size={14} className="text-terracotta" />
-              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/50">Hours</p>
+              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/62">Hours</p>
             </div>
-            <div className="space-y-3 text-sm text-parchment/80">
+            <div className="space-y-3 text-sm text-parchment/87">
               <div>
-                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/40 mb-1">Gallery</p>
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/53 mb-1">Gallery</p>
                 <p>Mon – Thu &nbsp; 10:00 AM – 4:00 PM</p>
                 <p>Select Saturdays &nbsp; 10:00 AM – 2:00 PM</p>
               </div>
               <div>
-                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/40 mb-1">Office</p>
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-parchment/53 mb-1">Office</p>
                 <p>Mon – Fri &nbsp; 8:00 AM – 4:00 PM</p>
-                <p className="text-parchment/50">Sat – Sun: Closed</p>
+                <p className="text-parchment/62">Sat – Sun: Closed</p>
               </div>
             </div>
           </div>
