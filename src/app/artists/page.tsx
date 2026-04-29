@@ -34,7 +34,7 @@ export default async function ArtistsPage() {
           <ArtistGrid artists={artists} />
 
           {/* CTA */}
-          <div className="mt-14 flex items-center justify-between gap-4 border border-parchment/15 bg-black/30 p-6">
+          <div className="mt-14 flex items-center justify-between gap-4 border border-parchment/15 bg-parchment/[0.045] p-6">
             <div>
               <p className="text-[0.68rem] uppercase tracking-[0.2em] text-terracotta">Are You an Artist?</p>
               <p className="mt-1 text-sm text-parchment/70">

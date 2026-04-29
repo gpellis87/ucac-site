@@ -151,7 +151,7 @@ export default function HomePage({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 0.7 }}
-          className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-black/40 backdrop-blur-sm"
+          className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-[rgba(34,30,26,0.46)] backdrop-blur-sm"
         >
           <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 py-3">
             <a href="#exhibitions" className="group flex items-center gap-3 shrink-0 transition hover:opacity-80">
@@ -179,7 +179,7 @@ export default function HomePage({
 
       {/* ── Announcements ────────────────────────────────────────────── */}
       {announcements.length > 0 && (
-        <SectionReveal className="section-pad bg-[#100f0e] py-8 border-b border-parchment/10">
+        <SectionReveal className="section-pad border-b border-parchment/10 bg-[rgba(245,240,235,0.025)] py-8">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-4 flex items-center justify-between">
               <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/35">Announcements</p>
@@ -196,7 +196,7 @@ export default function HomePage({
                 <div
                   key={ann.slug}
                   className={`relative flex flex-col gap-3 overflow-hidden border p-6 ${
-                    i === 0 ? "border-terracotta/30 bg-black/40" : "border-parchment/15 bg-black/20"
+                    i === 0 ? "border-terracotta/30 bg-parchment/[0.05]" : "border-parchment/15 bg-parchment/[0.035]"
                   }`}
                 >
                   {i === 0 && (
@@ -266,7 +266,7 @@ export default function HomePage({
             </div>
             <Link
               href={`/exhibits/${recentlyClosed.slug}`}
-              className="group flex flex-col overflow-hidden border border-parchment/10 bg-black/20 transition duration-300 hover:border-parchment/25 sm:flex-row"
+              className="group flex flex-col overflow-hidden border border-parchment/10 bg-parchment/[0.035] transition duration-300 hover:border-parchment/25 sm:flex-row"
             >
               <div className="relative h-52 shrink-0 overflow-hidden sm:h-auto sm:w-72">
                 <Image
@@ -295,7 +295,7 @@ export default function HomePage({
       )}
 
       {/* ── Mission strip ────────────────────────────────────────────── */}
-      <SectionReveal className="section-pad bg-[#111110] py-14">
+      <SectionReveal className="section-pad bg-[rgba(245,240,235,0.02)] py-14">
         <div className="mx-auto max-w-[1500px] border-y border-parchment/15 py-10">
           <p className="display text-center text-2xl leading-snug text-parchment/90 md:text-[2rem]">
             We champion art as civic infrastructure — for imagination, equity, and collective joy.
@@ -305,7 +305,7 @@ export default function HomePage({
 
       {/* ── Stats ────────────────────────────────────────────────────── */}
       <SectionReveal>
-        <div className="bg-[#111110] section-pad py-16">
+        <div className="section-pad bg-[rgba(245,240,235,0.02)] py-16">
           <div className="mx-auto max-w-[1500px]">
             <p className="mb-10 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Our Impact</p>
             <div className="grid gap-px bg-parchment/10 md:grid-cols-2 xl:grid-cols-4">
@@ -315,7 +315,7 @@ export default function HomePage({
                 { value: 175000, label: "Awarded Annually", prefix: "$" },
                 { value: 1980,   label: "Founded", raw: true },
               ].map(({ value, label, prefix, raw }) => (
-                <div key={label} className="bg-[#111110] p-8">
+                <div key={label} className="bg-[rgba(245,240,235,0.025)] p-8">
                   <p className="display text-5xl text-terracotta">
                     <Counter target={value} prefix={prefix ?? ""} raw={raw} />
                   </p>
@@ -330,7 +330,7 @@ export default function HomePage({
       {/* ── Connect CTA ──────────────────────────────────────────────── */}
       <SectionReveal className="section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
-          <div className="relative overflow-hidden border border-parchment/15 bg-black/40 p-10 text-center md:p-16">
+          <div className="relative overflow-hidden border border-parchment/15 bg-parchment/[0.045] p-10 text-center md:p-16">
             {/* Subtle terracotta glow */}
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(192,84,42,0.12),transparent_65%)]" />
             <div className="relative z-10">

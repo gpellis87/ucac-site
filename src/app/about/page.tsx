@@ -123,7 +123,7 @@ export default function AboutPage() {
           </div>
           <div className="flex items-center justify-center">
             <div className="relative h-64 w-64 rounded-full border border-parchment/20 bg-[conic-gradient(#c0542a_0_38%,#c9a84c_38%_62%,#677388_62%_80%,#2a3240_80%_92%,#f5f0eb_92%_100%)]">
-              <div className="absolute inset-8 rounded-full bg-charcoal" />
+              <div className="absolute inset-8 rounded-full bg-[color:var(--bg)]" />
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function AboutPage() {
           <h2 className="display text-4xl md:text-5xl">Board of Directors</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {boardMembers.map((member) => (
-              <div key={member.id} className="border border-parchment/20 bg-black/20 p-4">
+              <div key={member.id} className="border border-parchment/20 bg-parchment/[0.04] p-4">
                 <div className="relative h-56 overflow-hidden">
                   <Image src={member.imageUrl} alt={member.name} fill className="object-cover" sizes="(max-width:768px) 100vw, 25vw" />
                 </div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
           <h3 className="display text-3xl">Ex-officio Board Members</h3>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             {exOfficioBoardMembers.map((member) => (
-              <div key={member.id} className="border border-parchment/20 bg-black/20 p-4">
+              <div key={member.id} className="border border-parchment/20 bg-parchment/[0.04] p-4">
                 <p className="display text-2xl">{member.name}</p>
                 <p className="mt-1 text-sm text-parchment/75">{member.title}</p>
               </div>

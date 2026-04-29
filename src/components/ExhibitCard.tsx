@@ -14,8 +14,8 @@ export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhib
       href={`/exhibits/${exhibit.slug}`}
       className={`group block overflow-hidden border transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_34px_rgba(0,0,0,0.35)] ${
         muted
-          ? "border-parchment/10 bg-black/20 hover:border-parchment/30"
-          : "border-parchment/20 bg-black/30 hover:border-terracotta/70"
+          ? "border-parchment/10 bg-parchment/[0.035] hover:border-parchment/30"
+          : "border-parchment/20 bg-parchment/[0.045] hover:border-terracotta/70"
       }`}
     >
       <div className={`relative overflow-hidden ${muted ? "h-44" : "h-56"}`}>

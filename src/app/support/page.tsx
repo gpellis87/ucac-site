@@ -64,7 +64,7 @@ export default function SupportPage() {
       </div>
 
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.16),transparent_55%),linear-gradient(180deg,rgba(245,240,235,0.05),transparent_60%)]" />
         <div className="section-pad relative py-16 md:py-20">
           <div className="mx-auto max-w-[1500px]">
             <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Support UCCAC</p>
@@ -93,7 +93,7 @@ export default function SupportPage() {
 
       <div className="section-pad py-12">
         <div className="mx-auto grid max-w-[1500px] gap-6 lg:grid-cols-3">
-          <a href="#donate" className="group border border-parchment/15 bg-black/20 p-8 transition hover:border-terracotta/40">
+          <a href="#donate" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
             <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Give</p>
             <div className="mt-4 flex items-center gap-3">
               <Heart size={18} className="text-terracotta" />
@@ -103,7 +103,7 @@ export default function SupportPage() {
               Support the Arts Council directly or give to the Barbara Faulk Educators Grant.
             </p>
           </a>
-          <a href="#membership" className="group border border-parchment/15 bg-black/20 p-8 transition hover:border-terracotta/40">
+          <a href="#membership" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
             <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Join</p>
             <div className="mt-4 flex items-center gap-3">
               <Users size={18} className="text-terracotta" />
@@ -113,7 +113,7 @@ export default function SupportPage() {
               Become a founding member and enjoy benefits while helping shape UCCAC&apos;s next chapter.
             </p>
           </a>
-          <a href="#volunteer" className="group border border-parchment/15 bg-black/20 p-8 transition hover:border-terracotta/40">
+          <a href="#volunteer" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
             <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Serve</p>
             <div className="mt-4 flex items-center gap-3">
               <HandHeart size={18} className="text-terracotta" />
@@ -135,7 +135,7 @@ export default function SupportPage() {
             best matches what you want to support.
           </p>
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <div className="flex flex-col border border-parchment/20 bg-black/20 p-8 md:p-10">
+            <div className="flex flex-col border border-parchment/20 bg-parchment/[0.035] p-8 md:p-10">
               <p className="text-[0.65rem] uppercase tracking-[0.22em] text-parchment/45">General Support</p>
               <h3 className="display mt-3 text-3xl text-parchment">Support the Arts Council</h3>
               <p className="mt-4 flex-1 text-sm leading-relaxed text-parchment/65">
@@ -165,8 +165,8 @@ export default function SupportPage() {
               </div>
             </div>
 
-            <div className="relative flex flex-col overflow-hidden border border-terracotta/35 bg-black/20 p-8 md:p-10">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.1),transparent_60%)]" />
+            <div className="relative flex flex-col overflow-hidden border border-terracotta/35 bg-parchment/[0.04] p-8 md:p-10">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
               <div className="relative flex flex-1 flex-col">
                 <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">Named Grant</p>
                 <h3 className="display mt-3 text-3xl text-parchment">
@@ -187,51 +187,19 @@ export default function SupportPage() {
                   >
                     <Heart size={13} /> Give to This Grant
                   </a>
-                  <p className="mt-3 text-[0.62rem] text-parchment/35">Barbara&apos;s story is included below.</p>
+                  <p className="mt-3 max-w-sm text-[0.68rem] leading-relaxed text-parchment/45">
+                    A meaningful way to honor Barbara Faulk&apos;s legacy while investing in arts education.
+                  </p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="mb-14 mt-14 h-px bg-gradient-to-r from-transparent via-parchment/15 to-transparent" />
-          <div className="grid gap-0 lg:grid-cols-[3px_1fr]">
-            <div className="hidden rounded-full bg-terracotta/50 lg:block" />
-            <div className="lg:pl-12">
-              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">A Celebration</p>
-              <h3 className="editorial-title mt-3 text-4xl leading-tight md:text-5xl">Barbara Faulk</h3>
-              <div className="mt-8 max-w-2xl space-y-5 text-base leading-relaxed text-parchment/70">
-                <p>
-                  I would like to take a moment to celebrate Barbara Faulk. Barbara was with the Arts
-                  Council for 35 years and served as Executive Director from 1991 until she retired in
-                  2022. She was a force of nature, a champion of the arts, passionate about building
-                  this community.
-                </p>
-                <p>
-                  She was like the salt and butter on the baked potato - full of flavor, turning
-                  something ordinary into something extraordinary. She understood that children are our
-                  future. Barbara had a passion for arts in education, for supporting classroom teachers,
-                  and for serving the underserved.
-                </p>
-                <p>
-                  For her legacy to be remembered for generations to come, we are honoring Barbara Faulk
-                  by creating the <strong className="text-parchment">Barbara Faulk Educators Grant</strong>.
-                </p>
-              </div>
-              <a
-                href={BARBARA_FAULK_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-2 border border-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
-              >
-                <Heart size={13} /> Give to This Grant
-              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="membership" className="section-pad scroll-mt-28 py-12">
+      <section id="membership" className="section-pad scroll-mt-28 py-16">
         <div className="mx-auto max-w-[1500px]">
+          <div className="mb-12 h-px bg-gradient-to-r from-transparent via-parchment/15 to-transparent" />
           <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Membership</p>
           <h2 className="display mt-2 text-4xl text-parchment md:text-5xl">Become a Member</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-parchment/70">
@@ -266,8 +234,8 @@ export default function SupportPage() {
             </div>
 
             <div className="space-y-5">
-              <div className="relative overflow-hidden border border-terracotta/40 bg-black/40 p-8">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.18),transparent_60%)]" />
+              <div className="relative overflow-hidden border border-terracotta/40 bg-parchment/[0.045] p-8">
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.18),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.03),transparent)]" />
                 <div className="relative z-10">
                   <p className="text-[0.65rem] uppercase tracking-[0.2em] text-terracotta">Limited Time Offer</p>
                   <p className="mt-3 text-[0.68rem] uppercase tracking-[0.18em] text-parchment/50">Founding Member</p>
@@ -289,7 +257,7 @@ export default function SupportPage() {
                 </div>
               </div>
 
-              <div className="border border-parchment/15 bg-black/30 p-7 text-center">
+              <div className="border border-parchment/15 bg-parchment/[0.04] p-7 text-center">
                 <p className="mb-4 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50">Scan to Join</p>
                 <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
                   <Image src="/qr-membership.png" alt="Scan to become a member" width={160} height={160} className="mx-auto" />
@@ -297,7 +265,7 @@ export default function SupportPage() {
                 <p className="mt-3 text-xs text-parchment/35">Scan with your phone to sign up</p>
               </div>
 
-              <div className="border border-parchment/15 bg-black/30 p-7">
+              <div className="border border-parchment/15 bg-parchment/[0.04] p-7">
                 <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50">Coming to Our New Space</p>
                 <ul className="space-y-2.5 text-sm text-parchment/65">
                   <li className="flex items-center gap-3">
@@ -329,12 +297,13 @@ export default function SupportPage() {
         </div>
       </section>
 
-      <section id="volunteer" className="section-pad scroll-mt-28 py-12">
+      <section id="volunteer" className="section-pad scroll-mt-28 py-16">
         <div className="mx-auto max-w-[1500px]">
+          <div className="mb-12 h-px bg-gradient-to-r from-transparent via-parchment/15 to-transparent" />
           <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Volunteer</p>
           <h2 className="display mt-2 text-4xl text-parchment md:text-5xl">Share Your Time and Talents</h2>
           <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_420px]">
-            <div className="border border-parchment/15 bg-black/20 p-8 md:p-10">
+            <div className="border border-parchment/15 bg-parchment/[0.04] p-8 md:p-10">
               <p className="max-w-2xl text-base leading-relaxed text-parchment/70">
                 Volunteers help make UCCAC programs stronger and more welcoming. Whether you love
                 events, education, behind-the-scenes support, or creative work, we would love to hear
@@ -342,15 +311,15 @@ export default function SupportPage() {
               </p>
               <div className="mt-8 grid gap-3 md:grid-cols-2">
                 {volunteerAreas.map((area) => (
-                  <div key={area} className="border border-parchment/10 bg-black/20 px-4 py-3 text-sm text-parchment/80">
+                  <div key={area} className="border border-parchment/10 bg-parchment/[0.03] px-4 py-3 text-sm text-parchment/80">
                     {area}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative overflow-hidden border border-terracotta/35 bg-black/30 p-8">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.12),transparent_60%)]" />
+            <div className="relative overflow-hidden border border-terracotta/35 bg-parchment/[0.045] p-8">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.12),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.03),transparent)]" />
               <div className="relative z-10">
                 <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">Interest Form</p>
                 <h3 className="display mt-3 text-3xl text-parchment">Volunteer with UCCAC</h3>

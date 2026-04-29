@@ -38,7 +38,7 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
           placeholder="Search by name, medium, or city…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full border border-parchment/20 bg-black/30 pl-8 pr-8 py-2 text-sm text-parchment placeholder:text-parchment/30 focus:border-terracotta/60 focus:outline-none"
+          className="w-full border border-parchment/20 bg-parchment/[0.05] pl-8 pr-8 py-2 text-sm text-parchment placeholder:text-parchment/30 focus:border-terracotta/60 focus:outline-none"
         />
         {query && (
           <button

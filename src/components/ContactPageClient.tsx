@@ -25,7 +25,7 @@ export default function ContactPageClient() {
         <div className="mx-auto max-w-[1500px] grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
           {/* Address */}
-          <div className="border border-parchment/15 bg-black/30 p-7">
+          <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
               <MapPin size={14} className="text-terracotta" />
               <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/50">Location</p>
@@ -47,7 +47,7 @@ export default function ContactPageClient() {
           </div>
 
           {/* Contact details */}
-          <div className="border border-parchment/15 bg-black/30 p-7">
+          <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
               <Phone size={14} className="text-terracotta" />
               <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/50">Reach Us</p>
@@ -74,7 +74,7 @@ export default function ContactPageClient() {
           </div>
 
           {/* Hours */}
-          <div className="border border-parchment/15 bg-black/30 p-7">
+          <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
               <Clock size={14} className="text-terracotta" />
               <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/50">Hours</p>

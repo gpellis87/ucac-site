@@ -4,7 +4,7 @@ import { Facebook } from "lucide-react";
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-parchment/20 bg-[#121212] py-16 text-parchment">
+    <footer className="border-t border-parchment/20 bg-[#1b1815] py-16 text-parchment">
       <div className="section-pad mx-auto grid max-w-[1500px] gap-10 md:grid-cols-3">
         <div>
           <p className="display text-4xl text-parchment mb-3">UCCAC</p>

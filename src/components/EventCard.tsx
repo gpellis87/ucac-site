@@ -7,7 +7,7 @@ export default function EventCard({ event }: { event: UccacEvent }) {
   return (
     <Link
       href={`/events/${event.slug}`}
-      className="group block overflow-hidden border border-parchment/20 bg-black/30 transition duration-300 hover:-translate-y-1.5 hover:border-terracotta/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.35)]"
+      className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-terracotta/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]"
     >
       <div className="relative h-64 overflow-hidden">
         <Image

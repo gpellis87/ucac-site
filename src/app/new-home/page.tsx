@@ -96,7 +96,7 @@ export default function NewHomePage() {
 
             {/* Sidebar: new address */}
             <div className="space-y-5">
-              <div className="border border-terracotta/30 bg-black/30 p-7">
+              <div className="border border-terracotta/30 bg-parchment/[0.045] p-7">
                 <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-4">Our New Address</p>
                 <div className="flex items-start gap-3">
                   <MapPin size={14} className="mt-0.5 shrink-0 text-terracotta/60" />
@@ -115,7 +115,7 @@ export default function NewHomePage() {
                 </a>
               </div>
 
-              <div className="border border-parchment/15 bg-black/30 p-7">
+              <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
                 <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50 mb-3">Stay Updated</p>
                 <p className="text-sm text-parchment/65 leading-relaxed">
                   Follow us on Facebook for behind-the-scenes glimpses, progress updates, and opening announcements.
@@ -217,7 +217,7 @@ export default function NewHomePage() {
           <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
           <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40 mb-8">Support the Journey</p>
           <div className="grid gap-6 sm:grid-cols-2">
-            <div className="border border-terracotta/30 bg-black/30 p-8 flex flex-col items-center text-center">
+            <div className="border border-terracotta/30 bg-parchment/[0.045] p-8 flex flex-col items-center text-center">
               <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-1">Make a Donation</p>
               <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
                 Every gift helps bring our new home to life. Scan to donate or click below.
@@ -229,7 +229,7 @@ export default function NewHomePage() {
                 Donate Now
               </a>
             </div>
-            <div className="border border-parchment/20 bg-black/30 p-8 flex flex-col items-center text-center">
+            <div className="border border-parchment/20 bg-parchment/[0.045] p-8 flex flex-col items-center text-center">
               <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60 mb-1">Become a Member</p>
               <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
                 Founding memberships are open now. Scan to join or click below.
