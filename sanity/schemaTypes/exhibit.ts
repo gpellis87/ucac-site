@@ -102,10 +102,10 @@ export const exhibitType = defineType({
     }),
     defineField({
       name: "flyerFile",
-      title: "Flyer (PDF)",
+      title: "Flyer (PDF or Image)",
       type: "file",
-      description: "Upload the official event flyer as a PDF.",
-      options: { accept: "application/pdf" },
+      description: "Upload the official event flyer as a PDF or image (PNG, JPG, etc.).",
+      options: { accept: "application/pdf,image/*" },
     }),
     defineField({
       name: "videoUrl",
