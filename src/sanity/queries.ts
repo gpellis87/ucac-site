@@ -34,7 +34,8 @@ const EXHIBIT_FIELDS = `
   "images": images[defined(asset)]{ "url": asset->url, "filename": asset->originalFilename },
   "tags": coalesce(tags, []),
   "presentedBy": coalesce(presentedBy, []),
-  callToAction
+  callToAction,
+  "qrCodeUrl": qrCode.asset->url
 `;
 
 const STATUS_ORDER: Record<string, number> = {

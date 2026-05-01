@@ -241,6 +241,24 @@ export default async function ExhibitPage({ params }: Props) {
                 </div>
               )}
 
+              {exhibit.qrCodeUrl && (
+                <div className="p-5">
+                  <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                    Scan to Submit
+                  </p>
+                  <Image
+                    src={exhibit.qrCodeUrl}
+                    alt="QR code to submit work for this exhibition"
+                    width={140}
+                    height={140}
+                    className="border border-parchment/15"
+                  />
+                  <p className="mt-2 text-[0.65rem] leading-snug text-parchment/50">
+                    Point your phone camera at the code to open the submission form.
+                  </p>
+                </div>
+              )}
+
               {exhibit.tags.length > 0 && (
                 <div className="p-5">
                   <div className="flex flex-wrap gap-1.5">

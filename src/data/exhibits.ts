@@ -24,6 +24,7 @@ export interface Exhibit {
   tags: string[];
   presentedBy: string[];
   callToAction?: { label: string; href: string };
+  qrCodeUrl?: string;
 }
 
 export const statusLabel: Record<string, string> = {
