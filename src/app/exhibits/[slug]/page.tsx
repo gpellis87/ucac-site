@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const statusColors: Record<string, string> = {
   "now-on-view":      "border border-terracotta bg-terracotta text-white shadow-[0_10px_20px_rgba(192,84,42,0.28)]",
-  "opening-soon":     "border border-white/75 bg-white/92 text-[#201914] shadow-[0_10px_20px_rgba(0,0,0,0.2)]",
-  "call-for-artists": "border border-[#8ba0bf]/75 bg-[#334766]/92 text-white shadow-[0_10px_20px_rgba(0,0,0,0.24)]",
+  "opening-soon":     "border border-[#f1dfbf] bg-[#f4e8d3] text-[#201914] shadow-[0_10px_20px_rgba(0,0,0,0.18)]",
+  "call-for-artists": "border border-[#6f8cb5] bg-[#3e5474] text-white shadow-[0_10px_20px_rgba(0,0,0,0.24)]",
 };
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
@@ -86,7 +86,7 @@ export default async function ExhibitPage({ params }: Props) {
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-10 lg:px-16 xl:px-24">
           <div className="mx-auto max-w-[1500px]">
-            <span className={`inline-block px-3 py-1 text-[0.62rem] uppercase tracking-[0.18em] ${statusColors[exhibit.status]}`}>
+            <span className={`inline-block px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] ${statusColors[exhibit.status]}`}>
               {statusLabel[exhibit.status]}
             </span>
             <h1 className="editorial-title mt-3 max-w-4xl text-4xl leading-[0.93] md:text-6xl lg:text-[5.5rem]">

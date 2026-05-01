@@ -4,8 +4,8 @@ import { Exhibit, statusLabel } from "@/data/exhibits";
 
 const statusStyle: Record<string, string> = {
   "now-on-view": "border-terracotta bg-terracotta text-white shadow-[0_10px_20px_rgba(192,84,42,0.28)]",
-  "opening-soon": "border-white/75 bg-white/92 text-[#201914] shadow-[0_10px_20px_rgba(0,0,0,0.2)]",
-  "call-for-artists": "border-[#8ba0bf]/75 bg-[#334766]/92 text-white shadow-[0_10px_20px_rgba(0,0,0,0.24)]",
+  "opening-soon": "border-[#f1dfbf] bg-[#f4e8d3] text-[#201914] shadow-[0_10px_20px_rgba(0,0,0,0.18)]",
+  "call-for-artists": "border-[#6f8cb5] bg-[#3e5474] text-white shadow-[0_10px_20px_rgba(0,0,0,0.24)]",
 };
 
 export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhibit; muted?: boolean }) {
@@ -28,12 +28,12 @@ export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhib
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
         {muted ? (
-          <div className="absolute left-4 top-4 border border-white/35 bg-black/55 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-white shadow-[0_10px_20px_rgba(0,0,0,0.25)] backdrop-blur-sm">
+          <div className="absolute left-4 top-4 border border-white/35 bg-[#2b241d]/90 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white shadow-[0_10px_20px_rgba(0,0,0,0.25)] backdrop-blur-sm">
             Past Exhibition
           </div>
         ) : (
           <div
-            className={`absolute left-4 top-4 border px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.16em] backdrop-blur-sm ${statusStyle[exhibit.status]}`}
+            className={`absolute left-4 top-4 border px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${statusStyle[exhibit.status]}`}
           >
             {statusLabel[exhibit.status]}
           </div>
