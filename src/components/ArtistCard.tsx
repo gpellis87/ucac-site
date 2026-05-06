@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Artist } from "@/data/artists";
 import { sanityImg } from "@/sanity/image";
+import ArtistPortraitPlaceholder from "@/components/ArtistPortraitPlaceholder";
 
 export default function ArtistCard({ artist, priority = false }: { artist: Artist; priority?: boolean }) {
   const displayName = `${artist.firstName} ${artist.lastName}`;
@@ -28,13 +29,17 @@ export default function ArtistCard({ artist, priority = false }: { artist: Artis
       <div className="flex items-center gap-2.5 p-3">
         {/* Portrait avatar */}
         <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-parchment/20">
-          <Image
-            src={sanityImg(artist.portraitUrl, { w: 64, h: 64, fit: "crop" })}
-            alt={displayName}
-            fill
-            className="object-cover"
-            sizes="32px"
-          />
+          {artist.portraitUrl ? (
+            <Image
+              src={sanityImg(artist.portraitUrl, { w: 64, h: 64, fit: "crop" })}
+              alt={displayName}
+              fill
+              className="object-cover"
+              sizes="32px"
+            />
+          ) : (
+            <ArtistPortraitPlaceholder name={displayName} variant="avatar" />
+          )}
         </div>
         <div className="min-w-0">
           <h3 className="display text-sm text-parchment leading-tight truncate">{displayName}</h3>

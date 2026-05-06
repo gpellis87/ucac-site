@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Facebook, Globe, Instagram, Mail, MapPin } from "lucide-react";
 import { getArtistBySlug, getArtistSlugs } from "@/sanity/queries";
 import { sanityImg } from "@/sanity/image";
+import ArtistPortraitPlaceholder from "@/components/ArtistPortraitPlaceholder";
 
 export const revalidate = 60;
 
@@ -54,14 +55,18 @@ export default async function ArtistPage({ params }: Props) {
 
             {/* Portrait */}
             <div className="relative h-64 w-64 shrink-0 overflow-hidden border border-parchment/15 lg:h-80 lg:w-80">
-              <Image
-                src={sanityImg(artist.portraitUrl, { w: 640, h: 640, fit: "crop" })}
-                alt={displayName}
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 256px, 320px"
-              />
+              {artist.portraitUrl ? (
+                <Image
+                  src={sanityImg(artist.portraitUrl, { w: 640, h: 640, fit: "crop" })}
+                  alt={displayName}
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 256px, 320px"
+                />
+              ) : (
+                <ArtistPortraitPlaceholder name={displayName} />
+              )}
             </div>
 
             {/* Name + details */}

@@ -11,6 +11,6 @@ export interface Artist {
   facebook?: string;
   medium: string;
   bio?: string;
-  portraitUrl: string;
+  portraitUrl?: string | null;
   workImages: string[];
 }
