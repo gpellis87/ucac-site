@@ -6,6 +6,7 @@ import { ArrowLeft, Facebook, Globe, Instagram, Mail, MapPin } from "lucide-reac
 import { getArtistBySlug, getArtistSlugs } from "@/sanity/queries";
 import { sanityImg } from "@/sanity/image";
 import ArtistPortraitPlaceholder from "@/components/ArtistPortraitPlaceholder";
+import WorkGallery from "@/components/WorkGallery";
 
 export const revalidate = 60;
 
@@ -143,19 +144,7 @@ export default async function ArtistPage({ params }: Props) {
             <div className="mt-16">
               <div className="mb-8 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
               <p className="mb-6 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Selected Work</p>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {artist.workImages.map((src, i) => (
-                  <div key={i} className="relative aspect-square overflow-hidden border border-parchment/10 bg-[rgb(var(--theme-bg-alt)_/_0.65)]">
-                    <Image
-                      src={sanityImg(src, { w: 800, h: 800, fit: "crop" })}
-                      alt={`${displayName} — work ${i + 1}`}
-                      fill
-                      className="object-cover transition duration-500 hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                ))}
-              </div>
+              <WorkGallery images={artist.workImages} artistName={displayName} />
             </div>
           )}
 
