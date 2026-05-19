@@ -48,6 +48,42 @@ body {
   scroll-behavior: smooth;
 }
 
+html[data-a11y-text="large"] {
+  font-size: 112.5%;
+}
+
+html[data-a11y-text="larger"] {
+  font-size: 125%;
+}
+
+html.a11y-high-contrast {
+  --bg: #ffffff;
+  --accent: #9f330f;
+  --theme-bg: 255 255 255;
+  --theme-bg-alt: 246 246 246;
+  --theme-surface: 255 255 255;
+  --theme-surface-soft: 250 250 250;
+  --theme-surface-strong: 255 255 255;
+  --theme-text: 15 15 15;
+  --theme-text-muted: 46 46 46;
+  --theme-border: 15 15 15;
+  --theme-nav: 255 255 255;
+  --theme-overlay: 15 15 15;
+}
+
+html.a11y-reduced-motion {
+  scroll-behavior: auto;
+}
+
+html.a11y-reduced-motion *,
+html.a11y-reduced-motion *::before,
+html.a11y-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}
+
 body {
   font-family: var(--font-sans), Arial, sans-serif;
   line-height: 1.55;

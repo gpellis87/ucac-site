@@ -81,6 +81,15 @@ export default function SiteFooter() {
               className="underline underline-offset-2 transition hover:text-parchment/60"
             >
               Phillip Ellis
+            </a>{" "}
+            &middot; Hosted by{" "}
+            <a
+              href="https://dave-enterprise.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2 transition hover:text-parchment/60"
+            >
+              Dave Enterprise
             </a>
           </p>
         </div>
