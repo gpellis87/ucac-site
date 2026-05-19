@@ -75,12 +75,12 @@ export default function SiteFooter() {
           <p className="mt-3 text-[0.65rem] text-parchment/30">
             Built &amp; maintained by{" "}
             <a
-              href="https://phillipellis.com"
+              href="https://ellislocal.com"
               target="_blank"
               rel="noreferrer"
               className="underline underline-offset-2 transition hover:text-parchment/60"
             >
-              Phillip Ellis
+              Ellis Local
             </a>{" "}
             &middot; Hosted by{" "}
             <a
