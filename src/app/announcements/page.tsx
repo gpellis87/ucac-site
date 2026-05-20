@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Heart } from "lucide-react";
+import { ArrowLeft, Heart, Download } from "lucide-react";
 import { getAllAnnouncements } from "@/sanity/queries";
 import type { Announcement } from "@/sanity/queries";
+import { sanityImg } from "@/sanity/image";
 
 export const revalidate = 60;
 
@@ -74,6 +76,36 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
             <div className="mt-8 flex flex-wrap gap-3">
               {announcement.ctaOne && <AnnouncementCta cta={announcement.ctaOne} primary />}
               {announcement.ctaTwo && <AnnouncementCta cta={announcement.ctaTwo} />}
+            </div>
+          )}
+
+          {announcement.flyerImage && (
+            <div className="mt-10">
+              <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/35">Flyer</p>
+              <div className="relative w-full max-w-sm overflow-hidden border border-parchment/15">
+                <Image
+                  src={sanityImg(announcement.flyerImage, { w: 800 })}
+                  alt={`Flyer for ${announcement.title}`}
+                  width={800}
+                  height={1100}
+                  className="h-auto w-full object-contain"
+                  unoptimized
+                />
+              </div>
+            </div>
+          )}
+
+          {announcement.flyerPdf && (
+            <div className="mt-6">
+              <a
+                href={announcement.flyerPdf}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 border border-parchment/25 px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.18em] text-parchment/65 transition hover:border-parchment/60 hover:text-parchment"
+              >
+                <Download size={13} />
+                Download Flyer (PDF)
+              </a>
             </div>
           )}
         </div>

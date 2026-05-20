@@ -13,21 +13,9 @@ import type { Exhibit } from "@/data/exhibits";
 import type { Announcement } from "@/sanity/queries";
 import { sanityImg } from "@/sanity/image";
 
-function AnnouncementCta({
-  cta,
-  primary,
-  small,
-}: {
-  cta: { label: string; url: string };
-  primary?: boolean;
-  small?: boolean;
-}) {
+function AnnouncementCta({ cta }: { cta: { label: string; url: string } }) {
   const isExternal = cta.url.startsWith("http");
-  const cls = primary
-    ? "accent-btn text-center"
-    : small
-    ? "ghost-btn px-3 py-1.5 text-[0.65rem] text-center"
-    : "ghost-btn text-center text-[0.68rem]";
+  const cls = "ghost-btn text-center text-[0.7rem] py-2 px-4";
   return isExternal ? (
     <a href={cta.url} target="_blank" rel="noreferrer" className={cls}>
       {cta.label}
@@ -199,23 +187,32 @@ export default function HomePage({
               {announcements.map((ann, i) => (
                 <div
                   key={ann.slug}
-                  className={`relative flex flex-col gap-3 overflow-hidden border p-6 ${
+                  className={`relative flex flex-col overflow-hidden border p-6 ${
                     i === 0 ? "border-terracotta/30 bg-parchment/[0.05]" : "border-parchment/15 bg-parchment/[0.035]"
                   }`}
                 >
                   {i === 0 && (
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.1),transparent_65%)]" />
                   )}
-                  <div className="relative flex flex-1 flex-col gap-3">
-                    <h2 className={`display leading-tight text-parchment ${i === 0 ? "text-2xl" : "text-xl"}`}>
+                  <div className="relative flex flex-1 flex-col">
+                    {ann.eyebrow && (
+                      <p className="mb-2 text-[0.6rem] uppercase tracking-[0.2em] text-terracotta">
+                        {ann.eyebrow}
+                      </p>
+                    )}
+                    <h2 className="display text-xl leading-tight text-parchment">
                       {ann.title}
                     </h2>
-                    <p className="flex-1 text-sm leading-relaxed text-parchment/60">
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-parchment/60">
                       {ann.description}
                     </p>
-                    <div className="flex flex-wrap items-center gap-3 pt-1">
-                      {ann.ctaOne && <AnnouncementCta cta={ann.ctaOne} primary={i === 0} small={i > 0} />}
-                      {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} small />}
+                    <div className="mt-5 border-t border-parchment/10 pt-4">
+                      {(ann.ctaOne || ann.ctaTwo) && (
+                        <div className="mb-3 flex flex-wrap gap-2">
+                          {ann.ctaOne && <AnnouncementCta cta={ann.ctaOne} />}
+                          {ann.ctaTwo && <AnnouncementCta cta={ann.ctaTwo} />}
+                        </div>
+                      )}
                       <Link
                         href={`/announcements#${ann.slug}`}
                         className="text-[0.62rem] text-parchment/38 transition hover:text-parchment/65"

@@ -11,6 +11,8 @@ export type Announcement = {
   publishedAt: string;
   ctaOne: { label: string; url: string } | null;
   ctaTwo: { label: string; url: string } | null;
+  flyerImage: string | null;
+  flyerPdf: string | null;
 };
 
 const EXHIBIT_FIELDS = `
@@ -95,7 +97,7 @@ export async function getExhibitSlugs(): Promise<string[]> {
 // ── Announcement queries ──────────────────────────────────────────────────────
 
 const ANNOUNCEMENT_FILTER = `_type == "announcement" && active == true && (!defined(expiresAt) || expiresAt > $today)`;
-const ANNOUNCEMENT_FIELDS = `title, "slug": slug.current, eyebrow, description, body, publishedAt, ctaOne { label, url }, ctaTwo { label, url }`;
+const ANNOUNCEMENT_FIELDS = `title, "slug": slug.current, eyebrow, description, body, publishedAt, ctaOne { label, url }, ctaTwo { label, url }, "flyerImage": flyer.asset->url, "flyerPdf": flyerPdf.asset->url`;
 
 export async function getAnnouncements(): Promise<Announcement[]> {
   const client = getClient();
