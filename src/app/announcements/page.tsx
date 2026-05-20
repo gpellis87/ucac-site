@@ -60,7 +60,27 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
             {announcement.title}
           </h2>
 
-          {paragraphs ? (
+          {announcement.contentImage ? (
+            <div className="mt-6 max-w-2xl">
+              <div className="relative overflow-hidden border border-parchment/15">
+                <Image
+                  src={sanityImg(announcement.contentImage, { w: 1200 })}
+                  alt={announcement.title}
+                  width={1200}
+                  height={900}
+                  className="h-auto w-full object-contain"
+                  unoptimized
+                />
+              </div>
+              {paragraphs && (
+                <div className="mt-6 space-y-4 text-base leading-relaxed text-parchment/72">
+                  {paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : paragraphs ? (
             <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-parchment/72">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -81,7 +101,7 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
 
           {announcement.flyerImage && (
             <div className="mt-10">
-              <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/35">Flyer</p>
+              <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/35">Supplemental Flyer</p>
               <div className="relative w-full max-w-sm overflow-hidden border border-parchment/15">
                 <Image
                   src={sanityImg(announcement.flyerImage, { w: 800 })}
