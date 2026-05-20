@@ -18,7 +18,7 @@ export async function GET(
     "VERSION:2.0",
     "PRODID:-//UCCAC//Events//EN",
     "BEGIN:VEVENT",
-    `UID:${event.slug}@uccac.example.org`,
+    `UID:${event.slug}@unionarts.org`,
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").split(".")[0]}Z`,
     `DTSTART:${start}`,
     `DTEND:${end}`,

@@ -18,7 +18,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
     [event.slug],
   );
 
-  const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://uccac.example.org";
+  const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://unionarts.org";
   const pageUrl = `${baseUrl}/events/${event.slug}`;
   const smsBody = `Check out this event: ${event.title} on ${formatEventDate(event.date)} at ${event.location}. Learn more: ${pageUrl}`;
 

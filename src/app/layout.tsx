@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   },
   description:
     "Union County Community Arts Council is a nonprofit arts organization advancing creative expression through exhibitions, workshops, youth programs, and community cultural events.",
-  metadataBase: new URL("https://uccac.example.org"),
+  metadataBase: new URL("https://unionarts.org"),
   openGraph: {
     title: "Union County Community Arts Council",
     description: "Rooted in community. Driven by art.",
     type: "website",
-    url: "https://uccac.example.org",
+    url: "https://unionarts.org",
   },
   twitter: {
     card: "summary_large_image",
