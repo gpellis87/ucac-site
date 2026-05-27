@@ -29,6 +29,7 @@ export default function SiteFooter() {
             <Link href="/artists" className="text-parchment/80 transition hover:text-parchment">Artists</Link>
             <Link href="/support" className="text-parchment/80 transition hover:text-parchment">Support</Link>
             <Link href="/contact" className="text-parchment/80 transition hover:text-parchment">Contact</Link>
+            <Link href="/privacy-policy" className="text-parchment/80 transition hover:text-parchment">Privacy Policy</Link>
           </div>
         </div>
         <div>
