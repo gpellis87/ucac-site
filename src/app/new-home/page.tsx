@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, MapPin, Paintbrush, BookOpen, Frame, ShoppingBag } from "lucide-react";
 
 // Paste the Sanity CDN URL here after running: node ucac-studio/upload-renovation-video.mjs <write-token>
-const RENOVATION_VIDEO_URL = "";
+const RENOVATION_VIDEO_URL = "https://cdn.sanity.io/files/tqrjw75a/production/cc27cc9f10ec1ad99960fecfec528a0308a082c8.mp4";
 
 const MEMBERSHIP_URL = "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
 const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
