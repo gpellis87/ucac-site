@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { toEmbedUrl } from "@/lib/videoEmbed";
 
 const PAGE_SIZE = 12;
 
@@ -13,6 +14,7 @@ interface GalleryImage {
 interface Props {
   images: GalleryImage[];
   additionalVideoPaths?: string[];
+  additionalVideoUrls?: string[];
   exhibitTitle: string;
 }
 
@@ -39,37 +41,74 @@ function PortraitVideo({ src, label }: { src: string; label: string }) {
   );
 }
 
-export default function ExhibitGallery({ images, additionalVideoPaths, exhibitTitle }: Props) {
+function EmbedVideo({ url, label }: { url: string; label: string }) {
+  const embedSrc = toEmbedUrl(url);
+  if (!embedSrc) {
+    return (
+      <a href={url} target="_blank" rel="noreferrer" className="flex items-center justify-center bg-black/40 aspect-video text-xs text-terracotta underline">
+        Watch video →
+      </a>
+    );
+  }
+  return (
+    <div className="relative w-full overflow-hidden bg-black" style={{ paddingTop: "56.25%" }}>
+      <iframe
+        src={embedSrc}
+        title={label}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="absolute inset-0 h-full w-full border-0"
+      />
+    </div>
+  );
+}
+
+export default function ExhibitGallery({ images, additionalVideoPaths, additionalVideoUrls, exhibitTitle }: Props) {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const visibleImages = images.slice(0, visibleCount);
   const hasMore = visibleCount < images.length;
 
-  const hasVideos = additionalVideoPaths && additionalVideoPaths.length > 0;
+  const hasUploadedVideos = additionalVideoPaths && additionalVideoPaths.length > 0;
+  const hasEmbedVideos = additionalVideoUrls && additionalVideoUrls.length > 0;
+  const hasVideos = hasUploadedVideos || hasEmbedVideos;
 
   return (
     <>
-      {/* Additional videos — portrait row above the photo grid */}
+      {/* Additional videos — embed URLs (16:9) then uploaded portrait videos */}
       {hasVideos && (
         <div className="mb-8">
           <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">
             Exhibition Videos
           </p>
-          <div
-            className={
-              additionalVideoPaths!.length === 1
-                ? "max-w-[280px]"
-                : "grid gap-3 grid-cols-2 max-w-lg"
-            }
-          >
-            {additionalVideoPaths!.map((src, i) => (
-              <PortraitVideo
-                key={`vid-${i}`}
-                src={src}
-                label={`${exhibitTitle} video ${i + 1}`}
-              />
-            ))}
-          </div>
+          {hasEmbedVideos && (
+            <div className={`mb-4 ${additionalVideoUrls!.length === 1 ? "max-w-2xl" : "grid gap-4 grid-cols-1 sm:grid-cols-2"}`}>
+              {additionalVideoUrls!.map((url, i) => (
+                <EmbedVideo
+                  key={`embed-${i}`}
+                  url={url}
+                  label={`${exhibitTitle} video ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
+          {hasUploadedVideos && (
+            <div
+              className={
+                additionalVideoPaths!.length === 1
+                  ? "max-w-[280px]"
+                  : "grid gap-3 grid-cols-2 max-w-lg"
+              }
+            >
+              {additionalVideoPaths!.map((src, i) => (
+                <PortraitVideo
+                  key={`vid-${i}`}
+                  src={src}
+                  label={`${exhibitTitle} video ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
 

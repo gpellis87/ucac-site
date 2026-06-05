@@ -6,6 +6,7 @@ import { ArrowLeft, MapPin, CalendarDays, Users, Mail, Phone } from "lucide-reac
 import dynamic from "next/dynamic";
 import { statusLabel } from "@/data/exhibits";
 import { getExhibitBySlug, getExhibitSlugs } from "@/sanity/queries";
+import { toEmbedUrl } from "@/lib/videoEmbed";
 import ExhibitGallery from "@/components/ExhibitGallery";
 
 const FlyerViewer = dynamic(() => import("@/components/FlyerViewer"), { ssr: false });
@@ -102,26 +103,47 @@ export default async function ExhibitPage({ params }: Props) {
         </div>
       </div>
 
-      {exhibit.mainVideoPath && (
+      {(exhibit.mainVideoUrl || exhibit.mainVideoPath) && (
         <section className="theme-band">
           <div className="px-5 pt-10 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto max-w-[1500px]">
               <SectionEyebrow>Exhibition Preview</SectionEyebrow>
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
-                aria-label={`${exhibit.title} preview video`}
-              >
-                <source src={exhibit.mainVideoPath} type="video/mp4" />
-                <p className="p-4 text-sm text-parchment/60">
-                  Your browser does not support this video.{" "}
-                  <a href={exhibit.mainVideoPath} download className="text-terracotta underline">
-                    Download it here.
-                  </a>
-                </p>
-              </video>
+              {exhibit.mainVideoUrl ? (
+                (() => {
+                  const embedSrc = toEmbedUrl(exhibit.mainVideoUrl);
+                  return embedSrc ? (
+                    <div className="relative w-full overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.7)]" style={{ paddingTop: "56.25%" }}>
+                      <iframe
+                        src={embedSrc}
+                        title={`${exhibit.title} preview video`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full border-0"
+                      />
+                    </div>
+                  ) : (
+                    <a href={exhibit.mainVideoUrl} target="_blank" rel="noreferrer" className="text-terracotta underline text-sm">
+                      Watch video →
+                    </a>
+                  );
+                })()
+              ) : (
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
+                  aria-label={`${exhibit.title} preview video`}
+                >
+                  <source src={exhibit.mainVideoPath} type="video/mp4" />
+                  <p className="p-4 text-sm text-parchment/60">
+                    Your browser does not support this video.{" "}
+                    <a href={exhibit.mainVideoPath} download className="text-terracotta underline">
+                      Download it here.
+                    </a>
+                  </p>
+                </video>
+              )}
             </div>
           </div>
           <div className="mt-10 flex items-center gap-4 border-t border-parchment/10 px-5 py-5 md:px-10 lg:px-16 xl:px-24">
@@ -294,6 +316,7 @@ export default async function ExhibitPage({ params }: Props) {
       </main>
 
       {((exhibit.additionalVideoPaths && exhibit.additionalVideoPaths.length > 0) ||
+        (exhibit.additionalVideoUrls && exhibit.additionalVideoUrls.length > 0) ||
         (exhibit.images && exhibit.images.length > 0)) && (
         <>
           <Divider />
@@ -303,6 +326,7 @@ export default async function ExhibitPage({ params }: Props) {
               <ExhibitGallery
                 images={exhibit.images ?? []}
                 additionalVideoPaths={exhibit.additionalVideoPaths}
+                additionalVideoUrls={exhibit.additionalVideoUrls}
                 exhibitTitle={exhibit.title}
               />
             </div>

@@ -18,7 +18,9 @@ export interface Exhibit {
   videoPath?: string;
   videoPaths?: string[];
   mainVideoPath?: string;
+  mainVideoUrl?: string;
   additionalVideoPaths?: string[];
+  additionalVideoUrls?: string[];
   videoPoster?: string;
   images?: { url: string; filename: string }[];
   tags: string[];
