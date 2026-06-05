@@ -51,6 +51,7 @@ export default async function ExhibitPage({ params }: Props) {
   if (!exhibit) notFound();
 
   const receptionLabel = exhibit.status === "opening-soon" ? "Celebration" : "Reception";
+  const mainEmbedSrc = exhibit.mainVideoUrl ? toEmbedUrl(exhibit.mainVideoUrl) : null;
 
   return (
     <div className="pb-0">
@@ -108,25 +109,20 @@ export default async function ExhibitPage({ params }: Props) {
           <div className="px-5 pt-10 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto max-w-[1500px]">
               <SectionEyebrow>Exhibition Preview</SectionEyebrow>
-              {exhibit.mainVideoUrl ? (
-                (() => {
-                  const embedSrc = toEmbedUrl(exhibit.mainVideoUrl);
-                  return embedSrc ? (
-                    <div className="relative w-full overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.7)]" style={{ paddingTop: "56.25%" }}>
-                      <iframe
-                        src={embedSrc}
-                        title={`${exhibit.title} preview video`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        className="absolute inset-0 h-full w-full border-0"
-                      />
-                    </div>
-                  ) : (
-                    <a href={exhibit.mainVideoUrl} target="_blank" rel="noreferrer" className="text-terracotta underline text-sm">
-                      Watch video →
-                    </a>
-                  );
-                })()
+              {mainEmbedSrc ? (
+                <div className="relative w-full overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.7)]" style={{ paddingTop: "56.25%" }}>
+                  <iframe
+                    src={mainEmbedSrc}
+                    title={`${exhibit.title} preview video`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute inset-0 h-full w-full border-0"
+                  />
+                </div>
+              ) : exhibit.mainVideoUrl ? (
+                <a href={exhibit.mainVideoUrl} target="_blank" rel="noreferrer" className="text-terracotta underline text-sm">
+                  Watch video →
+                </a>
               ) : (
                 <video
                   controls
