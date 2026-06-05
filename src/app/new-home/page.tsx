@@ -3,6 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, MapPin, Paintbrush, BookOpen, Frame, ShoppingBag } from "lucide-react";
 
+// Paste the Sanity CDN URL here after running: node ucac-studio/upload-renovation-video.mjs <write-token>
+const RENOVATION_VIDEO_URL = "";
+
 const MEMBERSHIP_URL = "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
 const DONATE_URL = "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
 
@@ -134,6 +137,27 @@ export default function NewHomePage() {
           </div>
         </div>
       </div>
+
+      {/* Renovation Video */}
+      {RENOVATION_VIDEO_URL && (
+        <div className="section-pad py-14">
+          <div className="mx-auto max-w-[1500px]">
+            <div className="mb-6 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
+            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-2">Renovation Update</p>
+            <h2 className="editorial-title mt-2 text-4xl text-parchment md:text-5xl mb-8">Chapter One</h2>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.55)]"
+              aria-label="Renovation Chapter One — June 3"
+            >
+              <source src={RENOVATION_VIDEO_URL} type="video/mp4" />
+            </video>
+            <p className="mt-4 text-xs text-parchment/35 uppercase tracking-[0.14em]">Filmed June 3, 2026 · 300 North Hayne Street</p>
+          </div>
+        </div>
+      )}
 
       {/* What's Coming */}
       <div className="theme-band section-pad py-16">
