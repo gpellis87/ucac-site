@@ -149,7 +149,7 @@ export default function NewHomePage() {
               controls
               playsInline
               preload="metadata"
-              className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.55)]"
+              className="mx-auto block max-h-[70vh] w-auto max-w-full shadow-[0_24px_64px_rgba(0,0,0,0.55)]"
               aria-label="Renovation Chapter One — June 3"
             >
               <source src={RENOVATION_VIDEO_URL} type="video/mp4" />
