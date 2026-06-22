@@ -71,12 +71,12 @@ export default function HomePage({
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center brightness-110"
           />
         </motion.div>
 
         {/* Left dark overlay — keeps hero text legible */}
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.88),rgba(18,14,11,0.55)_42%,transparent_64%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.72),rgba(18,14,11,0.38)_42%,transparent_64%)]" />
         {/* Colour accents */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
         {/* ── TEMPORARY: right fade to charcoal for moving announcement ── */}
