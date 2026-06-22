@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { DM_Sans, DM_Serif_Display, Dancing_Script } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
@@ -24,6 +24,14 @@ const sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["400", "500", "700"],
+});
+
+// TEMPORARY — powers "Opening Fall 2026" script text in the hero announcement panel.
+// Remove this and its ${script.variable} in the body className when removing the panel.
+const script = Dancing_Script({
+  subsets: ["latin"],
+  variable: "--font-script",
+  weight: "600",
 });
 
 export const metadata: Metadata = {
@@ -54,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
-      <body className={`${display.variable} ${sans.variable} grain`}>
+      <body className={`${display.variable} ${sans.variable} ${script.variable} grain`}>
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>

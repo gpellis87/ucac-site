@@ -56,116 +56,148 @@ export default function HomePage({
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[600px] max-h-[860px] h-[90vh] items-center overflow-hidden py-20">
+      <section className="relative flex min-h-[600px] max-h-[860px] h-[90vh] overflow-hidden">
 
-        {/* Background image */}
-        <motion.div
-          initial={{ scale: 1.08, opacity: 0.75 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <Image
-            src="/hero-mural.jpg"
-            alt="Mural at the Union County Community Arts Council"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </motion.div>
+        {/* LEFT: existing hero content */}
+        <div className="section-pad relative flex flex-1 items-center overflow-hidden py-20">
 
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.82),rgba(18,14,11,0.46)_50%,rgba(18,14,11,0.72))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,248,241,0.06),rgba(0,0,0,0.18))]" />
-
-        {/* Grain */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.055]"
-          style={{
-            backgroundImage: "radial-gradient(#ffffff 0.7px, transparent 0.7px)",
-            backgroundSize: "3px 3px",
-          }}
-        />
-
-        {/* Content */}
-        <div className="relative z-10 mx-auto w-full max-w-[1500px]">
-
-          {/* Editorial rule */}
+          {/* Background image */}
           <motion.div
-            initial={{ scaleX: 0, opacity: 0 }}
-            animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
-            style={{ originX: 0 }}
-            className="mb-6 h-px w-24 bg-terracotta"
+            initial={{ scale: 1.08, opacity: 0.75 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src="/hero-mural.jpg"
+              alt="Mural at the Union County Community Arts Council"
+              fill
+              priority
+              sizes="(min-width: 1024px) 60vw, 100vw"
+              className="object-cover object-center"
+            />
+          </motion.div>
+
+          {/* Gradient overlays */}
+          <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.82),rgba(18,14,11,0.46)_50%,rgba(18,14,11,0.72))]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,248,241,0.06),rgba(0,0,0,0.18))]" />
+
+          {/* Grain */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.055]"
+            style={{
+              backgroundImage: "radial-gradient(#ffffff 0.7px, transparent 0.7px)",
+              backgroundSize: "3px 3px",
+            }}
           />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.8 }}
-            className="max-w-4xl text-[clamp(4rem,10vw,8.5rem)] leading-[0.9] text-white [text-shadow:0_14px_38px_rgba(0,0,0,0.55)]"
-            style={{ fontFamily: "var(--font-display), Georgia, serif" }}
-          >
-            Art lives<br />
-            <span className="text-terracotta">here.</span>
-          </motion.h1>
+          {/* Content */}
+          <div className="relative z-10 w-full">
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.52, duration: 0.7 }}
-            className="mt-7 max-w-xl text-base leading-relaxed text-white/90 [text-shadow:0_4px_18px_rgba(0,0,0,0.35)] md:text-lg"
-          >
-            Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
-          </motion.p>
+            {/* Editorial rule */}
+            <motion.div
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+              style={{ originX: 0 }}
+              className="mb-6 h-px w-24 bg-terracotta"
+            />
 
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.8 }}
+              className="max-w-2xl text-[clamp(3.5rem,8vw,8.5rem)] leading-[0.9] text-white [text-shadow:0_14px_38px_rgba(0,0,0,0.55)]"
+              style={{ fontFamily: "var(--font-display), Georgia, serif" }}
+            >
+              Art lives<br />
+              <span className="text-terracotta">here.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.52, duration: 0.7 }}
+              className="mt-7 max-w-md text-base leading-relaxed text-white/90 [text-shadow:0_4px_18px_rgba(0,0,0,0.35)] md:text-lg"
+            >
+              Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.66, duration: 0.6 }}
+              className="mt-8 flex flex-wrap gap-3"
+            >
+              <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
+              <Link href="/support" className="inline-flex items-center justify-center gap-2 border border-white/45 bg-black/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:text-[#1b1612]">
+                <Heart size={13} /> Support
+              </Link>
+              <Link href="/contact" className="inline-flex items-center justify-center border border-white/45 bg-black/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:text-[#1b1612]">
+                Get in Touch
+              </Link>
+            </motion.div>
+
+          </div>
+
+          {/* Bottom bar */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.66, duration: 0.6 }}
-            className="mt-8 flex flex-wrap gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.7 }}
+            className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-[rgb(var(--theme-nav)_/_0.54)] backdrop-blur-sm"
           >
-            <Link href="/exhibits" className="accent-btn">View Exhibitions</Link>
-            <Link href="/support" className="inline-flex items-center justify-center gap-2 border border-white/45 bg-black/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:text-[#1b1612]">
-              <Heart size={13} /> Support
-            </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center border border-white/45 bg-black/30 px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-white transition duration-300 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:text-[#1b1612]">
-              Get in Touch
-            </Link>
+            <div className="section-pad mx-auto flex w-full items-center justify-between gap-4 py-3">
+              <a href="#exhibitions" className="group flex items-center gap-3 shrink-0 transition hover:opacity-80">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-60" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
+                </span>
+                <span className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70 group-hover:text-parchment/90 transition">
+                  {exhibits.length} Exhibitions On View &amp; Upcoming
+                </span>
+              </a>
+
+              <motion.div
+                animate={{ y: [0, 4, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                className="shrink-0"
+              >
+                <ChevronDown size={15} className="text-terracotta/60" />
+              </motion.div>
+            </div>
           </motion.div>
 
         </div>
 
-        {/* Bottom bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 0.7 }}
-          className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-[rgb(var(--theme-nav)_/_0.54)] backdrop-blur-sm"
-        >
-          <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 py-3">
-            <a href="#exhibitions" className="group flex items-center gap-3 shrink-0 transition hover:opacity-80">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
-              </span>
-              <span className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70 group-hover:text-parchment/90 transition">
-                {exhibits.length} Exhibitions On View &amp; Upcoming
-              </span>
-            </a>
-
-
-            <motion.div
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-              className="shrink-0"
-            >
-              <ChevronDown size={15} className="text-terracotta/60" />
-            </motion.div>
-          </div>
-        </motion.div>
+        {/* ─────────────────────────────────────────────────────────────────
+            TEMPORARY MOVING ANNOUNCEMENT PANEL
+            To revert: delete this entire aside block (from here to
+            "END TEMPORARY"). Also remove Dancing_Script from layout.tsx
+            and its ${script.variable} from the body className.
+        ───────────────────────────────────────────────────────────────── */}
+        <aside className="hidden lg:flex w-[40%] xl:w-[38%] shrink-0 flex-col items-center justify-center bg-[#2b2b2b] px-8 xl:px-14 text-center text-white">
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-white/60">
+            Union County Community Arts Council
+          </p>
+          <p className="mt-1 text-sm text-white/45">is moving to our</p>
+          <p className="mt-5 text-[4rem] xl:text-[5rem] font-bold leading-none tracking-tight text-white uppercase">
+            LOCATION
+          </p>
+          <p className="mt-3 text-lg font-medium text-white/85">at 300 N Hayne St</p>
+          <p
+            className="mt-5 text-[2.2rem] xl:text-[2.6rem] leading-none text-white/90"
+            style={{ fontFamily: "var(--font-script), cursive" }}
+          >
+            Opening Fall 2026
+          </p>
+          <p className="mt-5 max-w-[260px] text-[0.82rem] leading-relaxed text-white/55">
+            Keep checking our website for updates or<br />
+            call us at 704.283.2784
+          </p>
+        </aside>
+        {/* ─── END TEMPORARY MOVING ANNOUNCEMENT PANEL ─────────────────── */}
 
       </section>
 
