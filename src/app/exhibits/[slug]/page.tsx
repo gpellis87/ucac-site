@@ -68,14 +68,18 @@ export default async function ExhibitPage({ params }: Props) {
       </div>
 
       <div className="relative h-[42vh] max-h-[520px] min-h-[300px] overflow-hidden">
-        <Image
-          src={exhibit.imageUrl}
-          alt={exhibit.title}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        {exhibit.imageUrl ? (
+          <Image
+            src={exhibit.imageUrl}
+            alt={exhibit.title}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(192,84,42,0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.9)] via-[rgb(var(--theme-overlay)_/_0.58)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(192,84,42,0.18),transparent_50%)]" />
 
