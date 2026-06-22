@@ -172,9 +172,8 @@ export default function HomePage({
               >
                 Opening Fall 2026
               </p>
-              <p className="mt-5 max-w-[240px] text-[0.78rem] leading-relaxed text-white/45">
-                Keep checking our website for updates or<br />
-                call us at 704.283.2784
+              <p className="mt-5 max-w-[220px] text-[0.78rem] leading-relaxed text-white/45">
+                Keep checking our website for updates or call us at 704.283.2784
               </p>
             </motion.div>
           </aside>
