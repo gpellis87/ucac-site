@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ShieldCheck } from "lucide-react";
-import WorkshopCard from "@/components/WorkshopCard";
+import WorkshopsExplorer from "@/components/WorkshopsExplorer";
 import { SectionReveal } from "@/components/SectionReveal";
 import { getWorkshops } from "@/sanity/queries";
 
@@ -46,11 +46,7 @@ export default async function WorkshopsPage() {
           </div>
 
           {workshops.length > 0 ? (
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {workshops.map((workshop) => (
-                <WorkshopCard key={workshop.id} workshop={workshop} />
-              ))}
-            </div>
+            <WorkshopsExplorer workshops={workshops} />
           ) : (
             <p className="py-20 text-center text-parchment/40">No classes are currently listed. Check back soon.</p>
           )}

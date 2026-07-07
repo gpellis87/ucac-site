@@ -179,13 +179,16 @@ const WORKSHOP_FIELDS = `
   category,
   skillLevel,
   startDate,
+  sessionType,
   scheduleText,
   location,
   price,
   "registrationStatus": coalesce(registrationStatus, "open"),
   zeffyUrl,
   "imageUrl": image.asset->url,
-  description
+  description,
+  overview,
+  instructorBio
 `;
 
 export async function getWorkshops(): Promise<Workshop[]> {
@@ -204,4 +207,13 @@ export async function getWorkshopBySlug(slug: string): Promise<Workshop | null> 
     { slug }
   );
   return results[0] ?? null;
+}
+
+export async function getWorkshopSlugs(): Promise<string[]> {
+  const client = getClient();
+  if (!client) return [];
+  const results = await client.fetch<{ slug: string }[]>(
+    `*[_type == "workshop"] { "slug": slug.current }`
+  );
+  return results.map((r) => r.slug);
 }
