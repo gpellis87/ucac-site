@@ -1,6 +1,7 @@
 import { getClient } from "./client";
 import type { Exhibit } from "@/data/exhibits";
 import type { Artist } from "@/data/artists";
+import type { Workshop } from "@/data/workshops";
 
 export type Announcement = {
   title: string;
@@ -166,4 +167,41 @@ export async function getArtistSlugs(): Promise<string[]> {
     `*[_type == "artist"] { "slug": slug.current }`
   );
   return results.map((r) => r.slug);
+}
+
+// ── Workshop queries ──────────────────────────────────────────────────────────
+
+const WORKSHOP_FIELDS = `
+  "id": _id,
+  "slug": slug.current,
+  title,
+  instructor,
+  category,
+  skillLevel,
+  startDate,
+  scheduleText,
+  location,
+  price,
+  "registrationStatus": coalesce(registrationStatus, "open"),
+  zeffyUrl,
+  "imageUrl": image.asset->url,
+  description
+`;
+
+export async function getWorkshops(): Promise<Workshop[]> {
+  const client = getClient();
+  if (!client) return [];
+  return client.fetch<Workshop[]>(
+    `*[_type == "workshop"] | order(startDate asc) { ${WORKSHOP_FIELDS} }`
+  );
+}
+
+export async function getWorkshopBySlug(slug: string): Promise<Workshop | null> {
+  const client = getClient();
+  if (!client) return null;
+  const results = await client.fetch<Workshop[]>(
+    `*[_type == "workshop" && slug.current == $slug][0..0] { ${WORKSHOP_FIELDS} }`,
+    { slug }
+  );
+  return results[0] ?? null;
 }
