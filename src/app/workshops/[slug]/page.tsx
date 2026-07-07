@@ -80,7 +80,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
                 {registrationStatusLabel[workshop.registrationStatus]}
               </span>
             </div>
-            <h1 className="editorial-title mt-3 max-w-4xl text-4xl leading-[0.93] md:text-6xl lg:text-[5.5rem]">
+            <h1 className="editorial-title on-image mt-3 max-w-4xl text-4xl leading-[0.93] md:text-6xl lg:text-[5.5rem]">
               {workshop.title}
             </h1>
             {workshop.instructor && (

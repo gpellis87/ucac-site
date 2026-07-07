@@ -166,6 +166,12 @@ p {
   color: rgb(var(--theme-text));
 }
 
+/* Hero titles sit on a photo + dark scrim, which stays dark in both themes —
+   so the title needs to stay light regardless of --theme-text. */
+.editorial-title.on-image {
+  color: #fff;
+}
+
 .link-underline {
   position: relative;
 }

@@ -52,7 +52,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
               <span className="theme-chip px-3 py-1 text-parchment">{event.time}</span>
               <span className="theme-chip px-3 py-1 text-parchment">{event.location}</span>
             </div>
-            <h1 className="editorial-title max-w-4xl text-5xl md:text-7xl">{event.title}</h1>
+            <h1 className="editorial-title on-image max-w-4xl text-5xl md:text-7xl">{event.title}</h1>
           </div>
         </div>
       </section>

@@ -90,7 +90,7 @@ export default async function ExhibitPage({ params }: Props) {
             >
               {statusLabel[exhibit.status]}
             </span>
-            <h1 className="editorial-title mt-3 max-w-4xl text-4xl leading-[0.93] md:text-6xl lg:text-[5.5rem]">
+            <h1 className="editorial-title on-image mt-3 max-w-4xl text-4xl leading-[0.93] md:text-6xl lg:text-[5.5rem]">
               {exhibit.title}
             </h1>
             <div className="mt-5 flex flex-wrap gap-3">
