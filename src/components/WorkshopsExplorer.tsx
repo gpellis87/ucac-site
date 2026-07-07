@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import WorkshopCard from "@/components/WorkshopCard";
 import { SessionType, Workshop, sessionTypeLabel } from "@/data/workshops";
 
@@ -17,7 +18,7 @@ function monthLabel(dateString: string): string {
   return new Date(dateString).toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }
 
-function FilterRow({
+function FilterDropdown({
   label,
   options,
   value,
@@ -29,24 +30,23 @@ function FilterRow({
   onChange: (value: Filter) => void;
 }) {
   return (
-    <div>
-      <p className="mb-2 text-[0.62rem] uppercase tracking-[0.18em] text-parchment/50">{label}</p>
-      <div className="flex flex-wrap gap-2">
+    <div className="relative">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        aria-label={label}
+        className="theme-input min-w-[9.5rem] appearance-none py-2.5 pl-3.5 pr-9 text-xs uppercase tracking-[0.14em] transition hover:border-terracotta focus-visible:border-terracotta focus-visible:outline-none"
+      >
         {options.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => onChange(option.value)}
-            className={`border px-3.5 py-1.5 text-xs uppercase tracking-[0.14em] transition ${
-              value === option.value
-                ? "border-terracotta bg-terracotta text-parchment"
-                : "border-parchment/30 text-parchment/80 hover:border-terracotta"
-            }`}
-          >
-            {option.label}
-          </button>
+          <option key={option.value} value={option.value}>
+            {label}: {option.label}
+          </option>
         ))}
-      </div>
+      </select>
+      <ChevronDown
+        size={14}
+        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-parchment/60"
+      />
     </div>
   );
 }
@@ -85,15 +85,15 @@ export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[]
 
   return (
     <div>
-      <div className="theme-panel mb-10 flex flex-col gap-6 border p-5">
-        <FilterRow
+      <div className="theme-panel mb-10 flex flex-wrap gap-3 border p-5">
+        <FilterDropdown
           label="Medium"
           value={category}
           onChange={setCategory}
           options={[{ value: ALL, label: "All" }, ...categories.map((c) => ({ value: c, label: c }))]}
         />
         {lengths.length > 0 && (
-          <FilterRow
+          <FilterDropdown
             label="Workshop Length"
             value={length}
             onChange={setLength}
@@ -104,7 +104,7 @@ export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[]
           />
         )}
         {months.length > 0 && (
-          <FilterRow
+          <FilterDropdown
             label="Month"
             value={month}
             onChange={setMonth}
