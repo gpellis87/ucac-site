@@ -76,14 +76,14 @@ export default function AccessibilityWidget() {
   };
 
   return (
-    <div className="fixed right-0 top-1/2 z-[65] -translate-y-1/2">
+    <div className="fixed bottom-5 left-5 z-[65]">
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
         aria-expanded={open}
         aria-controls="accessibility-panel"
         aria-label={`${open ? "Close" : "Open"} accessibility settings`}
-        className="flex h-12 w-12 items-center justify-center border border-r-0 border-parchment/25 bg-terracotta text-white shadow-[0_12px_28px_rgba(0,0,0,0.22)] transition hover:w-14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--bg)]"
+        className="flex h-12 w-12 items-center justify-center rounded-full border border-parchment/25 bg-terracotta text-white shadow-[0_12px_28px_rgba(0,0,0,0.28)] transition hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--bg)]"
       >
         {open ? <X size={20} /> : <Accessibility size={22} />}
       </button>
@@ -91,8 +91,8 @@ export default function AccessibilityWidget() {
       <aside
         id="accessibility-panel"
         aria-label="Accessibility settings"
-        className={`absolute right-0 top-0 w-[min(18rem,calc(100vw-2rem))] border border-parchment/20 bg-[rgb(var(--theme-surface-strong))] p-4 text-[rgb(var(--theme-text))] shadow-[0_18px_42px_rgba(0,0,0,0.22)] transition-transform duration-300 ${
-          open ? "translate-x-0" : "translate-x-[calc(100%+3.25rem)]"
+        className={`absolute bottom-full left-0 mb-3 w-[min(18rem,calc(100vw-2.5rem))] origin-bottom-left border border-parchment/20 bg-[rgb(var(--theme-surface-strong))] p-4 text-[rgb(var(--theme-text))] shadow-[0_18px_42px_rgba(0,0,0,0.28)] transition duration-300 ${
+          open ? "translate-y-0 scale-100 opacity-100" : "pointer-events-none translate-y-2 scale-95 opacity-0"
         }`}
       >
         <div className="flex items-start justify-between gap-3">
