@@ -56,7 +56,7 @@ export default function HomePage({
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[600px] max-h-[860px] h-[90vh] items-center overflow-hidden py-20">
+      <section className="section-pad relative flex min-h-[600px] items-center overflow-hidden py-20 lg:h-[90vh] lg:max-h-[860px]">
 
         {/* Full-width background image */}
         <motion.div
@@ -94,7 +94,7 @@ export default function HomePage({
         />
 
         {/* Content */}
-        <div className="relative z-10 mx-auto flex w-full max-w-[1500px] items-center gap-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-col items-center gap-8 lg:flex-row">
 
           {/* Left: existing hero */}
           <div className="flex-1 min-w-0">
@@ -147,11 +147,15 @@ export default function HomePage({
 
           {/* ───────────────────────────────────────────────────────────────
               TEMPORARY MOVING ANNOUNCEMENT
+              Stacks below the main hero content on mobile/tablet (own
+              translucent panel for legibility, since the desktop right-fade
+              gradient above is lg-only), sits beside it as the original
+              side panel from lg up.
               To revert: delete this aside block and the right-fade gradient
               div above. Also remove Dancing_Script from layout.tsx and its
               ${script.variable} from the body className.
           ─────────────────────────────────────────────────────────────── */}
-          <aside className="hidden lg:flex w-[40%] xl:w-[38%] shrink-0 flex-col items-center justify-center text-center text-white">
+          <aside className="flex w-full shrink-0 flex-col items-center justify-center rounded-2xl border-t border-white/15 bg-black/35 px-6 py-8 text-center text-white backdrop-blur-[2px] lg:w-[40%] xl:w-[38%] lg:rounded-none lg:border-t-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
             <motion.div
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -162,12 +166,12 @@ export default function HomePage({
                 Union County Community Arts Council
               </p>
               <p className="mt-1 text-sm text-white/40">is moving to our</p>
-              <p className="mt-5 text-[3.6rem] xl:text-[4.4rem] font-bold leading-none tracking-tight text-white">
+              <p className="mt-5 text-[2.4rem] font-bold leading-none tracking-tight text-white lg:text-[3.6rem] xl:text-[4.4rem]">
                 New Location
               </p>
-              <p className="mt-3 text-lg font-medium text-white/80">at 300 N Hayne St</p>
+              <p className="mt-3 text-base font-medium text-white/80 lg:text-lg">at 300 N Hayne St</p>
               <p
-                className="mt-4 text-[2rem] xl:text-[2.4rem] leading-none text-white/85"
+                className="mt-4 text-[1.6rem] leading-none text-white/85 lg:text-[2rem] xl:text-[2.4rem]"
                 style={{ fontFamily: "var(--font-script), cursive" }}
               >
                 Opening Fall 2026
