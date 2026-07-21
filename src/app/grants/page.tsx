@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { getActiveGrants } from "@/data/grants";
 import type { Grant } from "@/data/grants";
 
@@ -46,19 +46,6 @@ export default function GrantsPage() {
 
   return (
     <div className="pb-24">
-      {/* Breadcrumb */}
-      <div className="section-pad border-b border-parchment/10 py-3">
-        <div className="mx-auto max-w-[1500px]">
-          <Link
-            href="/support"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
-          >
-            <ArrowLeft size={13} />
-            Support
-          </Link>
-        </div>
-      </div>
-
       {/* Hero */}
       <div className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.18),transparent_55%)]" />
