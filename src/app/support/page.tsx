@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Check, ExternalLink, HandHeart, Heart, Users } from "lucide-react";
+import { ArrowLeft, Award, Check, ExternalLink, HandHeart, Heart, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Support | Union County Community Arts Council",
@@ -11,9 +11,6 @@ export const metadata: Metadata = {
 
 const GENERAL_DONATE_URL =
   "https://www.zeffy.com/en-US/donation-form/donate-to-the-union-county-community-arts-council";
-
-const BARBARA_FAULK_URL =
-  "https://www.zeffy.com/en-US/donation-form/barbara-faulk-educators-grant";
 
 const MEMBERSHIP_URL =
   "https://www.zeffy.com/en-US/ticketing/union-county-community-arts-council-memberships";
@@ -92,7 +89,7 @@ export default function SupportPage() {
       </div>
 
       <div className="section-pad py-12">
-        <div className="mx-auto grid max-w-[1500px] gap-6 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-[1500px] gap-6 lg:grid-cols-4">
           <a href="#donate" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
             <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Give</p>
             <div className="mt-4 flex items-center gap-3">
@@ -100,9 +97,19 @@ export default function SupportPage() {
               <h2 className="display text-3xl text-parchment">Donate</h2>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-parchment/65">
-              Support the Arts Council directly or give to the Barbara Faulk Educators Grant.
+              Make a general, tax-deductible gift to support the Arts Council directly.
             </p>
           </a>
+          <Link href="/grants" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
+            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Honor</p>
+            <div className="mt-4 flex items-center gap-3">
+              <Award size={18} className="text-terracotta" />
+              <h2 className="display text-3xl text-parchment">Grants</h2>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-parchment/65">
+              Give to one of our grants, like the Barbara Faulk Educators Grant.
+            </p>
+          </Link>
           <a href="#membership" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
             <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Join</p>
             <div className="mt-4 flex items-center gap-3">
@@ -170,27 +177,24 @@ export default function SupportPage() {
             <div className="relative flex flex-col overflow-hidden border border-terracotta/35 bg-parchment/[0.04] p-8 md:p-10">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
               <div className="relative flex flex-1 flex-col">
-                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">Named Grant</p>
+                <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">Grants</p>
                 <h3 className="display mt-3 text-3xl text-parchment md:min-h-[4.5rem]">
-                  Barbara Faulk
-                  <br />
-                  Educators Grant
+                  Give to a<br />
+                  Grant
                 </h3>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-parchment/65">
-                  Honor Barbara Faulk&apos;s legacy and help support classroom teachers and arts programs
-                  serving students across Union County.
+                  Support one of our grants, like the Barbara Faulk Educators Grant, which funds
+                  classroom teachers and arts programs serving students across Union County.
                 </p>
                 <div className="mt-8">
-                  <a
-                    href={BARBARA_FAULK_URL}
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    href="/grants"
                     className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
                   >
-                    <Heart size={13} /> Give to This Grant
-                  </a>
+                    <Award size={13} /> View Grants
+                  </Link>
                   <p className="mt-3 max-w-sm text-[0.68rem] leading-relaxed text-parchment/45">
-                    A meaningful way to honor Barbara Faulk&apos;s legacy while investing in arts education.
+                    Explore our grants and give directly on the Grants page.
                   </p>
                 </div>
               </div>
