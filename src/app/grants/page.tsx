@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Heart } from "lucide-react";
+import { FileText, Heart } from "lucide-react";
 import { getActiveGrants } from "@/data/grants";
 import type { Grant } from "@/data/grants";
 
@@ -26,6 +26,16 @@ function GrantEntry({ grant }: { grant: Grant }) {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
+            {grant.applyUrl && (
+              <a
+                href={grant.applyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 border border-terracotta/50 px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:border-terracotta hover:bg-terracotta/10"
+              >
+                <FileText size={13} /> Apply for This Grant
+              </a>
+            )}
             <a
               href={grant.zeffyUrl}
               target="_blank"

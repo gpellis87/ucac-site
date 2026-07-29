@@ -4,6 +4,7 @@ export type Grant = {
   title: string;
   description: string;
   body: string[];
+  applyUrl?: string;
   zeffyUrl: string;
   active: boolean;
 };
@@ -20,6 +21,7 @@ export const grants: Grant[] = [
       "She was like the salt and butter on the baked potato — full of flavor, turning something ordinary into something extraordinary. She understood that children are our future. Barbara had a passion for arts in education, for supporting classroom teachers, and for serving the under-served. Through her passion, support, and serving heart she made Union County a wonderful place to live and grow up.",
       "For her legacy to be remembered for generations to come, we are proud to honor Barbara Faulk by offering the Barbara Faulk Educators Grant — so that her energy and love of life will continue always.",
     ],
+    applyUrl: "https://docs.google.com/forms/d/16b09a9F-4dKztDUGXEIiXIxwutQ6qLRoz3MC9VjCVjw/preview",
     zeffyUrl: "https://www.zeffy.com/en-US/donation-form/barbara-faulk-educators-grant",
     active: true,
   },
