@@ -5,11 +5,23 @@ export type Grant = {
   description: string;
   body: string[];
   applyUrl?: string;
-  zeffyUrl: string;
+  zeffyUrl?: string;
   active: boolean;
 };
 
 export const grants: Grant[] = [
+  {
+    slug: "grassroots-arts-program-grant",
+    eyebrow: "NC Arts Council Grant",
+    title: "Grassroots Arts Program Grant",
+    description:
+      "Funding for local nonprofits, schools, and civic groups planning arts or cultural projects in Union County, supported by the NC Arts Council.",
+    body: [
+      "Funding for Local Arts! Applications are now open for the Grassroots Arts Program grant, supported by the NC Arts Council. If you are a local nonprofit, school, or civic group planning an upcoming arts or cultural project, you could receive funding to bring your vision to life. Apply today to help us enrich our community through the power of the arts!",
+    ],
+    applyUrl: "https://docs.google.com/forms/d/1gmG39hlQYwir4iVeTtIn9rSmO5TwtcdOF8sRPC_Kxis/preview",
+    active: true,
+  },
   {
     slug: "barbara-faulk-educators-grant",
     eyebrow: "Named Grant",
