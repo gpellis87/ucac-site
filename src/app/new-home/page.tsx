@@ -155,6 +155,9 @@ export default function NewHomePage() {
               <source src={RENOVATION_VIDEO_URL} type="video/mp4" />
             </video>
             <p className="mt-4 text-xs text-parchment/60 uppercase tracking-[0.14em]">Filmed June 3, 2026 · 300 North Hayne Street</p>
+            <p className="mt-1 text-[0.62rem] leading-snug text-parchment/60">
+              Not yet captioned — <Link href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</Link>
+            </p>
           </div>
         </div>
       )}

@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 const links = [
   { href: "/",            label: "Home" },
@@ -71,6 +72,8 @@ export default function SiteNav() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  const reduceMotion = useReducedMotion();
+
   return (
     <>
       <header className="theme-nav fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.12)]">
@@ -121,10 +124,10 @@ export default function SiteNav() {
             role="dialog"
             aria-modal="true"
             aria-label="Site menu"
-            initial={{ x: "100%" }}
+            initial={reduceMotion ? { x: 0 } : { x: "100%" }}
             animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            exit={reduceMotion ? { x: 0 } : { x: "100%" }}
+            transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeOut" }}
             className="theme-drawer fixed inset-0 z-[70]"
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(192,84,42,0.18),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(245,240,235,0.07),transparent_45%)]" />
@@ -138,9 +141,9 @@ export default function SiteNav() {
                 {links.map((link, index) => (
                   <motion.div
                     key={link.href}
-                    initial={{ opacity: 0, y: 16 }}
+                    initial={reduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.06 * index }}
+                    transition={{ delay: reduceMotion ? 0 : 0.06 * index }}
                   >
                     <Link
                       href={link.href}

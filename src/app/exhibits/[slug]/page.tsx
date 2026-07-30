@@ -128,21 +128,26 @@ export default async function ExhibitPage({ params }: Props) {
                   Watch video →
                 </a>
               ) : (
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
-                  aria-label={`${exhibit.title} preview video`}
-                >
-                  <source src={exhibit.mainVideoPath} type="video/mp4" />
-                  <p className="p-4 text-sm text-parchment/60">
-                    Your browser does not support this video.{" "}
-                    <a href={exhibit.mainVideoPath} download className="text-terracotta underline">
-                      Download it here.
-                    </a>
+                <div>
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full shadow-[0_24px_64px_rgba(0,0,0,0.7)]"
+                    aria-label={`${exhibit.title} preview video`}
+                  >
+                    <source src={exhibit.mainVideoPath} type="video/mp4" />
+                    <p className="p-4 text-sm text-parchment/60">
+                      Your browser does not support this video.{" "}
+                      <a href={exhibit.mainVideoPath} download className="text-terracotta underline">
+                        Download it here.
+                      </a>
+                    </p>
+                  </video>
+                  <p className="mt-2 text-[0.62rem] leading-snug text-parchment/60">
+                    Not yet captioned — <a href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</a>
                   </p>
-                </video>
+                </div>
               )}
             </div>
           </div>
@@ -162,7 +167,7 @@ export default async function ExhibitPage({ params }: Props) {
         </section>
       )}
 
-      <main className="flex-1 px-5 py-14 md:px-10 lg:px-16 xl:px-24">
+      <div className="flex-1 px-5 py-14 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1.55fr_1fr] lg:gap-16">
           <article>
             <SectionEyebrow>About This Exhibition</SectionEyebrow>
@@ -313,7 +318,7 @@ export default async function ExhibitPage({ params }: Props) {
             </div>
           </aside>
         </div>
-      </main>
+      </div>
 
       {((exhibit.additionalVideoPaths && exhibit.additionalVideoPaths.length > 0) ||
         (exhibit.additionalVideoUrls && exhibit.additionalVideoUrls.length > 0) ||

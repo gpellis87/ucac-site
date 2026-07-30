@@ -90,7 +90,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <main className="flex-1 px-5 py-14 md:px-10 lg:px-16 xl:px-24">
+      <div className="flex-1 px-5 py-14 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1.55fr_1fr] lg:gap-16">
           <article>
             <SectionEyebrow>Overview</SectionEyebrow>
@@ -186,7 +186,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
             </div>
           </aside>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

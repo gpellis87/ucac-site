@@ -2,9 +2,15 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 export default function RouteTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const reduceMotion = useReducedMotion();
+
+  if (reduceMotion) {
+    return <div key={pathname}>{children}</div>;
+  }
 
   return (
     <AnimatePresence mode="wait">
