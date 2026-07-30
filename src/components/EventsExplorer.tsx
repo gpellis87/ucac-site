@@ -52,6 +52,7 @@ export default function EventsExplorer() {
                 key={category}
                 type="button"
                 onClick={() => setFilter(category)}
+                aria-pressed={filter === category}
                 className={`border px-4 py-2 text-xs uppercase tracking-[0.14em] transition ${
                   filter === category
                     ? "border-terracotta bg-terracotta text-parchment"
@@ -66,6 +67,7 @@ export default function EventsExplorer() {
             <button
               type="button"
               onClick={() => setView("calendar")}
+              aria-pressed={view === "calendar"}
               className={`inline-flex items-center gap-2 border px-4 py-2 text-xs uppercase tracking-[0.14em] ${
                 view === "calendar" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"
               }`}
@@ -75,6 +77,7 @@ export default function EventsExplorer() {
             <button
               type="button"
               onClick={() => setView("cards")}
+              aria-pressed={view === "cards"}
               className={`inline-flex items-center gap-2 border px-4 py-2 text-xs uppercase tracking-[0.14em] ${
                 view === "cards" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"
               }`}
@@ -102,7 +105,12 @@ export default function EventsExplorer() {
                 >
                   <ChevronLeft size={16} />
                 </button>
-                <h3 className="display text-3xl">{monthLabel(currentMonth)}</h3>
+                <h3 className="display text-3xl">
+                  {monthLabel(currentMonth)}
+                  <span className="sr-only" aria-live="polite">
+                    Showing events for {monthLabel(currentMonth)}
+                  </span>
+                </h3>
                 <button
                   type="button"
                   onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1))}
@@ -124,7 +132,7 @@ export default function EventsExplorer() {
                     className={`min-h-[98px] border p-2 transition ${
                       inMonth
                         ? "border-parchment/20 bg-[rgb(var(--theme-surface)_/_0.72)] hover:border-terracotta/40 hover:bg-[rgb(var(--theme-surface-strong)_/_0.9)]"
-                        : "border-parchment/10 bg-[rgb(var(--theme-bg-alt)_/_0.5)] text-parchment/30"
+                        : "border-parchment/10 bg-[rgb(var(--theme-bg-alt)_/_0.5)] text-parchment/60"
                     }`}
                   >
                     <p className={`text-xs ${dayEvents.length > 0 && inMonth ? "text-terracotta" : ""}`}>{current.getDate()}</p>

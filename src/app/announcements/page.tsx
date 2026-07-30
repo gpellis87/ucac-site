@@ -46,8 +46,8 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
                 {announcement.eyebrow}
               </p>
             )}
-            <span className="text-parchment/20">·</span>
-            <time className="text-[0.65rem] uppercase tracking-[0.18em] text-parchment/35">
+            <span className="text-parchment/60">·</span>
+            <time className="text-[0.65rem] uppercase tracking-[0.18em] text-parchment/60">
               {new Date(announcement.publishedAt + "T12:00:00").toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -101,7 +101,7 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
 
           {announcement.flyerImage && (
             <div className="mt-10">
-              <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/35">Supplemental Flyer</p>
+              <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/60">Supplemental Flyer</p>
               <div className="relative w-full max-w-sm overflow-hidden border border-parchment/15">
                 <Image
                   src={sanityImg(announcement.flyerImage, { w: 800 })}
@@ -145,7 +145,7 @@ export default async function AnnouncementsPage() {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             Home
@@ -174,7 +174,7 @@ export default async function AnnouncementsPage() {
       <div className="section-pad py-12">
         <div className="mx-auto max-w-[1500px]">
           {announcements.length === 0 ? (
-            <p className="text-parchment/40 text-sm">No announcements at this time. Check back soon.</p>
+            <p className="text-parchment/60 text-sm">No announcements at this time. Check back soon.</p>
           ) : (
             <div className="space-y-6">
               {announcements.map((ann) => (

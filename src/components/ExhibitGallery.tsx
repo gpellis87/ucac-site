@@ -25,18 +25,26 @@ function parseFilename(filename: string): { title: string; artist: string | null
   return { title: base.slice(0, byIdx).trim(), artist: base.slice(byIdx + 4).trim() };
 }
 
-function PortraitVideo({ src, label }: { src: string; label: string }) {
+function PortraitVideo({ src, label, captionsUrl }: { src: string; label: string; captionsUrl?: string }) {
   return (
-    <div className="relative w-full overflow-hidden bg-black" style={{ paddingTop: "177.78%" }}>
-      <video
-        controls
-        playsInline
-        preload="metadata"
-        aria-label={label}
-        className="absolute inset-0 h-full w-full object-contain"
-      >
-        <source src={src} type="video/mp4" />
-      </video>
+    <div>
+      <div className="relative w-full overflow-hidden bg-black" style={{ paddingTop: "177.78%" }}>
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          aria-label={label}
+          className="absolute inset-0 h-full w-full object-contain"
+        >
+          <source src={src} type="video/mp4" />
+          {captionsUrl && <track kind="captions" src={captionsUrl} srcLang="en" label="English" default />}
+        </video>
+      </div>
+      {!captionsUrl && (
+        <p className="mt-1.5 text-[0.62rem] leading-snug text-parchment/60">
+          Not yet captioned — <a href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</a>
+        </p>
+      )}
     </div>
   );
 }
@@ -78,7 +86,7 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
       {/* Additional videos — embed URLs (16:9) then uploaded portrait videos */}
       {hasVideos && (
         <div className="mb-8">
-          <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/40">
+          <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/60">
             Exhibition Videos
           </p>
           {hasEmbedVideos && (
@@ -151,7 +159,7 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
           >
             Load More ({images.length - visibleCount} remaining)
           </button>
-          <p className="text-[0.6rem] uppercase tracking-[0.15em] text-parchment/30">
+          <p className="text-[0.6rem] uppercase tracking-[0.15em] text-parchment/60">
             Showing {visibleImages.length} of {images.length} works
           </p>
         </div>

@@ -32,18 +32,18 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
     <>
       {/* Search bar */}
       <div className="mb-8 relative max-w-sm">
-        <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-parchment/35 pointer-events-none" />
+        <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-parchment/60 pointer-events-none" />
         <input
           type="text"
           placeholder=""
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full border border-parchment/20 bg-parchment/[0.05] pl-8 pr-8 py-2 text-sm text-parchment placeholder:text-parchment/30 focus:border-terracotta/60 focus:outline-none"
+          className="w-full border border-parchment/20 bg-parchment/[0.05] pl-8 pr-8 py-2 text-sm text-parchment placeholder:text-parchment/60 focus:border-terracotta/60 focus:outline-none"
         />
         {query && (
           <button
             onClick={() => setQuery("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-parchment/35 hover:text-parchment"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-parchment/60 hover:text-parchment"
             aria-label="Clear search"
           >
             <X size={13} />
@@ -60,7 +60,7 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
         </div>
       ) : (
         <div className="py-20 text-center">
-          <p className="text-sm text-parchment/40">No artists match &ldquo;{query}&rdquo;</p>
+          <p className="text-sm text-parchment/60">No artists match &ldquo;{query}&rdquo;</p>
           <button onClick={() => setQuery("")} className="mt-3 text-[0.7rem] uppercase tracking-[0.16em] text-terracotta hover:underline">
             Clear search
           </button>
@@ -68,7 +68,7 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
       )}
 
       {query && filtered.length > 0 && (
-        <p className="mt-6 text-[0.65rem] uppercase tracking-[0.16em] text-parchment/30">
+        <p className="mt-6 text-[0.65rem] uppercase tracking-[0.16em] text-parchment/60">
           {filtered.length} result{filtered.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
         </p>
       )}

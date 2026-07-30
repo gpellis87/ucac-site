@@ -43,7 +43,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/workshops"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             All Classes &amp; Workshops
@@ -102,7 +102,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
 
             {workshop.instructorBio && (
               <div className="mt-12 border-t border-parchment/10 pt-8">
-                <p className="mb-3 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/40">
+                <p className="mb-3 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/60">
                   <User size={11} /> About the Instructor
                 </p>
                 <p className="text-sm leading-relaxed text-parchment/72">{workshop.instructorBio}</p>
@@ -169,7 +169,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
                 </p>
                 <p className="mb-4 text-2xl text-parchment">{priceLabel(workshop.price)}</p>
                 {disabled ? (
-                  <span className="block w-full border border-parchment/25 px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-parchment/40">
+                  <span className="block w-full border border-parchment/25 px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-parchment/60">
                     {registrationStatusLabel[workshop.registrationStatus]}
                   </span>
                 ) : (

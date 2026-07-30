@@ -220,8 +220,8 @@ export default function HomePage({
         <SectionReveal className="theme-band section-pad border-b border-parchment/10 py-8">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-4 flex items-center justify-between">
-              <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/35">Announcements</p>
-              <Link href="/announcements" className="text-[0.65rem] uppercase tracking-[0.16em] text-parchment/35 transition hover:text-parchment/65">
+              <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">Announcements</p>
+              <Link href="/announcements" className="text-[0.65rem] uppercase tracking-[0.16em] text-parchment/60 transition hover:text-parchment/65">
                 View all →
               </Link>
             </div>
@@ -261,7 +261,7 @@ export default function HomePage({
                       )}
                       <Link
                         href={`/announcements#${ann.slug}`}
-                        className="text-[0.62rem] text-parchment/38 transition hover:text-parchment/65"
+                        className="text-[0.62rem] text-parchment/60 transition hover:text-parchment/65"
                       >
                         Read more →
                       </Link>
@@ -303,7 +303,7 @@ export default function HomePage({
         <SectionReveal className="section-pad pb-20">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-6 flex items-center gap-4">
-              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Recently Closed</p>
+              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Recently Closed</p>
               <div className="h-px flex-1 bg-parchment/10" />
             </div>
             <Link
@@ -324,10 +324,10 @@ export default function HomePage({
                 <h3 className="display text-2xl text-parchment/85 leading-tight group-hover:text-parchment transition md:text-3xl">
                   {recentlyClosed.title}
                 </h3>
-                <p className="line-clamp-2 max-w-xl text-sm text-parchment/45 leading-relaxed">
+                <p className="line-clamp-2 max-w-xl text-sm text-parchment/60 leading-relaxed">
                   {recentlyClosed.description}
                 </p>
-                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/30 transition group-hover:text-parchment/55 group-hover:tracking-[0.2em]">
+                <p className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/60 transition group-hover:text-parchment/55 group-hover:tracking-[0.2em]">
                   View Exhibition
                 </p>
               </div>
@@ -349,7 +349,7 @@ export default function HomePage({
       <SectionReveal>
         <div className="theme-band section-pad py-16">
           <div className="mx-auto max-w-[1500px]">
-            <p className="mb-10 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/35">Our Impact</p>
+            <p className="mb-10 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Our Impact</p>
             <div className="grid gap-px bg-parchment/10 md:grid-cols-2 xl:grid-cols-4">
               {[
                 { value: 42000,  label: "Students Served" },

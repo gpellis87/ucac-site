@@ -21,7 +21,7 @@ export default function SponsorsStrip() {
   return (
     <SectionReveal className="theme-band section-pad py-14">
       <div className="mx-auto max-w-[1500px]">
-        <p className="mb-8 text-center text-[0.68rem] uppercase tracking-[0.22em] text-parchment/30">
+        <p className="mb-8 text-center text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">
           Supported By
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3">

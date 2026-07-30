@@ -30,7 +30,7 @@ export default function NewHomePage() {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             Home
@@ -119,7 +119,7 @@ export default function NewHomePage() {
               </div>
 
               <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
-                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50 mb-3">Stay Updated</p>
+                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60 mb-3">Stay Updated</p>
                 <p className="text-sm text-parchment/65 leading-relaxed">
                   Follow us on Facebook for behind-the-scenes glimpses, progress updates, and opening announcements.
                 </p>
@@ -154,7 +154,7 @@ export default function NewHomePage() {
             >
               <source src={RENOVATION_VIDEO_URL} type="video/mp4" />
             </video>
-            <p className="mt-4 text-xs text-parchment/35 uppercase tracking-[0.14em]">Filmed June 3, 2026 · 300 North Hayne Street</p>
+            <p className="mt-4 text-xs text-parchment/60 uppercase tracking-[0.14em]">Filmed June 3, 2026 · 300 North Hayne Street</p>
           </div>
         </div>
       )}
@@ -239,7 +239,7 @@ export default function NewHomePage() {
       <div className="theme-band section-pad py-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40 mb-8">Support the Journey</p>
+          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60 mb-8">Support the Journey</p>
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="border border-terracotta/30 bg-parchment/[0.045] p-8 flex flex-col items-center text-center">
               <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-1">Make a Donation</p>
@@ -273,7 +273,7 @@ export default function NewHomePage() {
       <div className="section-pad pb-24">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-          <p className="mb-5 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/40">Find Us</p>
+          <p className="mb-5 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Find Us</p>
           <div className="overflow-hidden border border-parchment/15 aspect-[16/7]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!4v1775845512145!6m8!1m7!1s8DlSB1FtnLg3RrhnCrwFCQ!2m2!1d34.98290750404062!2d-80.54950402759681!3f132.21760578911346!4f-1.2581472799853088!5f0.7820865974627469"
@@ -287,7 +287,7 @@ export default function NewHomePage() {
             />
           </div>
           <div className="mt-3 flex items-center justify-between">
-            <p className="text-xs text-parchment/35">300 North Hayne Street · Monroe, NC 28112</p>
+            <p className="text-xs text-parchment/60">300 North Hayne Street · Monroe, NC 28112</p>
             <a
               href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28112"
               target="_blank"

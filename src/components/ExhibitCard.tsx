@@ -51,7 +51,7 @@ export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhib
           </p>
         )}
         <p className={`line-clamp-2 text-parchment/60 ${muted ? "text-xs" : "text-sm text-parchment/75"}`}>{exhibit.description}</p>
-        <p className={`pt-1 text-[0.68rem] uppercase tracking-[0.16em] transition group-hover:tracking-[0.2em] ${muted ? "text-parchment/35 group-hover:text-parchment/60" : "text-terracotta"}`}>
+        <p className={`pt-1 text-[0.68rem] uppercase tracking-[0.16em] transition group-hover:tracking-[0.2em] ${muted ? "text-parchment/60 group-hover:text-parchment/60" : "text-terracotta"}`}>
           View Exhibition
         </p>
       </div>

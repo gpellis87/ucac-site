@@ -59,7 +59,7 @@ export default async function ExhibitPage({ params }: Props) {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/exhibits"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             All Exhibitions
@@ -154,7 +154,7 @@ export default async function ExhibitPage({ params }: Props) {
                   Exhibition Details
                 </span>
               </div>
-              <span className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-parchment/48">
+              <span className="text-[0.68rem] font-medium uppercase tracking-[0.18em] text-parchment/60">
                 {exhibit.location} · Monroe, NC
               </span>
             </div>
@@ -193,7 +193,7 @@ export default async function ExhibitPage({ params }: Props) {
 
             {exhibit.presentedBy.length > 0 && (
               <div className="mt-12 border-t border-parchment/10 pt-8">
-                <p className="mb-4 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/40">
+                <p className="mb-4 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/60">
                   <Users size={11} /> Presented By
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -275,7 +275,7 @@ export default async function ExhibitPage({ params }: Props) {
                     height={140}
                     className="border border-parchment/15"
                   />
-                  <p className="mt-2 text-[0.65rem] leading-snug text-parchment/50">
+                  <p className="mt-2 text-[0.65rem] leading-snug text-parchment/60">
                     Point your phone camera at the code to open the submission form.
                   </p>
                 </div>

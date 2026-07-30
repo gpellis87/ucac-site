@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
             the website collects only what is needed to operate, understand basic
             site activity, and connect visitors with arts programs and resources.
           </p>
-          <p className="mt-3 text-sm text-parchment/45">Last updated May 27, 2026</p>
+          <p className="mt-3 text-sm text-parchment/60">Last updated May 27, 2026</p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
         </div>
       </SectionReveal>

@@ -48,7 +48,7 @@ export default async function WorkshopsPage() {
           {workshops.length > 0 ? (
             <WorkshopsExplorer workshops={workshops} />
           ) : (
-            <p className="py-20 text-center text-parchment/40">No classes are currently listed. Check back soon.</p>
+            <p className="py-20 text-center text-parchment/60">No classes are currently listed. Check back soon.</p>
           )}
         </div>
       </div>

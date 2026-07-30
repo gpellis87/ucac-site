@@ -40,7 +40,7 @@ export default async function ArtistPage({ params }: Props) {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/artists"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/50 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             All Artists
@@ -76,7 +76,7 @@ export default async function ArtistPage({ params }: Props) {
               <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl">
                 {displayName}
               </h1>
-              <p className="mt-3 flex items-center gap-1.5 text-xs text-parchment/45">
+              <p className="mt-3 flex items-center gap-1.5 text-xs text-parchment/60">
                 <MapPin size={11} className="text-terracotta/60" />
                 {artist.city}, {artist.state}
               </p>

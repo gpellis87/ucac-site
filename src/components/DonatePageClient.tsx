@@ -76,14 +76,15 @@ export default function DonatePageClient() {
                   if (validateDonation(form)) setThanks(true);
                 }}
               >
-                <div>
-                  <p className="mb-2 text-xs uppercase tracking-[0.14em] text-parchment/70">Amount</p>
+                <fieldset className="border-0 p-0 m-0">
+                  <legend className="mb-2 text-xs uppercase tracking-[0.14em] text-parchment/70">Amount</legend>
                   <div className="flex flex-wrap gap-2">
                     {suggested.map((value) => (
                       <button
                         key={value}
                         type="button"
                         onClick={() => setAmount(value)}
+                        aria-pressed={amount === value}
                         className={`border px-4 py-2 text-sm ${amount === value ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"}`}
                       >
                         ${value}
@@ -92,41 +93,94 @@ export default function DonatePageClient() {
                     <button
                       type="button"
                       onClick={() => setAmount("custom")}
+                      aria-pressed={amount === "custom"}
                       className={`border px-4 py-2 text-sm ${amount === "custom" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"}`}
                     >
                       Custom
                     </button>
                   </div>
                   {amount === "custom" && (
-                    <input
-                      value={customAmount}
-                      onChange={(e) => setCustomAmount(e.target.value)}
-                      type="number"
-                      min={1}
-                      placeholder="Enter custom amount"
-                      className="theme-input mt-3 w-full px-3 py-2"
-                    />
+                    <div className="mt-3">
+                      <label htmlFor="donate-custom-amount" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                        Custom amount
+                      </label>
+                      <input
+                        id="donate-custom-amount"
+                        value={customAmount}
+                        onChange={(e) => setCustomAmount(e.target.value)}
+                        type="number"
+                        min={1}
+                        placeholder="Enter custom amount"
+                        aria-invalid={Boolean(errors.amount)}
+                        aria-describedby={errors.amount ? "donate-amount-error" : undefined}
+                        className="theme-input w-full px-3 py-2"
+                      />
+                    </div>
                   )}
-                  {errors.amount ? <p className="mt-1 text-xs text-terracotta">{errors.amount}</p> : null}
-                </div>
-                <div className="flex gap-2">
-                  <button type="button" onClick={() => setFrequency("one-time")} className={`border px-4 py-2 text-sm ${frequency === "one-time" ? "border-terracotta" : "border-parchment/30"}`}>
+                  {errors.amount ? (
+                    <p id="donate-amount-error" role="alert" className="mt-1 text-xs text-terracotta">
+                      {errors.amount}
+                    </p>
+                  ) : null}
+                </fieldset>
+                <fieldset className="flex gap-2 border-0 p-0 m-0">
+                  <legend className="sr-only">Donation frequency</legend>
+                  <button type="button" onClick={() => setFrequency("one-time")} aria-pressed={frequency === "one-time"} className={`border px-4 py-2 text-sm ${frequency === "one-time" ? "border-terracotta" : "border-parchment/30"}`}>
                     One-time
                   </button>
-                  <button type="button" onClick={() => setFrequency("monthly")} className={`border px-4 py-2 text-sm ${frequency === "monthly" ? "border-terracotta" : "border-parchment/30"}`}>
+                  <button type="button" onClick={() => setFrequency("monthly")} aria-pressed={frequency === "monthly"} className={`border px-4 py-2 text-sm ${frequency === "monthly" ? "border-terracotta" : "border-parchment/30"}`}>
                     Monthly
                   </button>
-                </div>
-                <input name="dedicate" placeholder="Dedicate in honor/memory of (optional)" className="theme-input w-full px-3 py-2" />
+                </fieldset>
                 <div>
-                  <input name="name" placeholder="Name" className="theme-input w-full px-3 py-2" />
-                  {errors.name ? <p className="mt-1 text-xs text-terracotta">{errors.name}</p> : null}
+                  <label htmlFor="donate-dedicate" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Dedicate in honor/memory of (optional)
+                  </label>
+                  <input id="donate-dedicate" name="dedicate" placeholder="Dedicate in honor/memory of (optional)" className="theme-input w-full px-3 py-2" />
                 </div>
                 <div>
-                  <input name="email" placeholder="Email" className="theme-input w-full px-3 py-2" />
-                  {errors.email ? <p className="mt-1 text-xs text-terracotta">{errors.email}</p> : null}
+                  <label htmlFor="donate-name" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Name
+                  </label>
+                  <input
+                    id="donate-name"
+                    name="name"
+                    placeholder="Name"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? "donate-name-error" : undefined}
+                    className="theme-input w-full px-3 py-2"
+                  />
+                  {errors.name ? (
+                    <p id="donate-name-error" role="alert" className="mt-1 text-xs text-terracotta">
+                      {errors.name}
+                    </p>
+                  ) : null}
                 </div>
-                <input name="phone" placeholder="Phone (optional)" className="theme-input w-full px-3 py-2" />
+                <div>
+                  <label htmlFor="donate-email" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Email
+                  </label>
+                  <input
+                    id="donate-email"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? "donate-email-error" : undefined}
+                    className="theme-input w-full px-3 py-2"
+                  />
+                  {errors.email ? (
+                    <p id="donate-email-error" role="alert" className="mt-1 text-xs text-terracotta">
+                      {errors.email}
+                    </p>
+                  ) : null}
+                </div>
+                <div>
+                  <label htmlFor="donate-phone" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Phone (optional)
+                  </label>
+                  <input id="donate-phone" name="phone" type="tel" placeholder="Phone (optional)" className="theme-input w-full px-3 py-2" />
+                </div>
                 <button type="submit" className="accent-btn w-full">Donate Now</button>
                 <p className="text-xs text-parchment/60">This is a nonprofit 501(c)(3) organization. Donations are tax-deductible.</p>
               </form>
@@ -155,16 +209,36 @@ export default function DonatePageClient() {
                   setVolunteerDone(true);
                 }}
               >
-                <input required placeholder="Name" className="theme-input w-full px-3 py-2" />
-                <input required type="email" placeholder="Email" className="theme-input w-full px-3 py-2" />
-                <select required className="theme-input w-full px-3 py-2">
-                  <option value="">Area of Interest</option>
-                  <option>Events</option>
-                  <option>Youth Programs</option>
-                  <option>Fundraising</option>
-                  <option>Marketing</option>
-                </select>
-                <textarea placeholder="Message" rows={4} className="theme-input w-full px-3 py-2" />
+                <div>
+                  <label htmlFor="volunteer-name" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Name
+                  </label>
+                  <input id="volunteer-name" required placeholder="Name" className="theme-input w-full px-3 py-2" />
+                </div>
+                <div>
+                  <label htmlFor="volunteer-email" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Email
+                  </label>
+                  <input id="volunteer-email" required type="email" placeholder="Email" className="theme-input w-full px-3 py-2" />
+                </div>
+                <div>
+                  <label htmlFor="volunteer-interest" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Area of interest
+                  </label>
+                  <select id="volunteer-interest" required className="theme-input w-full px-3 py-2">
+                    <option value="">Area of Interest</option>
+                    <option>Events</option>
+                    <option>Youth Programs</option>
+                    <option>Fundraising</option>
+                    <option>Marketing</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="volunteer-message" className="mb-1 block text-xs uppercase tracking-[0.1em] text-parchment/70">
+                    Message (optional)
+                  </label>
+                  <textarea id="volunteer-message" placeholder="Message" rows={4} className="theme-input w-full px-3 py-2" />
+                </div>
                 <button className="ghost-btn w-full" type="submit">Send Interest</button>
               </form>
             )}

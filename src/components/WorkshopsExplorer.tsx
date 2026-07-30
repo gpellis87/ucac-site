@@ -126,7 +126,7 @@ export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[]
           ))}
         </motion.div>
       ) : (
-        <p className="py-20 text-center text-parchment/40">No classes match those filters right now.</p>
+        <p className="py-20 text-center text-parchment/60">No classes match those filters right now.</p>
       )}
     </div>
   );

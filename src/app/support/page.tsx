@@ -79,7 +79,7 @@ export default function SupportPage() {
       <div className="section-pad py-12">
         <div className="mx-auto grid max-w-[1500px] gap-6 lg:grid-cols-4">
           <a href="#donate" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
-            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Give</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">Give</p>
             <div className="mt-4 flex items-center gap-3">
               <Heart size={18} className="text-terracotta" />
               <h2 className="display text-3xl text-parchment">Donate</h2>
@@ -89,7 +89,7 @@ export default function SupportPage() {
             </p>
           </a>
           <Link href="/grants" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
-            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Honor</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">Honor</p>
             <div className="mt-4 flex items-center gap-3">
               <Award size={18} className="text-terracotta" />
               <h2 className="display text-3xl text-parchment">Grants</h2>
@@ -99,7 +99,7 @@ export default function SupportPage() {
             </p>
           </Link>
           <a href="#membership" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
-            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Join</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">Join</p>
             <div className="mt-4 flex items-center gap-3">
               <Users size={18} className="text-terracotta" />
               <h2 className="display text-3xl text-parchment">Membership</h2>
@@ -109,7 +109,7 @@ export default function SupportPage() {
             </p>
           </a>
           <a href="#volunteer" className="group border border-parchment/20 bg-parchment/[0.035] p-8 transition hover:border-terracotta/40 hover:bg-parchment/[0.055]">
-            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/45">Serve</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">Serve</p>
             <div className="mt-4 flex items-center gap-3">
               <HandHeart size={18} className="text-terracotta" />
               <h2 className="display text-3xl text-parchment">Volunteer</h2>
@@ -131,7 +131,7 @@ export default function SupportPage() {
           </p>
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             <div className="flex flex-col border border-parchment/20 bg-parchment/[0.035] p-8 md:p-10">
-              <p className="text-[0.65rem] uppercase tracking-[0.22em] text-parchment/45">General Support</p>
+              <p className="text-[0.65rem] uppercase tracking-[0.22em] text-parchment/60">General Support</p>
               <h3 className="display mt-3 text-3xl text-parchment md:min-h-[4.5rem]">
                 Support the Arts Council
               </h3>
@@ -153,7 +153,7 @@ export default function SupportPage() {
                   <a href={GENERAL_DONATE_URL} target="_blank" rel="noreferrer" className="transition hover:opacity-75">
                     <Image src="/qr-donate.png" alt="Scan to donate to UCCAC" width={64} height={64} />
                   </a>
-                  <p className="text-[0.62rem] uppercase leading-snug tracking-[0.14em] text-parchment/30">
+                  <p className="text-[0.62rem] uppercase leading-snug tracking-[0.14em] text-parchment/60">
                     Or scan
                     <br />
                     to donate
@@ -181,7 +181,7 @@ export default function SupportPage() {
                   >
                     <Award size={13} /> View Grants
                   </Link>
-                  <p className="mt-3 max-w-sm text-[0.68rem] leading-relaxed text-parchment/45">
+                  <p className="mt-3 max-w-sm text-[0.68rem] leading-relaxed text-parchment/60">
                     Explore our grants and give directly on the Grants page.
                   </p>
                 </div>
@@ -203,7 +203,7 @@ export default function SupportPage() {
 
           <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_360px]">
             <div>
-              <p className="mb-6 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50">Member Benefits</p>
+              <p className="mb-6 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Member Benefits</p>
               <ul className="space-y-4">
                 {benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-4">
@@ -232,9 +232,9 @@ export default function SupportPage() {
                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.18),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.03),transparent)]" />
                 <div className="relative z-10">
                   <p className="text-[0.65rem] uppercase tracking-[0.2em] text-terracotta">Limited Time Offer</p>
-                  <p className="mt-3 text-[0.68rem] uppercase tracking-[0.18em] text-parchment/50">Founding Member</p>
+                  <p className="mt-3 text-[0.68rem] uppercase tracking-[0.18em] text-parchment/60">Founding Member</p>
                   <p className="mt-2 editorial-title text-6xl text-parchment">$75</p>
-                  <p className="mt-1 text-xs text-parchment/45">per year</p>
+                  <p className="mt-1 text-xs text-parchment/60">per year</p>
                   <div className="mt-5 h-px w-full bg-parchment/10" />
                   <p className="mt-4 text-sm leading-relaxed text-parchment/65">
                     Be among the first to join as we move into our new space. Founding members help shape
@@ -252,15 +252,15 @@ export default function SupportPage() {
               </div>
 
               <div className="border border-parchment/15 bg-parchment/[0.04] p-7 text-center">
-                <p className="mb-4 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50">Scan to Join</p>
+                <p className="mb-4 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Scan to Join</p>
                 <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
                   <Image src="/qr-membership.png" alt="Scan to become a member" width={160} height={160} className="mx-auto" />
                 </a>
-                <p className="mt-3 text-xs text-parchment/35">Scan with your phone to sign up</p>
+                <p className="mt-3 text-xs text-parchment/60">Scan with your phone to sign up</p>
               </div>
 
               <div className="border border-parchment/15 bg-parchment/[0.04] p-7">
-                <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/50">Coming to Our New Space</p>
+                <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Coming to Our New Space</p>
                 <ul className="space-y-2.5 text-sm text-parchment/65">
                   <li className="flex items-center gap-3">
                     <span className="h-px w-4 shrink-0 bg-terracotta/50" />
@@ -328,7 +328,7 @@ export default function SupportPage() {
                 >
                   Open Volunteer Form <ExternalLink size={14} />
                 </a>
-                <p className="mt-4 text-xs leading-relaxed text-parchment/40">
+                <p className="mt-4 text-xs leading-relaxed text-parchment/60">
                   The form opens in Google Forms and covers events, administrative support, education,
                   fundraising, social media, creative services, grant research, and other opportunities.
                 </p>

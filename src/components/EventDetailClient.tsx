@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Copy, CalendarPlus, Share2, X } from "lucide-react";
@@ -12,6 +12,47 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
   const [showRsvp, setShowRsvp] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [copyStatus, setCopyStatus] = useState("Copy link");
+  const rsvpTriggerRef = useRef<HTMLButtonElement>(null);
+  const rsvpDialogRef = useRef<HTMLDivElement>(null);
+  const rsvpCloseRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!showRsvp) return;
+
+    rsvpCloseRef.current?.focus();
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowRsvp(false);
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const focusable = rsvpDialogRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      if (!focusable || focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [showRsvp]);
+
+  const wasOpenRef = useRef(false);
+  useEffect(() => {
+    if (!showRsvp && wasOpenRef.current) {
+      rsvpTriggerRef.current?.focus();
+    }
+    wasOpenRef.current = showRsvp;
+  }, [showRsvp]);
 
   const related = useMemo(
     () => events.filter((item) => item.slug !== event.slug).slice(0, 3),
@@ -106,7 +147,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
 
       <section className="section-pad sticky bottom-0 z-30 mt-10">
         <div className="theme-panel-strong mx-auto flex max-w-[1500px] flex-wrap items-center justify-between gap-3 p-4 backdrop-blur-xl">
-          <button type="button" onClick={() => setShowRsvp(true)} className="accent-btn px-5 py-2 text-xs">
+          <button ref={rsvpTriggerRef} type="button" onClick={() => setShowRsvp(true)} className="accent-btn px-5 py-2 text-xs">
             RSVP
           </button>
           <div className="flex flex-wrap gap-2">
@@ -154,16 +195,22 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
       </section>
 
       {showRsvp && (
-        <div className="theme-modal fixed inset-0 z-[80] flex items-center justify-center p-4">
+        <div
+          ref={rsvpDialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="rsvp-dialog-title"
+          className="theme-modal fixed inset-0 z-[80] flex items-center justify-center p-4"
+        >
           <div className="theme-panel-strong w-full max-w-md p-6">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="display text-3xl">RSVP</h3>
-              <button type="button" onClick={() => setShowRsvp(false)} aria-label="Close RSVP modal">
+              <h3 id="rsvp-dialog-title" className="display text-3xl">RSVP</h3>
+              <button ref={rsvpCloseRef} type="button" onClick={() => setShowRsvp(false)} aria-label="Close RSVP modal">
                 <X size={20} />
               </button>
             </div>
             {submitted ? (
-              <div className="border border-terracotta/45 bg-terracotta/10 p-4 text-sm text-parchment">
+              <div role="status" className="border border-terracotta/45 bg-terracotta/10 p-4 text-sm text-parchment">
                 Thanks! Your RSVP has been received. We sent a confirmation to your email.
               </div>
             ) : (

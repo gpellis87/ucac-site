@@ -78,7 +78,7 @@ export default function GrantsPage() {
       <div className="section-pad py-12">
         <div className="mx-auto max-w-[1500px]">
           {grants.length === 0 ? (
-            <p className="text-parchment/40 text-sm">No grants are open at this time. Check back soon.</p>
+            <p className="text-parchment/60 text-sm">No grants are open at this time. Check back soon.</p>
           ) : (
             <div className="space-y-6">
               {grants.map((grant) => (

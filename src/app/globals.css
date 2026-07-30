@@ -84,6 +84,21 @@ html.a11y-reduced-motion *::after {
   transition-duration: 0.01ms !important;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html:not(.a11y-reduced-motion) {
+    scroll-behavior: auto;
+  }
+
+  html:not(.a11y-reduced-motion) *,
+  html:not(.a11y-reduced-motion) *::before,
+  html:not(.a11y-reduced-motion) *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   font-family: var(--font-sans), Arial, sans-serif;
   line-height: 1.55;

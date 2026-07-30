@@ -43,7 +43,7 @@ export default function FlyerViewer({ flyerPath, title }: { flyerPath: string; t
   return (
     <div className="flex flex-col items-center">
       {!loaded && (
-        <div className="py-16 text-xs uppercase tracking-[0.16em] text-parchment/35">
+        <div className="py-16 text-xs uppercase tracking-[0.16em] text-parchment/60">
           Loading flyer…
         </div>
       )}
@@ -61,6 +61,11 @@ export default function FlyerViewer({ flyerPath, title }: { flyerPath: string; t
           width={typeof window !== "undefined" ? Math.min(window.innerWidth - 80, 800) : 800}
         />
       </Document>
+      {/* The preview above is a flattened image and isn't readable by screen readers,
+          so always offer the underlying PDF as a real text-accessible alternative. */}
+      <a href={flyerPath} download className="mt-4 text-xs uppercase tracking-[0.14em] text-terracotta underline underline-offset-2 hover:text-terracotta/80">
+        Download flyer as PDF ({title})
+      </a>
     </div>
   );
 }

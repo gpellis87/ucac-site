@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { sanityImg } from "@/sanity/image";
@@ -12,6 +12,9 @@ interface Props {
 
 export default function WorkGallery({ images, artistName }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const close = useCallback(() => setActiveIndex(null), []);
   const prev = useCallback(
@@ -23,12 +26,32 @@ export default function WorkGallery({ images, artistName }: Props) {
     [images.length],
   );
 
+  const open = (i: number, e: React.MouseEvent<HTMLButtonElement>) => {
+    triggerRef.current = e.currentTarget;
+    setActiveIndex(i);
+  };
+
   useEffect(() => {
     if (activeIndex === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowLeft") prev();
       if (e.key === "ArrowRight") next();
+      if (e.key === "Tab") {
+        const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -36,6 +59,11 @@ export default function WorkGallery({ images, artistName }: Props) {
 
   useEffect(() => {
     document.body.style.overflow = activeIndex !== null ? "hidden" : "";
+    if (activeIndex !== null) {
+      closeButtonRef.current?.focus();
+    } else {
+      triggerRef.current?.focus();
+    }
     return () => { document.body.style.overflow = ""; };
   }, [activeIndex]);
 
@@ -45,7 +73,7 @@ export default function WorkGallery({ images, artistName }: Props) {
         {images.map((src, i) => (
           <button
             key={i}
-            onClick={() => setActiveIndex(i)}
+            onClick={(e) => open(i, e)}
             className="group relative aspect-square overflow-hidden border border-parchment/10 bg-[rgb(var(--theme-bg-alt)_/_0.65)] cursor-pointer"
             aria-label={`${artistName} — work ${i + 1}, click to view full image`}
           >
@@ -63,10 +91,15 @@ export default function WorkGallery({ images, artistName }: Props) {
 
       {activeIndex !== null && (
         <div
+          ref={dialogRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${artistName} — work ${activeIndex + 1} of ${images.length}`}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
           onClick={close}
         >
           <button
+            ref={closeButtonRef}
             onClick={close}
             className="absolute right-4 top-4 z-10 p-2 text-white/60 transition hover:text-white"
             aria-label="Close"
