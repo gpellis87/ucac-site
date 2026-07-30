@@ -145,7 +145,7 @@ export default function SupportPage() {
                   href={GENERAL_DONATE_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+                  className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
                 >
                   <Heart size={13} /> Donate Now
                 </a>
@@ -177,7 +177,7 @@ export default function SupportPage() {
                 <div className="mt-8">
                   <Link
                     href="/grants"
-                    className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+                    className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
                   >
                     <Award size={13} /> View Grants
                   </Link>
@@ -244,7 +244,7 @@ export default function SupportPage() {
                     href={MEMBERSHIP_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-block w-full bg-terracotta px-6 py-3 text-center text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+                    className="mt-6 inline-block w-full bg-terracotta px-6 py-3 text-center text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
                   >
                     Become a Member
                   </a>
@@ -324,7 +324,7 @@ export default function SupportPage() {
                   href={VOLUNTEER_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+                  className="mt-8 inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
                 >
                   Open Volunteer Form <ExternalLink size={14} />
                 </a>

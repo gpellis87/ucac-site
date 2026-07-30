@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 function AnnouncementCta({ cta, primary }: { cta: { label: string; url: string }; primary?: boolean }) {
   const isExternal = cta.url.startsWith("http");
   const cls = primary
-    ? "inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+    ? "inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
     : "inline-flex items-center gap-2 border border-parchment/30 px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/80 transition hover:border-parchment hover:text-parchment";
   return isExternal ? (
     <a href={cta.url} target="_blank" rel="noreferrer" className={cls}>

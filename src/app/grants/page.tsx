@@ -40,7 +40,7 @@ function GrantEntry({ grant }: { grant: Grant }) {
               href={grant.zeffyUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85"
+              className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
             >
               <Heart size={13} /> Give to This Grant
             </a>

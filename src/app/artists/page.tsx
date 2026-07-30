@@ -45,7 +45,7 @@ export default async function ArtistsPage() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfazpN8YRzXETiEocM1i6XWDKprhwR9OnYLmz9PsNz8w5LJyQ/viewform"
               target="_blank"
               rel="noreferrer"
-              className="shrink-0 border border-terracotta px-5 py-2.5 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment"
+              className="shrink-0 border border-terracotta px-5 py-2.5 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-white"
             >
               Get Listed
             </a>

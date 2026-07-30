@@ -20,21 +20,6 @@
   --theme-overlay: 43 36 29;
 }
 
-html[data-theme="dark"] {
-  --bg: #221e1a;
-  --surface: #f5f0eb;
-  --theme-bg: 34 30 26;
-  --theme-bg-alt: 24 22 19;
-  --theme-surface: 50 44 39;
-  --theme-surface-soft: 38 33 29;
-  --theme-surface-strong: 61 54 49;
-  --theme-text: 245 240 235;
-  --theme-text-muted: 205 193 181;
-  --theme-border: 245 240 235;
-  --theme-nav: 34 30 26;
-  --theme-overlay: 0 0 0;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -156,7 +141,9 @@ p {
 
 .accent-btn {
   @apply inline-flex items-center justify-center rounded-none border border-terracotta bg-terracotta px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] transition duration-300 hover:-translate-y-[1px] hover:brightness-110 hover:shadow-[0_10px_24px_rgba(192,84,42,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta;
-  color: #fff7f1;
+  /* #fff7f1 only cleared 4.36:1 against the terracotta bg — under the 4.5:1
+     AA minimum for this bold-but-14px button text. Pure white clears 4.62:1. */
+  color: #ffffff;
   box-shadow: 0 0 0 2px transparent;
 }
 

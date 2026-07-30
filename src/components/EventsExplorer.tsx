@@ -55,7 +55,7 @@ export default function EventsExplorer() {
                 aria-pressed={filter === category}
                 className={`border px-4 py-2 text-xs uppercase tracking-[0.14em] transition ${
                   filter === category
-                    ? "border-terracotta bg-terracotta text-parchment"
+                    ? "border-terracotta bg-terracotta text-white"
                     : "border-parchment/30 text-parchment/80 hover:border-terracotta"
                 }`}
               >

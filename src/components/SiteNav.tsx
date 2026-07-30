@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import ThemeToggle from "@/components/ThemeToggle";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 
 const links = [
@@ -99,7 +98,6 @@ export default function SiteNav() {
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
           </nav>
 
           <button
@@ -156,7 +154,6 @@ export default function SiteNav() {
                 ))}
               </nav>
               <div className="space-y-4">
-                <ThemeToggle mobile />
                 <p className="text-sm text-parchment/70">Rooted in community. Driven by art.</p>
               </div>
             </div>

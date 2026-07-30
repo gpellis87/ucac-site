@@ -252,7 +252,7 @@ export default function NewHomePage() {
               <a href={DONATE_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
                 <Image src="/qr-donate.png" alt="Scan to donate" width={160} height={160} />
               </a>
-              <a href={DONATE_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border border-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-parchment">
+              <a href={DONATE_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border border-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-white">
                 Donate Now
               </a>
             </div>
@@ -264,7 +264,7 @@ export default function NewHomePage() {
               <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
                 <Image src="/qr-membership.png" alt="Scan to become a member" width={160} height={160} />
               </a>
-              <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block bg-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:bg-terracotta/85">
+              <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block bg-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85">
                 Join Now
               </a>
             </div>
