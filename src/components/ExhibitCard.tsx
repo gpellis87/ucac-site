@@ -34,12 +34,12 @@ export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhib
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
         {muted ? (
-          <div className="absolute left-4 top-4 border border-white/35 bg-[#2b241d]/90 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white shadow-[0_10px_20px_rgba(0,0,0,0.25)] backdrop-blur-sm">
+          <div className="absolute left-4 top-4 border border-white/35 bg-[#2b241d]/90 px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-white shadow-[0_10px_20px_rgba(0,0,0,0.25)] backdrop-blur-sm">
             Past Exhibition
           </div>
         ) : (
           <div
-            className={`absolute left-4 top-4 border px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${statusStyle[exhibit.status]}`}
+            className={`absolute left-4 top-4 border px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${statusStyle[exhibit.status]}`}
           >
             {statusLabel[exhibit.status]}
           </div>
@@ -53,7 +53,7 @@ export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhib
           </p>
         )}
         <p className={`line-clamp-2 text-parchment/60 ${muted ? "text-xs" : "text-sm text-parchment/75"}`}>{exhibit.description}</p>
-        <p className={`pt-1 text-[0.68rem] uppercase tracking-[0.16em] transition group-hover:tracking-[0.2em] ${muted ? "text-parchment/60 group-hover:text-parchment/60" : "text-terracotta"}`}>
+        <p className={`pt-1 text-[0.75rem] uppercase tracking-[0.16em] transition group-hover:tracking-[0.2em] ${muted ? "text-parchment/60 group-hover:text-parchment/60" : "text-terracotta"}`}>
           View Exhibition
         </p>
       </div>

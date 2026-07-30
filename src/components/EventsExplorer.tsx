@@ -121,7 +121,7 @@ export default function EventsExplorer() {
                   <ChevronRight size={16} />
                 </button>
               </div>
-              <div className="calendar-grid mb-2 gap-2 text-center text-[0.65rem] uppercase tracking-[0.16em] text-parchment/60">
+              <div className="calendar-grid mb-2 gap-2 text-center text-[0.75rem] uppercase tracking-[0.16em] text-parchment/60">
                 {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
                   <div key={day}>{day}</div>
                 ))}
@@ -142,7 +142,7 @@ export default function EventsExplorer() {
                         <Link
                           key={event.id}
                           href={`/events/${event.slug}`}
-                          className="block truncate border-l-2 border-terracotta pl-2 text-[0.68rem] text-parchment/85 hover:text-terracotta"
+                          className="block truncate border-l-2 border-terracotta pl-2 text-[0.75rem] text-parchment/85 hover:text-terracotta"
                         >
                           {event.title}
                         </Link>

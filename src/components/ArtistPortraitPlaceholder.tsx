@@ -30,7 +30,7 @@ export default function ArtistPortraitPlaceholder({
       <div className="flex h-20 w-20 items-center justify-center rounded-full border border-terracotta/35 bg-black/10 text-terracotta/80">
         <UserRound size={40} strokeWidth={1.35} />
       </div>
-      <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">
+      <p className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">
         Artist Portrait
       </p>
     </div>

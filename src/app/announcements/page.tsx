@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 function AnnouncementCta({ cta, primary }: { cta: { label: string; url: string }; primary?: boolean }) {
   const isExternal = cta.url.startsWith("http");
   const cls = primary
-    ? "inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
-    : "inline-flex items-center gap-2 border border-parchment/30 px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/80 transition hover:border-parchment hover:text-parchment";
+    ? "inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.75rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
+    : "inline-flex items-center gap-2 border border-parchment/30 px-7 py-3 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/80 transition hover:border-parchment hover:text-parchment";
   return isExternal ? (
     <a href={cta.url} target="_blank" rel="noreferrer" className={cls}>
       {primary && <Heart size={13} />} {cta.label}
@@ -42,12 +42,12 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
         <div className="relative">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             {announcement.eyebrow && (
-              <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">
+              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">
                 {announcement.eyebrow}
               </p>
             )}
             <span className="text-parchment/60">·</span>
-            <time className="text-[0.65rem] uppercase tracking-[0.18em] text-parchment/60">
+            <time className="text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60">
               {new Date(announcement.publishedAt + "T12:00:00").toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -101,7 +101,7 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
 
           {announcement.flyerImage && (
             <div className="mt-10">
-              <p className="mb-3 text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">Supplemental Flyer</p>
+              <p className="mb-3 text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Supplemental Flyer</p>
               <div className="relative w-full max-w-sm overflow-hidden border border-parchment/15">
                 <Image
                   src={sanityImg(announcement.flyerImage, { w: 800 })}
@@ -121,7 +121,7 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
                 href={announcement.flyerPdf}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-parchment/25 px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.18em] text-parchment/65 transition hover:border-parchment/60 hover:text-parchment"
+                className="inline-flex items-center gap-2 border border-parchment/25 px-5 py-2.5 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/65 transition hover:border-parchment/60 hover:text-parchment"
               >
                 <Download size={13} />
                 Download Flyer (PDF)
@@ -145,7 +145,7 @@ export default async function AnnouncementsPage() {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             Home
@@ -158,7 +158,7 @@ export default async function AnnouncementsPage() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.18),transparent_55%)]" />
         <div className="section-pad relative py-16">
           <div className="mx-auto max-w-[1500px]">
-            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">From the Arts Council</p>
+            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">From the Arts Council</p>
             <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
               Announcements
             </h1>

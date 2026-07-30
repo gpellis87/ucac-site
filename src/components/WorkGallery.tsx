@@ -108,7 +108,7 @@ export default function WorkGallery({ images, artistName }: Props) {
           </button>
 
           {images.length > 1 && (
-            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[0.65rem] uppercase tracking-[0.22em] text-white/40">
+            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-[0.75rem] uppercase tracking-[0.22em] text-white/40">
               {activeIndex + 1} / {images.length}
             </p>
           )}

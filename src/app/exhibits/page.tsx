@@ -17,7 +17,7 @@ export default async function ExhibitsPage() {
     <div className="pb-24">
       <div className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
-          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">UCCAC Gallery · Monroe, NC</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">UCCAC Gallery · Monroe, NC</p>
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Exhibitions
           </h1>
@@ -47,7 +47,7 @@ export default async function ExhibitsPage() {
         <div className="section-pad mt-20">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-8 h-px w-full bg-gradient-to-r from-parchment/20 via-parchment/10 to-transparent" />
-            <h2 className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Past Exhibitions</h2>
+            <h2 className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">Past Exhibitions</h2>
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {archived.map((exhibit) => (
                 <ExhibitCard key={exhibit.id} exhibit={exhibit} muted />

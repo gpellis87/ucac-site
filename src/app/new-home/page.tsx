@@ -30,7 +30,7 @@ export default function NewHomePage() {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             Home
@@ -43,7 +43,7 @@ export default function NewHomePage() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.18),transparent_55%)]" />
         <div className="section-pad relative py-20">
           <div className="mx-auto max-w-[1500px]">
-            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Announcement</p>
+            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">Announcement</p>
             <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
               A New Home
             </h1>
@@ -100,7 +100,7 @@ export default function NewHomePage() {
             {/* Sidebar: new address */}
             <div className="space-y-5">
               <div className="border border-terracotta/30 bg-parchment/[0.045] p-7">
-                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-4">Our New Address</p>
+                <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta mb-4">Our New Address</p>
                 <div className="flex items-start gap-3">
                   <MapPin size={14} className="mt-0.5 shrink-0 text-terracotta/60" />
                   <div className="text-sm text-parchment/80 leading-relaxed">
@@ -112,14 +112,14 @@ export default function NewHomePage() {
                   href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28112"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-5 inline-block text-[0.68rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
+                  className="mt-5 inline-block text-[0.75rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
                 >
                   Get Directions →
                 </a>
               </div>
 
               <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
-                <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60 mb-3">Stay Updated</p>
+                <p className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60 mb-3">Stay Updated</p>
                 <p className="text-sm text-parchment/65 leading-relaxed">
                   Follow us on Facebook for behind-the-scenes glimpses, progress updates, and opening announcements.
                 </p>
@@ -127,7 +127,7 @@ export default function NewHomePage() {
                   href="https://www.facebook.com/profile.php?id=61574355290119"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-4 inline-block border border-parchment/30 px-4 py-2 text-[0.68rem] uppercase tracking-[0.14em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
+                  className="mt-4 inline-block border border-parchment/30 px-4 py-2 text-[0.75rem] uppercase tracking-[0.14em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
                 >
                   Follow on Facebook
                 </a>
@@ -143,7 +143,7 @@ export default function NewHomePage() {
         <div className="section-pad py-14">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-6 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-2">Renovation Update</p>
+            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta mb-2">Renovation Update</p>
             <h2 className="editorial-title mt-2 text-4xl text-parchment md:text-5xl mb-8">Chapter One</h2>
             <video
               controls
@@ -155,7 +155,7 @@ export default function NewHomePage() {
               <source src={RENOVATION_VIDEO_URL} type="video/mp4" />
             </video>
             <p className="mt-4 text-xs text-parchment/60 uppercase tracking-[0.14em]">Filmed June 3, 2026 · 300 North Hayne Street</p>
-            <p className="mt-1 text-[0.65rem] leading-snug text-parchment/60">
+            <p className="mt-1 text-[0.75rem] leading-snug text-parchment/60">
               Not yet captioned — <Link href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</Link>
             </p>
           </div>
@@ -167,7 +167,7 @@ export default function NewHomePage() {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-10">
             <div className="mb-6 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">What&rsquo;s Coming</p>
+            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">What&rsquo;s Coming</p>
             <h2 className="editorial-title mt-3 text-4xl text-parchment md:text-5xl">Inside the New Space</h2>
             <p className="mt-4 max-w-xl text-sm text-parchment/60 leading-relaxed">
               Our new home at 300 North Hayne Street is being built for the full creative life of this community. Here&rsquo;s what we&rsquo;re bringing to life.
@@ -200,7 +200,7 @@ export default function NewHomePage() {
                 <div className="flex h-10 w-10 items-center justify-center border border-terracotta/30 bg-terracotta/10">
                   <Icon size={16} className="text-terracotta" />
                 </div>
-                <p className="text-[0.68rem] uppercase tracking-[0.2em] text-parchment/70">{label}</p>
+                <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/70">{label}</p>
                 <p className="text-sm text-parchment/55 leading-relaxed">{body}</p>
               </div>
             ))}
@@ -220,7 +220,7 @@ export default function NewHomePage() {
       <div className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-2">In Progress</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta mb-2">In Progress</p>
           <h2 className="editorial-title mt-2 text-4xl text-parchment md:text-5xl mb-8">Building Updates</h2>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
             {buildingPhotos.map((photo) => (
@@ -242,29 +242,29 @@ export default function NewHomePage() {
       <div className="theme-band section-pad py-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60 mb-8">Support the Journey</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60 mb-8">Support the Journey</p>
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="border border-terracotta/30 bg-parchment/[0.045] p-8 flex flex-col items-center text-center">
-              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta mb-1">Make a Donation</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta mb-1">Make a Donation</p>
               <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
                 Every gift helps bring our new home to life. Scan to donate or click below.
               </p>
               {/* Decorative — meant to be scanned with a phone camera, not clicked;
                   the "Donate Now" button right below already covers keyboard/AT users. */}
               <Image src="/qr-donate.png" alt="" width={160} height={160} />
-              <a href={DONATE_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border border-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-white">
+              <a href={DONATE_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border border-terracotta px-5 py-2 text-[0.75rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-white">
                 Donate Now
               </a>
             </div>
             <div className="border border-parchment/20 bg-parchment/[0.045] p-8 flex flex-col items-center text-center">
-              <p className="text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60 mb-1">Become a Member</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60 mb-1">Become a Member</p>
               <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
                 Founding memberships are open now. Scan to join or click below.
               </p>
               {/* Decorative — meant to be scanned with a phone camera, not clicked;
                   the "Join Now" button right below already covers keyboard/AT users. */}
               <Image src="/qr-membership.png" alt="" width={160} height={160} />
-              <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block bg-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85">
+              <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block bg-terracotta px-5 py-2 text-[0.75rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85">
                 Join Now
               </a>
             </div>
@@ -276,7 +276,7 @@ export default function NewHomePage() {
       <div className="section-pad pb-24">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-4 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-          <p className="mb-5 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Find Us</p>
+          <p className="mb-5 text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">Find Us</p>
           <div className="overflow-hidden border border-parchment/15 aspect-[16/7]">
             <iframe
               src="https://www.google.com/maps/embed?pb=!4v1775845512145!6m8!1m7!1s8DlSB1FtnLg3RrhnCrwFCQ!2m2!1d34.98290750404062!2d-80.54950402759681!3f132.21760578911346!4f-1.2581472799853088!5f0.7820865974627469"
@@ -295,7 +295,7 @@ export default function NewHomePage() {
               href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28112"
               target="_blank"
               rel="noreferrer"
-              className="text-[0.68rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
+              className="text-[0.75rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
             >
               Open in Google Maps →
             </a>

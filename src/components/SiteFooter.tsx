@@ -74,7 +74,7 @@ export default function SiteFooter() {
         <div className="text-center">
           <p className="text-xs text-parchment/60">Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
           <p className="mt-1 text-xs text-parchment/60">&copy; {new Date().getFullYear()} Union County Community Arts Council. All rights reserved.</p>
-          <p className="mt-3 text-[0.65rem] text-parchment/60">
+          <p className="mt-3 text-[0.75rem] text-parchment/60">
             Built &amp; maintained by{" "}
             <a
               href="https://ellislocal.com"

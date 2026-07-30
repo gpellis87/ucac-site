@@ -16,7 +16,7 @@ function GrantEntry({ grant }: { grant: Grant }) {
       <div className="relative overflow-hidden border border-terracotta/35 bg-parchment/[0.04] p-8 md:p-12">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(192,84,42,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
         <div className="relative">
-          <p className="text-[0.65rem] uppercase tracking-[0.22em] text-terracotta">{grant.eyebrow}</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">{grant.eyebrow}</p>
           <h2 className="editorial-title mt-3 text-4xl leading-tight md:text-5xl">{grant.title}</h2>
 
           <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-parchment/72">
@@ -31,7 +31,7 @@ function GrantEntry({ grant }: { grant: Grant }) {
                 href={grant.applyUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 border border-terracotta/50 px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-parchment transition hover:border-terracotta hover:bg-terracotta/10"
+                className="inline-flex items-center gap-2 border border-terracotta/50 px-7 py-3 text-[0.75rem] uppercase tracking-[0.18em] text-parchment transition hover:border-terracotta hover:bg-terracotta/10"
               >
                 <FileText size={13} /> Apply for This Grant
               </a>
@@ -41,7 +41,7 @@ function GrantEntry({ grant }: { grant: Grant }) {
                 href={grant.zeffyUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
+                className="inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.75rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
               >
                 <Heart size={13} /> Give to This Grant
               </a>
@@ -63,7 +63,7 @@ export default function GrantsPage() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.18),transparent_55%)]" />
         <div className="section-pad relative py-16">
           <div className="mx-auto max-w-[1500px]">
-            <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Grants Program</p>
+            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">Grants Program</p>
             <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
               Grants
             </h1>

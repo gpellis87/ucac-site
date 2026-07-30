@@ -17,7 +17,7 @@ export default async function ArtistsPage() {
       {/* Page header */}
       <div className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
-          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">Creative Community</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">Creative Community</p>
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Artist Directory
           </h1>
@@ -36,7 +36,7 @@ export default async function ArtistsPage() {
           {/* CTA */}
           <div className="mt-14 flex items-center justify-between gap-4 border border-parchment/15 bg-parchment/[0.045] p-6">
             <div>
-              <p className="text-[0.68rem] uppercase tracking-[0.2em] text-terracotta">Are You an Artist?</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-terracotta">Are You an Artist?</p>
               <p className="mt-1 text-sm text-parchment/70">
                 UCCAC members can request to be listed in this directory.
               </p>
@@ -45,7 +45,7 @@ export default async function ArtistsPage() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSfazpN8YRzXETiEocM1i6XWDKprhwR9OnYLmz9PsNz8w5LJyQ/viewform"
               target="_blank"
               rel="noreferrer"
-              className="shrink-0 border border-terracotta px-5 py-2.5 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-white"
+              className="shrink-0 border border-terracotta px-5 py-2.5 text-[0.75rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-white"
             >
               Get Listed
             </a>

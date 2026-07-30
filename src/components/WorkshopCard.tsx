@@ -25,12 +25,12 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
           {workshop.category && (
-            <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.65rem] uppercase tracking-[0.16em] text-terracotta">
+            <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.75rem] uppercase tracking-[0.16em] text-terracotta">
               {workshop.category}
             </div>
           )}
           <div
-            className={`absolute right-4 top-4 border px-3 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${registrationStatusStyle[workshop.registrationStatus]}`}
+            className={`absolute right-4 top-4 border px-3 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${registrationStatusStyle[workshop.registrationStatus]}`}
           >
             {registrationStatusLabel[workshop.registrationStatus]}
           </div>
@@ -53,7 +53,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
       <div className="flex items-center justify-between p-5 pt-3">
         <span className="text-lg text-parchment">{priceLabel(workshop.price)}</span>
         {disabled ? (
-          <span className="text-[0.68rem] uppercase tracking-[0.16em] text-parchment/60">
+          <span className="text-[0.75rem] uppercase tracking-[0.16em] text-parchment/60">
             {registrationStatusLabel[workshop.registrationStatus]}
           </span>
         ) : (
@@ -61,7 +61,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
             href={workshop.zeffyUrl ?? undefined}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[0.68rem] uppercase tracking-[0.16em] text-terracotta transition hover:tracking-[0.2em]"
+            className="text-[0.75rem] uppercase tracking-[0.16em] text-terracotta transition hover:tracking-[0.2em]"
           >
             {registrationStatusLabel[workshop.registrationStatus]}
           </a>

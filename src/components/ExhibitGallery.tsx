@@ -41,7 +41,7 @@ function PortraitVideo({ src, label, captionsUrl }: { src: string; label: string
         </video>
       </div>
       {!captionsUrl && (
-        <p className="mt-1.5 text-[0.65rem] leading-snug text-parchment/60">
+        <p className="mt-1.5 text-[0.75rem] leading-snug text-parchment/60">
           Not yet captioned — <a href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</a>
         </p>
       )}
@@ -86,7 +86,7 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
       {/* Additional videos — embed URLs (16:9) then uploaded portrait videos */}
       {hasVideos && (
         <div className="mb-8">
-          <p className="mb-3 text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">
+          <p className="mb-3 text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">
             Exhibition Videos
           </p>
           {hasEmbedVideos && (
@@ -138,10 +138,10 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
               {(title || artist) && (
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent px-4 py-3 md:translate-y-full md:transition-transform md:duration-300 md:group-hover:translate-y-0">
                   {title && (
-                    <p className="text-[0.72rem] font-medium leading-tight text-parchment">{title}</p>
+                    <p className="text-[0.75rem] font-medium leading-tight text-parchment">{title}</p>
                   )}
                   {artist && (
-                    <p className="mt-0.5 text-[0.65rem] tracking-[0.1em] text-parchment/60">{artist}</p>
+                    <p className="mt-0.5 text-[0.75rem] tracking-[0.1em] text-parchment/60">{artist}</p>
                   )}
                 </div>
               )}
@@ -159,7 +159,7 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
           >
             Load More ({images.length - visibleCount} remaining)
           </button>
-          <p className="text-[0.65rem] uppercase tracking-[0.15em] text-parchment/60">
+          <p className="text-[0.75rem] uppercase tracking-[0.15em] text-parchment/60">
             Showing {visibleImages.length} of {images.length} works
           </p>
         </div>

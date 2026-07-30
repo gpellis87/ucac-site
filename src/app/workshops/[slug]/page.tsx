@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="mb-3 text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">{children}</p>;
+  return <p className="mb-3 text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">{children}</p>;
 }
 
 export default async function WorkshopDetailPage({ params }: Props) {
@@ -43,7 +43,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
         <div className="mx-auto max-w-[1500px]">
           <Link
             href="/workshops"
-            className="inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
+            className="inline-flex items-center gap-2 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
             All Classes &amp; Workshops
@@ -70,12 +70,12 @@ export default async function WorkshopDetailPage({ params }: Props) {
           <div className="mx-auto max-w-[1500px]">
             <div className="flex flex-wrap gap-2">
               {workshop.category && (
-                <span className="border border-white/30 bg-black/45 px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
+                <span className="border border-white/30 bg-black/45 px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
                   {workshop.category}
                 </span>
               )}
               <span
-                className={`border px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${registrationStatusStyle[workshop.registrationStatus]}`}
+                className={`border px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${registrationStatusStyle[workshop.registrationStatus]}`}
               >
                 {registrationStatusLabel[workshop.registrationStatus]}
               </span>
@@ -102,7 +102,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
 
             {workshop.instructorBio && (
               <div className="mt-12 border-t border-parchment/10 pt-8">
-                <p className="mb-3 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.2em] text-parchment/60">
+                <p className="mb-3 flex items-center gap-2 text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">
                   <User size={11} /> About the Instructor
                 </p>
                 <p className="text-sm leading-relaxed text-parchment/72">{workshop.instructorBio}</p>
@@ -124,7 +124,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
           <aside className="self-start lg:sticky lg:top-24">
             <div className="theme-panel divide-y divide-parchment/10">
               <div className="p-5">
-                <p className="mb-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
                   Schedule
                 </p>
                 <div className="flex items-start gap-2.5">
@@ -134,7 +134,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
               </div>
 
               <div className="p-5">
-                <p className="mb-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
                   Location
                 </p>
                 <div className="flex items-start gap-2.5">
@@ -145,17 +145,17 @@ export default async function WorkshopDetailPage({ params }: Props) {
 
               {(workshop.skillLevel || workshop.sessionType) && (
                 <div className="p-5">
-                  <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                  <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
                     Details
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {workshop.sessionType && (
-                      <span className="border border-parchment/15 bg-parchment/[0.06] px-2.5 py-1.5 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-parchment/65">
+                      <span className="border border-parchment/15 bg-parchment/[0.06] px-2.5 py-1.5 text-[0.75rem] font-medium uppercase tracking-[0.12em] text-parchment/65">
                         {sessionTypeLabel[workshop.sessionType]}
                       </span>
                     )}
                     {workshop.skillLevel && (
-                      <span className="border border-parchment/15 bg-parchment/[0.06] px-2.5 py-1.5 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-parchment/65">
+                      <span className="border border-parchment/15 bg-parchment/[0.06] px-2.5 py-1.5 text-[0.75rem] font-medium uppercase tracking-[0.12em] text-parchment/65">
                         {workshop.skillLevel}
                       </span>
                     )}
@@ -164,7 +164,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
               )}
 
               <div className="p-5">
-                <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
                   Class Fee
                 </p>
                 <p className="mb-4 text-2xl text-parchment">{priceLabel(workshop.price)}</p>

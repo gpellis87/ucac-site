@@ -63,14 +63,14 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
       ) : (
         <div className="py-20 text-center">
           <p className="text-sm text-parchment/60">No artists match &ldquo;{query}&rdquo;</p>
-          <button onClick={() => setQuery("")} className="mt-3 text-[0.7rem] uppercase tracking-[0.16em] text-terracotta hover:underline">
+          <button onClick={() => setQuery("")} className="mt-3 text-[0.75rem] uppercase tracking-[0.16em] text-terracotta hover:underline">
             Clear search
           </button>
         </div>
       )}
 
       {query && filtered.length > 0 && (
-        <p className="mt-6 text-[0.65rem] uppercase tracking-[0.16em] text-parchment/60">
+        <p className="mt-6 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/60">
           {filtered.length} result{filtered.length !== 1 ? "s" : ""} for &ldquo;{query}&rdquo;
         </p>
       )}

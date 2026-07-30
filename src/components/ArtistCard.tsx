@@ -45,7 +45,7 @@ export default function ArtistCard({ artist, priority = false }: { artist: Artis
         </div>
         <div className="min-w-0">
           <h3 className="display text-sm text-parchment leading-tight truncate">{displayName}</h3>
-          <p className="mt-0.5 text-[0.65rem] uppercase tracking-[0.12em] text-terracotta truncate">{artist.medium}</p>
+          <p className="mt-0.5 text-[0.75rem] uppercase tracking-[0.12em] text-terracotta truncate">{artist.medium}</p>
         </div>
       </div>
     </Link>

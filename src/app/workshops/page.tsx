@@ -20,7 +20,7 @@ export default async function WorkshopsPage() {
     <div className="pb-24">
       <SectionReveal className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
-          <p className="text-[0.68rem] uppercase tracking-[0.22em] text-terracotta">UCCAC Studio · Monroe, NC</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">UCCAC Studio · Monroe, NC</p>
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Classes &amp; Workshops
           </h1>
