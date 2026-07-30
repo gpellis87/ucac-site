@@ -35,7 +35,8 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
         <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-parchment/60 pointer-events-none" />
         <input
           type="text"
-          placeholder=""
+          aria-label="Search artists"
+          placeholder="Search artists…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="w-full border border-parchment/20 bg-parchment/[0.05] pl-8 pr-8 py-2 text-sm text-parchment placeholder:text-parchment/60 focus:border-terracotta/60 focus:outline-none"
