@@ -233,7 +233,7 @@ export default function SupportPage() {
                 <div className="relative z-10">
                   <p className="text-[0.75rem] uppercase tracking-[0.2em] text-terracotta">Limited Time Offer</p>
                   <p className="mt-3 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60">Founding Member</p>
-                  <p className="mt-2 editorial-title text-6xl text-parchment">$75</p>
+                  <div className="mt-2 editorial-title text-6xl text-parchment">$75</div>
                   <p className="mt-1 text-xs text-parchment/60">per year</p>
                   <div className="mt-5 h-px w-full bg-parchment/10" />
                   <p className="mt-4 text-sm leading-relaxed text-parchment/65">

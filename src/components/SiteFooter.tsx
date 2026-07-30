@@ -7,7 +7,7 @@ export default function SiteFooter() {
     <footer className="theme-band border-t border-parchment/20 py-16 text-parchment">
       <div className="section-pad mx-auto grid max-w-[1500px] gap-10 md:grid-cols-3">
         <div>
-          <p className="display text-4xl text-parchment mb-3">UCCAC</p>
+          <div className="display text-4xl text-parchment mb-3">UCCAC</div>
           <p className="max-w-xs text-sm text-parchment/75">
             Union County Community Arts Council champions creative expression through education, exhibitions, and community projects.
           </p>

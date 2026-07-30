@@ -167,7 +167,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
                 <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
                   Class Fee
                 </p>
-                <p className="mb-4 text-2xl text-parchment">{priceLabel(workshop.price)}</p>
+                <div className="mb-4 text-2xl text-parchment">{priceLabel(workshop.price)}</div>
                 {disabled ? (
                   <span className="block w-full border border-parchment/25 px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-parchment/60">
                     {registrationStatusLabel[workshop.registrationStatus]}

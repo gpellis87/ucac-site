@@ -166,16 +166,16 @@ export default function HomePage({
                 Union County Community Arts Council
               </p>
               <p className="mt-1 text-sm text-white/40">is moving to our</p>
-              <p className="mt-5 text-[2.4rem] font-bold leading-none tracking-tight text-white lg:text-[3.6rem] xl:text-[4.4rem]">
+              <div className="mt-5 text-[2.4rem] font-bold leading-none tracking-tight text-white lg:text-[3.6rem] xl:text-[4.4rem]">
                 New Location
-              </p>
+              </div>
               <p className="mt-3 text-base font-medium text-white/80 lg:text-lg">at 300 N Hayne St</p>
-              <p
+              <div
                 className="mt-4 text-[1.6rem] leading-none text-white/85 lg:text-[2rem] xl:text-[2.4rem]"
                 style={{ fontFamily: "var(--font-script), cursive" }}
               >
                 Opening Fall 2026
-              </p>
+              </div>
               <p className="mt-5 max-w-[220px] text-[0.78rem] leading-relaxed text-white/45">
                 Keep checking our website for updates or call us at 704.283.2784
               </p>
@@ -360,9 +360,9 @@ export default function HomePage({
                 { value: 1980,   label: "Founded", raw: true },
               ].map(({ value, label, prefix, raw }) => (
                 <div key={label} className="bg-[rgba(245,240,235,0.025)] p-8">
-                  <p className="display text-5xl text-terracotta">
+                  <div className="display text-5xl text-terracotta">
                     <Counter target={value} prefix={prefix ?? ""} raw={raw} />
-                  </p>
+                  </div>
                   <p className="mt-2 text-xs uppercase tracking-[0.16em] text-parchment/55">{label}</p>
                 </div>
               ))}
