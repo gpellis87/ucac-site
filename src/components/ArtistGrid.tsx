@@ -30,6 +30,7 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
 
   return (
     <>
+      <h2 className="sr-only">Artist Directory</h2>
       {/* Search bar */}
       <div className="mb-8 relative max-w-sm">
         <Search size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-parchment/60 pointer-events-none" />

@@ -144,7 +144,7 @@ export default async function ExhibitPage({ params }: Props) {
                       </a>
                     </p>
                   </video>
-                  <p className="mt-2 text-[0.62rem] leading-snug text-parchment/60">
+                  <p className="mt-2 text-[0.65rem] leading-snug text-parchment/60">
                     Not yet captioned — <a href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</a>
                   </p>
                 </div>
@@ -253,7 +253,7 @@ export default async function ExhibitPage({ params }: Props) {
                     <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
                     <div>
                       <p className="text-base font-semibold text-parchment">{exhibit.submissionDeadline}</p>
-                      {exhibit.submissionUrl && (
+                      {exhibit.submissionUrl && exhibit.submissionUrl !== exhibit.callToAction?.href && (
                         <a
                           href={exhibit.submissionUrl}
                           target="_blank"

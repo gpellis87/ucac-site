@@ -150,10 +150,10 @@ export default function SupportPage() {
                   <Heart size={13} /> Donate Now
                 </a>
                 <div className="flex items-center gap-3">
-                  <a href={GENERAL_DONATE_URL} target="_blank" rel="noreferrer" className="transition hover:opacity-75">
-                    <Image src="/qr-donate.png" alt="Scan to donate to UCCAC" width={64} height={64} />
-                  </a>
-                  <p className="text-[0.62rem] uppercase leading-snug tracking-[0.14em] text-parchment/60">
+                  {/* Decorative — meant to be scanned with a phone camera, not clicked;
+                      the "Donate Now" button right next to it already covers keyboard/AT users. */}
+                  <Image src="/qr-donate.png" alt="" width={64} height={64} />
+                  <p className="text-[0.65rem] uppercase leading-snug tracking-[0.14em] text-parchment/60">
                     Or scan
                     <br />
                     to donate
@@ -253,9 +253,9 @@ export default function SupportPage() {
 
               <div className="border border-parchment/15 bg-parchment/[0.04] p-7 text-center">
                 <p className="mb-4 text-[0.68rem] uppercase tracking-[0.22em] text-parchment/60">Scan to Join</p>
-                <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
-                  <Image src="/qr-membership.png" alt="Scan to become a member" width={160} height={160} className="mx-auto" />
-                </a>
+                {/* Decorative — meant to be scanned with a phone camera, not clicked;
+                    the "Become a Member" button above already covers keyboard/AT users. */}
+                <Image src="/qr-membership.png" alt="" width={160} height={160} className="mx-auto" />
                 <p className="mt-3 text-xs text-parchment/60">Scan with your phone to sign up</p>
               </div>
 

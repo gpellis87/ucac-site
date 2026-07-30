@@ -160,10 +160,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
               <CalendarPlus size={14} className="mr-2" /> Google
             </a>
             <a href={`/api/events/${event.slug}/ics`} className="ghost-btn px-4 py-2 text-xs">
-              Apple (.ics)
-            </a>
-            <a href={`/api/events/${event.slug}/ics`} className="ghost-btn px-4 py-2 text-xs">
-              Outlook
+              Apple / Outlook (.ics)
             </a>
           </div>
           <div className="flex flex-wrap gap-2">

@@ -10,9 +10,11 @@ export default function EventCard({ event }: { event: UccacEvent }) {
       className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-terracotta/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]"
     >
       <div className="relative h-64 overflow-hidden">
+        {/* Decorative — the event title is already announced via the heading below,
+            within the same link, so a repeated alt would double-announce it. */}
         <Image
           src={event.imageUrl}
-          alt={event.title}
+          alt=""
           fill
           className="object-cover transition duration-700 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 33vw"

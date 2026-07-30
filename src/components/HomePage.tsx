@@ -242,7 +242,7 @@ export default function HomePage({
                   )}
                   <div className="relative flex flex-1 flex-col">
                     {ann.eyebrow && (
-                      <p className="mb-2 text-[0.6rem] uppercase tracking-[0.2em] text-terracotta">
+                      <p className="mb-2 text-[0.65rem] uppercase tracking-[0.2em] text-terracotta">
                         {ann.eyebrow}
                       </p>
                     )}
@@ -261,7 +261,7 @@ export default function HomePage({
                       )}
                       <Link
                         href={`/announcements#${ann.slug}`}
-                        className="text-[0.62rem] text-parchment/60 transition hover:text-parchment/65"
+                        className="text-[0.65rem] text-parchment/60 transition hover:text-parchment/65"
                       >
                         Read more →
                       </Link>
@@ -311,9 +311,11 @@ export default function HomePage({
               className="group flex flex-col overflow-hidden border border-parchment/10 bg-parchment/[0.035] transition duration-300 hover:border-parchment/25 sm:flex-row"
             >
               <div className="relative h-52 shrink-0 overflow-hidden sm:h-auto sm:w-72">
+                {/* Decorative — the exhibit title is already announced via the heading
+                    below, within the same link, so a repeated alt would double-announce it. */}
                 <Image
                   src={sanityImg(recentlyClosed.imageUrl, { w: 600, h: 400, fit: "crop" })}
-                  alt={recentlyClosed.title}
+                  alt=""
                   fill
                   className="object-cover opacity-55 transition duration-700 group-hover:opacity-70 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, 288px"

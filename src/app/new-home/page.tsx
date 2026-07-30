@@ -155,7 +155,7 @@ export default function NewHomePage() {
               <source src={RENOVATION_VIDEO_URL} type="video/mp4" />
             </video>
             <p className="mt-4 text-xs text-parchment/60 uppercase tracking-[0.14em]">Filmed June 3, 2026 · 300 North Hayne Street</p>
-            <p className="mt-1 text-[0.62rem] leading-snug text-parchment/60">
+            <p className="mt-1 text-[0.65rem] leading-snug text-parchment/60">
               Not yet captioned — <Link href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</Link>
             </p>
           </div>
@@ -249,9 +249,9 @@ export default function NewHomePage() {
               <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
                 Every gift helps bring our new home to life. Scan to donate or click below.
               </p>
-              <a href={DONATE_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
-                <Image src="/qr-donate.png" alt="Scan to donate" width={160} height={160} />
-              </a>
+              {/* Decorative — meant to be scanned with a phone camera, not clicked;
+                  the "Donate Now" button right below already covers keyboard/AT users. */}
+              <Image src="/qr-donate.png" alt="" width={160} height={160} />
               <a href={DONATE_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block border border-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-terracotta transition hover:bg-terracotta hover:text-white">
                 Donate Now
               </a>
@@ -261,9 +261,9 @@ export default function NewHomePage() {
               <p className="mt-2 text-sm text-parchment/60 leading-relaxed max-w-xs mb-6">
                 Founding memberships are open now. Scan to join or click below.
               </p>
-              <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="inline-block transition hover:opacity-75">
-                <Image src="/qr-membership.png" alt="Scan to become a member" width={160} height={160} />
-              </a>
+              {/* Decorative — meant to be scanned with a phone camera, not clicked;
+                  the "Join Now" button right below already covers keyboard/AT users. */}
+              <Image src="/qr-membership.png" alt="" width={160} height={160} />
               <a href={MEMBERSHIP_URL} target="_blank" rel="noreferrer" className="mt-5 inline-block bg-terracotta px-5 py-2 text-[0.72rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85">
                 Join Now
               </a>

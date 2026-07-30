@@ -11,9 +11,11 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
       <Link href={`/workshops/${workshop.slug}`} className="block">
         <div className="relative h-56 overflow-hidden">
           {workshop.imageUrl ? (
+            // Decorative — the workshop title is already announced via the heading
+            // below, within the same link, so a repeated alt would double-announce it.
             <Image
               src={workshop.imageUrl}
-              alt={workshop.title}
+              alt=""
               fill
               className="object-cover transition duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 33vw"

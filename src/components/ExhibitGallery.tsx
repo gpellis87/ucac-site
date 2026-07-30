@@ -41,7 +41,7 @@ function PortraitVideo({ src, label, captionsUrl }: { src: string; label: string
         </video>
       </div>
       {!captionsUrl && (
-        <p className="mt-1.5 text-[0.62rem] leading-snug text-parchment/60">
+        <p className="mt-1.5 text-[0.65rem] leading-snug text-parchment/60">
           Not yet captioned — <a href="/contact" className="underline underline-offset-2 hover:text-parchment">request a transcript</a>
         </p>
       )}
@@ -86,7 +86,7 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
       {/* Additional videos — embed URLs (16:9) then uploaded portrait videos */}
       {hasVideos && (
         <div className="mb-8">
-          <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/60">
+          <p className="mb-3 text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">
             Exhibition Videos
           </p>
           {hasEmbedVideos && (
@@ -141,7 +141,7 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
                     <p className="text-[0.72rem] font-medium leading-tight text-parchment">{title}</p>
                   )}
                   {artist && (
-                    <p className="mt-0.5 text-[0.6rem] tracking-[0.1em] text-parchment/60">{artist}</p>
+                    <p className="mt-0.5 text-[0.65rem] tracking-[0.1em] text-parchment/60">{artist}</p>
                   )}
                 </div>
               )}
@@ -159,7 +159,7 @@ export default function ExhibitGallery({ images, additionalVideoPaths, additiona
           >
             Load More ({images.length - visibleCount} remaining)
           </button>
-          <p className="text-[0.6rem] uppercase tracking-[0.15em] text-parchment/60">
+          <p className="text-[0.65rem] uppercase tracking-[0.15em] text-parchment/60">
             Showing {visibleImages.length} of {images.length} works
           </p>
         </div>

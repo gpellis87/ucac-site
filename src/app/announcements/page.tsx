@@ -101,7 +101,7 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
 
           {announcement.flyerImage && (
             <div className="mt-10">
-              <p className="mb-3 text-[0.62rem] uppercase tracking-[0.2em] text-parchment/60">Supplemental Flyer</p>
+              <p className="mb-3 text-[0.65rem] uppercase tracking-[0.2em] text-parchment/60">Supplemental Flyer</p>
               <div className="relative w-full max-w-sm overflow-hidden border border-parchment/15">
                 <Image
                   src={sanityImg(announcement.flyerImage, { w: 800 })}

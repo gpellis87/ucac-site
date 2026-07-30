@@ -85,6 +85,7 @@ export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[]
 
   return (
     <div>
+      <h2 className="sr-only">Browse Classes &amp; Workshops</h2>
       <div className="theme-panel mb-10 flex flex-wrap gap-3 border p-5">
         <FilterDropdown
           label="Medium"

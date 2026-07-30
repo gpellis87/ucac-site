@@ -93,7 +93,7 @@ export default function AboutPage() {
             {programs.map(({ label, icon: Icon }) => (
               <div key={label} className="border border-parchment/20 p-5">
                 <Icon size={20} className="text-terracotta" />
-                <p className="mt-3 display text-2xl">{label}</p>
+                <h3 className="mt-3 display text-2xl">{label}</h3>
               </div>
             ))}
           </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
                 <div className="relative h-56 overflow-hidden">
                   <Image src={member.imageUrl} alt={member.name} fill className="object-cover" sizes="(max-width:768px) 100vw, 25vw" />
                 </div>
-                <p className="mt-3 display text-2xl">{member.name}</p>
+                <h3 className="mt-3 display text-2xl">{member.name}</h3>
                 <p className="text-sm text-parchment/70">{member.title}</p>
               </div>
             ))}
@@ -152,7 +152,7 @@ export default function AboutPage() {
           <div className="mt-4 grid gap-3 md:grid-cols-3">
             {exOfficioBoardMembers.map((member) => (
               <div key={member.id} className="border border-parchment/20 bg-parchment/[0.04] p-4">
-                <p className="display text-2xl">{member.name}</p>
+                <h4 className="display text-2xl">{member.name}</h4>
                 <p className="mt-1 text-sm text-parchment/75">{member.title}</p>
               </div>
             ))}

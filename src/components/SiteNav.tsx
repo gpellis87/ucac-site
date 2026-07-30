@@ -7,8 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 
+// The logo already links home (see the <Link href="/"> below), so a
+// separate "Home" entry here would be a redundant adjacent link to the
+// same destination for keyboard/screen reader users.
 const links = [
-  { href: "/",            label: "Home" },
   { href: "/exhibits",    label: "Exhibitions" },
   { href: "/artists",     label: "Artists" },
   { href: "/support",     label: "Support" },
@@ -81,7 +83,7 @@ export default function SiteNav() {
             <div className="display text-[1.9rem] tracking-tight text-parchment transition-colors group-hover:text-terracotta">
               UCCAC
             </div>
-            <div className="text-[0.58rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-terracotta">
+            <div className="text-[0.65rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-terracotta">
               Union County Community Arts Council
             </div>
           </Link>

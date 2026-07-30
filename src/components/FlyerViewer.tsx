@@ -16,12 +16,12 @@ export default function FlyerViewer({ flyerPath, title }: { flyerPath: string; t
   const [error, setError] = useState(false);
 
   if (error) {
+    // The page header above already renders a persistent "Download" link for
+    // this exact file, so no need to repeat it here — that would just be a
+    // second, adjacent link to the same destination for keyboard/AT users.
     return (
       <div className="flex flex-col items-center gap-4 py-12 text-center text-parchment/55">
-        <p className="text-sm">Unable to display flyer inline.</p>
-        <a href={flyerPath} download className="accent-btn px-5 py-2 text-xs">
-          Download Flyer
-        </a>
+        <p className="text-sm">Unable to display flyer inline. Use the Download link above to view it.</p>
       </div>
     );
   }
@@ -61,11 +61,6 @@ export default function FlyerViewer({ flyerPath, title }: { flyerPath: string; t
           width={typeof window !== "undefined" ? Math.min(window.innerWidth - 80, 800) : 800}
         />
       </Document>
-      {/* The preview above is a flattened image and isn't readable by screen readers,
-          so always offer the underlying PDF as a real text-accessible alternative. */}
-      <a href={flyerPath} download className="mt-4 text-xs uppercase tracking-[0.14em] text-terracotta underline underline-offset-2 hover:text-terracotta/80">
-        Download flyer as PDF ({title})
-      </a>
     </div>
   );
 }

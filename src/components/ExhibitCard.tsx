@@ -20,9 +20,11 @@ export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhib
     >
       <div className={`relative overflow-hidden ${muted ? "h-44" : "h-56"}`}>
         {exhibit.imageUrl ? (
+          // Decorative — the exhibit title is already announced via the heading
+          // below, within the same link, so a repeated alt would double-announce it.
           <Image
             src={exhibit.imageUrl}
-            alt={exhibit.title}
+            alt=""
             fill
             className={`object-cover transition duration-700 group-hover:scale-105 ${muted ? "opacity-60 group-hover:opacity-80" : ""}`}
             sizes="(max-width: 768px) 100vw, 50vw"

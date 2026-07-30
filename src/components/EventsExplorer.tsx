@@ -45,6 +45,7 @@ export default function EventsExplorer() {
   return (
     <section className="section-pad pb-20">
       <div className="mx-auto max-w-[1500px]">
+        <h2 className="sr-only">Browse Events</h2>
         <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap gap-2">
             {eventCategories.map((category) => (
@@ -120,7 +121,7 @@ export default function EventsExplorer() {
                   <ChevronRight size={16} />
                 </button>
               </div>
-              <div className="calendar-grid mb-2 gap-2 text-center text-[0.62rem] uppercase tracking-[0.16em] text-parchment/60">
+              <div className="calendar-grid mb-2 gap-2 text-center text-[0.65rem] uppercase tracking-[0.16em] text-parchment/60">
                 {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
                   <div key={day}>{day}</div>
                 ))}

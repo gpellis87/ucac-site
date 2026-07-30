@@ -30,9 +30,11 @@ export default function ArtistCard({ artist, priority = false }: { artist: Artis
         {/* Portrait avatar */}
         <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full border border-parchment/20">
           {artist.portraitUrl ? (
+            // Decorative — the artist's name is already announced via the work-thumbnail
+            // alt above ("Work by {name}") and the heading below, both within this same link.
             <Image
               src={sanityImg(artist.portraitUrl, { w: 64, h: 64, fit: "crop" })}
-              alt={displayName}
+              alt=""
               fill
               className="object-cover"
               sizes="32px"
@@ -43,7 +45,7 @@ export default function ArtistCard({ artist, priority = false }: { artist: Artis
         </div>
         <div className="min-w-0">
           <h3 className="display text-sm text-parchment leading-tight truncate">{displayName}</h3>
-          <p className="mt-0.5 text-[0.58rem] uppercase tracking-[0.12em] text-terracotta truncate">{artist.medium}</p>
+          <p className="mt-0.5 text-[0.65rem] uppercase tracking-[0.12em] text-terracotta truncate">{artist.medium}</p>
         </div>
       </div>
     </Link>
