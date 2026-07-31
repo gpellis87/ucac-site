@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Clock, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export default function ContactPageClient() {
   return (
@@ -60,15 +60,6 @@ export default function ContactPageClient() {
               <a href="mailto:info@unionarts.org" className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment">
                 <Mail size={13} className="shrink-0 text-terracotta/60" />
                 info@unionarts.org
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61574355290119"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment"
-              >
-                <Facebook size={13} className="shrink-0 text-terracotta/60" />
-                Facebook
               </a>
             </div>
           </div>

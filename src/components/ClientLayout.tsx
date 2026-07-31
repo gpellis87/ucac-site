@@ -2,7 +2,6 @@
 
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import AccessibilityWidget from "@/components/AccessibilityWidget";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -15,7 +14,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       </a>
       <SiteNav />
       <main id="main-content" className="pt-20">{children}</main>
-      <AccessibilityWidget />
       <SiteFooter />
     </div>
   );
