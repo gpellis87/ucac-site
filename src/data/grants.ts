@@ -15,9 +15,10 @@ export const grants: Grant[] = [
     eyebrow: "NC Arts Council Grant",
     title: "Grassroots Arts Program Grant",
     description:
-      "Funding for local nonprofits, schools, and civic groups planning arts or cultural projects in Union County, supported by the NC Arts Council.",
+      "Apply for funding to support local arts and cultural programming in Union County — for nonprofits, government entities, and education groups. Applications are due October 15.",
     body: [
-      "Funding for Local Arts! Applications are now open for the Grassroots Arts Program grant, supported by the NC Arts Council. If you are a local nonprofit, school, or civic group planning an upcoming arts or cultural project, you could receive funding to bring your vision to life. Apply today to help us enrich our community through the power of the arts!",
+      "The Union County Community Arts Council, in partnership with the North Carolina Arts Council, is proud to administer the Grassroots Arts Program grant. This initiative funds local nonprofits, government entities, and education groups dedicated to providing high-quality arts experiences for our residents. Whether you are hosting a community festival, bringing a teaching artist into a school, or staging a public theater production, this grant is designed to support your work.",
+      "Download the guidelines and application form below to get started. Applications must be submitted by October 15 to be considered. Grantees will be notified by October 30, and accepted applicants will receive a contract that must be returned by November 13. Once the signed contract is returned, funding will be issued.",
     ],
     applyUrl: "https://docs.google.com/forms/d/1gmG39hlQYwir4iVeTtIn9rSmO5TwtcdOF8sRPC_Kxis/preview",
     active: true,
