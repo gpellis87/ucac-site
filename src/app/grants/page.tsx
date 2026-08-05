@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { FileText, Heart } from "lucide-react";
 import { getActiveGrants } from "@/data/grants";
 import type { Grant } from "@/data/grants";
+import { sanityImg } from "@/sanity/image";
 
 export const metadata: Metadata = {
   title: "Grants | Union County Community Arts Council",
@@ -18,6 +20,19 @@ function GrantEntry({ grant }: { grant: Grant }) {
         <div className="relative">
           <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">{grant.eyebrow}</p>
           <h2 className="editorial-title mt-3 text-4xl leading-tight md:text-5xl">{grant.title}</h2>
+
+          {grant.imageUrl && (
+            <div className="mt-6 max-w-2xl overflow-hidden border border-parchment/15">
+              <Image
+                src={sanityImg(grant.imageUrl, { w: 1200 })}
+                alt={grant.title}
+                width={1200}
+                height={900}
+                className="h-auto w-full object-contain"
+                unoptimized
+              />
+            </div>
+          )}
 
           <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-parchment/72">
             {grant.body.map((paragraph, i) => (
