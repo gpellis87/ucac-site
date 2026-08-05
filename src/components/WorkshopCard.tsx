@@ -51,7 +51,12 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
         </div>
       </Link>
       <div className="flex items-center justify-between p-5 pt-3">
-        <span className="text-lg text-parchment">{priceLabel(workshop.price)}</span>
+        <div className="flex flex-col">
+          <span className="text-lg text-parchment">{priceLabel(workshop.price)}</span>
+          {workshop.memberPrice != null && (
+            <span className="text-xs text-parchment/60">Members {priceLabel(workshop.memberPrice)}</span>
+          )}
+        </div>
         {disabled ? (
           <span className="text-[0.75rem] uppercase tracking-[0.16em] text-parchment/60">
             {registrationStatusLabel[workshop.registrationStatus]}

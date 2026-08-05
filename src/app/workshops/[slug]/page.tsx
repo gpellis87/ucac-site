@@ -167,7 +167,12 @@ export default async function WorkshopDetailPage({ params }: Props) {
                 <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
                   Class Fee
                 </p>
-                <div className="mb-4 text-2xl text-parchment">{priceLabel(workshop.price)}</div>
+                <div className={`text-2xl text-parchment ${workshop.memberPrice == null ? "mb-4" : ""}`}>
+                  {priceLabel(workshop.price)}
+                </div>
+                {workshop.memberPrice != null && (
+                  <div className="mb-4 text-sm text-parchment/60">Members {priceLabel(workshop.memberPrice)}</div>
+                )}
                 {disabled ? (
                   <span className="block w-full border border-parchment/25 px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-parchment/60">
                     {registrationStatusLabel[workshop.registrationStatus]}

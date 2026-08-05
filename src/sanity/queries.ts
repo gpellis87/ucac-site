@@ -183,6 +183,7 @@ const WORKSHOP_FIELDS = `
   scheduleText,
   location,
   price,
+  memberPrice,
   "registrationStatus": coalesce(registrationStatus, "open"),
   zeffyUrl,
   "imageUrl": image.asset->url,

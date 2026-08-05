@@ -13,6 +13,7 @@ export interface Workshop {
   scheduleText: string;
   location: string | null;
   price: number;
+  memberPrice: number | null;
   registrationStatus: RegistrationStatus;
   zeffyUrl: string | null;
   imageUrl: string | null;
