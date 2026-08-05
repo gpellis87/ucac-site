@@ -115,7 +115,12 @@ export default async function WorkshopDetailPage({ params }: Props) {
                 <p>
                   Registration and payment is handled securely through Zeffy, a platform built for nonprofits
                   that charges the Arts Council no processing or platform fees. Zeffy may separately offer an
-                  optional tip to support their platform — that&apos;s not part of your class fee.
+                  optional tip to support their platform — that&apos;s not part of your class fee.{" "}
+                  See our{" "}
+                  <Link href="/registration-policies" className="text-terracotta underline underline-offset-4 transition hover:text-parchment">
+                    Registration Policies
+                  </Link>{" "}
+                  for withdrawal, refund, and cancellation details.
                 </p>
               </div>
             </div>
@@ -187,6 +192,12 @@ export default async function WorkshopDetailPage({ params }: Props) {
                     {registrationStatusLabel[workshop.registrationStatus]}
                   </a>
                 )}
+                <Link
+                  href="/registration-policies"
+                  className="mt-3 block text-center text-[0.75rem] text-parchment/60 underline underline-offset-4 transition hover:text-parchment"
+                >
+                  Registration Policies
+                </Link>
               </div>
             </div>
           </aside>
