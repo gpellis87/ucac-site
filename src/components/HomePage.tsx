@@ -240,7 +240,7 @@ export default function HomePage({
                     <div className="relative h-40 w-full shrink-0 overflow-hidden sm:h-44">
                       {/* Decorative — the announcement title is already announced via the heading below. */}
                       <Image
-                        src={sanityImg(ann.contentImage, { w: 800, h: 450, fit: "crop" })}
+                        src={sanityImg(ann.contentImage, { w: 1600 })}
                         alt=""
                         fill
                         className="object-cover"
