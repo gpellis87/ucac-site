@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/contact`,            changeFrequency: "yearly",  priority: 0.6 },
     { url: `${BASE_URL}/privacy-policy`,     changeFrequency: "yearly",  priority: 0.3 },
     { url: `${BASE_URL}/accessibility`,      changeFrequency: "yearly",  priority: 0.3 },
+    { url: `${BASE_URL}/registration-policies`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const exhibitRoutes: MetadataRoute.Sitemap = exhibitSlugs.map((slug) => ({

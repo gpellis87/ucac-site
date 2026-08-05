@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import WorkshopsExplorer from "@/components/WorkshopsExplorer";
 import { SectionReveal } from "@/components/SectionReveal";
@@ -41,7 +42,12 @@ export default async function WorkshopsPage() {
               <span className="text-parchment">Zeffy</span>, a platform built for nonprofits that charges the
               Arts Council no processing or platform fees — so 100% of your class fee supports local artists and
               community programming. At checkout, Zeffy will separately offer you the option to leave a tip to
-              support their free platform for nonprofits; that&apos;s optional and separate from your class fee.
+              support their free platform for nonprofits; that&apos;s optional and separate from your class fee.{" "}
+              See our{" "}
+              <Link href="/registration-policies" className="text-terracotta underline underline-offset-4 transition hover:text-parchment">
+                Registration Policies
+              </Link>{" "}
+              for withdrawal, refund, and cancellation details.
             </p>
           </div>
 
