@@ -250,6 +250,31 @@ html[data-theme="light"] .text-parchment\/30 { color: rgb(var(--theme-text) / 0.
 html[data-theme="light"] .text-parchment\/20 { color: rgb(var(--theme-text) / 0.3) !important; }
 html[data-theme="light"] .text-parchment\/10 { color: rgb(var(--theme-text) / 0.18) !important; }
 
+/* The rules above only match the resting state of text-parchment/*. Tailwind's
+   hover: variant is a separate generated class (.hover\:text-parchment:hover),
+   so without these it fell through to the raw near-white brand color on hover
+   -- invisible against this theme's light background. Same fix, hover state. */
+html[data-theme="light"] .hover\:text-parchment:hover { color: rgb(var(--theme-text)) !important; }
+html[data-theme="light"] .hover\:text-parchment\/95:hover { color: rgb(var(--theme-text) / 0.97) !important; }
+html[data-theme="light"] .hover\:text-parchment\/90:hover { color: rgb(var(--theme-text) / 0.94) !important; }
+html[data-theme="light"] .hover\:text-parchment\/88:hover { color: rgb(var(--theme-text) / 0.92) !important; }
+html[data-theme="light"] .hover\:text-parchment\/85:hover { color: rgb(var(--theme-text) / 0.89) !important; }
+html[data-theme="light"] .hover\:text-parchment\/80:hover { color: rgb(var(--theme-text) / 0.85) !important; }
+html[data-theme="light"] .hover\:text-parchment\/78:hover { color: rgb(var(--theme-text) / 0.83) !important; }
+html[data-theme="light"] .hover\:text-parchment\/75:hover { color: rgb(var(--theme-text) / 0.8) !important; }
+html[data-theme="light"] .hover\:text-parchment\/72:hover { color: rgb(var(--theme-text) / 0.77) !important; }
+html[data-theme="light"] .hover\:text-parchment\/70:hover { color: rgb(var(--theme-text) / 0.75) !important; }
+html[data-theme="light"] .hover\:text-parchment\/65:hover { color: rgb(var(--theme-text) / 0.71) !important; }
+html[data-theme="light"] .hover\:text-parchment\/60:hover { color: rgb(var(--theme-text) / 0.68) !important; }
+html[data-theme="light"] .hover\:text-parchment\/55:hover { color: rgb(var(--theme-text) / 0.64) !important; }
+html[data-theme="light"] .hover\:text-parchment\/50:hover { color: rgb(var(--theme-text) / 0.6) !important; }
+html[data-theme="light"] .hover\:text-parchment\/45:hover { color: rgb(var(--theme-text) / 0.56) !important; }
+html[data-theme="light"] .hover\:text-parchment\/40:hover { color: rgb(var(--theme-text) / 0.52) !important; }
+html[data-theme="light"] .hover\:text-parchment\/35:hover { color: rgb(var(--theme-text) / 0.48) !important; }
+html[data-theme="light"] .hover\:text-parchment\/30:hover { color: rgb(var(--theme-text) / 0.44) !important; }
+html[data-theme="light"] .hover\:text-parchment\/20:hover { color: rgb(var(--theme-text) / 0.3) !important; }
+html[data-theme="light"] .hover\:text-parchment\/10:hover { color: rgb(var(--theme-text) / 0.18) !important; }
+
 html[data-theme="light"] .border-parchment,
 html[data-theme="light"] .border-parchment\/50,
 html[data-theme="light"] .border-parchment\/40,
@@ -257,7 +282,11 @@ html[data-theme="light"] .border-parchment\/30,
 html[data-theme="light"] .border-parchment\/25,
 html[data-theme="light"] .border-parchment\/20,
 html[data-theme="light"] .border-parchment\/15,
-html[data-theme="light"] .border-parchment\/10 {
+html[data-theme="light"] .border-parchment\/10,
+html[data-theme="light"] .hover\:border-parchment:hover,
+html[data-theme="light"] .hover\:border-parchment\/60:hover,
+html[data-theme="light"] .hover\:border-parchment\/30:hover,
+html[data-theme="light"] .hover\:border-parchment\/25:hover {
   border-color: rgb(var(--theme-border) / 0.18) !important;
 }
 
