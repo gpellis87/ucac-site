@@ -5,7 +5,7 @@
 :root {
   --bg: #f6f1ea;
   --surface: #2b241d;
-  --accent: #c0542a;
+  --accent: #ad4c26;
   --slate: #677388;
   --slate-deep: #2a3240;
   --theme-bg: 246 241 234;
@@ -105,8 +105,9 @@ p {
 
 .accent-btn {
   @apply inline-flex items-center justify-center rounded-none border border-terracotta bg-terracotta px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] transition duration-300 hover:-translate-y-[1px] hover:brightness-110 hover:shadow-[0_10px_24px_rgba(192,84,42,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta;
-  /* #fff7f1 only cleared 4.36:1 against the terracotta bg — under the 4.5:1
-     AA minimum for this bold-but-14px button text. Pure white clears 4.62:1. */
+  /* #fff7f1 only cleared 4.36:1 against the (former) terracotta bg — under the
+     4.5:1 AA minimum for this bold-but-14px button text. Pure white clears
+     5.47:1 against the current, slightly darkened terracotta (#ad4c26). */
   color: #ffffff;
   box-shadow: 0 0 0 2px transparent;
 }

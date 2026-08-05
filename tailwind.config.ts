@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         charcoal: "#1a1a1a",
         parchment: "#f5f0eb",
-        terracotta: "#c0542a",
+        terracotta: "#ad4c26",
         slatecool: "#677388",
         slatedeep: "#2a3240",
       },
@@ -16,7 +16,7 @@ const config: Config = {
         sans: ["var(--font-sans)", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 15px 45px rgba(192, 84, 42, 0.25)",
+        glow: "0 15px 45px rgba(173, 76, 38, 0.25)",
       },
     },
   },

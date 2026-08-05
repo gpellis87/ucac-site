@@ -37,8 +37,8 @@ const sections = [
   {
     title: "Third-Party Services",
     body: [
-      "The website may connect to third-party services including Google Fonts, Google Maps, Facebook, Sanity-hosted content, Umami analytics, and external donation or membership platforms. These services may process data according to their own privacy practices.",
-      "Donation and membership transactions are handled by external platforms. Please review the privacy and payment terms shown by those providers before submitting payment information.",
+      "The website may connect to third-party services including Google Fonts, Google Maps, Facebook, Sanity-hosted content, Umami analytics, and external donation, membership, and class registration platforms. These services may process data according to their own privacy practices.",
+      "Donation, membership, and class registration transactions are handled by external platforms, including Zeffy. Please review the privacy and payment terms shown by those providers before submitting payment information.",
     ],
   },
   {

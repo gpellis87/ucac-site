@@ -21,7 +21,7 @@ const measures = [
 const limitations = [
   "Some content is embedded from third-party services — Google Maps, event registration and donation forms hosted by Zeffy, and Google Forms for class and volunteer sign-ups — which we don't control and which may not fully meet the same standard.",
   "Some flyers and event materials are provided as PDFs. If you have trouble accessing one, contact us and we'll provide the information in another format.",
-  "Exhibitions, events, and artist profiles are added and updated regularly by our staff. We aim for every new page to meet the same standard, and we welcome reports if something falls short.",
+  "Exhibitions, events, classes, artist profiles, and other content are added and updated regularly by our staff. We aim for every new page to meet the same standard, and we welcome reports if something falls short.",
 ];
 
 export default function AccessibilityPage() {
@@ -40,7 +40,7 @@ export default function AccessibilityPage() {
             everyone, including people who use assistive technology such as screen readers,
             screen magnification, voice recognition software, or keyboard-only navigation.
           </p>
-          <p className="mt-3 text-sm text-parchment/60">Last updated July 30, 2026</p>
+          <p className="mt-3 text-sm text-parchment/60">Last updated August 5, 2026</p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
         </div>
       </SectionReveal>
