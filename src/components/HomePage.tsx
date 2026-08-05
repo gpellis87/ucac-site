@@ -237,17 +237,13 @@ export default function HomePage({
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.1),transparent_65%)]" />
                   )}
                   {ann.contentImage && (
-                    <div className="relative h-40 w-full shrink-0 overflow-hidden bg-black/15 sm:h-44">
-                      {/* object-contain (not cover) — announcement images are often full-bleed
-                          graphics with logos/text at the edges, so cropping to fill the box
-                          risks cutting those off. Scaling to fit avoids that at the cost of
-                          letterboxing for images that aren't already card-shaped. */}
+                    <div className="relative h-40 w-full shrink-0 overflow-hidden sm:h-44">
                       {/* Decorative — the announcement title is already announced via the heading below. */}
                       <Image
-                        src={sanityImg(ann.contentImage, { w: 800, h: 450, fit: "max" })}
+                        src={sanityImg(ann.contentImage, { w: 800, h: 450, fit: "crop" })}
                         alt=""
                         fill
-                        className="object-contain"
+                        className="object-cover"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
