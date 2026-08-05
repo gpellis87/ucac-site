@@ -152,8 +152,7 @@ export default function HomePage({
               gradient above is lg-only), sits beside it as the original
               side panel from lg up.
               To revert: delete this aside block and the right-fade gradient
-              div above. Also remove Dancing_Script from layout.tsx and its
-              ${script.variable} from the body className.
+              div above.
           ─────────────────────────────────────────────────────────────── */}
           <aside className="flex w-full shrink-0 flex-col items-center justify-center rounded-2xl border-t border-white/15 bg-black/35 px-6 py-8 text-center text-white backdrop-blur-[2px] lg:w-[40%] xl:w-[38%] lg:rounded-none lg:border-t-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
             <motion.div
@@ -170,10 +169,7 @@ export default function HomePage({
                 New Location
               </div>
               <p className="mt-3 text-base font-medium text-white/80 lg:text-lg">at 300 N Hayne St</p>
-              <div
-                className="mt-4 text-[1.6rem] leading-none text-white/85 lg:text-[2rem] xl:text-[2.4rem]"
-                style={{ fontFamily: "var(--font-script), cursive" }}
-              >
+              <div className="font-display mt-4 text-[1.7rem] italic leading-none text-white/85 lg:text-[2.1rem] xl:text-[2.5rem]">
                 Opening Fall 2026
               </div>
               <p className="mt-5 max-w-[220px] text-[0.78rem] leading-relaxed text-white/45">
@@ -233,14 +229,26 @@ export default function HomePage({
               {announcements.map((ann, i) => (
                 <div
                   key={ann.slug}
-                  className={`relative flex flex-col overflow-hidden border p-6 ${
+                  className={`relative flex flex-col overflow-hidden border ${
                     i === 0 ? "border-terracotta/30 bg-parchment/[0.05]" : "border-parchment/15 bg-parchment/[0.035]"
                   }`}
                 >
                   {i === 0 && (
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.1),transparent_65%)]" />
                   )}
-                  <div className="relative flex flex-1 flex-col">
+                  {ann.contentImage && (
+                    <div className="relative h-40 w-full shrink-0 overflow-hidden sm:h-44">
+                      {/* Decorative — the announcement title is already announced via the heading below. */}
+                      <Image
+                        src={sanityImg(ann.contentImage, { w: 800, h: 450, fit: "crop" })}
+                        alt=""
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    </div>
+                  )}
+                  <div className="relative flex flex-1 flex-col p-6">
                     {ann.eyebrow && (
                       <p className="mb-2 text-[0.75rem] uppercase tracking-[0.2em] text-terracotta">
                         {ann.eyebrow}
