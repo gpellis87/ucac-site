@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <div className="pb-24">
       <SectionReveal className="section-pad relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(192,84,42,0.28),transparent_35%),radial-gradient(circle_at_85%_15%,rgba(103,115,136,0.3),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(23, 63, 115, 0.28),transparent_35%),radial-gradient(circle_at_85%_15%,rgba(103,115,136,0.3),transparent_45%)]" />
         <div className="relative mx-auto max-w-[1500px]">
           <h1 className="editorial-title max-w-4xl text-5xl md:text-8xl">
             Rooted in community. Driven by art.
@@ -92,7 +92,7 @@ export default function AboutPage() {
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {programs.map(({ label, icon: Icon }) => (
               <div key={label} className="border border-parchment/20 p-5">
-                <Icon size={20} className="text-terracotta" />
+                <Icon size={20} className="text-navy" />
                 <h3 className="mt-3 display text-2xl">{label}</h3>
               </div>
             ))}
@@ -167,7 +167,7 @@ export default function AboutPage() {
             {sponsors.map((sponsor) => (
               <div key={sponsor.name} className="flex items-center justify-between border border-parchment/20 px-4 py-5">
                 <span className="display text-2xl">{sponsor.name}</span>
-                <span className="text-xs uppercase tracking-[0.14em] text-terracotta">{sponsor.tier}</span>
+                <span className="text-xs uppercase tracking-[0.14em] text-navy">{sponsor.tier}</span>
               </div>
             ))}
           </div>
@@ -177,10 +177,10 @@ export default function AboutPage() {
       <SectionReveal className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
           <h2 className="display text-4xl md:text-5xl">Milestones</h2>
-          <div className="mt-7 space-y-4 border-l border-terracotta/60 pl-6">
+          <div className="mt-7 space-y-4 border-l border-navy/60 pl-6">
             {milestones.map((item) => (
               <div key={item} className="relative">
-                <span className="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-terracotta" />
+                <span className="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-navy" />
                 <p className="text-parchment/80">{item}</p>
               </div>
             ))}

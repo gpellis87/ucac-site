@@ -89,7 +89,7 @@ export default function SiteNav() {
               priority
               className="h-10 w-auto transition-opacity group-hover:opacity-80"
             />
-            <div className="mt-1 text-[0.75rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-terracotta">
+            <div className="mt-1 text-[0.75rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-navy">
               Union County Community Arts Council
             </div>
           </Link>
@@ -100,7 +100,7 @@ export default function SiteNav() {
                 key={link.href}
                 href={link.href}
                 className={`link-underline text-sm uppercase tracking-[0.14em] ${
-                  isActive(link.href) ? "text-terracotta" : "text-parchment/95"
+                  isActive(link.href) ? "text-navy" : "text-parchment/95"
                 }`}
               >
                 {link.label}
@@ -136,7 +136,7 @@ export default function SiteNav() {
             transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeOut" }}
             className="theme-drawer fixed inset-0 z-[70]"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(192,84,42,0.18),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(245,240,235,0.07),transparent_45%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(23, 63, 115, 0.18),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(245,240,235,0.07),transparent_45%)]" />
             <div className="relative flex h-full flex-col justify-between p-8">
               <div className="flex justify-end">
                 <button ref={closeButtonRef} type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="border border-parchment/30 p-2 text-parchment">
@@ -153,7 +153,7 @@ export default function SiteNav() {
                   >
                     <Link
                       href={link.href}
-                      className={`display text-4xl ${isActive(link.href) ? "text-terracotta" : "text-parchment"}`}
+                      className={`display text-4xl ${isActive(link.href) ? "text-navy" : "text-parchment"}`}
                       onClick={() => setOpen(false)}
                     >
                       {link.label}

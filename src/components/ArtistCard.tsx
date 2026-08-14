@@ -10,7 +10,7 @@ export default function ArtistCard({ artist, priority = false }: { artist: Artis
   return (
     <Link
       href={`/artists/${artist.slug}`}
-      className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1 hover:border-terracotta/70 hover:shadow-[0_12px_24px_rgba(0,0,0,0.28)]"
+      className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1 hover:border-navy/70 hover:shadow-[0_12px_24px_rgba(0,0,0,0.28)]"
     >
       {/* Work thumbnail */}
       <div className="relative aspect-[4/3] overflow-hidden bg-[rgb(var(--theme-bg-alt)_/_0.65)]">
@@ -45,7 +45,7 @@ export default function ArtistCard({ artist, priority = false }: { artist: Artis
         </div>
         <div className="min-w-0">
           <h3 className="display text-sm text-parchment leading-tight truncate">{displayName}</h3>
-          <p className="mt-0.5 text-[0.75rem] uppercase tracking-[0.12em] text-terracotta truncate">{artist.medium}</p>
+          <p className="mt-0.5 text-[0.75rem] uppercase tracking-[0.12em] text-navy truncate">{artist.medium}</p>
         </div>
       </div>
     </Link>

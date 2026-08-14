@@ -8,7 +8,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
   const disabled = isRegistrationDisabled(workshop);
 
   return (
-    <div className="group overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-terracotta/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]">
+    <div className="group overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-navy/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]">
       <Link href={`/workshops/${workshop.slug}`} className="block">
         <div className="relative h-56 overflow-hidden">
           {workshop.imageUrl ? (
@@ -22,11 +22,11 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           ) : (
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(192,84,42,0.25),transparent_60%),linear-gradient(135deg,#1a1612,#2b241d)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(23, 63, 115, 0.25),transparent_60%),linear-gradient(135deg,#1a1612,#2b241d)]" />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
           {workshop.category && (
-            <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.75rem] uppercase tracking-[0.16em] text-terracotta">
+            <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.75rem] uppercase tracking-[0.16em] text-navy">
               {workshop.category}
             </div>
           )}
@@ -38,7 +38,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
         </div>
         <div className="space-y-3 p-5 pb-0">
           <p className="text-xs uppercase tracking-[0.14em] text-parchment/70">{workshop.scheduleText}</p>
-          <h3 className="display text-2xl text-parchment leading-tight transition group-hover:text-terracotta">
+          <h3 className="display text-2xl text-parchment leading-tight transition group-hover:text-navy">
             {workshop.title}
           </h3>
           <p className="text-sm text-parchment/75">
@@ -70,7 +70,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
             href={workshop.zeffyUrl ?? undefined}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[0.75rem] uppercase tracking-[0.16em] text-terracotta transition hover:tracking-[0.2em]"
+            className="text-[0.75rem] uppercase tracking-[0.16em] text-navy transition hover:tracking-[0.2em]"
           >
             {registrationStatusLabel[workshop.registrationStatus]}
           </a>

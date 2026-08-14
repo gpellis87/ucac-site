@@ -17,14 +17,14 @@ export default async function ExhibitsPage() {
     <div className="pb-24">
       <div className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
-          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">UCCAC Gallery · Monroe, NC</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">UCCAC Gallery · Monroe, NC</p>
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Exhibitions
           </h1>
           <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
             Works from artists across Union County and the region — on view now and opening soon at 300 North Hayne Street.
           </p>
-          <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
+          <div className="mt-8 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
         </div>
       </div>
 

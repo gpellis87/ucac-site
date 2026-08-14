@@ -53,7 +53,7 @@ function EmbedVideo({ url, label }: { url: string; label: string }) {
   const embedSrc = toEmbedUrl(url);
   if (!embedSrc) {
     return (
-      <a href={url} target="_blank" rel="noreferrer" className="flex items-center justify-center bg-black/40 aspect-video text-xs text-terracotta underline">
+      <a href={url} target="_blank" rel="noreferrer" className="flex items-center justify-center bg-black/40 aspect-video text-xs text-navy underline">
         Watch video →
       </a>
     );

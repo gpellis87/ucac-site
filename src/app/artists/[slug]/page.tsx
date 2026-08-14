@@ -72,12 +72,12 @@ export default async function ArtistPage({ params }: Props) {
 
             {/* Name + details */}
             <div className="flex flex-col justify-center">
-              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">{artist.medium}</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">{artist.medium}</p>
               <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl">
                 {displayName}
               </h1>
               <p className="mt-3 flex items-center gap-1.5 text-xs text-parchment/60">
-                <MapPin size={11} className="text-terracotta/60" />
+                <MapPin size={11} className="text-navy/60" />
                 {artist.city}, {artist.state}
               </p>
 
@@ -98,9 +98,9 @@ export default async function ArtistPage({ params }: Props) {
                     href={artist.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
+                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-navy hover:text-parchment"
                   >
-                    <Globe size={12} className="text-terracotta" />
+                    <Globe size={12} className="text-navy" />
                     Website
                   </a>
                 )}
@@ -109,9 +109,9 @@ export default async function ArtistPage({ params }: Props) {
                     href={`https://instagram.com/${artist.instagram}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
+                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-navy hover:text-parchment"
                   >
-                    <Instagram size={12} className="text-terracotta" />
+                    <Instagram size={12} className="text-navy" />
                     @{artist.instagram}
                   </a>
                 )}
@@ -120,18 +120,18 @@ export default async function ArtistPage({ params }: Props) {
                     href={`https://facebook.com/${artist.facebook}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
+                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-navy hover:text-parchment"
                   >
-                    <Facebook size={12} className="text-terracotta" />
+                    <Facebook size={12} className="text-navy" />
                     @{artist.facebook}
                   </a>
                 )}
                 {artist.email && (
                   <a
                     href={`mailto:${artist.email}`}
-                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-terracotta hover:text-parchment"
+                    className="inline-flex items-center gap-2 border border-parchment/25 px-4 py-2 text-[0.75rem] uppercase tracking-[0.16em] text-parchment/70 transition hover:border-navy hover:text-parchment"
                   >
-                    <Mail size={12} className="text-terracotta" />
+                    <Mail size={12} className="text-navy" />
                     Contact
                   </a>
                 )}
@@ -142,8 +142,8 @@ export default async function ArtistPage({ params }: Props) {
           {/* Work gallery */}
           {artist.workImages && artist.workImages.length > 0 && (
             <div className="mt-16">
-              <div className="mb-8 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />
-              <p className="mb-6 text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">Selected Work</p>
+              <div className="mb-8 h-px w-full bg-gradient-to-r from-navy/30 via-parchment/10 to-transparent" />
+              <p className="mb-6 text-[0.75rem] uppercase tracking-[0.22em] text-navy">Selected Work</p>
               <WorkGallery images={artist.workImages} artistName={displayName} />
             </div>
           )}

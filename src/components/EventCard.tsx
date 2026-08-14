@@ -7,7 +7,7 @@ export default function EventCard({ event }: { event: UccacEvent }) {
   return (
     <Link
       href={`/events/${event.slug}`}
-      className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-terracotta/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]"
+      className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-navy/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]"
     >
       <div className="relative h-64 overflow-hidden">
         {/* Decorative — the event title is already announced via the heading below,
@@ -20,7 +20,7 @@ export default function EventCard({ event }: { event: UccacEvent }) {
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-        <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.75rem] uppercase tracking-[0.16em] text-terracotta">
+        <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.75rem] uppercase tracking-[0.16em] text-navy">
           {event.category}
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function EventCard({ event }: { event: UccacEvent }) {
         </p>
         <h3 className="display text-2xl text-parchment">{event.title}</h3>
         <p className="line-clamp-2 text-sm text-parchment/75">{event.description}</p>
-        <p className="pt-1 text-[0.75rem] uppercase tracking-[0.16em] text-terracotta transition group-hover:tracking-[0.2em]">
+        <p className="pt-1 text-[0.75rem] uppercase tracking-[0.16em] text-navy transition group-hover:tracking-[0.2em]">
           View Event
         </p>
       </div>

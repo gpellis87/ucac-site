@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="mb-3 text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">{children}</p>;
+  return <p className="mb-3 text-[0.75rem] uppercase tracking-[0.22em] text-navy">{children}</p>;
 }
 
 export default async function WorkshopDetailPage({ params }: Props) {
@@ -63,7 +63,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
             className="object-cover"
           />
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(192,84,42,0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(23, 63, 115, 0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.9)] via-[rgb(var(--theme-overlay)_/_0.58)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
 
@@ -112,13 +112,13 @@ export default async function WorkshopDetailPage({ params }: Props) {
 
             <div className="mt-12 border-t border-parchment/10 pt-6">
               <div className="flex items-start gap-2.5 text-sm leading-relaxed text-parchment/72">
-                <ShieldCheck size={14} className="mt-0.5 shrink-0 text-terracotta" />
+                <ShieldCheck size={14} className="mt-0.5 shrink-0 text-navy" />
                 <p>
                   Registration and payment is handled securely through Zeffy, a platform built for nonprofits
                   that charges the Arts Council no processing or platform fees. Zeffy may separately offer an
                   optional tip to support their platform — that&apos;s not part of your class fee.{" "}
                   See our{" "}
-                  <Link href="/registration-policies" className="text-terracotta underline underline-offset-4 transition hover:text-parchment">
+                  <Link href="/registration-policies" className="text-navy underline underline-offset-4 transition hover:text-parchment">
                     Registration Policies
                   </Link>{" "}
                   for withdrawal, refund, and cancellation details.
@@ -130,28 +130,28 @@ export default async function WorkshopDetailPage({ params }: Props) {
           <aside className="self-start lg:sticky lg:top-24">
             <div className="theme-panel divide-y divide-parchment/10">
               <div className="p-5">
-                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                   Schedule
                 </p>
                 <div className="flex items-start gap-2.5">
-                  <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                  <CalendarDays size={13} className="mt-0.5 shrink-0 text-navy" />
                   <p className="text-sm font-medium text-parchment">{workshop.scheduleText}</p>
                 </div>
               </div>
 
               <div className="p-5">
-                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                   Location
                 </p>
                 <div className="flex items-start gap-2.5">
-                  <MapPin size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                  <MapPin size={13} className="mt-0.5 shrink-0 text-navy" />
                   <p className="text-sm font-medium text-parchment">{workshop.location ?? "UCCAC Studio"}</p>
                 </div>
               </div>
 
               {(workshop.skillLevel || workshop.sessionType) && (
                 <div className="p-5">
-                  <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                  <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                     Details
                   </p>
                   <div className="flex flex-wrap gap-1.5">
@@ -170,7 +170,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
               )}
 
               <div className="p-5">
-                <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                   Class Fee
                 </p>
                 <div

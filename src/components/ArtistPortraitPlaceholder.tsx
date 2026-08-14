@@ -12,7 +12,7 @@ export default function ArtistPortraitPlaceholder({
   if (variant === "avatar") {
     return (
       <div
-        className="flex h-full w-full items-center justify-center bg-parchment/[0.07] text-terracotta/75"
+        className="flex h-full w-full items-center justify-center bg-parchment/[0.07] text-navy/75"
         aria-label={`${name} portrait placeholder`}
         role="img"
       >
@@ -27,7 +27,7 @@ export default function ArtistPortraitPlaceholder({
       aria-label={`${name} portrait placeholder`}
       role="img"
     >
-      <div className="flex h-20 w-20 items-center justify-center rounded-full border border-terracotta/35 bg-black/10 text-terracotta/80">
+      <div className="flex h-20 w-20 items-center justify-center rounded-full border border-navy/35 bg-black/10 text-navy/80">
         <UserRound size={40} strokeWidth={1.35} />
       </div>
       <p className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">

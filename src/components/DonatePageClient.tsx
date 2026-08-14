@@ -29,7 +29,7 @@ export default function DonatePageClient() {
   return (
     <div className="pb-24">
       <SectionReveal className="section-pad relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(192,84,42,0.32),transparent_35%),linear-gradient(180deg,#1a1a1a,rgba(26,26,26,0.45))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(23, 63, 115, 0.32),transparent_35%),linear-gradient(180deg,#1a1a1a,rgba(26,26,26,0.45))]" />
         <div className="relative mx-auto max-w-[1500px]">
           <h1 className="editorial-title max-w-4xl text-5xl md:text-8xl">Your support keeps art alive.</h1>
         </div>
@@ -37,14 +37,14 @@ export default function DonatePageClient() {
 
       <SectionReveal className="section-pad py-12">
         <div className="mx-auto grid max-w-[1500px] gap-5 md:grid-cols-3">
-          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">42,000+</p><p className="mt-2 text-parchment/75">Students served through Arts in Education programs.</p></div>
-          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">140,000+</p><p className="mt-2 text-parchment/75">Residents benefit from community arts programs and services.</p></div>
-          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-terracotta">$175,000+</p><p className="mt-2 text-parchment/75">Awarded to artists, schools, and nonprofit organizations.</p></div>
+          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-navy">42,000+</p><p className="mt-2 text-parchment/75">Students served through Arts in Education programs.</p></div>
+          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-navy">140,000+</p><p className="mt-2 text-parchment/75">Residents benefit from community arts programs and services.</p></div>
+          <div className="border border-parchment/20 p-5"><p className="display text-5xl text-navy">$175,000+</p><p className="mt-2 text-parchment/75">Awarded to artists, schools, and nonprofit organizations.</p></div>
         </div>
       </SectionReveal>
 
       <SectionReveal className="section-pad pb-2">
-        <div className="mx-auto max-w-[1500px] border border-terracotta/45 bg-terracotta/10 p-5">
+        <div className="mx-auto max-w-[1500px] border border-navy/45 bg-navy/10 p-5">
           <p className="text-sm text-parchment/88">
             Thank you for supporting the Union County Community Arts Council. Your tax-deductible contribution directly supports and promotes programs and services for arts organizations and individual artists throughout Union County.
           </p>
@@ -64,7 +64,7 @@ export default function DonatePageClient() {
           <div className="theme-panel p-6 md:p-8">
             <h2 className="display text-4xl">Make a Donation</h2>
             {thanks ? (
-              <div className="mt-5 border border-terracotta/50 bg-terracotta/10 p-4">
+              <div className="mt-5 border border-navy/50 bg-navy/10 p-4">
                 Thank you for supporting UCCAC. Your contribution helps keep the arts accessible and thriving in Union County.
               </div>
             ) : (
@@ -85,7 +85,7 @@ export default function DonatePageClient() {
                         type="button"
                         onClick={() => setAmount(value)}
                         aria-pressed={amount === value}
-                        className={`border px-4 py-2 text-sm ${amount === value ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"}`}
+                        className={`border px-4 py-2 text-sm ${amount === value ? "border-navy text-navy" : "border-parchment/30 text-parchment/80"}`}
                       >
                         ${value}
                       </button>
@@ -94,7 +94,7 @@ export default function DonatePageClient() {
                       type="button"
                       onClick={() => setAmount("custom")}
                       aria-pressed={amount === "custom"}
-                      className={`border px-4 py-2 text-sm ${amount === "custom" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"}`}
+                      className={`border px-4 py-2 text-sm ${amount === "custom" ? "border-navy text-navy" : "border-parchment/30 text-parchment/80"}`}
                     >
                       Custom
                     </button>
@@ -118,17 +118,17 @@ export default function DonatePageClient() {
                     </div>
                   )}
                   {errors.amount ? (
-                    <p id="donate-amount-error" role="alert" className="mt-1 text-xs text-terracotta">
+                    <p id="donate-amount-error" role="alert" className="mt-1 text-xs text-navy">
                       {errors.amount}
                     </p>
                   ) : null}
                 </fieldset>
                 <fieldset className="flex gap-2 border-0 p-0 m-0">
                   <legend className="sr-only">Donation frequency</legend>
-                  <button type="button" onClick={() => setFrequency("one-time")} aria-pressed={frequency === "one-time"} className={`border px-4 py-2 text-sm ${frequency === "one-time" ? "border-terracotta" : "border-parchment/30"}`}>
+                  <button type="button" onClick={() => setFrequency("one-time")} aria-pressed={frequency === "one-time"} className={`border px-4 py-2 text-sm ${frequency === "one-time" ? "border-navy" : "border-parchment/30"}`}>
                     One-time
                   </button>
-                  <button type="button" onClick={() => setFrequency("monthly")} aria-pressed={frequency === "monthly"} className={`border px-4 py-2 text-sm ${frequency === "monthly" ? "border-terracotta" : "border-parchment/30"}`}>
+                  <button type="button" onClick={() => setFrequency("monthly")} aria-pressed={frequency === "monthly"} className={`border px-4 py-2 text-sm ${frequency === "monthly" ? "border-navy" : "border-parchment/30"}`}>
                     Monthly
                   </button>
                 </fieldset>
@@ -151,7 +151,7 @@ export default function DonatePageClient() {
                     className="theme-input w-full px-3 py-2"
                   />
                   {errors.name ? (
-                    <p id="donate-name-error" role="alert" className="mt-1 text-xs text-terracotta">
+                    <p id="donate-name-error" role="alert" className="mt-1 text-xs text-navy">
                       {errors.name}
                     </p>
                   ) : null}
@@ -170,7 +170,7 @@ export default function DonatePageClient() {
                     className="theme-input w-full px-3 py-2"
                   />
                   {errors.email ? (
-                    <p id="donate-email-error" role="alert" className="mt-1 text-xs text-terracotta">
+                    <p id="donate-email-error" role="alert" className="mt-1 text-xs text-navy">
                       {errors.email}
                     </p>
                   ) : null}
@@ -200,7 +200,7 @@ export default function DonatePageClient() {
           <div className="border border-parchment/20 p-6">
             <h3 className="display text-3xl">Volunteer Interest</h3>
             {volunteerDone ? (
-              <p className="mt-4 border border-terracotta/40 bg-terracotta/10 p-3 text-sm">Thanks for your interest. Our team will be in touch soon.</p>
+              <p className="mt-4 border border-navy/40 bg-navy/10 p-3 text-sm">Thanks for your interest. Our team will be in touch soon.</p>
             ) : (
               <form
                 className="mt-4 space-y-3"

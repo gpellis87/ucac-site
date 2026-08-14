@@ -40,7 +40,7 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
           placeholder="Search artists…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full border border-parchment/20 bg-parchment/[0.05] pl-8 pr-8 py-2 text-sm text-parchment placeholder:text-parchment/60 focus:border-terracotta/60 focus:outline-none"
+          className="w-full border border-parchment/20 bg-parchment/[0.05] pl-8 pr-8 py-2 text-sm text-parchment placeholder:text-parchment/60 focus:border-navy/60 focus:outline-none"
         />
         {query && (
           <button
@@ -63,7 +63,7 @@ export default function ArtistGrid({ artists }: { artists: Artist[] }) {
       ) : (
         <div className="py-20 text-center">
           <p className="text-sm text-parchment/60">No artists match &ldquo;{query}&rdquo;</p>
-          <button onClick={() => setQuery("")} className="mt-3 text-[0.75rem] uppercase tracking-[0.16em] text-terracotta hover:underline">
+          <button onClick={() => setQuery("")} className="mt-3 text-[0.75rem] uppercase tracking-[0.16em] text-navy hover:underline">
             Clear search
           </button>
         </div>

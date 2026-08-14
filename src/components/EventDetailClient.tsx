@@ -88,7 +88,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
         <div className="section-pad absolute inset-x-0 bottom-0 pb-10">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-4 flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em]">
-              <span className="bg-terracotta px-3 py-1 text-white">{event.category}</span>
+              <span className="bg-navy px-3 py-1 text-white">{event.category}</span>
               <span className="theme-chip px-3 py-1 text-parchment">{formatEventDate(event.date)}</span>
               <span className="theme-chip px-3 py-1 text-parchment">{event.time}</span>
               <span className="theme-chip px-3 py-1 text-parchment">{event.location}</span>
@@ -207,7 +207,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
               </button>
             </div>
             {submitted ? (
-              <div role="status" className="border border-terracotta/45 bg-terracotta/10 p-4 text-sm text-parchment">
+              <div role="status" className="border border-navy/45 bg-navy/10 p-4 text-sm text-parchment">
                 Thanks! Your RSVP has been received. We sent a confirmation to your email.
               </div>
             ) : (
@@ -218,9 +218,9 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
                   setSubmitted(true);
                 }}
               >
-                <input required aria-label="Name" placeholder="Name" className="theme-input w-full px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
-                <input required type="email" aria-label="Email" placeholder="Email" className="theme-input w-full px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
-                <input required type="number" min={1} defaultValue={1} aria-label="Number of Guests" placeholder="Number of Guests" className="theme-input w-full px-3 py-2 text-sm focus:border-terracotta focus:outline-none" />
+                <input required aria-label="Name" placeholder="Name" className="theme-input w-full px-3 py-2 text-sm focus:border-navy focus:outline-none" />
+                <input required type="email" aria-label="Email" placeholder="Email" className="theme-input w-full px-3 py-2 text-sm focus:border-navy focus:outline-none" />
+                <input required type="number" min={1} defaultValue={1} aria-label="Number of Guests" placeholder="Number of Guests" className="theme-input w-full px-3 py-2 text-sm focus:border-navy focus:outline-none" />
                 <button type="submit" className="accent-btn w-full">
                   Submit RSVP
                 </button>

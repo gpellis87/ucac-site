@@ -78,7 +78,7 @@ export default function HomePage({
         {/* Left dark overlay — keeps hero text legible */}
         <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.72),rgba(18,14,11,0.38)_42%,transparent_64%)]" />
         {/* Colour accents */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(192,84,42,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(23, 63, 115, 0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
         {/* ── TEMPORARY: right fade to charcoal for moving announcement ── */}
         <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_30%,rgba(38,38,38,0.72)_54%,rgba(40,40,40,0.95)_70%,#282828_85%)]" />
         {/* ── END TEMPORARY ─────────────────────────────────────────────── */}
@@ -105,7 +105,7 @@ export default function HomePage({
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
               style={{ originX: 0 }}
-              className="mb-6 h-px w-24 bg-terracotta"
+              className="mb-6 h-px w-24 bg-navy"
             />
 
             <motion.h1
@@ -116,7 +116,7 @@ export default function HomePage({
               style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               Art lives<br />
-              <span className="text-terracotta">here.</span>
+              <span className="text-navy">here.</span>
             </motion.h1>
 
             <motion.p
@@ -191,8 +191,8 @@ export default function HomePage({
           <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 py-3">
             <a href="#exhibitions" className="group flex items-center gap-3 shrink-0 transition hover:opacity-80">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-navy opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-navy" />
               </span>
               <span className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/70 group-hover:text-parchment/90 transition">
                 {exhibits.length} Exhibitions On View &amp; Upcoming
@@ -204,7 +204,7 @@ export default function HomePage({
               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
               className="shrink-0"
             >
-              <ChevronDown size={15} className="text-terracotta/60" />
+              <ChevronDown size={15} className="text-navy/60" />
             </motion.div>
           </div>
         </motion.div>
@@ -230,11 +230,11 @@ export default function HomePage({
                 <div
                   key={ann.slug}
                   className={`relative flex flex-col overflow-hidden border ${
-                    i === 0 ? "border-terracotta/30 bg-parchment/[0.05]" : "border-parchment/15 bg-parchment/[0.035]"
+                    i === 0 ? "border-navy/30 bg-parchment/[0.05]" : "border-parchment/15 bg-parchment/[0.035]"
                   }`}
                 >
                   {i === 0 && (
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.1),transparent_65%)]" />
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23, 63, 115, 0.1),transparent_65%)]" />
                   )}
                   {ann.contentImage && (
                     <div className="relative h-40 w-full shrink-0 overflow-hidden sm:h-44">
@@ -250,7 +250,7 @@ export default function HomePage({
                   )}
                   <div className="relative flex flex-1 flex-col p-6">
                     {ann.eyebrow && (
-                      <p className="mb-2 text-[0.75rem] uppercase tracking-[0.2em] text-terracotta">
+                      <p className="mb-2 text-[0.75rem] uppercase tracking-[0.2em] text-navy">
                         {ann.eyebrow}
                       </p>
                     )}
@@ -287,14 +287,14 @@ export default function HomePage({
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-2 flex items-end justify-between gap-4">
             <div>
-              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-terracotta">On View Now &amp; Upcoming</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-navy">On View Now &amp; Upcoming</p>
               <h2 className="display mt-2 text-4xl text-parchment md:text-5xl">Current Exhibitions</h2>
             </div>
             <Link href="/exhibits" className="link-underline hidden text-sm uppercase tracking-[0.15em] md:block">
               View all
             </Link>
           </div>
-          <div className="mt-3 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent mb-10" />
+          <div className="mt-3 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent mb-10" />
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {exhibits.map((exhibit) => (
               <ExhibitCard key={exhibit.id} exhibit={exhibit} />
@@ -330,7 +330,7 @@ export default function HomePage({
                 />
               </div>
               <div className="flex flex-col justify-center gap-3 p-7">
-                <p className="text-[0.75rem] uppercase tracking-[0.18em] text-terracotta">Past Exhibition</p>
+                <p className="text-[0.75rem] uppercase tracking-[0.18em] text-navy">Past Exhibition</p>
                 <h3 className="display text-2xl text-parchment/85 leading-tight group-hover:text-parchment transition md:text-3xl">
                   {recentlyClosed.title}
                 </h3>
@@ -368,7 +368,7 @@ export default function HomePage({
                 { value: 1980,   label: "Founded", raw: true },
               ].map(({ value, label, prefix, raw }) => (
                 <div key={label} className="bg-[rgba(245,240,235,0.025)] p-8">
-                  <div className="display text-5xl text-terracotta">
+                  <div className="display text-5xl text-navy">
                     <Counter target={value} prefix={prefix ?? ""} raw={raw} />
                   </div>
                   <p className="mt-2 text-xs uppercase tracking-[0.16em] text-parchment/55">{label}</p>
@@ -383,10 +383,10 @@ export default function HomePage({
       <SectionReveal className="section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
           <div className="relative overflow-hidden border border-parchment/15 bg-parchment/[0.045] p-10 text-center md:p-16">
-            {/* Subtle terracotta glow */}
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(192,84,42,0.12),transparent_65%)]" />
+            {/* Subtle navy glow */}
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(23, 63, 115, 0.12),transparent_65%)]" />
             <div className="relative z-10">
-              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">Connect</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Connect</p>
               <h2 className="display mt-2 text-4xl md:text-5xl">Get in Touch</h2>
               <p className="mx-auto mt-4 max-w-md text-parchment/60 text-sm leading-relaxed">
                 We&rsquo;d love to connect — reach out about exhibitions, programming, or anything else.

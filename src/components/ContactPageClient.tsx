@@ -9,14 +9,14 @@ export default function ContactPageClient() {
       {/* Page header */}
       <div className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
-          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">Union County Community Arts Council</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Union County Community Arts Council</p>
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Contact Us
           </h1>
           <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
             We would love to hear from you. Reach out about exhibitions, programming, volunteering, or general questions.
           </p>
-          <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
+          <div className="mt-8 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
         </div>
       </div>
 
@@ -27,7 +27,7 @@ export default function ContactPageClient() {
           {/* Address */}
           <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
-              <MapPin size={14} className="text-terracotta" />
+              <MapPin size={14} className="text-navy" />
               <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Location</p>
             </div>
             <p className="text-lg font-medium text-parchment">UCCAC Gallery</p>
@@ -40,7 +40,7 @@ export default function ContactPageClient() {
               href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28112"
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-block text-[0.75rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
+              className="mt-4 inline-block text-[0.75rem] uppercase tracking-[0.14em] text-navy hover:underline"
             >
               Get Directions →
             </a>
@@ -49,16 +49,16 @@ export default function ContactPageClient() {
           {/* Contact details */}
           <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
-              <Phone size={14} className="text-terracotta" />
+              <Phone size={14} className="text-navy" />
               <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Reach Us</p>
             </div>
             <div className="space-y-3">
               <a href="tel:+17042832784" className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment">
-                <Phone size={13} className="shrink-0 text-terracotta/60" />
+                <Phone size={13} className="shrink-0 text-navy/60" />
                 (704) 283-2784
               </a>
               <a href="mailto:info@unionarts.org" className="flex items-center gap-3 text-sm text-parchment/80 transition hover:text-parchment">
-                <Mail size={13} className="shrink-0 text-terracotta/60" />
+                <Mail size={13} className="shrink-0 text-navy/60" />
                 info@unionarts.org
               </a>
             </div>
@@ -67,7 +67,7 @@ export default function ContactPageClient() {
           {/* Hours */}
           <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
-              <Clock size={14} className="text-terracotta" />
+              <Clock size={14} className="text-navy" />
               <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Hours</p>
             </div>
             <div className="space-y-3 text-sm text-parchment/80">

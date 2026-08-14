@@ -21,7 +21,7 @@ export default async function WorkshopsPage() {
     <div className="pb-24">
       <SectionReveal className="section-pad py-16">
         <div className="mx-auto max-w-[1500px]">
-          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">UCCAC Studio · Monroe, NC</p>
+          <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">UCCAC Studio · Monroe, NC</p>
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
             Classes &amp; Workshops
           </h1>
@@ -29,14 +29,14 @@ export default async function WorkshopsPage() {
             Hands-on classes taught by local artists, right here at the Arts Council. New sessions are added
             throughout the year — browse what&apos;s coming up and reserve your spot below.
           </p>
-          <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
+          <div className="mt-8 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
         </div>
       </SectionReveal>
 
       <div className="section-pad">
         <div className="mx-auto max-w-[1500px]">
           <div className="theme-panel mb-10 flex flex-col gap-3 border p-5 sm:flex-row sm:items-start sm:gap-4">
-            <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-terracotta" />
+            <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-navy" />
             <p className="text-sm leading-relaxed text-parchment/75">
               Registration and payment for all classes is handled securely through{" "}
               <span className="text-parchment">Zeffy</span>, a platform built for nonprofits that charges the
@@ -44,7 +44,7 @@ export default async function WorkshopsPage() {
               community programming. At checkout, Zeffy will separately offer you the option to leave a tip to
               support their free platform for nonprofits; that&apos;s optional and separate from your class fee.{" "}
               See our{" "}
-              <Link href="/registration-policies" className="text-terracotta underline underline-offset-4 transition hover:text-parchment">
+              <Link href="/registration-policies" className="text-navy underline underline-offset-4 transition hover:text-parchment">
                 Registration Policies
               </Link>{" "}
               for withdrawal, refund, and cancellation details.

@@ -35,7 +35,7 @@ function FilterDropdown({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         aria-label={label}
-        className="theme-input min-w-[9.5rem] appearance-none py-2.5 pl-3.5 pr-9 text-xs uppercase tracking-[0.14em] transition hover:border-terracotta focus-visible:border-terracotta focus-visible:outline-none"
+        className="theme-input min-w-[9.5rem] appearance-none py-2.5 pl-3.5 pr-9 text-xs uppercase tracking-[0.14em] transition hover:border-navy focus-visible:border-navy focus-visible:outline-none"
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>

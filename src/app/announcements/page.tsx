@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 function AnnouncementCta({ cta, primary }: { cta: { label: string; url: string }; primary?: boolean }) {
   const isExternal = cta.url.startsWith("http");
   const cls = primary
-    ? "inline-flex items-center gap-2 bg-terracotta px-7 py-3 text-[0.75rem] uppercase tracking-[0.18em] text-white transition hover:bg-terracotta/85"
+    ? "inline-flex items-center gap-2 bg-navy px-7 py-3 text-[0.75rem] uppercase tracking-[0.18em] text-white transition hover:bg-navy/85"
     : "inline-flex items-center gap-2 border border-parchment/30 px-7 py-3 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/80 transition hover:border-parchment hover:text-parchment";
   return isExternal ? (
     <a href={cta.url} target="_blank" rel="noreferrer" className={cls}>
@@ -38,11 +38,11 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
   return (
     <section id={announcement.slug} className="scroll-mt-28">
       <div className="relative overflow-hidden border border-parchment/15 bg-parchment/[0.04] p-8 md:p-12">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.08),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23, 63, 115, 0.08),transparent_60%)]" />
         <div className="relative">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             {announcement.eyebrow && (
-              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">
+              <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">
                 {announcement.eyebrow}
               </p>
             )}
@@ -155,17 +155,17 @@ export default async function AnnouncementsPage() {
 
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(192,84,42,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23, 63, 115, 0.18),transparent_55%)]" />
         <div className="section-pad relative py-16">
           <div className="mx-auto max-w-[1500px]">
-            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">From the Arts Council</p>
+            <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">From the Arts Council</p>
             <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
               Announcements
             </h1>
             <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
               News, grants, programs, and updates from the Union County Community Arts Council.
             </p>
-            <div className="mt-8 h-px w-full bg-gradient-to-r from-terracotta/60 via-terracotta/20 to-transparent" />
+            <div className="mt-8 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
           </div>
         </div>
       </div>

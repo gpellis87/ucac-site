@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const statusColors: Record<string, string> = {
   "now-on-view":
-    "border border-terracotta bg-terracotta text-white shadow-[0_10px_20px_rgba(192,84,42,0.28)]",
+    "border border-navy bg-navy text-white shadow-[0_10px_20px_rgba(23, 63, 115, 0.28)]",
   "opening-soon":
     "border border-[#f1dfbf] bg-[#f4e8d3] text-[#201914] shadow-[0_10px_20px_rgba(0,0,0,0.18)]",
   "call-for-artists":
@@ -39,11 +39,11 @@ const statusColors: Record<string, string> = {
 };
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="mb-3 text-[0.75rem] uppercase tracking-[0.22em] text-terracotta">{children}</p>;
+  return <p className="mb-3 text-[0.75rem] uppercase tracking-[0.22em] text-navy">{children}</p>;
 }
 
 function Divider() {
-  return <div className="my-12 h-px w-full bg-gradient-to-r from-terracotta/30 via-parchment/10 to-transparent" />;
+  return <div className="my-12 h-px w-full bg-gradient-to-r from-navy/30 via-parchment/10 to-transparent" />;
 }
 
 export default async function ExhibitPage({ params }: Props) {
@@ -78,10 +78,10 @@ export default async function ExhibitPage({ params }: Props) {
             className="object-cover"
           />
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(192,84,42,0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(23, 63, 115, 0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.9)] via-[rgb(var(--theme-overlay)_/_0.58)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(192,84,42,0.18),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(23, 63, 115, 0.18),transparent_50%)]" />
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-10 lg:px-16 xl:px-24">
           <div className="mx-auto max-w-[1500px]">
@@ -124,7 +124,7 @@ export default async function ExhibitPage({ params }: Props) {
                   />
                 </div>
               ) : exhibit.mainVideoUrl ? (
-                <a href={exhibit.mainVideoUrl} target="_blank" rel="noreferrer" className="text-terracotta underline text-sm">
+                <a href={exhibit.mainVideoUrl} target="_blank" rel="noreferrer" className="text-navy underline text-sm">
                   Watch video →
                 </a>
               ) : (
@@ -139,7 +139,7 @@ export default async function ExhibitPage({ params }: Props) {
                     <source src={exhibit.mainVideoPath} type="video/mp4" />
                     <p className="p-4 text-sm text-parchment/60">
                       Your browser does not support this video.{" "}
-                      <a href={exhibit.mainVideoPath} download className="text-terracotta underline">
+                      <a href={exhibit.mainVideoPath} download className="text-navy underline">
                         Download it here.
                       </a>
                     </p>
@@ -154,7 +154,7 @@ export default async function ExhibitPage({ params }: Props) {
           <div className="mt-10 flex items-center gap-4 border-t border-parchment/10 px-5 py-5 md:px-10 lg:px-16 xl:px-24">
             <div className="mx-auto flex w-full max-w-[1500px] items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="h-1 w-8 bg-terracotta/70" />
+                <span className="h-1 w-8 bg-navy/70" />
                 <span className="text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-parchment/55">
                   Exhibition Details
                 </span>
@@ -174,7 +174,7 @@ export default async function ExhibitPage({ params }: Props) {
             <p className="text-lg leading-relaxed text-parchment/88 md:text-xl">{exhibit.description}</p>
 
             {exhibit.details.length > 0 && (
-              <ul className="mt-8 space-y-4 border-l-2 border-terracotta/40 pl-6">
+              <ul className="mt-8 space-y-4 border-l-2 border-navy/40 pl-6">
                 {exhibit.details.map((detail) => (
                   <li key={detail} className="text-sm leading-relaxed text-parchment/72">
                     {detail}
@@ -215,11 +215,11 @@ export default async function ExhibitPage({ params }: Props) {
           <aside className="self-start lg:sticky lg:top-24">
             <div className="theme-panel divide-y divide-parchment/10">
               <div className="p-5">
-                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                   Location
                 </p>
                 <div className="flex items-start gap-2.5">
-                  <MapPin size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                  <MapPin size={13} className="mt-0.5 shrink-0 text-navy" />
                   <div>
                     <p className="text-base font-semibold text-parchment">{exhibit.location}</p>
                     <p className="mt-1 text-sm text-parchment/68">{exhibit.address}</p>
@@ -229,11 +229,11 @@ export default async function ExhibitPage({ params }: Props) {
 
               {exhibit.receptionDate && (
                 <div className="p-5">
-                  <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                  <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                     {receptionLabel}
                   </p>
                   <div className="flex items-start gap-2.5">
-                    <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                    <CalendarDays size={13} className="mt-0.5 shrink-0 text-navy" />
                     <div>
                       <p className="text-base font-semibold text-parchment">{exhibit.receptionDate}</p>
                       {exhibit.receptionTime && (
@@ -246,11 +246,11 @@ export default async function ExhibitPage({ params }: Props) {
 
               {exhibit.submissionDeadline && (
                 <div className="p-5">
-                  <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                  <p className="mb-2 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                     Submissions Due
                   </p>
                   <div className="flex items-start gap-2.5">
-                    <CalendarDays size={13} className="mt-0.5 shrink-0 text-terracotta" />
+                    <CalendarDays size={13} className="mt-0.5 shrink-0 text-navy" />
                     <div>
                       <p className="text-base font-semibold text-parchment">{exhibit.submissionDeadline}</p>
                       {exhibit.submissionUrl && exhibit.submissionUrl !== exhibit.callToAction?.href && (
@@ -258,7 +258,7 @@ export default async function ExhibitPage({ params }: Props) {
                           href={exhibit.submissionUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="mt-2 inline-block text-[0.75rem] uppercase tracking-[0.14em] text-terracotta hover:underline"
+                          className="mt-2 inline-block text-[0.75rem] uppercase tracking-[0.14em] text-navy hover:underline"
                         >
                           Submit Now →
                         </a>
@@ -270,7 +270,7 @@ export default async function ExhibitPage({ params }: Props) {
 
               {exhibit.qrCodeUrl && (
                 <div className="p-5">
-                  <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                  <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                     Scan to Submit
                   </p>
                   <Image
@@ -302,17 +302,17 @@ export default async function ExhibitPage({ params }: Props) {
               )}
 
               <div className="p-5">
-                <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                   Questions?
                 </p>
                 <a
                   href="mailto:info@unionarts.org"
-                  className="flex items-center gap-2 text-sm text-parchment/78 transition hover:text-terracotta"
+                  className="flex items-center gap-2 text-sm text-parchment/78 transition hover:text-navy"
                 >
-                  <Mail size={12} className="text-terracotta/70" /> info@unionarts.org
+                  <Mail size={12} className="text-navy/70" /> info@unionarts.org
                 </a>
                 <p className="mt-2 flex items-center gap-2 text-sm text-parchment/68">
-                  <Phone size={12} className="text-terracotta/70" /> (704) 283-2784
+                  <Phone size={12} className="text-navy/70" /> (704) 283-2784
                 </p>
               </div>
             </div>

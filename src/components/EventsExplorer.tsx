@@ -56,8 +56,8 @@ export default function EventsExplorer() {
                 aria-pressed={filter === category}
                 className={`border px-4 py-2 text-xs uppercase tracking-[0.14em] transition ${
                   filter === category
-                    ? "border-terracotta bg-terracotta text-white"
-                    : "border-parchment/30 text-parchment/80 hover:border-terracotta"
+                    ? "border-navy bg-navy text-white"
+                    : "border-parchment/30 text-parchment/80 hover:border-navy"
                 }`}
               >
                 {category}
@@ -70,7 +70,7 @@ export default function EventsExplorer() {
               onClick={() => setView("calendar")}
               aria-pressed={view === "calendar"}
               className={`inline-flex items-center gap-2 border px-4 py-2 text-xs uppercase tracking-[0.14em] ${
-                view === "calendar" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"
+                view === "calendar" ? "border-navy text-navy" : "border-parchment/30 text-parchment/80"
               }`}
             >
               <CalendarDays size={15} /> Calendar
@@ -80,7 +80,7 @@ export default function EventsExplorer() {
               onClick={() => setView("cards")}
               aria-pressed={view === "cards"}
               className={`inline-flex items-center gap-2 border px-4 py-2 text-xs uppercase tracking-[0.14em] ${
-                view === "cards" ? "border-terracotta text-terracotta" : "border-parchment/30 text-parchment/80"
+                view === "cards" ? "border-navy text-navy" : "border-parchment/30 text-parchment/80"
               }`}
             >
               <LayoutGrid size={15} /> Card View
@@ -101,7 +101,7 @@ export default function EventsExplorer() {
                 <button
                   type="button"
                   onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1))}
-                  className="border border-parchment/30 p-2 transition hover:border-terracotta hover:bg-terracotta/10"
+                  className="border border-parchment/30 p-2 transition hover:border-navy hover:bg-navy/10"
                   aria-label="Previous month"
                 >
                   <ChevronLeft size={16} />
@@ -115,7 +115,7 @@ export default function EventsExplorer() {
                 <button
                   type="button"
                   onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1))}
-                  className="border border-parchment/30 p-2 transition hover:border-terracotta hover:bg-terracotta/10"
+                  className="border border-parchment/30 p-2 transition hover:border-navy hover:bg-navy/10"
                   aria-label="Next month"
                 >
                   <ChevronRight size={16} />
@@ -132,17 +132,17 @@ export default function EventsExplorer() {
                     key={current.toISOString()}
                     className={`min-h-[98px] border p-2 transition ${
                       inMonth
-                        ? "border-parchment/20 bg-[rgb(var(--theme-surface)_/_0.72)] hover:border-terracotta/40 hover:bg-[rgb(var(--theme-surface-strong)_/_0.9)]"
+                        ? "border-parchment/20 bg-[rgb(var(--theme-surface)_/_0.72)] hover:border-navy/40 hover:bg-[rgb(var(--theme-surface-strong)_/_0.9)]"
                         : "border-parchment/10 bg-[rgb(var(--theme-bg-alt)_/_0.5)] text-parchment/60"
                     }`}
                   >
-                    <p className={`text-xs ${dayEvents.length > 0 && inMonth ? "text-terracotta" : ""}`}>{current.getDate()}</p>
+                    <p className={`text-xs ${dayEvents.length > 0 && inMonth ? "text-navy" : ""}`}>{current.getDate()}</p>
                     <div className="mt-2 space-y-1">
                       {dayEvents.slice(0, 2).map((event) => (
                         <Link
                           key={event.id}
                           href={`/events/${event.slug}`}
-                          className="block truncate border-l-2 border-terracotta pl-2 text-[0.75rem] text-parchment/85 hover:text-terracotta"
+                          className="block truncate border-l-2 border-navy pl-2 text-[0.75rem] text-parchment/85 hover:text-navy"
                         >
                           {event.title}
                         </Link>

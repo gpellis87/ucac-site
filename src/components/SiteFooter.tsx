@@ -16,7 +16,7 @@ export default function SiteFooter() {
             target="_blank"
             rel="noreferrer"
             aria-label="Facebook"
-            className="mt-4 inline-flex items-center gap-2 border border-parchment/30 px-3 py-2 text-xs uppercase tracking-[0.14em] transition hover:border-terracotta hover:text-terracotta"
+            className="mt-4 inline-flex items-center gap-2 border border-parchment/30 px-3 py-2 text-xs uppercase tracking-[0.14em] transition hover:border-navy hover:text-navy"
           >
             <Facebook size={14} /> Facebook
           </a>

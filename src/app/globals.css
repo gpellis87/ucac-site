@@ -5,7 +5,7 @@
 :root {
   --bg: #f6f1ea;
   --surface: #2b241d;
-  --accent: #ad4c26;
+  --accent: #173f73;
   --slate: #677388;
   --slate-deep: #2a3240;
   --theme-bg: 246 241 234;
@@ -55,7 +55,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image:
-    radial-gradient(circle at top left, rgba(192, 84, 42, 0.08), transparent 24%),
+    radial-gradient(circle at top left, rgba(23, 63, 115, 0.08), transparent 24%),
     radial-gradient(circle at top right, rgb(var(--theme-text) / 0.04), transparent 22%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 26%);
 }
@@ -65,7 +65,7 @@ p {
 }
 
 ::selection {
-  background: rgba(192, 84, 42, 0.35);
+  background: rgba(23, 63, 115, 0.35);
   color: rgb(var(--theme-text));
 }
 
@@ -90,7 +90,7 @@ p {
   z-index: 2;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 14%),
-    radial-gradient(circle at 85% 12%, rgba(192, 84, 42, 0.05), transparent 20%);
+    radial-gradient(circle at 85% 12%, rgba(23, 63, 115, 0.05), transparent 20%);
 }
 
 .section-pad {
@@ -104,10 +104,9 @@ p {
 }
 
 .accent-btn {
-  @apply inline-flex items-center justify-center rounded-none border border-terracotta bg-terracotta px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] transition duration-300 hover:-translate-y-[1px] hover:brightness-110 hover:shadow-[0_10px_24px_rgba(192,84,42,0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-terracotta;
-  /* #fff7f1 only cleared 4.36:1 against the (former) terracotta bg — under the
-     4.5:1 AA minimum for this bold-but-14px button text. Pure white clears
-     5.47:1 against the current, slightly darkened terracotta (#ad4c26). */
+  @apply inline-flex items-center justify-center rounded-none border border-navy bg-navy px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] transition duration-300 hover:-translate-y-[1px] hover:brightness-110 hover:shadow-[0_10px_24px_rgba(23, 63, 115, 0.32)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy;
+  /* Pure white clears 10.53:1 against navy (#173f73), well past the 4.5:1 AA
+     minimum for this bold-but-14px button text. */
   color: #ffffff;
   box-shadow: 0 0 0 2px transparent;
 }
@@ -178,7 +177,7 @@ p {
 .theme-drawer {
   background:
     linear-gradient(180deg, rgb(var(--theme-surface-strong) / 0.94), rgb(var(--theme-bg) / 0.98)),
-    radial-gradient(circle at top right, rgba(192, 84, 42, 0.14), transparent 40%);
+    radial-gradient(circle at top right, rgba(23, 63, 115, 0.14), transparent 40%);
 }
 
 .theme-panel {
@@ -224,7 +223,7 @@ textarea::placeholder {
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  @apply border-terracotta outline-none ring-2 ring-terracotta/35;
+  @apply border-navy outline-none ring-2 ring-navy/35;
 }
 
 html[data-theme="light"] .text-parchment {
