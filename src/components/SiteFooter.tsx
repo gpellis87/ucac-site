@@ -52,11 +52,11 @@ export default function SiteFooter() {
       <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-8">
         <div className="mb-6 flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-center sm:gap-8">
           <Image
-            src="/sponsors/ucac-logo.png"
+            src="/sponsors/uccac-logo.png"
             alt="Union County Community Arts Council"
-            width={112}
-            height={112}
-            className="h-28 w-auto rounded"
+            width={420}
+            height={420}
+            className="h-28 w-auto rounded bg-white p-2"
           />
           <div className="h-px w-16 bg-parchment/20 sm:h-20 sm:w-px" />
           <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer" className="transition hover:opacity-75">

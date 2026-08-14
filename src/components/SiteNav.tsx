@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -80,10 +81,15 @@ export default function SiteNav() {
       <header className="theme-nav fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.12)]">
         <div className="section-pad mx-auto flex h-20 max-w-[1500px] items-center justify-between">
           <Link href="/" className="group">
-            <div className="display text-[1.9rem] tracking-tight text-parchment transition-colors group-hover:text-terracotta">
-              UCCAC
-            </div>
-            <div className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-terracotta">
+            <Image
+              src="/uccac-wordmark.png"
+              alt="UCCAC"
+              width={700}
+              height={332}
+              priority
+              className="h-10 w-auto transition-opacity group-hover:opacity-80"
+            />
+            <div className="mt-1 text-[0.75rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-terracotta">
               Union County Community Arts Council
             </div>
           </Link>
