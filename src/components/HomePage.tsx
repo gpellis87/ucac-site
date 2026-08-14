@@ -116,7 +116,7 @@ export default function HomePage({
               style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
               Art lives<br />
-              <span className="text-navy">here.</span>
+              <span className="text-white">here.</span>
             </motion.h1>
 
             <motion.p
@@ -134,7 +134,7 @@ export default function HomePage({
               transition={{ delay: 0.66, duration: 0.6 }}
               className="mt-8 grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap"
             >
-              <Link href="/exhibits" className="accent-btn col-span-2 md:col-auto">View Exhibitions</Link>
+              <Link href="/exhibits" className="accent-btn col-span-2 ring-1 ring-inset ring-white/50 md:col-auto">View Exhibitions</Link>
               <Link href="/support" className="inline-flex items-center justify-center gap-2 whitespace-nowrap border border-white/45 bg-black/30 px-3 py-3 text-xs font-semibold uppercase tracking-[0.06em] text-white transition duration-300 hover:-translate-y-[1px] hover:border-white hover:bg-white hover:text-[#1b1612] md:px-6 md:text-sm md:tracking-[0.14em]">
                 <Heart size={13} /> Support
               </Link>

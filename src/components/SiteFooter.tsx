@@ -7,7 +7,7 @@ export default function SiteFooter() {
     <footer className="theme-band border-t border-parchment/20 py-16 text-parchment">
       <div className="section-pad mx-auto grid max-w-[1500px] gap-10 md:grid-cols-3">
         <div>
-          <div className="display text-4xl text-parchment mb-3">UCCAC</div>
+          <Image src="/uccac-wordmark.png" alt="UCCAC" width={700} height={332} className="mb-3 h-9 w-auto" />
           <p className="max-w-xs text-sm text-parchment/75">
             Union County Community Arts Council champions creative expression through education, exhibitions, and community projects.
           </p>
@@ -54,9 +54,9 @@ export default function SiteFooter() {
           <Image
             src="/sponsors/uccac-logo.png"
             alt="Union County Community Arts Council"
-            width={420}
-            height={420}
-            className="h-28 w-auto rounded bg-white p-2"
+            width={700}
+            height={554}
+            className="h-28 w-auto"
           />
           <div className="h-px w-16 bg-parchment/20 sm:h-20 sm:w-px" />
           <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer" className="transition hover:opacity-75">
