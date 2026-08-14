@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const statusColors: Record<string, string> = {
   "now-on-view":
-    "border border-navy bg-navy text-white shadow-[0_10px_20px_rgba(23, 63, 115, 0.28)]",
+    "border border-navy bg-navy text-white shadow-[0_10px_20px_rgba(23,63,115,0.28)]",
   "opening-soon":
     "border border-[#f1dfbf] bg-[#f4e8d3] text-[#201914] shadow-[0_10px_20px_rgba(0,0,0,0.18)]",
   "call-for-artists":
@@ -78,10 +78,10 @@ export default async function ExhibitPage({ params }: Props) {
             className="object-cover"
           />
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(23, 63, 115, 0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(23,63,115,0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.9)] via-[rgb(var(--theme-overlay)_/_0.58)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(23, 63, 115, 0.18),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(23,63,115,0.18),transparent_50%)]" />
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-10 lg:px-16 xl:px-24">
           <div className="mx-auto max-w-[1500px]">

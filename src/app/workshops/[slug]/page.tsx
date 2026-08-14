@@ -63,7 +63,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
             className="object-cover"
           />
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(23, 63, 115, 0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(23,63,115,0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.9)] via-[rgb(var(--theme-overlay)_/_0.58)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
 

@@ -22,7 +22,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           ) : (
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(23, 63, 115, 0.25),transparent_60%),linear-gradient(135deg,#1a1612,#2b241d)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(23,63,115,0.25),transparent_60%),linear-gradient(135deg,#1a1612,#2b241d)]" />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
           {workshop.category && (
