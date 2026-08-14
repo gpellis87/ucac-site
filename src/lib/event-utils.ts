@@ -1,12 +1,13 @@
 import { EventCategory, UccacEvent } from "@/data/events";
 
-// Filled category chip per brand color. Navy/Purple are dark fills (white
-// text); Olive/Orange/Teal only clear AA contrast as light fills (dark
-// text) -- see the palette accessibility review for the underlying ratios.
+// Filled category chip per brand color -- pairing (white vs. charcoal text)
+// follows whichever clears AA against that specific fill; see the palette
+// accessibility review for the underlying ratios. Teal darkened enough in
+// the artwork-matched recalibration that it now needs white, not charcoal.
 export const eventCategoryStyle: Record<EventCategory, string> = {
   Workshop: "bg-navy text-white",
   Gala: "bg-purple text-white",
-  Exhibition: "bg-teal text-charcoal",
+  Exhibition: "bg-teal text-white",
   "Community Event": "bg-olive text-charcoal",
   Performance: "bg-orange text-charcoal",
 };

@@ -40,7 +40,7 @@ export default function NewHomePage() {
 
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23,63,115,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(12,44,92,0.18),transparent_55%)]" />
         <div className="section-pad relative py-20">
           <div className="mx-auto max-w-[1500px]">
             <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Announcement</p>

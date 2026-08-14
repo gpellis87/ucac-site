@@ -96,12 +96,12 @@ export default function SiteNav() {
                 file's own per-letter treatment -- brand/logotype text is WCAG-exempt from
                 the contrast minimum that applies to body text, and sizing it up here keeps
                 it close to the "large text" bar anyway. */}
-            <span className="font-logo sr-only text-[0.8rem] font-light uppercase leading-[1.3] tracking-[0.14em] text-navy sm:not-sr-only sm:block">
+            <span className="font-logo sr-only text-[0.8rem] font-semibold uppercase leading-[1.3] tracking-[0.14em] text-navy sm:not-sr-only sm:block">
               Union County
               <br />
               Community
               <br />
-              <span className="font-semibold">
+              <span>
                 <span className="text-olive">A</span>
                 <span className="text-orange">r</span>
                 <span className="text-teal">t</span>
@@ -152,7 +152,7 @@ export default function SiteNav() {
             transition={{ duration: reduceMotion ? 0 : 0.35, ease: "easeOut" }}
             className="theme-drawer fixed inset-0 z-[70]"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(23,63,115,0.18),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(245,240,235,0.07),transparent_45%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(12,44,92,0.18),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(245,240,235,0.07),transparent_45%)]" />
             <div className="relative flex h-full flex-col justify-between p-8">
               <div className="flex justify-end">
                 <button ref={closeButtonRef} type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="border border-parchment/30 p-2 text-parchment">

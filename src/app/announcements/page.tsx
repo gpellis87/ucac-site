@@ -38,7 +38,7 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
   return (
     <section id={announcement.slug} className="scroll-mt-28">
       <div className="relative overflow-hidden border border-parchment/15 bg-parchment/[0.04] p-8 md:p-12">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23,63,115,0.08),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(12,44,92,0.08),transparent_60%)]" />
         <div className="relative">
           <div className="flex flex-wrap items-center gap-3 mb-4">
             {announcement.eyebrow && (
@@ -155,7 +155,7 @@ export default async function AnnouncementsPage() {
 
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23,63,115,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(12,44,92,0.18),transparent_55%)]" />
         <div className="section-pad relative py-16">
           <div className="mx-auto max-w-[1500px]">
             <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">From the Arts Council</p>

@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <div className="pb-24">
       <SectionReveal className="section-pad relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(23,63,115,0.28),transparent_35%),radial-gradient(circle_at_85%_15%,rgba(103,115,136,0.3),transparent_45%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(12,44,92,0.28),transparent_35%),radial-gradient(circle_at_85%_15%,rgba(103,115,136,0.3),transparent_45%)]" />
         <div className="relative mx-auto max-w-[1500px]">
           <h1 className="editorial-title max-w-4xl text-5xl md:text-8xl">
             Rooted in community. Driven by art.

@@ -29,7 +29,7 @@ export default function DonatePageClient() {
   return (
     <div className="pb-24">
       <SectionReveal className="section-pad relative overflow-hidden py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(23,63,115,0.32),transparent_35%),linear-gradient(180deg,#1a1a1a,rgba(26,26,26,0.45))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(12,44,92,0.32),transparent_35%),linear-gradient(180deg,#1a1a1a,rgba(26,26,26,0.45))]" />
         <div className="relative mx-auto max-w-[1500px]">
           <h1 className="editorial-title max-w-4xl text-5xl md:text-8xl">Your support keeps art alive.</h1>
         </div>

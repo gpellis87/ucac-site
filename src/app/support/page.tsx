@@ -49,7 +49,7 @@ export default function SupportPage() {
   return (
     <div className="pb-24">
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23,63,115,0.16),transparent_55%),linear-gradient(180deg,rgba(245,240,235,0.05),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(12,44,92,0.16),transparent_55%),linear-gradient(180deg,rgba(245,240,235,0.05),transparent_60%)]" />
         <div className="section-pad relative py-16 md:py-20">
           <div className="mx-auto max-w-[1500px]">
             <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Support UCCAC</p>
@@ -163,7 +163,7 @@ export default function SupportPage() {
             </div>
 
             <div className="relative flex flex-col overflow-hidden border border-navy/35 bg-parchment/[0.04] p-8 md:p-10">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(23,63,115,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(12,44,92,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
               <div className="relative flex flex-1 flex-col">
                 <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Grants</p>
                 <h3 className="display mt-3 text-3xl text-parchment md:min-h-[4.5rem]">
@@ -229,7 +229,7 @@ export default function SupportPage() {
 
             <div className="space-y-5">
               <div className="relative overflow-hidden border border-navy/40 bg-parchment/[0.045] p-8">
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(23,63,115,0.18),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.03),transparent)]" />
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(12,44,92,0.18),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.03),transparent)]" />
                 <div className="relative z-10">
                   <p className="text-[0.75rem] uppercase tracking-[0.2em] text-navy">Limited Time Offer</p>
                   <p className="mt-3 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60">Founding Member</p>
@@ -313,7 +313,7 @@ export default function SupportPage() {
             </div>
 
             <div className="relative overflow-hidden border border-navy/35 bg-parchment/[0.045] p-8">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(23,63,115,0.12),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.03),transparent)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(12,44,92,0.12),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.03),transparent)]" />
               <div className="relative z-10">
                 <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Interest Form</p>
                 <h3 className="display mt-3 text-3xl text-parchment">Volunteer with UCCAC</h3>

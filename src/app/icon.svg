@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <!-- Navy background with slight rounding -->
-  <rect width="32" height="32" rx="5" fill="#173f73"/>
+  <rect width="32" height="32" rx="5" fill="#0c2c5c"/>
   <!-- Thin gold/cream horizontal rule -->
   <line x1="5" y1="20" x2="27" y2="20" stroke="#f5f0eb" stroke-width="1" opacity="0.5"/>
   <!-- UC letters -->

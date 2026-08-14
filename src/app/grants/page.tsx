@@ -16,7 +16,7 @@ function GrantEntry({ grant }: { grant: Grant }) {
   return (
     <section id={grant.slug} className="scroll-mt-28">
       <div className="relative overflow-hidden border border-navy/35 bg-parchment/[0.04] p-8 md:p-12">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(23,63,115,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(12,44,92,0.1),transparent_60%),linear-gradient(180deg,rgba(245,240,235,0.035),transparent)]" />
         <div className="relative">
           <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">{grant.eyebrow}</p>
           <h2 className="editorial-title mt-3 text-4xl leading-tight md:text-5xl">{grant.title}</h2>
@@ -75,7 +75,7 @@ export default function GrantsPage() {
     <div className="pb-24">
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23,63,115,0.18),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(12,44,92,0.18),transparent_55%)]" />
         <div className="section-pad relative py-16">
           <div className="mx-auto max-w-[1500px]">
             <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Grants Program</p>

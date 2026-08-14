@@ -78,7 +78,7 @@ export default function HomePage({
         {/* Left dark overlay — keeps hero text legible */}
         <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.72),rgba(18,14,11,0.38)_42%,transparent_64%)]" />
         {/* Colour accents */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(23,63,115,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(12,44,92,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
         {/* ── TEMPORARY: right fade to charcoal for moving announcement ── */}
         <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_30%,rgba(38,38,38,0.72)_54%,rgba(40,40,40,0.95)_70%,#282828_85%)]" />
         {/* ── END TEMPORARY ─────────────────────────────────────────────── */}
@@ -234,7 +234,7 @@ export default function HomePage({
                   }`}
                 >
                   {i === 0 && (
-                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(23,63,115,0.1),transparent_65%)]" />
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(12,44,92,0.1),transparent_65%)]" />
                   )}
                   {ann.contentImage && (
                     <div className="relative h-40 w-full shrink-0 overflow-hidden sm:h-44">
@@ -384,7 +384,7 @@ export default function HomePage({
         <div className="mx-auto max-w-[1500px]">
           <div className="relative overflow-hidden border border-parchment/15 bg-parchment/[0.045] p-10 text-center md:p-16">
             {/* Subtle navy glow */}
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(23,63,115,0.12),transparent_65%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(12,44,92,0.12),transparent_65%)]" />
             <div className="relative z-10">
               <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">Connect</p>
               <h2 className="display mt-2 text-4xl md:text-5xl">Get in Touch</h2>
