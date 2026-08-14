@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Workshop, registrationStatusLabel } from "@/data/workshops";
+import { sanityImg } from "@/sanity/image";
 import { isRegistrationDisabled, priceLabel, registrationStatusStyle } from "@/lib/workshop-utils";
 
 export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
@@ -14,7 +15,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
             // Decorative — the workshop title is already announced via the heading
             // below, within the same link, so a repeated alt would double-announce it.
             <Image
-              src={workshop.imageUrl}
+              src={sanityImg(workshop.imageUrl, { w: 800, h: 450, fit: "crop", hotspot: workshop.imageHotspot })}
               alt=""
               fill
               className="object-cover transition duration-700 group-hover:scale-105"

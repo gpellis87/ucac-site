@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, CalendarDays, MapPin, ShieldCheck, User } from "lucide-react";
 import { registrationStatusLabel, sessionTypeLabel } from "@/data/workshops";
 import { getWorkshopBySlug, getWorkshopSlugs } from "@/sanity/queries";
+import { sanityImg } from "@/sanity/image";
 import { isRegistrationDisabled, priceLabel, registrationStatusStyle } from "@/lib/workshop-utils";
 
 export const revalidate = 60;
@@ -54,7 +55,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
       <div className="relative h-[42vh] max-h-[520px] min-h-[300px] overflow-hidden">
         {workshop.imageUrl ? (
           <Image
-            src={workshop.imageUrl}
+            src={sanityImg(workshop.imageUrl, { w: 1600, h: 520, fit: "crop", hotspot: workshop.imageHotspot })}
             alt={workshop.title}
             fill
             priority

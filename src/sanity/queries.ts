@@ -188,6 +188,7 @@ const WORKSHOP_FIELDS = `
   "registrationStatus": coalesce(registrationStatus, "open"),
   zeffyUrl,
   "imageUrl": image.asset->url,
+  "imageHotspot": image.hotspot,
   description,
   overview,
   instructorBio

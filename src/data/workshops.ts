@@ -18,6 +18,7 @@ export interface Workshop {
   registrationStatus: RegistrationStatus;
   zeffyUrl: string | null;
   imageUrl: string | null;
+  imageHotspot: { x: number; y: number } | null;
   description: string | null;
   overview: string | null;
   instructorBio: string | null;
