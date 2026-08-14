@@ -18,6 +18,7 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-display)", "serif"],
         sans: ["var(--font-sans)", "sans-serif"],
+        logo: ["var(--font-logo)", "Arial", "sans-serif"],
       },
       boxShadow: {
         glow: "0 15px 45px rgba(23, 63, 115, 0.25)",

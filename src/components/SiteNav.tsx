@@ -80,18 +80,26 @@ export default function SiteNav() {
     <>
       <header className="theme-nav fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.12)]">
         <div className="section-pad mx-auto flex h-20 max-w-[1500px] items-center justify-between">
-          <Link href="/" className="group">
+          <Link href="/" className="group flex items-center gap-3">
             <Image
               src="/uccac-wordmark.png"
               alt="UCCAC"
               width={700}
               height={332}
               priority
-              className="h-10 w-auto transition-opacity group-hover:opacity-80"
+              className="h-9 w-auto transition-opacity group-hover:opacity-80"
             />
-            <div className="mt-1 text-[0.75rem] uppercase tracking-[0.22em] text-parchment/85 transition-colors group-hover:text-navy">
-              Union County Community Arts Council
-            </div>
+            <span aria-hidden="true" className="hidden h-8 w-px bg-navy/25 sm:block" />
+            {/* Visually hidden below sm (the wordmark alone carries the brand there) but
+                still announced to screen readers at every size, since it's the nav's only
+                spelled-out org name on mobile. */}
+            <span className="font-logo sr-only text-[0.62rem] font-light uppercase leading-[1.35] tracking-[0.16em] text-navy sm:not-sr-only sm:block">
+              Union County
+              <br />
+              Community
+              <br />
+              <span className="font-semibold">Arts Council</span>
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">

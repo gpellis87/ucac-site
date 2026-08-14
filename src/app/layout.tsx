@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { DM_Sans, DM_Serif_Display, Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
@@ -14,6 +14,15 @@ const sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["400", "500", "700"],
+});
+
+// Matches the wordmark logo's own type spec (Montserrat Light body,
+// SemiBold for "Arts Council") so the nav tagline reads as one lockup
+// with the logo instead of the site's default sans.
+const logoType = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-logo",
+  weight: ["300", "600"],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${display.variable} ${sans.variable} grain`}>
+      <body className={`${display.variable} ${sans.variable} ${logoType.variable} grain`}>
         <ClientLayout>{children}</ClientLayout>
         <Script
           defer
