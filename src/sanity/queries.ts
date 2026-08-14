@@ -184,6 +184,7 @@ const WORKSHOP_FIELDS = `
   location,
   price,
   memberPrice,
+  materialsCost,
   "registrationStatus": coalesce(registrationStatus, "open"),
   zeffyUrl,
   "imageUrl": image.asset->url,

@@ -56,6 +56,9 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
           {workshop.memberPrice != null && (
             <span className="text-xs text-parchment/60">Members {priceLabel(workshop.memberPrice)}</span>
           )}
+          {workshop.materialsCost != null && (
+            <span className="text-xs text-parchment/60">+ {priceLabel(workshop.materialsCost)} materials</span>
+          )}
         </div>
         {disabled ? (
           <span className="text-[0.75rem] uppercase tracking-[0.16em] text-parchment/60">

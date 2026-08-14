@@ -14,6 +14,7 @@ export interface Workshop {
   location: string | null;
   price: number;
   memberPrice: number | null;
+  materialsCost: number | null;
   registrationStatus: RegistrationStatus;
   zeffyUrl: string | null;
   imageUrl: string | null;
