@@ -87,18 +87,26 @@ export default function SiteNav() {
               width={700}
               height={332}
               priority
-              className="h-9 w-auto transition-opacity group-hover:opacity-80"
+              className="h-11 w-auto transition-opacity group-hover:opacity-80"
             />
-            <span aria-hidden="true" className="hidden h-8 w-px bg-navy/25 sm:block" />
+            <span aria-hidden="true" className="hidden h-10 w-px bg-navy/25 sm:block" />
             {/* Visually hidden below sm (the wordmark alone carries the brand there) but
                 still announced to screen readers at every size, since it's the nav's only
-                spelled-out org name on mobile. */}
-            <span className="font-logo sr-only text-[0.62rem] font-light uppercase leading-[1.35] tracking-[0.16em] text-navy sm:not-sr-only sm:block">
+                spelled-out org name on mobile. The colored "Arts" letters mirror the logo
+                file's own per-letter treatment -- brand/logotype text is WCAG-exempt from
+                the contrast minimum that applies to body text, and sizing it up here keeps
+                it close to the "large text" bar anyway. */}
+            <span className="font-logo sr-only text-[0.8rem] font-light uppercase leading-[1.3] tracking-[0.14em] text-navy sm:not-sr-only sm:block">
               Union County
               <br />
               Community
               <br />
-              <span className="font-semibold">Arts Council</span>
+              <span className="font-semibold">
+                <span className="text-olive">A</span>
+                <span className="text-orange">r</span>
+                <span className="text-teal">t</span>
+                <span className="text-purple">s</span> Council
+              </span>
             </span>
           </Link>
 
