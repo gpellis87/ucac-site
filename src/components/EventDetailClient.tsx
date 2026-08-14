@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Copy, CalendarPlus, Share2, X } from "lucide-react";
 import { UccacEvent, events } from "@/data/events";
 import EventCard from "@/components/EventCard";
-import { buildGoogleCalendarLink, formatEventDate } from "@/lib/event-utils";
+import { buildGoogleCalendarLink, eventCategoryStyle, formatEventDate } from "@/lib/event-utils";
 
 export default function EventDetailClient({ event }: { event: UccacEvent }) {
   const [showRsvp, setShowRsvp] = useState(false);
@@ -88,7 +88,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
         <div className="section-pad absolute inset-x-0 bottom-0 pb-10">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-4 flex flex-wrap gap-2 text-xs uppercase tracking-[0.14em]">
-              <span className="bg-navy px-3 py-1 text-white">{event.category}</span>
+              <span className={`px-3 py-1 font-semibold ${eventCategoryStyle[event.category]}`}>{event.category}</span>
               <span className="theme-chip px-3 py-1 text-parchment">{formatEventDate(event.date)}</span>
               <span className="theme-chip px-3 py-1 text-parchment">{event.time}</span>
               <span className="theme-chip px-3 py-1 text-parchment">{event.location}</span>

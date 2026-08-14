@@ -1,4 +1,25 @@
-import { UccacEvent } from "@/data/events";
+import { EventCategory, UccacEvent } from "@/data/events";
+
+// Filled category chip per brand color. Navy/Purple are dark fills (white
+// text); Olive/Orange/Teal only clear AA contrast as light fills (dark
+// text) -- see the palette accessibility review for the underlying ratios.
+export const eventCategoryStyle: Record<EventCategory, string> = {
+  Workshop: "bg-navy text-white",
+  Gala: "bg-purple text-white",
+  Exhibition: "bg-teal text-charcoal",
+  "Community Event": "bg-olive text-charcoal",
+  Performance: "bg-orange text-charcoal",
+};
+
+// Border-only accent for tight spaces (calendar day cells) -- decorative,
+// so it can use Olive/Orange/Teal even where they'd fail as text color.
+export const eventCategoryBorder: Record<EventCategory, string> = {
+  Workshop: "border-navy",
+  Gala: "border-purple",
+  Exhibition: "border-teal",
+  "Community Event": "border-olive",
+  Performance: "border-orange",
+};
 
 export function formatEventDate(dateString: string): string {
   return new Date(dateString).toLocaleDateString("en-US", {

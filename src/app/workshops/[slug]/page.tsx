@@ -52,44 +52,45 @@ export default async function WorkshopDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="relative h-[42vh] max-h-[520px] min-h-[300px] overflow-hidden">
-        {workshop.imageUrl ? (
-          <Image
-            src={sanityImg(workshop.imageUrl, { w: 1600, h: 520, fit: "crop", hotspot: workshop.imageHotspot })}
-            alt={workshop.title}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(23,63,115,0.3),transparent_55%),linear-gradient(135deg,#1a1612,#2b241d_60%,#1a1a2e)]" />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--theme-overlay)_/_0.9)] via-[rgb(var(--theme-overlay)_/_0.58)] to-[rgb(var(--theme-overlay)_/_0.08)]" />
-
-        <div className="absolute inset-x-0 bottom-0 px-5 pb-10 md:px-10 lg:px-16 xl:px-24">
-          <div className="mx-auto max-w-[1500px]">
-            <div className="flex flex-wrap gap-2">
-              {workshop.category && (
-                <span className="border border-white/30 bg-black/45 px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-sm">
-                  {workshop.category}
-                </span>
-              )}
-              <span
-                className={`border px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${registrationStatusStyle[workshop.registrationStatus]}`}
-              >
-                {registrationStatusLabel[workshop.registrationStatus]}
+      <div className="section-pad pt-10 md:pt-14">
+        <div className="mx-auto max-w-[1500px]">
+          <div className="flex flex-wrap gap-2">
+            {workshop.category && (
+              <span className="theme-chip px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-navy">
+                {workshop.category}
               </span>
-            </div>
-            <h1 className="editorial-title on-image mt-3 max-w-4xl text-4xl leading-[0.93] md:text-6xl lg:text-[5.5rem]">
-              {workshop.title}
-            </h1>
-            {workshop.instructor && (
-              <p className="mt-4 text-base text-parchment/85">with {workshop.instructor}</p>
             )}
+            <span
+              className={`border px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] ${registrationStatusStyle[workshop.registrationStatus]}`}
+            >
+              {registrationStatusLabel[workshop.registrationStatus]}
+            </span>
           </div>
+          <h1 className="editorial-title mt-4 max-w-4xl text-4xl leading-[0.95] md:text-6xl lg:text-7xl">
+            {workshop.title}
+          </h1>
+          {workshop.instructor && (
+            <p className="mt-4 text-base text-parchment/85">with {workshop.instructor}</p>
+          )}
         </div>
       </div>
+
+      {workshop.imageUrl && (
+        <div className="section-pad mt-8 md:mt-10">
+          <div className="mx-auto max-w-[1500px]">
+            <div className="relative aspect-video w-full overflow-hidden">
+              <Image
+                src={sanityImg(workshop.imageUrl, { w: 1600, h: 900, fit: "crop", hotspot: workshop.imageHotspot })}
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="flex-1 px-5 py-14 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[1.55fr_1fr] lg:gap-16">

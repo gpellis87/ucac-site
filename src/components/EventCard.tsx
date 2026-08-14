@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { UccacEvent } from "@/data/events";
-import { formatEventDate } from "@/lib/event-utils";
+import { eventCategoryStyle, formatEventDate } from "@/lib/event-utils";
 
 export default function EventCard({ event }: { event: UccacEvent }) {
   return (
@@ -20,7 +20,9 @@ export default function EventCard({ event }: { event: UccacEvent }) {
           sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-        <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.75rem] uppercase tracking-[0.16em] text-navy">
+        <div
+          className={`absolute left-4 top-4 px-3 py-1 text-[0.75rem] font-semibold uppercase tracking-[0.16em] ${eventCategoryStyle[event.category]}`}
+        >
           {event.category}
         </div>
       </div>

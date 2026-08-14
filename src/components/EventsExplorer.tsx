@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, LayoutGrid, CalendarDays } from "lucide-reac
 import { motion, AnimatePresence } from "framer-motion";
 import EventCard from "@/components/EventCard";
 import { events, eventCategories, EventCategory } from "@/data/events";
-import { monthLabel } from "@/lib/event-utils";
+import { eventCategoryBorder, eventCategoryStyle, monthLabel } from "@/lib/event-utils";
 
 type ViewMode = "calendar" | "cards";
 type FilterMode = "All" | EventCategory;
@@ -56,7 +56,9 @@ export default function EventsExplorer() {
                 aria-pressed={filter === category}
                 className={`border px-4 py-2 text-xs uppercase tracking-[0.14em] transition ${
                   filter === category
-                    ? "border-navy bg-navy text-white"
+                    ? category === "All"
+                      ? "border-navy bg-navy text-white"
+                      : `border-transparent ${eventCategoryStyle[category]}`
                     : "border-parchment/30 text-parchment/80 hover:border-navy"
                 }`}
               >
@@ -142,7 +144,7 @@ export default function EventsExplorer() {
                         <Link
                           key={event.id}
                           href={`/events/${event.slug}`}
-                          className="block truncate border-l-2 border-navy pl-2 text-[0.75rem] text-parchment/85 hover:text-navy"
+                          className={`block truncate border-l-2 pl-2 text-[0.75rem] text-parchment/85 hover:text-navy ${eventCategoryBorder[event.category]}`}
                         >
                           {event.title}
                         </Link>
