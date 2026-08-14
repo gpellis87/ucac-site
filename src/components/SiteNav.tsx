@@ -80,23 +80,22 @@ export default function SiteNav() {
     <>
       <header className="theme-nav fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl shadow-[0_8px_28px_rgba(0,0,0,0.12)]">
         <div className="section-pad mx-auto flex h-20 max-w-[1500px] items-center justify-between">
-          <Link href="/" className="group flex items-center gap-3">
+          <Link href="/" className="group flex items-center gap-2 sm:gap-3">
             <Image
               src="/uccac-wordmark.png"
               alt="UCCAC"
               width={700}
               height={332}
               priority
-              className="h-11 w-auto transition-opacity group-hover:opacity-80"
+              className="h-8 w-auto shrink-0 transition-opacity group-hover:opacity-80 sm:h-11"
             />
-            <span aria-hidden="true" className="hidden h-10 w-px bg-navy/25 sm:block" />
-            {/* Visually hidden below sm (the wordmark alone carries the brand there) but
-                still announced to screen readers at every size, since it's the nav's only
-                spelled-out org name on mobile. The colored "Arts" letters mirror the logo
-                file's own per-letter treatment -- brand/logotype text is WCAG-exempt from
-                the contrast minimum that applies to body text, and sizing it up here keeps
-                it close to the "large text" bar anyway. */}
-            <span className="font-logo sr-only text-[0.8rem] font-semibold uppercase leading-[1.3] tracking-[0.14em] text-navy sm:not-sr-only sm:block">
+            <span aria-hidden="true" className="h-7 w-px shrink-0 bg-navy/25 sm:h-10" />
+            {/* The colored "Arts" letters mirror the logo file's own per-letter treatment --
+                brand/logotype text is WCAG-exempt from the contrast minimum that applies to
+                body text, and sizing it up from sm: keeps it close to the "large text" bar
+                anyway. Shrunk (not hidden) below sm so the org name stays on-screen on phones
+                too, not just announced to screen readers. */}
+            <span className="font-logo whitespace-nowrap text-[0.48rem] font-semibold uppercase leading-[1.25] tracking-[0.06em] text-navy sm:text-[0.8rem] sm:leading-[1.3] sm:tracking-[0.14em]">
               Union County
               <br />
               Community
