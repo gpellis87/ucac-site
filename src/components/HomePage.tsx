@@ -379,6 +379,9 @@ export default function HomePage({
         </div>
       </SectionReveal>
 
+      {/* ── Sponsors ─────────────────────────────────────────────────── */}
+      <SponsorsStrip />
+
       {/* ── Connect CTA ──────────────────────────────────────────────── */}
       <SectionReveal className="section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
@@ -409,9 +412,6 @@ export default function HomePage({
           </div>
         </div>
       </SectionReveal>
-
-      {/* ── Sponsors ─────────────────────────────────────────────────── */}
-      <SponsorsStrip />
 
     </div>
   );

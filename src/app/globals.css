@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --bg: #f6f1ea;
-  --surface: #2b241d;
+  --bg: #f7f7f8;
+  --surface: #232326;
   --accent: #0c2c5c;
   --slate: #677388;
   --slate-deep: #2a3240;
-  --theme-bg: 246 241 234;
-  --theme-bg-alt: 237 227 216;
-  --theme-surface: 255 252 248;
-  --theme-surface-soft: 248 242 235;
+  --theme-bg: 247 247 248;
+  --theme-bg-alt: 237 238 240;
+  --theme-surface: 255 255 255;
+  --theme-surface-soft: 244 244 246;
   --theme-surface-strong: 255 255 255;
-  --theme-text: 43 36 29;
-  --theme-text-muted: 88 74 60;
-  --theme-border: 116 96 79;
-  --theme-nav: 246 241 234;
-  --theme-overlay: 43 36 29;
+  --theme-text: 35 35 38;
+  --theme-text-muted: 82 84 90;
+  --theme-border: 100 102 110;
+  --theme-nav: 247 247 248;
+  --theme-overlay: 35 35 38;
 }
 
 * {

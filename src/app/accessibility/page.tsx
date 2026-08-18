@@ -40,7 +40,7 @@ export default function AccessibilityPage() {
             everyone, including people who use assistive technology such as screen readers,
             screen magnification, voice recognition software, or keyboard-only navigation.
           </p>
-          <p className="mt-3 text-sm text-parchment/60">Last updated August 5, 2026</p>
+          <p className="mt-3 text-sm text-parchment/60">Last updated August 18, 2026</p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
         </div>
       </SectionReveal>

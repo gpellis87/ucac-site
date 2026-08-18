@@ -24,12 +24,6 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
           ) : (
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(12,44,92,0.25),transparent_60%),linear-gradient(135deg,#1a1612,#2b241d)]" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-          {workshop.category && (
-            <div className="theme-chip absolute left-4 top-4 px-3 py-1 text-[0.75rem] uppercase tracking-[0.16em] text-navy">
-              {workshop.category}
-            </div>
-          )}
           <div
             className={`absolute right-4 top-4 border px-3 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm ${registrationStatusStyle[workshop.registrationStatus]}`}
           >

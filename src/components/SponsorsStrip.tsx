@@ -19,12 +19,36 @@ const sponsors = [
 
 export default function SponsorsStrip() {
   return (
-    <SectionReveal className="theme-band section-pad py-14">
+    <SectionReveal className="bg-white section-pad py-14">
       <div className="mx-auto max-w-[1500px]">
         <p className="mb-8 text-center text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">
           Supported By
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <a
+          href="https://www.ncarts.org/"
+          target="_blank"
+          rel="noreferrer"
+          title="North Carolina Arts Council"
+          className="mx-auto mb-8 flex h-[92px] w-[220px] items-center justify-center transition duration-200 hover:opacity-75"
+        >
+          <Image
+            src="/sponsors/nc-arts-council.png"
+            alt="North Carolina Arts Council"
+            width={280}
+            height={112}
+            className="h-full w-full object-contain"
+          />
+        </a>
+        <div className="mb-8 flex justify-center">
+          <Image
+            src="/sponsors/ucps-logo.png"
+            alt="Union County Public Schools"
+            width={900}
+            height={333}
+            className="h-[92px] w-auto object-contain"
+          />
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
           {sponsors.map(({ name, file, href, imgClass }) => (
             <a
               key={name}
@@ -32,7 +56,7 @@ export default function SponsorsStrip() {
               target="_blank"
               rel="noreferrer"
               title={name}
-              className="theme-panel-strong flex h-[76px] w-[144px] items-center justify-center rounded-xl p-4 shadow-md transition duration-200 hover:opacity-75"
+              className="flex h-14 w-32 items-center justify-center transition duration-200 hover:opacity-70"
             >
               <Image
                 src={`/sponsors/${file}`}

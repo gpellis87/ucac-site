@@ -32,9 +32,9 @@ export default function ContactPageClient() {
             </div>
             <p className="text-lg font-medium text-parchment">UCCAC Gallery</p>
             <p className="mt-1 text-sm text-parchment/70 leading-relaxed">
-              300 North Hayne Street<br />
+              300 N Hayne St<br />
               Monroe, NC 28112<br />
-              PO Box 576
+              PO Box 576, Monroe, NC 28111
             </p>
             <a
               href="https://maps.google.com/?q=300+North+Hayne+Street+Monroe+NC+28112"

@@ -38,9 +38,8 @@ export default function SiteFooter() {
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Contact</p>
           <div className="mt-3 space-y-2 text-sm text-parchment/85">
             <div>
-              <p>300 North Hayne Street</p>
-              <p>PO Box 576</p>
-              <p>Monroe, NC 28112</p>
+              <p>300 N Hayne St, Monroe, NC 28112</p>
+              <p>PO Box 576, Monroe, NC 28111</p>
             </div>
             <p>(704) 283-2784</p>
             <p>info@unionarts.org</p>
