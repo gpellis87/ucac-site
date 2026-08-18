@@ -283,7 +283,7 @@ export default function HomePage({
       )}
 
       {/* ── Current Exhibitions ───────────────────────────────────────── */}
-      <SectionReveal id="exhibitions" className="section-pad py-20">
+      <SectionReveal id="exhibitions" className="bg-white section-pad py-20">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-2 flex items-end justify-between gap-4">
             <div>
@@ -308,7 +308,7 @@ export default function HomePage({
 
       {/* ── Recently Closed ──────────────────────────────────────────── */}
       {recentlyClosed && (
-        <SectionReveal className="section-pad pb-20">
+        <SectionReveal className="bg-white section-pad pb-20">
           <div className="mx-auto max-w-[1500px]">
             <div className="mb-6 flex items-center gap-4">
               <p className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">Recently Closed</p>
