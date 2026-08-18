@@ -72,13 +72,13 @@ export default function SponsorsStrip() {
             target="_blank"
             rel="noreferrer"
             title="North Carolina Arts Council"
-            className="flex h-24 w-56 items-center justify-center transition duration-200 hover:opacity-75"
+            className="flex h-40 w-64 items-center justify-center transition duration-200 hover:opacity-75"
           >
             <Image
               src="/sponsors/nc-arts-council.png"
               alt="North Carolina Arts Council"
-              width={280}
-              height={112}
+              width={504}
+              height={352}
               className="h-full w-full object-contain"
             />
           </a>
