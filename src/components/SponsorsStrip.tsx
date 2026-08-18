@@ -66,21 +66,26 @@ export default function SponsorsStrip() {
         <p className="text-center text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">
           Supported By
         </p>
-        <a
-          href="https://www.ncarts.org/"
-          target="_blank"
-          rel="noreferrer"
-          title="North Carolina Arts Council"
-          className="mx-auto flex h-[92px] w-[220px] items-center justify-center transition duration-200 hover:opacity-75"
-        >
-          <Image
-            src="/sponsors/nc-arts-council.png"
-            alt="North Carolina Arts Council"
-            width={280}
-            height={112}
-            className="h-full w-full object-contain"
-          />
-        </a>
+        <div className="flex flex-col items-center gap-3">
+          <a
+            href="https://www.ncarts.org/"
+            target="_blank"
+            rel="noreferrer"
+            title="North Carolina Arts Council"
+            className="flex h-24 w-56 items-center justify-center transition duration-200 hover:opacity-75"
+          >
+            <Image
+              src="/sponsors/nc-arts-council.png"
+              alt="North Carolina Arts Council"
+              width={280}
+              height={112}
+              className="h-full w-full object-contain"
+            />
+          </a>
+          <p className="max-w-xs text-center text-xs leading-relaxed text-parchment/60">
+            Supported by the North Carolina Arts Council, a division of the Department of Natural &amp; Cultural Resources.
+          </p>
+        </div>
         <LogoRow logos={govRow} tileClass="h-20 w-44" imgWidth={220} imgHeight={80} />
         <LogoRow logos={businessRow} tileClass="h-14 w-32" imgWidth={160} imgHeight={64} />
         <LogoRow logos={localRow} tileClass="h-14 w-32" imgWidth={160} imgHeight={64} />

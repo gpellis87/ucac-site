@@ -49,7 +49,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="section-pad mx-auto mt-12 max-w-[1500px] border-t border-parchment/20 pt-8">
-        <div className="mb-6 flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-center sm:gap-8">
+        <div className="mb-6 flex justify-center">
           <Image
             src="/sponsors/uccac-logo.png"
             alt="Union County Community Arts Council"
@@ -57,19 +57,6 @@ export default function SiteFooter() {
             height={554}
             className="h-28 w-auto"
           />
-          <div className="h-px w-16 bg-parchment/20 sm:h-20 sm:w-px" />
-          <a href="https://www.ncarts.org/" target="_blank" rel="noreferrer" className="transition hover:opacity-75">
-            <Image
-              src="/sponsors/nc-arts-council.png"
-              alt="North Carolina Arts Council"
-              width={280}
-              height={112}
-              className="h-28 w-auto object-contain"
-            />
-          </a>
-          <p className="max-w-xs text-xs text-parchment/60 leading-relaxed sm:text-left">
-            Supported by the North Carolina Arts Council, a division of the Department of Natural &amp; Cultural Resources.
-          </p>
         </div>
         <div className="text-center">
           <p className="text-xs text-parchment/60">Union County Community Arts Council is a 501(c)(3) nonprofit organization.</p>
