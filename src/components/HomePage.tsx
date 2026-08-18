@@ -56,7 +56,7 @@ export default function HomePage({
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[600px] items-center overflow-hidden py-20 lg:h-[90vh] lg:max-h-[860px]">
+      <section className="section-pad relative flex min-h-[520px] items-center overflow-hidden py-20 lg:h-[64vh] lg:min-h-[460px] lg:max-h-[620px]">
 
         {/* Full-width background image */}
         <motion.div
