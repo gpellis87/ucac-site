@@ -18,9 +18,11 @@ const businessRow = [
 ];
 
 const localRow = [
-  { name: "Helms Heating & Air",  file: "helms.jpg",     href: "https://www.helmsheating.com/",   imgClass: "mix-blend-multiply" },
-  { name: "Lawrence Associates",  file: "lawrence.png",  href: "http://lawrencesurveying.com/",   imgClass: "invert" },
-  { name: "Wingate University",   file: "wingate.png",   href: "https://www.wingate.edu/",        imgClass: "mix-blend-multiply" },
+  { name: "South Piedmont Community College", file: "south-piedmont-cc.png", href: "https://www.spcc.edu/",           imgClass: "" },
+  { name: "Helms Heating & Air",              file: "helms.jpg",             href: "https://www.helmsheating.com/",   imgClass: "mix-blend-multiply" },
+  { name: "Lawrence Associates",              file: "lawrence.png",          href: "http://lawrencesurveying.com/",   imgClass: "invert" },
+  { name: "Wingate University",               file: "wingate.png",           href: "https://www.wingate.edu/",        imgClass: "mix-blend-multiply" },
+  { name: "Sell Ethics Marketing Group",      file: "sell-ethics.png",       href: "https://www.sellethics.com/",     imgClass: "mix-blend-multiply" },
 ];
 
 function LogoRow({
