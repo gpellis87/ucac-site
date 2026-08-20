@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Facebook, ChevronDown, Heart } from "lucide-react";
+import { Facebook, Instagram, ChevronDown, Heart } from "lucide-react";
 
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
@@ -406,6 +406,14 @@ export default function HomePage({
                   className="ghost-btn inline-flex items-center gap-2"
                 >
                   <Facebook size={14} /> Follow on Facebook
+                </a>
+                <a
+                  href="https://www.instagram.com/unioncountycommunityarts/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="ghost-btn inline-flex items-center gap-2"
+                >
+                  <Instagram size={14} /> Follow on Instagram
                 </a>
               </div>
             </div>

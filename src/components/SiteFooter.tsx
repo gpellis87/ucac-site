@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 export default function SiteFooter() {
   return (
@@ -11,15 +11,26 @@ export default function SiteFooter() {
           <p className="max-w-xs text-sm text-parchment/75">
             Union County Community Arts Council champions creative expression through education, exhibitions, and community projects.
           </p>
-          <a
-            href="https://www.facebook.com/profile.php?id=61574355290119"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Facebook"
-            className="mt-4 inline-flex items-center gap-2 border border-parchment/30 px-3 py-2 text-xs uppercase tracking-[0.14em] transition hover:border-navy hover:text-navy"
-          >
-            <Facebook size={14} /> Facebook
-          </a>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a
+              href="https://www.facebook.com/profile.php?id=61574355290119"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="inline-flex items-center gap-2 border border-parchment/30 px-3 py-2 text-xs uppercase tracking-[0.14em] transition hover:border-navy hover:text-navy"
+            >
+              <Facebook size={14} /> Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/unioncountycommunityarts/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="inline-flex items-center gap-2 border border-parchment/30 px-3 py-2 text-xs uppercase tracking-[0.14em] transition hover:border-navy hover:text-navy"
+            >
+              <Instagram size={14} /> Instagram
+            </a>
+          </div>
         </div>
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Quick Links</p>

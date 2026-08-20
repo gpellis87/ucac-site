@@ -86,6 +86,15 @@ export default function NewHomePage() {
                 >
                   Facebook
                 </a>{" "}
+                or{" "}
+                <a
+                  href="https://www.instagram.com/unioncountycommunityarts/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-navy hover:underline"
+                >
+                  Instagram
+                </a>{" "}
                 for behind-the-scenes updates as the journey unfolds.
               </p>
               <p>
@@ -121,16 +130,26 @@ export default function NewHomePage() {
               <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
                 <p className="text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60 mb-3">Stay Updated</p>
                 <p className="text-sm text-parchment/65 leading-relaxed">
-                  Follow us on Facebook for behind-the-scenes glimpses, progress updates, and opening announcements.
+                  Follow us on Facebook or Instagram for behind-the-scenes glimpses, progress updates, and opening announcements.
                 </p>
-                <a
-                  href="https://www.facebook.com/profile.php?id=61574355290119"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-block border border-parchment/30 px-4 py-2 text-[0.75rem] uppercase tracking-[0.14em] text-parchment/70 transition hover:border-navy hover:text-parchment"
-                >
-                  Follow on Facebook
-                </a>
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61574355290119"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block border border-parchment/30 px-4 py-2 text-[0.75rem] uppercase tracking-[0.14em] text-parchment/70 transition hover:border-navy hover:text-parchment"
+                  >
+                    Follow on Facebook
+                  </a>
+                  <a
+                    href="https://www.instagram.com/unioncountycommunityarts/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block border border-parchment/30 px-4 py-2 text-[0.75rem] uppercase tracking-[0.14em] text-parchment/70 transition hover:border-navy hover:text-parchment"
+                  >
+                    Follow on Instagram
+                  </a>
+                </div>
               </div>
             </div>
 
