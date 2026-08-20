@@ -25,6 +25,31 @@ const localRow = [
   { name: "Sell Ethics Marketing Group",      file: "sell-ethics.png",       href: "https://www.sellethics.com/",     imgClass: "mix-blend-multiply" },
 ];
 
+// Individual & family donors, in order of contribution level (not alphabetical).
+const individualDonors = [
+  "Ben & Carol Williams",
+  "Tony Wright",
+  "Mike Baucom",
+  "Paul D'Amico",
+  "Wesley Faulk",
+  "Billy Norwood",
+  "Marc Gustafson",
+  "Tracy Price",
+  "Robert Forquer",
+  "Denise White",
+  "George Howard",
+  "Horner Family",
+  "Monroe Civitan Club",
+  "Mike Lee",
+  "Robald Brown",
+  "John Faulk",
+  "Margaret Pigg",
+  "David Rogers",
+  "Candice Sturdivant",
+  "Zandi Watts",
+  "Caroline Hoefferle",
+];
+
 function LogoRow({
   logos,
   tileClass,
@@ -91,6 +116,17 @@ export default function SponsorsStrip() {
         <LogoRow logos={govRow} tileClass="h-20 w-44" imgWidth={220} imgHeight={80} />
         <LogoRow logos={businessRow} tileClass="h-14 w-32" imgWidth={160} imgHeight={64} />
         <LogoRow logos={localRow} tileClass="h-14 w-32" imgWidth={160} imgHeight={64} />
+
+        <div className="mx-auto max-w-2xl border-t border-parchment/15 pt-10">
+          <p className="mb-6 text-center text-[0.75rem] uppercase tracking-[0.22em] text-parchment/60">
+            With Gratitude to Our Individual &amp; Family Donors
+          </p>
+          <ul className="grid grid-cols-1 gap-x-8 gap-y-2 text-center text-sm text-parchment/80 sm:grid-cols-2 md:grid-cols-3">
+            {individualDonors.map((name) => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </SectionReveal>
   );
