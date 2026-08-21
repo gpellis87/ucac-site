@@ -217,7 +217,7 @@ export default function HomePage({
 
       {/* ── Classes ──────────────────────────────────────────────────── */}
       {workshops.length > 0 && (
-        <SectionReveal className="bg-white section-pad py-20">
+        <SectionReveal className="bg-white section-pad py-12">
           <ClassesCarousel workshops={workshops} />
         </SectionReveal>
       )}
