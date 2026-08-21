@@ -33,8 +33,8 @@ function CompactClassCard({ workshop }: { workshop: Workshop }) {
         )}
       </div>
       <div className="space-y-1.5 p-4">
-        <p className="text-[0.68rem] uppercase tracking-[0.12em] text-parchment/60">{workshop.scheduleText}</p>
-        <h3 className="display text-lg leading-tight text-parchment transition group-hover:text-navy line-clamp-2">
+        <p className="line-clamp-1 text-[0.68rem] uppercase tracking-[0.12em] text-parchment/60">{workshop.scheduleText}</p>
+        <h3 className="display h-[2.8rem] text-lg leading-tight text-parchment transition group-hover:text-navy line-clamp-2">
           {workshop.title}
         </h3>
         <div className="flex items-center justify-between pt-1">
@@ -81,11 +81,8 @@ export default function ClassesCarousel({ workshops }: { workshops: Workshop[] }
 
   return (
     <div className="mx-auto max-w-[1500px]">
-      <div className="mb-2 flex items-end justify-between gap-4">
-        <div>
-          <p className="text-[0.75rem] uppercase tracking-[0.2em] text-navy">Hands-On &amp; Upcoming</p>
-          <h2 className="display mt-2 text-3xl text-parchment md:text-4xl">Classes</h2>
-        </div>
+      <div className="mb-4 flex items-center justify-between gap-4">
+        <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Upcoming Classes</p>
         <div className="flex shrink-0 items-center gap-3">
           <div className="hidden items-center gap-2 sm:flex">
             <button
@@ -105,12 +102,14 @@ export default function ClassesCarousel({ workshops }: { workshops: Workshop[] }
               <ChevronRight size={15} />
             </button>
           </div>
-          <Link href="/workshops" className="link-underline hidden text-sm uppercase tracking-[0.15em] md:block">
-            View all
+          <Link
+            href="/workshops"
+            className="text-[0.75rem] uppercase tracking-[0.16em] text-parchment/60 transition hover:text-parchment/65"
+          >
+            View all →
           </Link>
         </div>
       </div>
-      <div className="mt-3 mb-6 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
 
       <div
         ref={scrollerRef}

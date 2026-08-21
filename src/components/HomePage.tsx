@@ -60,7 +60,7 @@ export default function HomePage({
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[520px] items-center overflow-hidden py-20 lg:h-[64vh] lg:min-h-[460px] lg:max-h-[620px]">
+      <section className="section-pad relative flex min-h-[460px] items-center overflow-hidden py-16 lg:h-[52vh] lg:min-h-[400px] lg:max-h-[520px]">
 
         {/* Full-width background image */}
         <motion.div
@@ -207,7 +207,7 @@ export default function HomePage({
 
       {/* ── Classes ──────────────────────────────────────────────────── */}
       {workshops.length > 0 && (
-        <SectionReveal className="bg-white section-pad py-12">
+        <SectionReveal className="bg-white section-pad py-8">
           <ClassesCarousel workshops={workshops} />
         </SectionReveal>
       )}
