@@ -192,17 +192,7 @@ export default function HomePage({
           transition={{ delay: 1.1, duration: 0.7 }}
           className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-[rgb(var(--theme-nav)_/_0.54)] backdrop-blur-sm"
         >
-          <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-between gap-4 py-3">
-            <a href="#exhibitions" className="group flex items-center gap-3 shrink-0 transition hover:opacity-80">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-navy opacity-60" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-navy" />
-              </span>
-              <span className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/70 group-hover:text-parchment/90 transition">
-                {exhibits.length} Exhibitions On View &amp; Upcoming
-              </span>
-            </a>
-
+          <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-center gap-4 py-3">
             <motion.div
               animate={{ y: [0, 4, 0] }}
               transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
