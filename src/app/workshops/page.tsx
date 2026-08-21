@@ -8,7 +8,7 @@ import { getWorkshops } from "@/sanity/queries";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Classes & Workshops",
+  title: "Classes",
   description:
     "Browse upcoming classes and workshops at the Union County Community Arts Council — pottery, painting, and more for all skill levels.",
   robots: { index: false, follow: false },
@@ -23,7 +23,7 @@ export default async function WorkshopsPage() {
         <div className="mx-auto max-w-[1500px]">
           <p className="text-[0.75rem] uppercase tracking-[0.22em] text-navy">UCCAC Studio · Monroe, NC</p>
           <h1 className="editorial-title mt-3 text-5xl leading-[0.93] md:text-7xl lg:text-[5.5rem]">
-            Classes &amp; Workshops
+            Classes
           </h1>
           <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
             Hands-on classes taught by local artists, right here at the Arts Council. New sessions are added

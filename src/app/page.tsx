@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import HomePage from "@/components/HomePage";
-import { getExhibits, getMostRecentArchivedExhibit, getAnnouncements } from "@/sanity/queries";
+import { getExhibits, getMostRecentArchivedExhibit, getAnnouncements, getWorkshops } from "@/sanity/queries";
 
 export const revalidate = 60;
 
@@ -10,10 +10,18 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const [exhibits, recentlyClosed, announcements] = await Promise.all([
+  const [exhibits, recentlyClosed, announcements, workshops] = await Promise.all([
     getExhibits(),
     getMostRecentArchivedExhibit(),
     getAnnouncements(),
+    getWorkshops(),
   ]);
-  return <HomePage exhibits={exhibits} recentlyClosed={recentlyClosed} announcements={announcements} />;
+  return (
+    <HomePage
+      exhibits={exhibits}
+      recentlyClosed={recentlyClosed}
+      announcements={announcements}
+      workshops={workshops}
+    />
+  );
 }

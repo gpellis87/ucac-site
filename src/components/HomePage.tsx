@@ -9,7 +9,9 @@ import { Facebook, Instagram, ChevronDown, Heart } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
 import ExhibitCard from "@/components/ExhibitCard";
 import SponsorsStrip from "@/components/SponsorsStrip";
+import ClassesCarousel from "@/components/ClassesCarousel";
 import type { Exhibit } from "@/data/exhibits";
+import type { Workshop } from "@/data/workshops";
 import type { Announcement } from "@/sanity/queries";
 import { sanityImg } from "@/sanity/image";
 
@@ -48,10 +50,12 @@ export default function HomePage({
   exhibits,
   recentlyClosed,
   announcements,
+  workshops,
 }: {
   exhibits: Exhibit[];
   recentlyClosed: Exhibit | null;
   announcements: Announcement[];
+  workshops: Workshop[];
 }) {
   return (
     <div>
@@ -210,6 +214,13 @@ export default function HomePage({
         </motion.div>
 
       </section>
+
+      {/* ── Classes ──────────────────────────────────────────────────── */}
+      {workshops.length > 0 && (
+        <SectionReveal className="bg-white section-pad py-20">
+          <ClassesCarousel workshops={workshops} />
+        </SectionReveal>
+      )}
 
       {/* ── Announcements ────────────────────────────────────────────── */}
       {announcements.length > 0 && (

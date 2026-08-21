@@ -47,7 +47,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
             className="inline-flex items-center gap-2 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />
-            All Classes &amp; Workshops
+            All Classes
           </Link>
         </div>
       </div>

@@ -12,10 +12,11 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
 // separate "Home" entry here would be a redundant adjacent link to the
 // same destination for keyboard/screen reader users.
 const links = [
-  { href: "/exhibits",    label: "Exhibitions" },
-  { href: "/artists",     label: "Artists" },
-  { href: "/support",     label: "Support" },
+  { href: "/workshops",   label: "Classes" },
   { href: "/grants",      label: "Grants" },
+  { href: "/artists",     label: "Artists" },
+  { href: "/exhibits",    label: "Exhibitions" },
+  { href: "/support",     label: "Support" },
   { href: "/contact",     label: "Contact" },
 ];
 
