@@ -193,11 +193,21 @@ const WORKSHOP_FIELDS = `
   instructorBio
 `;
 
+// startDate is a plain "YYYY-MM-DD" string with no timezone info, so the
+// cutoff needs to be computed the same way -- today's date in the studio's
+// own timezone, not read via UTC (which could roll it back or forward a
+// day depending on the server's clock, the same class of bug fixed in the
+// Month filter on the workshops page).
+function todayInStudioTimezone(): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+}
+
 export async function getWorkshops(): Promise<Workshop[]> {
   const client = getClient();
   if (!client) return [];
   return client.fetch<Workshop[]>(
-    `*[_type == "workshop"] | order(startDate asc) { ${WORKSHOP_FIELDS} }`
+    `*[_type == "workshop" && startDate >= $today] | order(startDate asc) { ${WORKSHOP_FIELDS} }`,
+    { today: todayInStudioTimezone() }
   );
 }
 
