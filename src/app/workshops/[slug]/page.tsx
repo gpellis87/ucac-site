@@ -55,11 +55,6 @@ export default async function WorkshopDetailPage({ params }: Props) {
       <div className="section-pad pt-10 md:pt-14">
         <div className="mx-auto max-w-[1500px]">
           <div className="flex flex-wrap gap-2">
-            {workshop.category && (
-              <span className="theme-chip px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-navy">
-                {workshop.category}
-              </span>
-            )}
             <span
               className={`border px-4 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.16em] ${registrationStatusStyle[workshop.registrationStatus]}`}
             >

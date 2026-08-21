@@ -10,12 +10,15 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
   return (
     <div className="group overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-navy/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]">
       <Link href={`/workshops/${workshop.slug}`} className="block">
-        <div className="relative h-56 overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden">
           {workshop.imageUrl ? (
             // Decorative — the workshop title is already announced via the heading
             // below, within the same link, so a repeated alt would double-announce it.
+            // Requested crop matches the container's aspect-[4/3] exactly, so the
+            // hotspot-focused crop Sanity returns is what renders -- no second,
+            // unpredictable crop from object-cover fighting a mismatched container ratio.
             <Image
-              src={sanityImg(workshop.imageUrl, { w: 800, h: 450, fit: "crop", hotspot: workshop.imageHotspot })}
+              src={sanityImg(workshop.imageUrl, { w: 800, h: 600, fit: "crop", hotspot: workshop.imageHotspot })}
               alt=""
               fill
               className="object-cover transition duration-700 group-hover:scale-105"

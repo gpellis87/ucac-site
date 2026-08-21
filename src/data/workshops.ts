@@ -6,7 +6,6 @@ export interface Workshop {
   slug: string;
   title: string;
   instructor: string | null;
-  category: string | null;
   skillLevel: string | null;
   startDate: string;
   sessionType: SessionType | null;

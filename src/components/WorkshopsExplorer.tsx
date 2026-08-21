@@ -4,18 +4,28 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import WorkshopCard from "@/components/WorkshopCard";
-import { SessionType, Workshop, sessionTypeLabel } from "@/data/workshops";
+import { Workshop } from "@/data/workshops";
 
 const ALL = "All";
 type Filter = typeof ALL | string;
 
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+// startDate is a plain "YYYY-MM-DD" string. Parsing that with `new Date(...)`
+// reads it as UTC midnight, so formatting it back out in a local timezone
+// behind UTC (e.g. US Eastern) can roll it back a day -- enough to push a
+// December 1st class into the November bucket. Read the components
+// directly instead of going through Date/timezone conversion at all.
 function monthKey(dateString: string): string {
-  const d = new Date(dateString);
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+  return dateString.slice(0, 7);
 }
 
 function monthLabel(dateString: string): string {
-  return new Date(dateString).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  const [year, month] = dateString.split("-").map(Number);
+  return `${MONTH_NAMES[month - 1]} ${year}`;
 }
 
 function FilterDropdown({
@@ -52,14 +62,7 @@ function FilterDropdown({
 }
 
 export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[] }) {
-  const [category, setCategory] = useState<Filter>(ALL);
-  const [length, setLength] = useState<Filter>(ALL);
   const [month, setMonth] = useState<Filter>(ALL);
-
-  const categories = useMemo(
-    () => Array.from(new Set(workshops.map((w) => w.category).filter((c): c is string => Boolean(c)))),
-    [workshops]
-  );
 
   const months = useMemo(() => {
     const seen = new Map<string, string>();
@@ -71,14 +74,7 @@ export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[]
       .map(([key, label]) => ({ key, label }));
   }, [workshops]);
 
-  const lengths = useMemo(
-    () => Array.from(new Set(workshops.map((w) => w.sessionType).filter((s): s is SessionType => Boolean(s)))),
-    [workshops]
-  );
-
   const filtered = workshops.filter((w) => {
-    if (category !== ALL && w.category !== category) return false;
-    if (length !== ALL && w.sessionType !== length) return false;
     if (month !== ALL && monthKey(w.startDate) !== month) return false;
     return true;
   });
@@ -87,23 +83,6 @@ export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[]
     <div>
       <h2 className="sr-only">Browse Classes &amp; Workshops</h2>
       <div className="theme-panel mb-10 flex flex-wrap gap-3 border p-5">
-        <FilterDropdown
-          label="Medium"
-          value={category}
-          onChange={setCategory}
-          options={[{ value: ALL, label: "All" }, ...categories.map((c) => ({ value: c, label: c }))]}
-        />
-        {lengths.length > 0 && (
-          <FilterDropdown
-            label="Workshop Length"
-            value={length}
-            onChange={setLength}
-            options={[
-              { value: ALL, label: "All" },
-              ...lengths.map((l) => ({ value: l, label: sessionTypeLabel[l] })),
-            ]}
-          />
-        )}
         {months.length > 0 && (
           <FilterDropdown
             label="Month"
@@ -116,7 +95,7 @@ export default function WorkshopsExplorer({ workshops }: { workshops: Workshop[]
 
       {filtered.length > 0 ? (
         <motion.div
-          key={`${category}-${length}-${month}`}
+          key={month}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}

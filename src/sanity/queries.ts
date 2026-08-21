@@ -176,7 +176,6 @@ const WORKSHOP_FIELDS = `
   "slug": slug.current,
   title,
   instructor,
-  category,
   skillLevel,
   startDate,
   sessionType,
