@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Facebook, Instagram, ChevronDown, Heart } from "lucide-react";
 
 import { SectionReveal } from "@/components/SectionReveal";
@@ -26,6 +27,57 @@ function AnnouncementCta({ cta }: { cta: { label: string; url: string } }) {
     <Link href={cta.url} className={cls}>
       {cta.label}
     </Link>
+  );
+}
+
+// On mobile the hero's content (headline + the "New Location" panel, which
+// stacks below it instead of beside it) runs taller than one screen, so the
+// bounce chevron pinned to the hero's own bottom edge sits below the fold --
+// useless as a "there's more below" hint since you'd have to scroll to see
+// it. This floats independently of the hero's height, fades out once
+// scrolled past it, and jumps straight to the Classes section on tap.
+function MobileScrollHint() {
+  const [visible, setVisible] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const onScroll = () => setVisible(window.scrollY < 260);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // RouteTransition animates `filter: blur(...)` on every page's content,
+  // and even resolved to blur(0px) that establishes a new containing block
+  // for `position: fixed` descendants -- so a fixed element declared inside
+  // the page tree ends up positioned relative to that wrapper instead of
+  // the viewport. Portal straight to <body> to sidestep it entirely.
+  if (!mounted) return null;
+
+  return createPortal(
+    <div
+      style={{ pointerEvents: visible ? "auto" : "none" }}
+      className="fixed inset-x-0 bottom-5 z-40 flex justify-center md:hidden"
+    >
+      <motion.button
+        type="button"
+        aria-label="Scroll down for more"
+        onClick={() => document.getElementById("classes")?.scrollIntoView({ behavior: "smooth" })}
+        animate={{ opacity: visible ? 1 : 0 }}
+        transition={{ duration: 0.25 }}
+        className="flex h-10 w-10 items-center justify-center rounded-full border border-parchment/25 bg-[rgb(var(--theme-overlay)_/_0.55)] backdrop-blur-sm"
+      >
+        <motion.span
+          animate={{ y: [0, 4, 0] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          className="flex"
+        >
+          <ChevronDown size={18} className="text-parchment" />
+        </motion.span>
+      </motion.button>
+    </div>,
+    document.body
   );
 }
 
@@ -60,7 +112,7 @@ export default function HomePage({
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[460px] items-center overflow-hidden py-16 lg:h-[52vh] lg:min-h-[400px] lg:max-h-[520px]">
+      <section className="section-pad relative flex min-h-[460px] items-center overflow-hidden py-16 lg:h-[57vh] lg:min-h-[420px] lg:max-h-[560px]">
 
         {/* Full-width background image */}
         <motion.div
@@ -185,29 +237,18 @@ export default function HomePage({
 
         </div>
 
-        {/* Bottom bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 0.7 }}
-          className="absolute bottom-0 inset-x-0 border-t border-parchment/15 bg-[rgb(var(--theme-nav)_/_0.54)] backdrop-blur-sm"
-        >
-          <div className="section-pad mx-auto flex w-full max-w-[1500px] items-center justify-center gap-4 py-3">
-            <motion.div
-              animate={{ y: [0, 4, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-              className="shrink-0"
-            >
-              <ChevronDown size={15} className="text-navy/60" />
-            </motion.div>
-          </div>
-        </motion.div>
-
       </section>
+
+      {/* Mobile-only floating scroll hint -- on mobile the stacked hero
+          content can run taller than the viewport, so a plain scroll-hint
+          bar pinned to the hero's own bottom edge would sit below the fold.
+          On desktop the next section is already visibly peeking into view,
+          so no indicator is needed there. */}
+      <MobileScrollHint />
 
       {/* ── Classes ──────────────────────────────────────────────────── */}
       {workshops.length > 0 && (
-        <SectionReveal className="bg-white section-pad py-8">
+        <SectionReveal id="classes" className="bg-white section-pad py-8">
           <ClassesCarousel workshops={workshops} />
         </SectionReveal>
       )}
