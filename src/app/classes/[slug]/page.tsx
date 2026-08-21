@@ -43,7 +43,7 @@ export default async function WorkshopDetailPage({ params }: Props) {
       <div className="section-pad border-b border-parchment/10 px-5 py-3 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto max-w-[1500px]">
           <Link
-            href="/workshops"
+            href="/classes"
             className="inline-flex items-center gap-2 text-[0.75rem] uppercase tracking-[0.18em] text-parchment/60 transition hover:text-parchment"
           >
             <ArrowLeft size={13} />

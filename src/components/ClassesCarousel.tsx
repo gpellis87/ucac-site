@@ -16,7 +16,7 @@ const AUTO_SCROLL_MS = 3500;
 function CompactClassCard({ workshop }: { workshop: Workshop }) {
   return (
     <Link
-      href={`/workshops/${workshop.slug}`}
+      href={`/classes/${workshop.slug}`}
       className="group block overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1 hover:border-navy/70"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -103,7 +103,7 @@ export default function ClassesCarousel({ workshops }: { workshops: Workshop[] }
             </button>
           </div>
           <Link
-            href="/workshops"
+            href="/classes"
             className="text-[0.75rem] uppercase tracking-[0.16em] text-parchment/60 transition hover:text-parchment/65"
           >
             View all →
@@ -126,7 +126,7 @@ export default function ClassesCarousel({ workshops }: { workshops: Workshop[] }
       </div>
 
       <div className="mt-6 text-center md:hidden">
-        <Link href="/workshops" className="ghost-btn inline-flex px-5 py-2.5 text-xs">
+        <Link href="/classes" className="ghost-btn inline-flex px-5 py-2.5 text-xs">
           View All Classes
         </Link>
       </div>

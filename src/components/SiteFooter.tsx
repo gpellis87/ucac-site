@@ -36,7 +36,7 @@ export default function SiteFooter() {
           <p className="text-xs uppercase tracking-[0.2em] text-parchment/70">Quick Links</p>
           <div className="mt-3 flex flex-col gap-2 text-sm">
             <Link href="/" className="text-parchment/80 transition hover:text-parchment">Home</Link>
-            <Link href="/workshops" className="text-parchment/80 transition hover:text-parchment">Classes</Link>
+            <Link href="/classes" className="text-parchment/80 transition hover:text-parchment">Classes</Link>
             <Link href="/grants" className="text-parchment/80 transition hover:text-parchment">Grants</Link>
             <Link href="/artists" className="text-parchment/80 transition hover:text-parchment">Artists</Link>
             <Link href="/exhibits" className="text-parchment/80 transition hover:text-parchment">Exhibitions</Link>

@@ -9,7 +9,7 @@ export default function WorkshopCard({ workshop }: { workshop: Workshop }) {
 
   return (
     <div className="group overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-navy/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]">
-      <Link href={`/workshops/${workshop.slug}`} className="block">
+      <Link href={`/classes/${workshop.slug}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden">
           {workshop.imageUrl ? (
             // Decorative — the workshop title is already announced via the heading

@@ -124,7 +124,7 @@ export default function RegistrationPoliciesPage() {
 
           <div className="pt-2">
             <Link
-              href="/workshops"
+              href="/classes"
               className="inline-flex border border-parchment/20 px-4 py-3 text-xs uppercase tracking-[0.16em] text-parchment/80 transition hover:border-navy hover:text-navy"
             >
               Back to Classes
