@@ -166,6 +166,12 @@ export default async function WorkshopDetailPage({ params }: Props) {
               )}
 
               <div className="p-5">
+                <p className="text-sm font-medium text-parchment">
+                  All participants must be 18 years of age or older.
+                </p>
+              </div>
+
+              <div className="p-5">
                 <p className="mb-3 text-[0.75rem] font-semibold uppercase tracking-[0.18em] text-navy">
                   Class Fee
                 </p>

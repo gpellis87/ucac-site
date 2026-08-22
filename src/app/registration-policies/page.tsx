@@ -10,6 +10,10 @@ export const metadata: Metadata = {
 
 const sections = [
   {
+    title: "Age Requirement",
+    body: ["All participants must be 18 years of age or older."],
+  },
+  {
     title: "Student Withdrawal Policy",
     body: [
       "If you need to withdraw from a class, please notify us at least 14 days prior to the class start date. With sufficient notice, we can offer a refund minus a $20 processing fee.",

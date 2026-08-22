@@ -48,6 +48,7 @@ export default async function WorkshopsPage() {
                 Registration Policies
               </Link>{" "}
               for withdrawal, refund, and cancellation details.
+              <span className="mt-2 block text-parchment">All participants must be 18 years of age or older.</span>
             </p>
           </div>
 
