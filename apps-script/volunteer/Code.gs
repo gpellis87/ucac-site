@@ -34,7 +34,7 @@ const TIMEZONE = "America/New_York";
 // set the volunteer coordinator's real email (they're BCC'd on every
 // confirmation so they see new signups without keeping the Sheet open).
 const SITE_CANCEL_URL = "https://unionarts.org/api/volunteer/cancel";
-const COORDINATOR_EMAIL = "info@unionarts.org";
+const COORDINATOR_EMAIL = "alicia@unionarts.org";
 
 function doGet(e) {
   const action = ((e && e.parameter && e.parameter.action) || "list").toLowerCase();
