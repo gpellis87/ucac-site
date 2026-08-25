@@ -36,12 +36,6 @@ const TIMEZONE = "America/New_York";
 const SITE_CANCEL_URL = "https://unionarts.org/api/volunteer/cancel";
 const COORDINATOR_EMAIL = "alicia@unionarts.org";
 
-// Must be a verified "Send As" alias in the Gmail settings of whichever
-// Google account deployed this script (Settings > Accounts and Import >
-// "Send mail as") -- GmailApp.sendEmail's `from` option silently falls
-// back to the account's own address otherwise.
-const SENDER_EMAIL = "volunteers@unionarts.org";
-
 function doGet(e) {
   const action = ((e && e.parameter && e.parameter.action) || "list").toLowerCase();
   if (action === "cancel") {
@@ -217,15 +211,14 @@ function sendConfirmationEmail_(opportunityTitle, date, time, location, name, em
       "Thank you for volunteering with Union County Community Arts Council!"
     );
 
-    // GmailApp (not MailApp) is required to send from a custom address --
-    // it only works because SENDER_EMAIL is a verified "Send As" alias on
-    // the Google account that deployed this script. If that verification
-    // ever lapses, this throws and falls into the catch below, which
-    // silently swallows it (the signup itself already succeeded and was
-    // persisted before this function was called).
-    GmailApp.sendEmail(email, "You're signed up: " + opportunityTitle, lines.join("\n"), {
+    // MailApp always sends from whichever Google account deployed this
+    // script -- as long as that's volunteers@unionarts.org, this needs no
+    // `from` override at all (unlike the alias workaround this replaced).
+    MailApp.sendEmail({
+      to: email,
       bcc: COORDINATOR_EMAIL,
-      from: SENDER_EMAIL,
+      subject: "You're signed up: " + opportunityTitle,
+      body: lines.join("\n"),
       name: "Union County Community Arts Council",
     });
   } catch (err) {
