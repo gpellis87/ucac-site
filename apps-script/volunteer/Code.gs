@@ -216,6 +216,13 @@ function sendConfirmationEmail_(opportunityTitle, date, time, location, name, em
       bcc: COORDINATOR_EMAIL,
       subject: "You're signed up: " + opportunityTitle,
       body: lines.join("\n"),
+      // MailApp always sends from the Google account that deployed this
+      // script (there's no way to change the underlying address without a
+      // verified Gmail "Send As" alias, which would mean switching to
+      // GmailApp.sendEmail with a `from` option instead). Setting `name`
+      // at least replaces the raw account address with a friendly sender
+      // name in most email clients' display.
+      name: "Union County Community Arts Council",
     });
   } catch (err) {
     // The signup already succeeded and was persisted above -- a mail
