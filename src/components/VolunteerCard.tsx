@@ -63,9 +63,10 @@ export default function VolunteerCard({ opportunity }: { opportunity: VolunteerO
     <div className="group overflow-hidden border border-parchment/20 bg-parchment/[0.045] transition duration-300 hover:-translate-y-1.5 hover:border-navy/70 hover:shadow-[0_16px_34px_rgba(0,0,0,0.28)]">
       <div className="space-y-3 p-5">
         <div className="flex items-start justify-between gap-3">
-          <p className="text-xs uppercase tracking-[0.14em] text-parchment/70">
-            {formatVolunteerDate(opportunity.date)} · {opportunity.time} ET
-          </p>
+          <div className="text-xs uppercase tracking-[0.14em] text-parchment/70">
+            <p>{formatVolunteerDate(opportunity.date)}</p>
+            <p>{opportunity.time} ET</p>
+          </div>
           <span
             className={`shrink-0 border px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.14em] ${volunteerStatusStyle[full ? "full" : "open"]}`}
           >
