@@ -2,7 +2,12 @@ import { VolunteerOpportunity } from "@/data/volunteer";
 
 export const volunteerStatusStyle: Record<VolunteerOpportunity["status"], string> = {
   open: "border-navy bg-navy text-white shadow-[0_10px_20px_rgba(12,44,92,0.28)]",
-  full: "border-parchment/25 bg-[#2b241d]/90 text-parchment/70",
+  // Explicit text-white rather than text-parchment/70 -- globals.css force-
+  // remaps every text-parchment/* class to dark text site-wide (leftover
+  // from the light-theme conversion), which made this unreadable: dark
+  // badge background + forced-dark text. text-white isn't covered by that
+  // override, so it actually stays white.
+  full: "border-[#5b5b60] bg-[#5b5b60] text-white shadow-[0_10px_20px_rgba(0,0,0,0.24)]",
 };
 
 export function isVolunteerFull(opportunity: Pick<VolunteerOpportunity, "status" | "spotsAvailable">): boolean {
