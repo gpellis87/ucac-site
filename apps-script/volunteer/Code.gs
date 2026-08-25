@@ -212,7 +212,7 @@ function sendConfirmationEmail_(opportunityTitle, date, time, location, name, em
     );
 
     // MailApp always sends from whichever Google account deployed this
-    // script -- as long as that's volunteers@unionarts.org, this needs no
+    // script -- as long as that's volunteer@unionarts.org, this needs no
     // `from` override at all (unlike the alias workaround this replaced).
     MailApp.sendEmail({
       to: email,
