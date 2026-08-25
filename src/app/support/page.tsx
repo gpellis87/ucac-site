@@ -303,6 +303,13 @@ export default function SupportPage() {
                 events, education, behind-the-scenes support, or creative work, we would love to hear
                 where you can help.
               </p>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-parchment/60">
+                Looking for a specific upcoming shift instead of a general interest form?{" "}
+                <Link href="/volunteer" className="text-navy underline underline-offset-4 transition hover:text-parchment">
+                  See our current volunteer opportunities
+                </Link>
+                .
+              </p>
               <div className="mt-8 grid gap-3 md:grid-cols-2">
                 {volunteerAreas.map((area) => (
                   <div key={area} className="border border-parchment/10 bg-parchment/[0.03] px-4 py-3 text-sm text-parchment/80">

@@ -19,7 +19,7 @@ const measures = [
 ];
 
 const limitations = [
-  "Some content is embedded from third-party services — Google Maps, event registration and donation forms hosted by Zeffy, and Google Forms for class and volunteer sign-ups — which we don't control and which may not fully meet the same standard.",
+  "Some content is embedded from or powered by third-party services — Google Maps, event registration and donation forms hosted by Zeffy, a Google Form for general volunteer interest, and a Google Sheets-backed sign-up system for scheduled volunteer shifts — which we don't control and which may not fully meet the same standard.",
   "Some flyers and event materials are provided as PDFs. If you have trouble accessing one, contact us and we'll provide the information in another format.",
   "Exhibitions, events, classes, artist profiles, and other content are added and updated regularly by our staff. We aim for every new page to meet the same standard, and we welcome reports if something falls short.",
 ];
