@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { VolunteerOpportunity, volunteerStatusLabel } from "@/data/volunteer";
-import { isVolunteerFull, spotsLabel, volunteerStatusStyle } from "@/lib/volunteer-utils";
+import { formatVolunteerDate, isVolunteerFull, spotsLabel, volunteerStatusStyle } from "@/lib/volunteer-utils";
 
 const EMAIL_RE = /^\S+@\S+\.\S+$/;
 
@@ -64,7 +64,7 @@ export default function VolunteerCard({ opportunity }: { opportunity: VolunteerO
       <div className="space-y-3 p-5">
         <div className="flex items-start justify-between gap-3">
           <p className="text-xs uppercase tracking-[0.14em] text-parchment/70">
-            {opportunity.date} · {opportunity.time}
+            {formatVolunteerDate(opportunity.date)} · {opportunity.time} ET
           </p>
           <span
             className={`shrink-0 border px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.14em] ${volunteerStatusStyle[full ? "full" : "open"]}`}

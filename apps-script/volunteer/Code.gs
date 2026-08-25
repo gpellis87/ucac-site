@@ -200,7 +200,7 @@ function sendConfirmationEmail_(opportunityTitle, date, time, location, name, em
       "You're signed up to volunteer:",
       "",
       opportunityTitle,
-      date + (time ? " · " + time : ""),
+      formatDisplayDate_(date) + (time ? " · " + time + " ET" : ""),
     ];
     if (location) lines.push(location);
     lines.push(
@@ -297,4 +297,23 @@ function formatDate_(value) {
 
 function jsonOutput_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+// isoDate is "yyyy-MM-dd" (the same string formatDate_ produces). Building a
+// Date from numeric (year, month, day) components -- not parsing the string
+// directly -- reads it as local time, avoiding any UTC-midnight surprises.
+// Used only for the confirmation email; the site itself formats the ISO
+// string it receives independently, the same way.
+function formatDisplayDate_(isoDate) {
+  const parts = String(isoDate || "").split("-").map(Number);
+  if (parts.length !== 3 || parts.some(isNaN)) return isoDate;
+  const [year, month, day] = parts;
+  const dayName = DAY_NAMES[new Date(year, month - 1, day).getDay()];
+  return dayName + ", " + MONTH_NAMES[month - 1] + " " + day + ", " + year;
 }
