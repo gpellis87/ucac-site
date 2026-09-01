@@ -6,6 +6,7 @@ export type Grant = {
   body: string[];
   imageUrl?: string;
   applyUrl?: string;
+  guidelinesUrl?: string;
   zeffyUrl?: string;
   active: boolean;
 };
@@ -21,8 +22,9 @@ export const grants: Grant[] = [
       "The Union County Community Arts Council, in partnership with the North Carolina Arts Council, is proud to administer the Grassroots Arts Program grant. This initiative funds local nonprofits, government entities, and education groups dedicated to providing high-quality arts experiences for our residents. Whether you are hosting a community festival, bringing a teaching artist into a school, or staging a public theater production, this grant is designed to support your work.",
       "Download the guidelines and application form below to get started. Applications must be submitted by October 15 to be considered. Grantees will be notified by October 30, and accepted applicants will receive a contract that must be returned by November 13. Once the signed contract is returned, funding will be issued.",
     ],
-    imageUrl: "https://cdn.sanity.io/images/tqrjw75a/production/5637025033e3d4c9dc06044170fa789e30af418b-1200x526.png",
+    imageUrl: "https://cdn.sanity.io/images/tqrjw75a/production/feaecd44355143bda76e251d4d1c4f54cac4ec2b-1200x526.jpg",
     applyUrl: "https://docs.google.com/forms/d/1gmG39hlQYwir4iVeTtIn9rSmO5TwtcdOF8sRPC_Kxis/viewform",
+    guidelinesUrl: "https://docs.google.com/document/d/1SDju1GufPfE_5PSoWn73tw-DVRJZpvmLT0qgM3598sc/edit?tab=t.0",
     active: true,
   },
   {

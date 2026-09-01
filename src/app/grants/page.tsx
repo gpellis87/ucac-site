@@ -40,7 +40,22 @@ function GrantEntry({ grant }: { grant: Grant }) {
             ))}
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          {grant.guidelinesUrl && (
+            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-parchment/72">
+              For more information about Grassroots funding go to{" "}
+              <a
+                href={grant.guidelinesUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-navy hover:underline"
+              >
+                North Carolina Arts Council Grassroots Arts Program Subgranting Guidelines
+              </a>
+              .
+            </p>
+          )}
+
+          <div className={`${grant.guidelinesUrl ? "mt-4" : "mt-8"} flex flex-wrap items-center gap-3`}>
             {grant.applyUrl && (
               <a
                 href={grant.applyUrl}
