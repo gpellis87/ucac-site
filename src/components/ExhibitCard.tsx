@@ -11,7 +11,7 @@ const statusStyle: Record<string, string> = {
 export default function ExhibitCard({ exhibit, muted = false }: { exhibit: Exhibit; muted?: boolean }) {
   return (
     <Link
-      href={`/exhibits/${exhibit.slug}`}
+      href={`/exhibitions/${exhibit.slug}`}
       className={`group block overflow-hidden border transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_34px_rgba(0,0,0,0.35)] ${
         muted
           ? "border-parchment/10 bg-parchment/[0.035] hover:border-parchment/30"

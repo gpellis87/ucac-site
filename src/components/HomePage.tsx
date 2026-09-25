@@ -191,7 +191,7 @@ export default function HomePage({
               className="mt-8 grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap"
             >
               {exhibits.length > 0 ? (
-                <Link href="/exhibits" className="accent-btn col-span-2 ring-1 ring-inset ring-white/50 md:col-auto">View Exhibitions</Link>
+                <Link href="/exhibitions" className="accent-btn col-span-2 ring-1 ring-inset ring-white/50 md:col-auto">View Exhibitions</Link>
               ) : (
                 <Link href="/classes" className="accent-btn col-span-2 ring-1 ring-inset ring-white/50 md:col-auto">View Classes</Link>
               )}
@@ -336,7 +336,7 @@ export default function HomePage({
               <p className="text-[0.75rem] uppercase tracking-[0.2em] text-navy">On View Now &amp; Upcoming</p>
               <h2 className="display mt-2 text-4xl text-parchment md:text-5xl">Current Exhibitions</h2>
             </div>
-            <Link href="/exhibits" className="link-underline hidden text-sm uppercase tracking-[0.15em] md:block">
+            <Link href="/exhibitions" className="link-underline hidden text-sm uppercase tracking-[0.15em] md:block">
               View all
             </Link>
           </div>
@@ -347,7 +347,7 @@ export default function HomePage({
             ))}
           </div>
           <div className="mt-10 md:hidden text-center">
-            <Link href="/exhibits" className="ghost-btn px-5 py-2.5 text-xs">View All Exhibitions</Link>
+            <Link href="/exhibitions" className="ghost-btn px-5 py-2.5 text-xs">View All Exhibitions</Link>
           </div>
         </div>
       </SectionReveal>
@@ -361,7 +361,7 @@ export default function HomePage({
               <div className="h-px flex-1 bg-parchment/10" />
             </div>
             <Link
-              href={`/exhibits/${recentlyClosed.slug}`}
+              href={`/exhibitions/${recentlyClosed.slug}`}
               className="group flex flex-col overflow-hidden border border-parchment/10 bg-parchment/[0.035] transition duration-300 hover:border-parchment/25 sm:flex-row"
             >
               <div className="relative h-52 shrink-0 overflow-hidden sm:h-auto sm:w-72">

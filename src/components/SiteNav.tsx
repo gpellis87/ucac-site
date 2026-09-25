@@ -15,7 +15,7 @@ const links = [
   { href: "/classes",   label: "Classes" },
   { href: "/grants",      label: "Grants" },
   { href: "/artists",     label: "Artists" },
-  { href: "/exhibits",    label: "Exhibitions" },
+  { href: "/exhibitions",    label: "Exhibitions" },
   { href: "/support",     label: "Support" },
   { href: "/contact",     label: "Contact" },
 ];

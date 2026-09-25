@@ -4,6 +4,8 @@ const nextConfig = {
     return [
       { source: "/workshops", destination: "/classes", permanent: true },
       { source: "/workshops/:slug", destination: "/classes/:slug", permanent: true },
+      { source: "/exhibits", destination: "/exhibitions", permanent: true },
+      { source: "/exhibits/:slug", destination: "/exhibitions/:slug", permanent: true },
     ];
   },
   images: {
