@@ -206,15 +206,15 @@ export default function HomePage({
           </div>
         </div>
 
-        {/* Right: welcome panel */}
-        <div className="relative flex w-full flex-col justify-center bg-white px-6 py-14 sm:px-10 lg:w-[46%] lg:px-16">
+        {/* Right: welcome panel — right-aligned to match the mockup */}
+        <div className="relative flex w-full flex-col items-end justify-center bg-white px-6 py-14 text-right sm:px-10 lg:w-[46%] lg:px-16">
           <motion.h2
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="font-logo text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.05] text-[#173F73]"
           >
-            Welcome to the Community
+            Welcome<br />to the<br />Community
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
