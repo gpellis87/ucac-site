@@ -18,11 +18,14 @@ const sans = DM_Sans({
 
 // Matches the wordmark logo's own type spec (Montserrat Light body,
 // SemiBold for "Arts Council") so the nav tagline reads as one lockup
-// with the logo instead of the site's default sans.
+// with the logo instead of the site's default sans. Also used for the
+// homepage hero's brand-color "Welcome to the Community" copy, which
+// needed bold/italic weights added.
 const logoType = Montserrat({
   subsets: ["latin"],
   variable: "--font-logo",
-  weight: ["300", "600"],
+  weight: ["300", "400", "600", "700", "800"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {

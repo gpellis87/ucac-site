@@ -111,49 +111,50 @@ export default function HomePage({
 }) {
   return (
     <div>
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="section-pad relative flex min-h-[460px] items-center overflow-hidden py-16 lg:h-[57vh] lg:min-h-[420px] lg:max-h-[560px]">
+      {/* ───────────────────────────────────────────────────────────────
+          TEMPORARY: Grand-opening split hero (Nov 7 announcement).
+          Client asked to match a mockup for the opening: a photo panel
+          on the left + a plain white "Welcome to the Community" panel
+          on the right, in Montserrat and their brand navy/orange
+          (#173F73 / #E86A2A — deliberately not the site's --font-display
+          or tailwind navy/orange tokens, since this is scoped to this
+          announcement only). Replaces the previous full-bleed hero with
+          the "moving to a New Location" side panel; see git history to
+          revert once the opening has passed.
+      ─────────────────────────────────────────────────────────────── */}
+      <section className="relative flex flex-col overflow-hidden bg-white lg:min-h-[620px] lg:flex-row">
 
-        {/* Full-width background image */}
-        <motion.div
-          initial={{ scale: 1.08, opacity: 0.75 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.4, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <Image
-            src="/hero-mural.jpg"
-            alt="Mural at the Union County Community Arts Council"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center brightness-110"
+        {/* Left: photo panel */}
+        <div className="relative flex min-h-[460px] w-full items-end overflow-hidden lg:min-h-0 lg:w-[54%]">
+          <motion.div
+            initial={{ scale: 1.08, opacity: 0.75 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src="/hero-mural.jpg"
+              alt="Mural at the Union County Community Arts Council"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 54vw"
+              className="object-cover object-center brightness-110"
+            />
+          </motion.div>
+
+          {/* Dark scrim — keeps hero text legible over the photo */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
+
+          {/* Grain */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.055]"
+            style={{
+              backgroundImage: "radial-gradient(#ffffff 0.7px, transparent 0.7px)",
+              backgroundSize: "3px 3px",
+            }}
           />
-        </motion.div>
 
-        {/* Left dark overlay — keeps hero text legible */}
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(18,14,11,0.72),rgba(18,14,11,0.38)_42%,transparent_64%)]" />
-        {/* Colour accents */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_24%,rgba(12,44,92,0.34),transparent_36%),radial-gradient(circle_at_84%_18%,rgba(103,115,136,0.18),transparent_42%)]" />
-        {/* ── TEMPORARY: right fade to charcoal for moving announcement ── */}
-        <div className="absolute inset-0 hidden lg:block bg-[linear-gradient(to_right,transparent_30%,rgba(38,38,38,0.72)_54%,rgba(40,40,40,0.95)_70%,#282828_85%)]" />
-        {/* ── END TEMPORARY ─────────────────────────────────────────────── */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,248,241,0.06),rgba(0,0,0,0.18))]" />
-
-        {/* Grain */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.055]"
-          style={{
-            backgroundImage: "radial-gradient(#ffffff 0.7px, transparent 0.7px)",
-            backgroundSize: "3px 3px",
-          }}
-        />
-
-        {/* Content */}
-        <div className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-col items-center gap-8 lg:flex-row">
-
-          {/* Left: existing hero */}
-          <div className="flex-1 min-w-0">
+          <div className="relative z-10 w-full px-6 py-10 sm:px-10 sm:py-12 lg:px-12 lg:py-14">
 
             {/* Editorial rule */}
             <motion.div
@@ -161,25 +162,24 @@ export default function HomePage({
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
               style={{ originX: 0 }}
-              className="mb-6 h-px w-24 bg-navy"
+              className="mb-5 h-px w-24 bg-white/70"
             />
 
             <motion.h1
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.8 }}
-              className="max-w-2xl text-[clamp(3.5rem,7vw,8.5rem)] leading-[0.9] text-white [text-shadow:0_14px_38px_rgba(0,0,0,0.55)]"
+              className="max-w-xl text-[clamp(2.75rem,6vw,5.5rem)] leading-[0.92] text-white [text-shadow:0_14px_38px_rgba(0,0,0,0.55)]"
               style={{ fontFamily: "var(--font-display), Georgia, serif" }}
             >
-              Art lives<br />
-              <span className="text-white">here.</span>
+              Art lives<br />here.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.52, duration: 0.7 }}
-              className="mt-7 max-w-md text-base leading-relaxed text-white/90 [text-shadow:0_4px_18px_rgba(0,0,0,0.35)] md:text-lg"
+              className="mt-6 max-w-md text-sm leading-relaxed text-white/90 [text-shadow:0_4px_18px_rgba(0,0,0,0.35)] md:text-base"
             >
               Making a positive impact through the arts by serving students, supporting artists, and expanding cultural access across Union County.
             </motion.p>
@@ -188,7 +188,7 @@ export default function HomePage({
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.66, duration: 0.6 }}
-              className="mt-8 grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap"
+              className="mt-7 grid grid-cols-2 gap-3 md:flex md:flex-row md:flex-wrap"
             >
               {exhibits.length > 0 ? (
                 <Link href="/exhibitions" className="accent-btn col-span-2 ring-1 ring-inset ring-white/50 md:col-auto">View Exhibitions</Link>
@@ -204,42 +204,36 @@ export default function HomePage({
             </motion.div>
 
           </div>
-
-          {/* ───────────────────────────────────────────────────────────────
-              TEMPORARY MOVING ANNOUNCEMENT
-              Stacks below the main hero content on mobile/tablet (own
-              translucent panel for legibility, since the desktop right-fade
-              gradient above is lg-only), sits beside it as the original
-              side panel from lg up.
-              To revert: delete this aside block and the right-fade gradient
-              div above.
-          ─────────────────────────────────────────────────────────────── */}
-          <aside className="flex w-full shrink-0 flex-col items-center justify-center rounded-2xl border-t border-white/15 bg-black/35 px-6 py-8 text-center text-white backdrop-blur-[2px] lg:w-[40%] xl:w-[38%] lg:rounded-none lg:border-t-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
-            <motion.div
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="flex flex-col items-center gap-0"
-            >
-              <p className="text-[0.75rem] font-semibold uppercase tracking-[0.24em] text-white/55">
-                Union County Community Arts Council
-              </p>
-              <p className="mt-1 text-sm text-white/40">is moving to our</p>
-              <div className="mt-5 text-[2.4rem] font-bold leading-none tracking-tight text-white lg:text-[3.6rem] xl:text-[4.4rem]">
-                New Location
-              </div>
-              <p className="mt-3 text-base font-medium text-white/80 lg:text-lg">at 300 N Hayne St</p>
-              <div className="font-display mt-4 text-[1.7rem] italic leading-none text-white/85 lg:text-[2.1rem] xl:text-[2.5rem]">
-                Opening Fall 2026
-              </div>
-              <p className="mt-5 max-w-[220px] text-[0.78rem] leading-relaxed text-white/45">
-                Keep checking our website for updates or call us at 704.283.2784
-              </p>
-            </motion.div>
-          </aside>
-          {/* ─── END TEMPORARY MOVING ANNOUNCEMENT ────────────────────── */}
-
         </div>
+
+        {/* Right: welcome panel */}
+        <div className="relative flex w-full flex-col justify-center bg-white px-6 py-14 sm:px-10 lg:w-[46%] lg:px-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="font-logo text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.05] text-[#173F73]"
+          >
+            Welcome to the Community
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.46, duration: 0.7 }}
+            className="font-logo mt-6 text-[clamp(1.5rem,3vw,2.5rem)] italic text-[#E86A2A]"
+          >
+            Celebrating Creativity
+          </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="font-logo mt-6 max-w-md text-lg text-[#1a1a1a] sm:text-xl"
+          >
+            Our doors open <strong>November&nbsp;7th</strong> and you are invited!
+          </motion.p>
+        </div>
+        {/* ─── END TEMPORARY GRAND-OPENING HERO ─────────────────────────── */}
 
       </section>
 
