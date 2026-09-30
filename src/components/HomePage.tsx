@@ -125,7 +125,7 @@ export default function HomePage({
       <section className="relative flex flex-col overflow-hidden bg-white lg:min-h-[620px] lg:flex-row">
 
         {/* Left: photo panel */}
-        <div className="relative flex min-h-[460px] w-full items-end overflow-hidden lg:min-h-0 lg:w-[54%]">
+        <div className="relative flex min-h-[460px] w-full items-end overflow-hidden lg:min-h-0 lg:w-[52%]">
           <motion.div
             initial={{ scale: 1.08, opacity: 0.75 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -137,7 +137,7 @@ export default function HomePage({
               alt="Mural at the Union County Community Arts Council"
               fill
               priority
-              sizes="(max-width: 1024px) 100vw, 54vw"
+              sizes="(max-width: 1024px) 100vw, 52vw"
               className="object-cover object-center brightness-110"
             />
           </motion.div>
@@ -207,12 +207,12 @@ export default function HomePage({
         </div>
 
         {/* Right: welcome panel — right-aligned to match the mockup */}
-        <div className="relative flex w-full flex-col items-end justify-center bg-white px-6 py-14 text-right sm:px-10 lg:w-[46%] lg:px-16">
+        <div className="relative flex w-full flex-col items-end justify-center bg-white px-6 py-14 text-right sm:px-10 lg:w-[48%] lg:px-12">
           <motion.h2
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-logo text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.05] text-[#173F73]"
+            className="font-logo text-[clamp(2.75rem,5.5vw,5.5rem)] font-bold leading-[1.05] text-[#173F73]"
           >
             Welcome<br />to the<br />Community
           </motion.h2>
@@ -220,7 +220,7 @@ export default function HomePage({
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.46, duration: 0.7 }}
-            className="font-logo mt-6 text-[clamp(1.5rem,3vw,2.5rem)] italic text-[#E86A2A]"
+            className="font-logo mt-6 text-[clamp(1.6rem,3.2vw,2.75rem)] italic text-[#E86A2A]"
           >
             Celebrating Creativity
           </motion.p>
@@ -228,7 +228,7 @@ export default function HomePage({
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="font-logo mt-6 max-w-md text-lg text-[#1a1a1a] sm:text-xl"
+            className="font-logo mt-6 max-w-full text-[clamp(1.15rem,1.5vw,1.6rem)] text-[#1a1a1a] xl:whitespace-nowrap"
           >
             Our doors open <strong>November&nbsp;7th</strong> and you are invited!
           </motion.p>
