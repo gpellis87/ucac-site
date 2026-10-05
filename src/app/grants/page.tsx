@@ -34,6 +34,15 @@ function GrantEntry({ grant }: { grant: Grant }) {
             </div>
           )}
 
+          {grant.closedNotice && (
+            <div
+              role="status"
+              className="mt-6 max-w-2xl border border-navy/60 bg-navy/10 px-5 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-parchment"
+            >
+              {grant.closedNotice}
+            </div>
+          )}
+
           <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-parchment/72">
             {grant.body.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>

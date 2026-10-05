@@ -6,6 +6,7 @@ export type Grant = {
   body: string[];
   imageUrl?: string;
   applyUrl?: string;
+  closedNotice?: string;
   guidelinesUrl?: string;
   zeffyUrl?: string;
   active: boolean;
@@ -39,7 +40,7 @@ export const grants: Grant[] = [
       "For her legacy to be remembered for generations to come, we are proud to honor Barbara Faulk by offering the Barbara Faulk Educators Grant — so that her energy and love of life will continue always.",
     ],
     imageUrl: "https://cdn.sanity.io/images/tqrjw75a/production/6bc6ef9b01da964867a7afc992a66e509311d565-1200x526.png",
-    applyUrl: "https://docs.google.com/forms/d/16b09a9F-4dKztDUGXEIiXIxwutQ6qLRoz3MC9VjCVjw/viewform",
+    closedNotice: "Applications for this grant closed. The deadline to apply was September 30.",
     zeffyUrl: "https://www.zeffy.com/en-US/donation-form/barbara-faulk-educators-grant",
     active: true,
   },
