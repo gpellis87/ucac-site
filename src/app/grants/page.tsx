@@ -129,6 +129,14 @@ export default function GrantsPage() {
           )}
 
           <p className="mt-10 max-w-2xl text-sm leading-relaxed text-parchment/55">
+            Grant recipients:{" "}
+            <Link href="/grants/logos" className="text-navy hover:underline">
+              download the required Arts Council logos
+            </Link>
+            .
+          </p>
+
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-parchment/55">
             Looking to give a general, tax-deductible gift to the Arts Council instead? Visit our{" "}
             <Link href="/support#donate" className="text-navy hover:underline">
               Support page
