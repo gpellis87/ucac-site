@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const exhibit = await getExhibitBySlug(params.slug);
   if (!exhibit) return { title: "Exhibit Not Found" };
   return {
-    title: `${exhibit.title} | Union County Community Arts Council`,
+    title: exhibit.title,
     description: exhibit.description,
   };
 }

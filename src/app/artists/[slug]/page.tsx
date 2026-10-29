@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const artist = await getArtistBySlug(params.slug);
   if (!artist) return { title: "Artist Not Found" };
   return {
-    title: `${artist.firstName} ${artist.lastName} | Union County Community Arts Council`,
+    title: `${artist.firstName} ${artist.lastName}`,
     description: artist.bio ?? `${artist.medium} artist from Union County, NC.`,
   };
 }

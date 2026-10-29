@@ -1,6 +1,7 @@
 "use client";
 
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Clock, CalendarOff, Car } from "lucide-react";
 
 export default function ContactPageClient() {
   return (
@@ -70,20 +71,58 @@ export default function ContactPageClient() {
               <Clock size={14} className="text-navy" />
               <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Hours</p>
             </div>
-            <div className="space-y-3 text-sm text-parchment/80">
-              <div>
-                <p className="text-[0.75rem] uppercase tracking-[0.14em] text-parchment/60 mb-1">Gallery</p>
-                <p>Mon – Thu &nbsp; 10:00 AM – 4:00 PM</p>
-                <p>Select Saturdays &nbsp; 10:00 AM – 2:00 PM</p>
-              </div>
-              <div>
-                <p className="text-[0.75rem] uppercase tracking-[0.14em] text-parchment/60 mb-1">Office</p>
-                <p>Mon – Fri &nbsp; 8:00 AM – 4:00 PM</p>
-                <p className="text-parchment/60">Sat – Sun: Closed</p>
-              </div>
+            <div className="space-y-1 text-sm text-parchment/80">
+              <p>Tuesday &nbsp; 10:00 AM – 4:00 PM</p>
+              <p>Wednesday &nbsp; 10:00 AM – 4:00 PM</p>
+              <p>Thursday &nbsp; 10:00 AM – 4:00 PM</p>
+              <p>Friday &nbsp; 10:00 AM – 6:00 PM</p>
+              <p>Saturday &nbsp; 10:00 AM – 4:00 PM</p>
+              <p className="text-parchment/60">Sunday – Monday: Closed</p>
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* Holiday closures + parking */}
+      <div className="section-pad mt-6">
+        <div className="mx-auto max-w-[1500px] grid gap-6 md:grid-cols-2">
+          <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
+            <div className="mb-4 flex items-center gap-2">
+              <CalendarOff size={14} className="text-navy" />
+              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">2026 Holiday Closures</p>
+            </div>
+            <p className="text-sm leading-relaxed text-parchment/70">
+              Artspace will be closed to the public on the following dates:
+            </p>
+            <ul className="mt-3 space-y-1 text-sm text-parchment/80">
+              <li>Thu, November 26 – Fri, November 27</li>
+              <li>Thu, December 24 – Fri, December 25</li>
+              <li>Thu, December 31 – Fri, January 1</li>
+            </ul>
+          </div>
+
+          <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
+            <div className="mb-4 flex items-center gap-2">
+              <Car size={14} className="text-navy" />
+              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Parking</p>
+            </div>
+            <p className="text-sm leading-relaxed text-parchment/70">
+              The City of Monroe provides an interactive map to help you find appropriate parking
+              near our building at 300 N Hayne St, including accessible parking spaces. The image
+              below shows our location.
+            </p>
+            <Image
+              src="/parking-map.png"
+              alt="Aerial map of downtown Monroe showing UCCAC at 300 N Hayne St, circled in orange, at the corner of N Hayne St and E Franklin St. Pink lines mark nearby street parking and blue wheelchair icons mark accessible parking."
+              width={515}
+              height={478}
+              className="mt-4 h-auto w-full max-w-md border border-parchment/20"
+            />
+            <p className="mt-2 text-xs text-parchment/60">
+              Our building is circled in orange. Pink lines mark street parking; blue icons mark accessible spaces.
+            </p>
+          </div>
         </div>
       </div>
 

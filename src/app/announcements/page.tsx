@@ -9,7 +9,7 @@ import { sanityImg } from "@/sanity/image";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Announcements | Union County Community Arts Council",
+  title: "Announcements",
   description:
     "News and announcements from the Union County Community Arts Council — grants, programs, events, and updates.",
 };

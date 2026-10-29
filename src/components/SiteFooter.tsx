@@ -55,8 +55,9 @@ export default function SiteFooter() {
             </div>
             <p>(704) 283-2784</p>
             <p>info@unionarts.org</p>
-            <p>Mon–Fri: 8:00 AM – 4:00 PM</p>
-            <p>Sat–Sun: Closed</p>
+            <p>Tue–Thu, Sat: 10:00 AM – 4:00 PM</p>
+            <p>Fri: 10:00 AM – 6:00 PM</p>
+            <p>Sun–Mon: Closed</p>
           </div>
         </div>
       </div>

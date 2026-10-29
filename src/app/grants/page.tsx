@@ -7,7 +7,7 @@ import type { Grant } from "@/data/grants";
 import { sanityImg } from "@/sanity/image";
 
 export const metadata: Metadata = {
-  title: "Grants | Union County Community Arts Council",
+  title: "Grants",
   description:
     "Grants from the Union County Community Arts Council, supporting arts education and programs across Union County.",
 };

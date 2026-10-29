@@ -7,4 +7,23 @@ export type GrantLogo = {
   format: string;
 };
 
-export const grantLogos: GrantLogo[] = [];
+export const grantLogos: GrantLogo[] = [
+  {
+    name: "UCCAC Logo (White Background)",
+    description: "Full-color logo on a white background. Best for print and standard documents.",
+    file: "uccac-logo-white-background.png",
+    format: "PNG",
+  },
+  {
+    name: "UCCAC Logo (Transparent)",
+    description: "Full-color logo with a transparent background. Best for placing over light backgrounds.",
+    file: "uccac-logo-transparent.png",
+    format: "PNG",
+  },
+  {
+    name: "North Carolina Arts Council",
+    description: "Logo of the North Carolina Arts Council, which funds the Grassroots Arts Program.",
+    file: "nc-arts-council-logo.png",
+    format: "PNG",
+  },
+];

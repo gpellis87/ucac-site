@@ -113,7 +113,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
             </p>
           </article>
 
-          <aside className="theme-panel space-y-4 p-6">
+          <div className="theme-panel space-y-4 p-6">
             <p><span className="text-parchment/55">Date:</span> {formatEventDate(event.date)}</p>
             <p><span className="text-parchment/55">Time:</span> {event.time}</p>
             <p><span className="text-parchment/55">Location:</span> {event.location}</p>
@@ -127,7 +127,7 @@ export default function EventDetailClient({ event }: { event: UccacEvent }) {
                 </span>
               ))}
             </div>
-          </aside>
+          </div>
         </div>
       </section>
 

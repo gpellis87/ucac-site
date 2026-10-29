@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Award, Check, ExternalLink, HandHeart, Heart, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Support | Union County Community Arts Council",
+  title: "Support",
   description:
     "Support the Union County Community Arts Council through donations, membership, and volunteer service.",
 };

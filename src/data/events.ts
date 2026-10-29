@@ -159,23 +159,6 @@ export const events: UccacEvent[] = [
     tags: ["Volunteer", "Info Session", "Board"],
   },
   {
-    id: 9,
-    slug: "summer-sculpture-walk-preview",
-    title: "Summer Sculpture Walk Preview",
-    description:
-      "Preview this season's outdoor sculpture installations before the official citywide public launch.",
-    date: "2026-06-20",
-    time: "5:30 PM - 7:00 PM",
-    location: "Heritage Greenway",
-    address: "101 Greenway Loop, Monroe, NC 28112",
-    category: "Exhibition",
-    imageUrl:
-      "https://images.unsplash.com/photo-1473447198193-5e26c7ffdc27?auto=format&fit=crop&w=1600&q=80",
-    ticketPrice: "Free Event",
-    organizer: "UCCAC Public Art Initiative",
-    tags: ["Sculpture", "Outdoor", "Preview"],
-  },
-  {
     id: 10,
     slug: "artist-grant-info-night",
     title: "Artist Grant Info Night",

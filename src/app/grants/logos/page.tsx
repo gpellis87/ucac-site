@@ -4,7 +4,7 @@ import { Download } from "lucide-react";
 import { grantLogos } from "@/data/grantLogos";
 
 export const metadata: Metadata = {
-  title: "Grant Recipient Logos | Union County Community Arts Council",
+  title: "Grant Recipient Logos",
   description:
     "Download the Union County Community Arts Council logos that grant recipients are required to use on advertising and literature.",
 };
@@ -44,7 +44,7 @@ export default function GrantLogosPage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`/grant-logos/${logo.file}`}
-                      alt={`${logo.name} logo`}
+                      alt={logo.name}
                       className="max-h-full max-w-full object-contain"
                     />
                   </div>

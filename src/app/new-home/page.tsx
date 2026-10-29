@@ -16,7 +16,7 @@ const buildingPhotos = [
 ];
 
 export const metadata: Metadata = {
-  title: "A New Home | Union County Community Arts Council",
+  title: "A New Home",
   description:
     "The Union County Community Arts Council is moving to a new space — more room for exhibitions, programs, and community. Follow the journey.",
 };

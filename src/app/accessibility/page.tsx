@@ -8,6 +8,17 @@ export const metadata: Metadata = {
     "Union County Community Arts Council's accessibility statement — the standard we target, what we've done, how we test, and how to report a barrier.",
 };
 
+const spaceFeatures = [
+  "Full Mobility Access: All of our public areas, restrooms, studios, galleries, and classrooms are fully accessible.",
+  "Ramp Access: A ramp provides smooth navigation and easy entry to our spaces and facilities.",
+  "Service Animals: Fully trained service animals are always welcome in our building.",
+  "Wayfinding signage uses large fonts, high contrast, and a flat finish for persons with low vision.",
+  "Exhibition signage uses large font, high contrast, and a flat finish for persons with low vision.",
+  "All artwork labels are printed in 18pt font in black on a white background.",
+  "Large Print Gallery Guides are available for all exhibition brochures.",
+  "All Large Print Gallery Guides are linked via QR code to a digital copy that can be read with a screen reader.",
+];
+
 const measures = [
   "Full keyboard navigation, including a “skip to main content” link and a visible focus indicator on every interactive element.",
   "Proper heading structure and landmark regions, so screen reader users can navigate the page by section rather than reading it top to bottom.",
@@ -40,13 +51,40 @@ export default function AccessibilityPage() {
             everyone, including people who use assistive technology such as screen readers,
             screen magnification, voice recognition software, or keyboard-only navigation.
           </p>
-          <p className="mt-3 text-sm text-parchment/60">Last updated August 18, 2026</p>
+          <p className="mt-3 text-sm text-parchment/60">Last updated October 29, 2026</p>
           <div className="mt-8 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
         </div>
       </SectionReveal>
 
       <SectionReveal className="section-pad">
         <article className="mx-auto max-w-4xl space-y-9 text-parchment/78">
+          <section className="border border-parchment/15 bg-parchment/[0.045] p-7">
+            <h2 className="display text-3xl text-parchment">Accessibility at UCCAC</h2>
+            <p className="mt-4 text-sm leading-relaxed md:text-base">
+              We believe creativity is for everyone. We are dedicated to removing barriers and
+              expanding access to the arts, ensuring that our entire community feels welcome.
+            </p>
+            <h3 className="mt-6 text-lg font-semibold text-parchment">Our Space</h3>
+            <ul className="mt-3 space-y-3 text-sm leading-relaxed md:text-base list-disc pl-5">
+              {spaceFeatures.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <h3 className="mt-6 text-lg font-semibold text-parchment">Plan Your Visit</h3>
+            <p className="mt-3 text-sm leading-relaxed md:text-base">
+              Have a question or need to request a specific accommodation? We are here to help!
+              Please reach out to us at{" "}
+              <a href="tel:+17042832784" className="text-navy underline underline-offset-4 transition hover:text-parchment">
+                (704) 283-2784
+              </a>
+              . See our{" "}
+              <Link href="/contact" className="text-navy underline underline-offset-4 transition hover:text-parchment">
+                hours, holiday closures, and parking information
+              </Link>
+              .
+            </p>
+          </section>
+
           <section className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <h2 className="display text-3xl text-parchment">Our Standard</h2>
             <div className="mt-4 space-y-3 text-sm leading-relaxed md:text-base">

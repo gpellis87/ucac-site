@@ -5,7 +5,7 @@ import { getExhibits, getArchivedExhibits } from "@/sanity/queries";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Exhibitions | Union County Community Arts Council",
+  title: "Exhibitions",
   description:
     "Current and upcoming exhibitions at the UCCAC Gallery in Monroe, NC — painting, mixed media, student art, and more.",
 };

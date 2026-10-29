@@ -5,7 +5,7 @@ import { getArtists } from "@/sanity/queries";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Artists | Union County Community Arts Council",
+  title: "Artists",
   description:
     "Meet the artists of Union County — painters, mixed-media creators, and fiber artists connected through the Union County Community Arts Council in Monroe, NC.",
 };
