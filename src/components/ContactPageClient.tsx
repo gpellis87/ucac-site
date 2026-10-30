@@ -69,7 +69,7 @@ export default function ContactPageClient() {
           <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
               <Clock size={14} className="text-navy" />
-              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Hours</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Gallery Hours</p>
             </div>
             <div className="space-y-1 text-sm text-parchment/80">
               <p>Tuesday &nbsp; 10:00 AM – 4:00 PM</p>
@@ -90,15 +90,14 @@ export default function ContactPageClient() {
           <div className="border border-parchment/15 bg-parchment/[0.045] p-7">
             <div className="mb-4 flex items-center gap-2">
               <CalendarOff size={14} className="text-navy" />
-              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">2026 Holiday Closures</p>
+              <p className="text-[0.75rem] uppercase tracking-[0.2em] text-parchment/60">Holiday Closures</p>
             </div>
             <p className="text-sm leading-relaxed text-parchment/70">
               Artspace will be closed to the public on the following dates:
             </p>
             <ul className="mt-3 space-y-1 text-sm text-parchment/80">
-              <li>Thu, November 26 – Fri, November 27</li>
-              <li>Thu, December 24 – Fri, December 25</li>
-              <li>Thu, December 31 – Fri, January 1</li>
+              <li>November 25 – November 28</li>
+              <li>December 19 – January 2</li>
             </ul>
           </div>
 
@@ -112,6 +111,14 @@ export default function ContactPageClient() {
               near our building at 300 N Hayne St, including accessible parking spaces. The image
               below shows our location.
             </p>
+            <a
+              href="https://monroencgis.maps.arcgis.com/apps/webappviewer/index.html?id=ef43c76d605b4f5aa7f18995ed932227"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-[0.75rem] uppercase tracking-[0.14em] text-navy hover:underline"
+            >
+              Open interactive parking map
+            </a>
             <Image
               src="/parking-map.png"
               alt="Aerial map of downtown Monroe showing UCCAC at 300 N Hayne St, circled in orange, at the corner of N Hayne St and E Franklin St. Pink lines mark nearby street parking and blue wheelchair icons mark accessible parking."

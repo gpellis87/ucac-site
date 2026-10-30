@@ -13,10 +13,7 @@ const spaceFeatures = [
   "Ramp Access: A ramp provides smooth navigation and easy entry to our spaces and facilities.",
   "Service Animals: Fully trained service animals are always welcome in our building.",
   "Wayfinding signage uses large fonts, high contrast, and a flat finish for persons with low vision.",
-  "Exhibition signage uses large font, high contrast, and a flat finish for persons with low vision.",
-  "All artwork labels are printed in 18pt font in black on a white background.",
-  "Large Print Gallery Guides are available for all exhibition brochures.",
-  "All Large Print Gallery Guides are linked via QR code to a digital copy that can be read with a screen reader.",
+  "Gallery catalogs are printed in 18 point font in black on white background for visibility.",
 ];
 
 const measures = [
