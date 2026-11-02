@@ -283,7 +283,7 @@ export default function HomePage({
                         src={sanityImg(ann.contentImage, { w: 1600 })}
                         alt=""
                         fill
-                        className="object-cover"
+                        className="object-cover object-top"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />
                     </div>
