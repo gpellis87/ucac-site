@@ -277,7 +277,7 @@ export default function HomePage({
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(12,44,92,0.1),transparent_65%)]" />
                   )}
                   {ann.contentImage && (
-                    <div className="relative h-40 w-full shrink-0 overflow-hidden sm:h-44">
+                    <div className="relative aspect-[8/3] w-full shrink-0 overflow-hidden">
                       {/* Decorative — the announcement title is already announced via the heading below. */}
                       <Image
                         src={sanityImg(ann.contentImage, { w: 1600 })}
@@ -308,7 +308,7 @@ export default function HomePage({
                         </div>
                       )}
                       <Link
-                        href={`/announcements#${ann.slug}`}
+                        href={ann.readMoreUrl || `/announcements#${ann.slug}`}
                         className="text-[0.75rem] text-parchment/60 transition hover:text-parchment/65"
                       >
                         Read more →

@@ -15,6 +15,7 @@ export type Announcement = {
   contentImage: string | null;
   flyerImage: string | null;
   flyerPdf: string | null;
+  readMoreUrl: string | null;
 };
 
 const EXHIBIT_FIELDS = `
@@ -101,7 +102,7 @@ export async function getExhibitSlugs(): Promise<string[]> {
 // ── Announcement queries ──────────────────────────────────────────────────────
 
 const ANNOUNCEMENT_FILTER = `_type == "announcement" && active == true && (!defined(expiresAt) || expiresAt > $today)`;
-const ANNOUNCEMENT_FIELDS = `title, "slug": slug.current, eyebrow, description, body, publishedAt, ctaOne { label, url }, ctaTwo { label, url }, "contentImage": contentImage.asset->url, "flyerImage": flyer.asset->url, "flyerPdf": flyerPdf.asset->url`;
+const ANNOUNCEMENT_FIELDS = `title, "slug": slug.current, eyebrow, description, body, publishedAt, ctaOne { label, url }, ctaTwo { label, url }, "contentImage": contentImage.asset->url, "flyerImage": flyer.asset->url, "flyerPdf": flyerPdf.asset->url, readMoreUrl`;
 
 export async function getAnnouncements(): Promise<Announcement[]> {
   const client = getClient();
@@ -228,4 +229,71 @@ export async function getWorkshopSlugs(): Promise<string[]> {
     `*[_type == "workshop"] { "slug": slug.current }`
   );
   return results.map((r) => r.slug);
+}
+
+// ── Call for Entry queries ────────────────────────────────────────────────────
+
+export type CallForEntry = {
+  title: string;
+  slug: string;
+  tagline: string | null;
+  headerImage: string | null;
+  summary: string;
+  deadline: string;
+  deadlineNote: string | null;
+  exhibitionDates: string | null;
+  intro: string | null;
+  actions: { label: string; url: string }[];
+  keyDates: { label: string; value: string }[];
+  awards: { name: string; amount: string | null }[];
+  sections: { heading: string; body: string | null; bullets: string[] }[];
+  contactName: string | null;
+  contactEmail: string | null;
+};
+
+const CALL_FIELDS = `
+  title, "slug": slug.current, tagline, "headerImage": headerImage.asset->url,
+  summary, deadline, deadlineNote, exhibitionDates, intro,
+  "actions": coalesce(actions[defined(url)], []),
+  "keyDates": coalesce(keyDates, []),
+  "awards": coalesce(awards, []),
+  "sections": coalesce(sections[]{ heading, body, "bullets": coalesce(bullets, []) }, []),
+  contactName, contactEmail
+`;
+
+export async function getCallsForEntry(): Promise<CallForEntry[]> {
+  const client = getClient();
+  if (!client) return [];
+  return client.fetch<CallForEntry[]>(
+    `*[_type == "callForEntry" && active != false] | order(deadline asc) { ${CALL_FIELDS} }`
+  );
+}
+
+export async function getCallForEntryBySlug(slug: string): Promise<CallForEntry | null> {
+  const client = getClient();
+  if (!client) return null;
+  const results = await client.fetch<CallForEntry[]>(
+    `*[_type == "callForEntry" && active != false && slug.current == $slug][0..0] { ${CALL_FIELDS} }`,
+    { slug }
+  );
+  return results[0] ?? null;
+}
+
+export async function getCallForEntrySlugs(): Promise<string[]> {
+  const client = getClient();
+  if (!client) return [];
+  const results = await client.fetch<{ slug: string }[]>(
+    `*[_type == "callForEntry" && active != false] { "slug": slug.current }`
+  );
+  return results.map((r) => r.slug);
+}
+
+/** True once the submission deadline (YYYY-MM-DD) has passed, in Eastern time. */
+export function isCallClosed(deadline: string): boolean {
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+  return today > deadline;
+}
+
+export function formatCallDate(d: string): string {
+  return new Date(d + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 }

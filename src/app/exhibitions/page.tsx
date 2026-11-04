@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ExhibitCard from "@/components/ExhibitCard";
-import { getExhibits, getArchivedExhibits } from "@/sanity/queries";
+import Link from "next/link";
+import { getExhibits, getArchivedExhibits, getCallsForEntry, isCallClosed } from "@/sanity/queries";
 
 export const revalidate = 60;
 
@@ -11,7 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default async function ExhibitsPage() {
-  const [exhibits, archived] = await Promise.all([getExhibits(), getArchivedExhibits()]);
+  const [exhibits, archived, calls] = await Promise.all([
+    getExhibits(),
+    getArchivedExhibits(),
+    getCallsForEntry(),
+  ]);
+  const hasOpenCalls = calls.some((c) => !isCallClosed(c.deadline));
 
   return (
     <div className="pb-24">
@@ -24,6 +30,14 @@ export default async function ExhibitsPage() {
           <p className="mt-5 max-w-xl text-base text-parchment/70 leading-relaxed">
             Works from artists across Union County and the region — on view now and opening soon at 300 North Hayne Street.
           </p>
+          {hasOpenCalls && (
+            <p className="mt-4 text-sm text-parchment/70">
+              Artist?{" "}
+              <Link href="/calls-for-entry" className="underline underline-offset-2 hover:text-parchment">
+                See open calls for entry →
+              </Link>
+            </p>
+          )}
           <div className="mt-8 h-px w-full bg-gradient-to-r from-navy/60 via-navy/20 to-transparent" />
         </div>
       </div>

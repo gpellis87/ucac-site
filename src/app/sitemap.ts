@@ -1,19 +1,21 @@
 import type { MetadataRoute } from "next";
 import { events } from "@/data/events";
-import { getExhibitSlugs, getArtistSlugs } from "@/sanity/queries";
+import { getExhibitSlugs, getArtistSlugs, getCallForEntrySlugs } from "@/sanity/queries";
 
 const BASE_URL = "https://unionarts.org";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [exhibitSlugs, artistSlugs] = await Promise.all([
+  const [exhibitSlugs, artistSlugs, callSlugs] = await Promise.all([
     getExhibitSlugs(),
     getArtistSlugs(),
+    getCallForEntrySlugs(),
   ]);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: BASE_URL,                         changeFrequency: "weekly",  priority: 1.0 },
     { url: `${BASE_URL}/about`,              changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/exhibitions`,        changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${BASE_URL}/calls-for-entry`,    changeFrequency: "weekly",  priority: 0.8 },
     { url: `${BASE_URL}/events`,             changeFrequency: "weekly",  priority: 0.9 },
     { url: `${BASE_URL}/artists`,            changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/announcements`,      changeFrequency: "weekly",  priority: 0.7 },
@@ -34,6 +36,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  const callRoutes: MetadataRoute.Sitemap = callSlugs.map((slug) => ({
+    url: `${BASE_URL}/calls-for-entry/${slug}`,
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+
   const artistRoutes: MetadataRoute.Sitemap = artistSlugs.map((slug) => ({
     url: `${BASE_URL}/artists/${slug}`,
     changeFrequency: "monthly",
@@ -46,5 +54,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...exhibitRoutes, ...artistRoutes, ...eventRoutes];
+  return [...staticRoutes, ...exhibitRoutes, ...callRoutes, ...artistRoutes, ...eventRoutes];
 }

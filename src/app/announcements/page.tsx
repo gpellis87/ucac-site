@@ -92,10 +92,13 @@ function AnnouncementEntry({ announcement }: { announcement: Announcement }) {
             </p>
           )}
 
-          {(announcement.ctaOne || announcement.ctaTwo) && (
+          {(announcement.ctaOne || announcement.ctaTwo || announcement.readMoreUrl) && (
             <div className="mt-8 flex flex-wrap gap-3">
               {announcement.ctaOne && <AnnouncementCta cta={announcement.ctaOne} primary />}
               {announcement.ctaTwo && <AnnouncementCta cta={announcement.ctaTwo} />}
+              {announcement.readMoreUrl && !announcement.ctaOne && (
+                <AnnouncementCta cta={{ label: "Read more", url: announcement.readMoreUrl }} primary />
+              )}
             </div>
           )}
 
