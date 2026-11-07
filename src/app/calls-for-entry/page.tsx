@@ -11,7 +11,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Calls for Entry",
   description:
-    "Open calls for entry from the Union County Community Arts Council — juried exhibitions and opportunities for artists in the Southeast region of North Carolina.",
+    "Open calls for entry from the Union County Community Arts Council — juried exhibitions and opportunities for artists.",
 };
 
 export default async function CallsForEntryPage() {
